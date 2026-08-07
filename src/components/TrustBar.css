@@ -1,0 +1,49 @@
+.trust-bar {
+  width: 100%;
+  padding: 35px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  gap: 30px;
+}
+
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+.trust-item h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin:0;
+  
+}
+
+
+.trust-item p {
+  color: #f5b301;
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+
+.trust-item span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+
+.iso h3 {
+  color: #0950CD;
+}
+
+.trust-item img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+
+}
