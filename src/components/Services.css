@@ -1,103 +1,228 @@
 /* Global Fix */
 
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 html,
 body {
-  overflow-x: hidden;
+overflow-x: hidden;
 }
 
 
 /* Services Section */
 
 .services-section {
-  width: 100%;
-  padding: 90px 0;
+width: 100%;
+padding: 90px 60px;
+background: #6eaaff;
 }
 
-
 .services-container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 15px;
+width: 100%;
+max-width: 1280px;
+margin: 0 auto;
+padding: 0;
 }
 
 
 /* Services Grid */
+
 .services-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 50px;
+width: 100%;
+max-width: 1280px;
+
+margin: 50px auto 0;
+
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
 }
+
 
 /* Service Card */
 
 .service-card {
-  width: 100%;
-  min-width: 0;
-  padding: 25px;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  box-sizing: border-box;
+width: 100%;
+min-width: 0;
+
+padding: 25px;
+
+background: white;
+
+border-radius: 12px;
+border: 2px solid rgba(9, 80, 205, 0.35);
+
+box-sizing: border-box;
+
+position: relative;
+overflow: hidden;
+
+transition: 0.3s ease;
+}
+
+
+/* Card Image */
+
+.card-image {
+position: absolute;
+inset: 0;
+
+background-size: cover;
+background-position: center;
+
+opacity: 0;
+transform: scale(1.1);
+
+transition: 0.4s ease;
+
+z-index: 0;
+}
+
+
+/* Overlay */
+
+.card-overlay {
+position: absolute;
+inset: 0;
+
+background: rgba(0,0,0,0);
+
+transition: 0.4s ease;
+
+z-index: 1;
+}
+
+
+/* Keep Content Above Image */
+
+.service-icon,
+.service-card h3,
+.service-card p,
+.service-card a {
+position: relative;
+z-index: 2;
 }
 
 
 /* Icon */
 
 .service-icon {
-  width: 45px;
-  height: 45px;
-  margin-bottom: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f1f5ff;
-  border-radius: 8px;
-  color: #0950CD;
+width: 45px;
+height: 45px;
+
+margin-bottom: 35px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: #f1f5ff;
+
+border-radius: 8px;
+
+color: #0950CD;
+
+transition: 0.3s ease;
 }
 
 
 /* Title */
 
 .service-card h3 {
-  font-size: 22px;
-  line-height: 1.3;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 15px;
+
+font-size: 22px;
+
+line-height: 1.3;
+
+font-weight: 700;
+
+color: #111;
+
+margin-bottom: 15px;
+
+transition: 0.3s ease;
 }
 
 
 /* Description */
 
 .service-card p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #666;
+
+font-size: 16px;
+
+line-height: 1.6;
+
+color: #666;
+
+transition: 0.3s ease;
 }
 
 
 /* Arrow */
 
 .service-card a {
-  margin-top: auto;
-  padding-top: 25px;
-  font-size: 24px;
-  color: #0950CD;
-  text-decoration: none;
+
+margin-top: auto;
+
+padding-top: 25px;
+
+font-size: 24px;
+
+color: #0950CD;
+
+text-decoration: none;
+
+transition: 0.3s ease;
 }
 
 
 /* Hover */
 
 .service-card:hover {
-  transform: translateY(-8px);
+
+transform: translateY(-8px);
+
+}
+
+
+.service-card:hover .card-image {
+
+opacity: 1;
+
+transform: scale(1);
+
+}
+
+
+.service-card:hover .card-overlay {
+
+background: rgba(0,0,0,0.65);
+
+}
+
+
+.service-card:hover h3,
+.service-card:hover p {
+
+color: white;
+
+}
+
+
+.service-card:hover .service-icon {
+
+background: rgba(255,255,255,0.2);
+
+color: #3CD2F9;
+
+}
+
+
+.service-card:hover a {
+
+color: #3CD2F9;
+
 }
 
 
@@ -105,31 +230,44 @@ body {
 
 @media(max-width:1200px){
 
-  .services-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.services-grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
 }
 
 
 @media(max-width:900px){
 
-  .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.services-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
 }
 
 
 @media(max-width:600px){
 
-  .services-container {
-    padding: 0 20px;
-  }
+.services-section {
+padding: 70px 20px;
+}
 
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+.services-container {
+padding: 0;
+}
 
+
+.services-grid {
+grid-template-columns: 1fr;
+}
+
+}
+.services-header {
+    margin-left: 100px;
+    color: rgb(0, 0, 0);
+}
+.services-header a {
+    color: #060607;
+    text-decoration: none;
 }
