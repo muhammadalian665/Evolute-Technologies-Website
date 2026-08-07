@@ -1,0 +1,49 @@
+.navbar {
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+/* Logo */
+.logo img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+
+/* Menu */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+
+.nav-links li {
+  font-size: 16px;
+  cursor: pointer;
+  color: #111;
+}
+
+
+/* Hire Us Button */
+.hire-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0950CD;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
+.hire-btn:hover {
+  background-color: #063b99;
+}
