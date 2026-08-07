@@ -1,11 +1,24 @@
+/* Navbar */
+/* Navbar */
 .navbar {
   width: 100%;
   padding: 20px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+
+  background: linear-gradient(
+    90deg,
+    #FFFFFF 0%,
+    #FFFFFF 25%,
+    #E2F1FF 30%,
+    #A3D2FF 45%,
+    #67AEFA 65%,
+    #3A84E8 82%,
+    #2A6FD8 100%
+  );
 }
+
 
 /* Logo */
 .logo img {
@@ -26,8 +39,15 @@
 
 .nav-links li {
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  color: #111;
+  color: #082A66;
+  transition: all 0.3s ease;
+}
+
+
+.nav-links li:hover {
+  color: #0950CD;
 }
 
 
@@ -36,14 +56,29 @@
   padding: 12px 25px;
   border: none;
   border-radius: 8px;
-  background-color: #0950CD;
-  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #082A66,
+    #0950CD
+  );
+
+  color: #FFFFFF;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 
 .hire-btn:hover {
-  background-color: #063b99;
+  transform: translateY(-2px);
+
+  background: linear-gradient(
+    135deg,
+    #0950CD,
+    #0A4DB8
+  );
+
+  box-shadow: 0 8px 25px rgba(9, 80, 205, 0.35);
 }

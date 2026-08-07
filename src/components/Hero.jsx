@@ -1,15 +1,20 @@
 import "./Hero.css";
-import heroImage from "../assets/hero-img.webp";
+import heroVideo from "../assets/Videos/hero-video (2).mp4";
 
 function Hero() {
   return (
     <section className="hero">
 
-      <img
-        className="hero-image"
-        src={heroImage}
-        alt="Digital Solutions"
-      />
+      <video
+        className="hero-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+
 
       <div className="hero-overlay"></div>
 
@@ -18,13 +23,12 @@ function Hero() {
 
         <h1>
           Empowering Businesses Through AI, Software & Digital Innovation
-
-
         </h1>
 
 
         <p>
-       We design scalable software solutions and growth systems that help companies innovate, automate, and scale globally.
+          We design scalable software solutions and growth systems that help
+          companies innovate, automate, and scale globally.
         </p>
 
 
@@ -40,7 +44,6 @@ function Hero() {
           </button>
 
         </div>
-
 
       </div>
 

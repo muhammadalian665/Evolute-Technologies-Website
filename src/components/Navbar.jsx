@@ -1,12 +1,14 @@
 import "./Navbar.css";
-import logo from "../assets/logo.png";
+import Logo from "../assets/logo.png";
+
 function Navbar() {
   return (
     <header className="navbar">
-      
+
       <div className="logo">
-  <img src={logo} alt="Evolute Technologies Logo" />
-</div>
+        <img src={Logo} alt="Evolute Technologies" />
+      </div>
+
 
       <ul className="nav-links">
         <li>Home</li>
@@ -16,6 +18,7 @@ function Navbar() {
         <li>Blogs</li>
         <li>Contact Us</li>
       </ul>
+
 
       <button className="hire-btn">
         Hire Us
