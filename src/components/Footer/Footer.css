@@ -1,0 +1,389 @@
+
+/* =========================================
+FOOTER
+========================================= */
+
+.footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 25%,
+    #e2f1ff 30%,
+    #a3d2ff 45%,
+    #67aefa 65%,
+    #3a84e8 82%,
+    #2a6fd8 100%
+  );
+
+  color: #082a66;
+}
+
+/* =========================================
+FOOTER LOGO
+========================================= */
+
+.footer-logo {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  /* LOGO LEFT EDGE */
+  padding: 55px 70px 25px 0;
+
+  box-sizing: border-box;
+}
+
+.footer-logo img {
+  width: 175px;
+  height: auto;
+
+  display: block;
+}
+
+/* =========================================
+FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+  padding: 35px 70px 75px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    0.8fr
+    1.3fr
+    1.3fr;
+
+  gap: 70px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+FOOTER COLUMNS
+========================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+COMPANY NAME
+========================================= */
+
+.footer-column h3 {
+  margin: 0 0 22px;
+
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  color: #082a66;
+}
+
+/* =========================================
+COLUMN HEADINGS
+========================================= */
+
+.footer-column h4 {
+  margin: 0 0 25px;
+
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+
+  color: #082a66;
+}
+
+/* =========================================
+COMPANY DESCRIPTION
+========================================= */
+
+.footer-company > p {
+  max-width: 370px;
+
+  margin: 0 0 25px;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #164a86;
+}
+
+/* =========================================
+PAKISTAN OFFICE
+========================================= */
+
+.footer-contact {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.footer-contact h4 {
+  margin-bottom: 12px;
+}
+
+.footer-contact p {
+  margin: 0 0 15px;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #164a86;
+}
+
+.footer-contact strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #082a66;
+
+  font-weight: 700;
+}
+
+/* =========================================
+COMPANY EMAIL
+========================================= */
+
+.footer-company > a {
+  width: fit-content;
+
+  font-size: 14px;
+
+  color: #082a66;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.footer-company > a:hover {
+  color: #0950cd;
+}
+
+/* =========================================
+LIST
+========================================= */
+
+.footer-column ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+LIST ITEMS
+========================================= */
+
+.footer-column ul li {
+  margin-bottom: 13px;
+}
+
+/* =========================================
+LINKS
+========================================= */
+
+.footer-column ul li a {
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: #164a86;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+/* =========================================
+LINK HOVER
+========================================= */
+
+.footer-column ul li a:hover {
+  color: #0950cd;
+
+  padding-left: 4px;
+}
+
+/* =========================================
+GENERAL QUESTIONS / EMAIL
+========================================= */
+
+.footer-email-links {
+  margin-top: 35px;
+}
+
+.footer-email-links h4 {
+  margin-bottom: 12px;
+}
+
+.footer-email-links a {
+  font-size: 14px;
+
+  color: #164a86;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.footer-email-links a:hover {
+  color: #0950cd;
+}
+
+/* =========================================
+HIRE RESOURCES SUBHEADING
+========================================= */
+
+.footer-subheading {
+  margin-top: 35px !important;
+}
+
+/* =========================================
+FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+  width: 100%;
+
+  border-top: 1px solid rgba(8, 42, 102, 0.18);
+
+  padding: 22px 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #164a86;
+
+  text-align: center;
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .footer-logo {
+    padding: 50px 45px 20px 0;
+  }
+
+  .footer-container {
+    padding: 35px 45px 65px;
+
+    grid-template-columns:
+      1.2fr
+      0.8fr
+      1fr
+      1fr;
+
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    padding: 22px 45px;
+  }
+}
+
+/* =========================================
+MOBILE TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .footer-logo {
+    padding: 45px 30px 20px 0;
+  }
+
+  .footer-logo img {
+    width: 160px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px 35px;
+
+    padding: 30px 30px 60px;
+  }
+
+  .footer-company {
+    grid-column: 1 / -1;
+  }
+
+  .footer-company > p {
+    max-width: 600px;
+  }
+
+  .footer-bottom {
+    padding: 20px 30px;
+  }
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+  .footer-logo {
+    padding: 40px 25px 15px 0;
+  }
+
+  .footer-logo img {
+    width: 145px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding: 30px 25px 50px;
+  }
+
+  .footer-company {
+    grid-column: auto;
+  }
+
+  .footer-column h3 {
+    font-size: 22px;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 18px;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 11px;
+  }
+
+  .footer-subheading {
+    margin-top: 30px;
+  }
+
+  .footer-bottom {
+    padding: 18px 20px;
+  }
+}
+
