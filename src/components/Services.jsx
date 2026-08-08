@@ -1,214 +1,105 @@
 import "./Services.css";
 
 import {
-Code2,
-Layers,
-Bot,
-Smartphone,
-Cloud,
-Users,
-Target,
-Mail,
-CalendarCheck,
-Workflow
+  Code2,
+  Target
 } from "lucide-react";
 
-import CustomSoftwareDevelopment from "../assets/CardPictures/CustomSoftwareDevelopment.jpg";
-import SaasProductDevelopment from "../assets/CardPictures/SaasProductDevelopment.jpg";
-import AIIntegrationAndAutomation from "../assets/CardPictures/AIIntegrationAndAutomation.jpg";
-import WebMobileApplication from "../assets/CardPictures/Web&MobileApplicationDevelopment.jpg";
-import ScalableCloudSolutions from "../assets/CardPictures/ScalableCloudSolutions.jpg";
-import DedicatedDevelopmentTeams from "../assets/CardPictures/DedicatedDevelopmentTeams.jpg";
-import B2BLeadGeneration from "../assets/CardPictures/B2B Lead Generation.jpg";
-import LinkedinProspecting from "../assets/CardPictures/Linkedin.png";
-import ColdEmailCampaign from "../assets/CardPictures/ColdEmail.jpg";
-import AppointmentSetting from "../assets/CardPictures/Appointment.webp";
-import SalesAutomation from "../assets/CardPictures/SalesAutomation.jpg";
-import OutboundGrowth from "../assets/CardPictures/OutboundGrowth.jpeg";
+import SoftwareServices from "../assets/Service_&_Growth_Card_images/Software_Services.png";
+import GrowthServices from "../assets/Service_&_Growth_Card_images/Growth_Services.png";
+
+import Software2 from "../assets/Service_&_Growth_Card_images/Software2.png";
+import Growth2 from "../assets/Service_&_Growth_Card_images/Growth2.png";
 
 function Services() {
+  const services = [
+    {
+      title: "Software Services",
+      description:
+        "Build scalable software solutions, applications, SaaS products, AI solutions, and cloud systems designed to support your business.",
+      icon: Code2,
 
-const services = [
+      // Standby image
+      image: Software2,
 
-{
-title: "Custom Software Development",
-description:
-"Build scalable software solutions tailored to your business needs with modern technologies.",
-icon: Code2,
-image: CustomSoftwareDevelopment
-},
+      // Hover image
+      hoverImage: SoftwareServices
+    },
 
-{
-title: "SaaS Product Development",
-description:
-"Transform ideas into powerful SaaS platforms designed for growth and scalability.",
-icon: Layers,
-image: SaasProductDevelopment
-},
+    {
+      title: "Growth Services",
+      description:
+        "Generate qualified opportunities and build predictable growth through targeted outreach, automation, and sales systems.",
+      icon: Target,
 
-{
-title: "AI Integration & Automation",
-description:
-"Automate workflows and unlock smarter business decisions with AI-powered solutions.",
-icon: Bot,
-image: AIIntegrationAndAutomation
-},
+      // Standby image
+      image: Growth2,
 
-{
-title: "Web & Mobile Applications",
-description:
-"Create high-performance web and mobile apps with seamless user experiences.",
-icon: Smartphone,
-image: WebMobileApplication
-},
+      // Hover image
+      hoverImage: GrowthServices
+    }
+  ];
 
-{
-title: "Scalable Cloud Solutions",
-description:
-"Build secure and flexible cloud infrastructure that grows with your business.",
-icon: Cloud,
-image: ScalableCloudSolutions
-},
+  return (
+    <section className="services-section">
 
-{
-title: "Dedicated Development Teams",
-description:
-"Extend your capabilities with skilled engineers focused on your success.",
-icon: Users,
-image: DedicatedDevelopmentTeams
-},
+      <div className="services-container">
 
-{
-title: "B2B Lead Generation",
-description:
-"Generate qualified business opportunities through targeted growth strategies.",
-icon: Target,
-image: B2BLeadGeneration
-},
+        <div className="services-header">
+          <h2>Our Services</h2>
+        </div>
 
-{
-title: "LinkedIn Prospecting & Outreach",
-description:
-"Connect with decision-makers through personalized LinkedIn campaigns.",
-icon: Users,
-image: LinkedinProspecting
-},
+        <div className="services-grid">
 
-{
-title: "Cold Email Campaigns",
-description:
-"Drive conversations with data-driven email campaigns built for conversions.",
-icon: Mail,
-image: ColdEmailCampaign
-},
+          {services.map((service, index) => (
+            <div
+              className="service-card"
+              key={index}
+            >
 
-{
-title: "Appointment Setting",
-description:
-"Turn prospects into qualified meetings with effective outreach systems.",
-icon: CalendarCheck,
-image: AppointmentSetting
-},
+              {/* Standby Image */}
+              <div
+                className="card-image card-image-default"
+                style={{
+                  backgroundImage: `url(${service.image})`
+                }}
+              ></div>
 
-{
-title: "Sales Automation Systems",
-description:
-"Streamline sales processes with intelligent automation workflows.",
-icon: Workflow,
-image: SalesAutomation
-},
+              {/* Hover Image */}
+              <div
+                className="card-image card-image-hover"
+                style={{
+                  backgroundImage: `url(${service.hoverImage})`
+                }}
+              ></div>
 
-{
-title: "Outbound Growth Strategies",
-description:
-"Build predictable growth engines that help businesses scale faster.",
-icon: Layers,
-image: OutboundGrowth
-}
+              {/* Overlay */}
+              <div className="card-overlay"></div>
 
-];
+              {/* Icon */}
+              <div className="service-icon">
+                <service.icon size={24} />
+              </div>
 
-return (
+              {/* Content */}
+              <h3>{service.title}</h3>
 
-<section className="services-section">
+              <p>{service.description}</p>
 
+              {/* Arrow */}
+              <a href="#">
+                →
+              </a>
 
-<div className="services-header">
+            </div>
+          ))}
 
-  <h2>
-    Our Services
-  </h2>
+        </div>
 
+      </div>
 
-  <a href="#">
-    See all our services →
-  </a>
-
-</div>
-
-
-
-<div className="services-line"></div>
-
-
-
-<div className="services-grid">
-
-
-{services.map((service, index) => (
-
-<div 
-className="service-card" 
-key={index}
->
-
-
-<div 
-className="card-image"
-style={{
-backgroundImage: `url(${service.image})`
-}}
-></div>
-
-
-<div className="card-overlay"></div>
-
-
-
-<div className="service-icon">
-  <service.icon size={24} />
-</div>
-
-
-
-<h3>
-  {service.title}
-</h3>
-
-
-
-<p>
-  {service.description}
-</p>
-
-
-
-<a href="#">
-  →
-</a>
-
-
-</div>
-
-))}
-
-
-</div>
-
-</section>
-
-);
-
+    </section>
+  );
 }
 
 export default Services;
