@@ -1,0 +1,240 @@
+/* Software Hiring Section */
+
+.software-hiring-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+
+/* Full Width Two-Column Layout */
+
+.software-hiring-grid {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0;
+}
+
+/* Image Columns */
+
+.software-hiring-column {
+  position: relative;
+
+  width: 100%;
+  min-height: 500px;
+
+  padding: 70px 65px;
+
+  display: flex;
+  align-items: flex-end;
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+/* Default Overlay */
+
+.software-hiring-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: transparent;
+
+  transition: background 0.4s ease;
+
+  z-index: 1;
+}
+
+/* LEFT COLUMN - NO OVERLAY */
+
+.software-hiring-column:first-child .software-hiring-overlay {
+  background: transparent;
+}
+
+/* RIGHT COLUMN - DARK BLUE OVERLAY */
+
+.software-hiring-column:last-child .software-hiring-overlay {
+  background: rgba(5, 35, 105, 0.78);
+}
+
+/* Content */
+
+.software-hiring-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 560px;
+
+  color: white;
+}
+
+/* Heading */
+
+.software-hiring-content h2 {
+  margin: 0 0 18px;
+
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 700;
+
+  color: white;
+
+  /* Keeps both headings visually aligned */
+  min-height: 85px;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 1),
+    0 5px 12px rgba(0, 0, 0, 0.95),
+    0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Description */
+
+.software-hiring-content p {
+  margin: 0;
+
+  max-width: 520px;
+
+  font-size: 17px;
+  line-height: 1.65;
+
+  color: white;
+
+  /* Same description height on both sides */
+  min-height: 56px;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 1),
+    0 4px 10px rgba(0, 0, 0, 0.95),
+    0 7px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Buttons - Base */
+
+.software-hiring-button {
+  display: inline-block;
+
+  margin-top: 30px;
+
+  padding: 14px 26px;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.35);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* LEFT BUTTON - STANDBY */
+
+.software-hiring-column:first-child .software-hiring-button {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* LEFT BUTTON - HOVER */
+
+.software-hiring-column:first-child .software-hiring-button:hover {
+  background: rgb(9, 80, 205);
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 22px rgba(9, 80, 205, 0.55);
+}
+
+/* RIGHT BUTTON - STANDBY */
+
+.software-hiring-column:last-child .software-hiring-button {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* RIGHT BUTTON - HOVER */
+
+.software-hiring-column:last-child .software-hiring-button:hover {
+  background: rgb(9, 80, 205);
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 22px rgba(9, 80, 205, 0.55);
+}
+
+/* LEFT COLUMN HOVER - NO OVERLAY */
+
+.software-hiring-column:first-child:hover .software-hiring-overlay {
+  background: transparent;
+}
+
+/* RIGHT COLUMN HOVER - DARKER BLUE */
+
+.software-hiring-column:last-child:hover .software-hiring-overlay {
+  background: rgba(3, 25, 80, 0.88);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .software-hiring-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .software-hiring-column {
+    min-height: 450px;
+    padding: 60px 45px;
+  }
+
+  .software-hiring-content h2 {
+    min-height: auto;
+  }
+
+  .software-hiring-content p {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .software-hiring-column {
+    min-height: 420px;
+    padding: 45px 25px;
+  }
+
+  .software-hiring-content h2 {
+    font-size: 27px;
+    min-height: auto;
+  }
+
+  .software-hiring-content p {
+    font-size: 15px;
+    min-height: auto;
+  }
+
+  .software-hiring-button {
+    padding: 12px 20px;
+  }
+}
