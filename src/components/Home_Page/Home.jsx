@@ -1,5 +1,4 @@
 import Hero from "./Hero/Hero";
-import TrustBar from "./TrustBar/TrustBar";
 import IntroSection from "./IntroSection/IntroSection";
 import ClientsSection from "./ClientsSection/ClientsSection";
 import Services from "./Services/Services";
@@ -11,7 +10,6 @@ function Home() {
   return (
     <>
       <Hero />
-      <TrustBar />
       <IntroSection />
       <ClientsSection />
       <Services />
