@@ -1,5 +1,6 @@
 import "./Philosphy.css";
-import Team from "../assets/Philosophy/Team.png";
+
+import Team from "../../../assets/Philosophy/Team.png";
 
 function Philosphy() {
   return (

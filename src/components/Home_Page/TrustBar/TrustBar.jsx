@@ -1,10 +1,10 @@
 import "./TrustBar.css";
 
-import clientsLogo from "../assets/Trust-Bar-Logo-Images/clients_trust_bar_img.png";
-import clutchLogo from "../assets/Trust-Bar-Logo-Images/Clutch_trust_bar_img.png";
-import googleLogo from "../assets/Trust-Bar-Logo-Images/google_trust_bar_img.png";
-import isoLogo from "../assets/Trust-Bar-Logo-Images/ISO_Trust_Bar_img.png";
-import upworkLogo from "../assets/Trust-Bar-Logo-Images/upwork_trust_bar_img.png";
+import clientsLogo from "../../../assets/Trust-Bar-Logo-Images/clients_trust_bar_img.png";
+import clutchLogo from "../../../assets/Trust-Bar-Logo-Images/Clutch_trust_bar_img.png";
+import googleLogo from "../../../assets/Trust-Bar-Logo-Images/google_trust_bar_img.png";
+import isoLogo from "../../../assets/Trust-Bar-Logo-Images/ISO_Trust_Bar_img.png";
+import upworkLogo from "../../../assets/Trust-Bar-Logo-Images/upwork_trust_bar_img.png";
 
 
 function TrustBar() {

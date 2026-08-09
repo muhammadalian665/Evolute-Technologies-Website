@@ -1,16 +1,12 @@
 import "./Services.css";
 
-import {
-  Code2,
-  Target
-} from "lucide-react";
+import { Code2, Target } from "lucide-react";
 
-import SoftwareServices from "../assets/Service_&_Growth_Card_images/Software_Services.png";
-import GrowthServices from "../assets/Service_&_Growth_Card_images/Growth_Services.png";
+import SoftwareServices from "../../../assets/Service_&_Growth_Card_images/Software_Services.png";
+import GrowthServices from "../../../assets/Service_&_Growth_Card_images/Growth_Services.png";
 
-import Software2 from "../assets/Service_&_Growth_Card_images/Software2.png";
-import Growth2 from "../assets/Service_&_Growth_Card_images/Growth2.png";
-
+import Software2 from "../../../assets/Service_&_Growth_Card_images/Software2.png";
+import Growth2 from "../../../assets/Service_&_Growth_Card_images/Growth2.png";
 function Services() {
   const services = [
     {

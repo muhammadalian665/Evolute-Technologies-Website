@@ -1,7 +1,7 @@
 import "./GrowthHiring.css";
 
 import WorkingLady from "../../../assets/GrowthHiring/Professiona_lady.png";
-import Patterns from "../../../assets/SoftwareHiring/Patterns.png";
+import Patterns from "../../../assets/GrowthHiring/Patterns.png";
 
 function GrowthHiring() {
   return (

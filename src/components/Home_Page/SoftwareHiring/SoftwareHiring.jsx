@@ -1,8 +1,7 @@
 import "./SoftwareHiring.css";
 
-import WorkingLady from "../assets/SoftwareHiring/Working_lady.png";
-import Patterns from "../assets/SoftwareHiring/Patterns.png";
-
+import WorkingLady from "../../../assets/SoftwareHiring/Working_lady.png";
+import Patterns from "../../../assets/SoftwareHiring/Patterns.png";
 function SoftwareHiring() {
   return (
     <section className="software-hiring-section">
