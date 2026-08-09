@@ -5,17 +5,14 @@ import Patterns from "../../../assets/GrowthHiring/Patterns.png";
 
 function GrowthHiring() {
   return (
-    <section className="growth-hiring">
-      <div className="software-hiring-container">
+    <section className="software-hiring-section">
+      <div className="software-hiring-grid">
 
-        {/* LEFT - Patterns + Blue Overlay */}
+        {/* LEFT COLUMN - Patterns + Text */}
         <div
           className="software-hiring-column software-hiring-left"
           style={{
-            backgroundImage: `linear-gradient(
-              rgba(5, 35, 105, 0.78),
-              rgba(5, 35, 105, 0.78)
-            ), url(${Patterns})`,
+            backgroundImage: `url(${Patterns})`,
           }}
         >
           <div className="software-hiring-content">
@@ -33,7 +30,7 @@ function GrowthHiring() {
           </div>
         </div>
 
-        {/* RIGHT - Working Lady */}
+        {/* RIGHT COLUMN - Professional Lady + Text */}
         <div
           className="software-hiring-column software-hiring-right"
           style={{
