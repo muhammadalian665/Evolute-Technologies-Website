@@ -32,9 +32,7 @@ function Navbar() {
           <Link to="/case-studies">Case Studies</Link>
         </li>
 
-        <li>
-          <Link to="/blogs">Blogs</Link>
-        </li>
+       
 
         <li>
           <Link to="/contact">Contact Us</Link>
