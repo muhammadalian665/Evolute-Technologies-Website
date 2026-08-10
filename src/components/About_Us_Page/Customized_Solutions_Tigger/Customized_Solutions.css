@@ -1,0 +1,283 @@
+/* =====================================================
+   CUSTOMIZED SOLUTIONS
+===================================================== */
+
+.customized-solutions {
+  width: 100%;
+  padding: 55px 8%;
+
+  background: rgb(9, 80, 205);
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.customized-solutions-container {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+
+  /*
+    Left column takes remaining space.
+    Right column takes only button width.
+  */
+  grid-template-columns: minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+
+/* =====================================================
+   LEFT TICKER
+===================================================== */
+
+.customized-solutions-ticker-wrapper {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.customized-solutions-ticker {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   TICKER TRACK
+===================================================== */
+
+.customized-solutions-ticker-track {
+  display: flex;
+  width: max-content;
+
+  animation:
+    customizedSolutionsTicker
+    18s
+    linear
+    infinite;
+}
+
+
+/* =====================================================
+   TICKER TEXT
+===================================================== */
+
+.customized-solutions-ticker-track span {
+  display: flex;
+  align-items: center;
+
+  white-space: nowrap;
+
+  margin-right: 90px;
+
+  font-size: 32px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   TICKER DOT
+===================================================== */
+
+.customized-solutions-ticker-track span::before {
+  content: "";
+
+  width: 8px;
+  height: 8px;
+
+  margin-right: 20px;
+
+  flex-shrink: 0;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
+
+
+/* =====================================================
+   TICKER ANIMATION
+===================================================== */
+
+@keyframes customizedSolutionsTicker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* =====================================================
+   RIGHT COLUMN
+===================================================== */
+
+.customized-solutions-button-column {
+  width: max-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.customized-solutions-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 13px 21px;
+
+  white-space: nowrap;
+
+  background: #ffffff;
+  color: rgb(9, 80, 205);
+
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.customized-solutions-arrow {
+  font-size: 18px;
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+/* =====================================================
+BUTTON HOVER
+===================================================== */
+
+.customized-solutions-button:hover {
+  background: rgb(60, 210, 249);
+  color: #ffffff;
+
+  border-color: rgb(60, 210, 249);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(60, 210, 249, 0.35);
+}
+
+.customized-solutions-button:hover .customized-solutions-arrow {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .customized-solutions {
+    padding: 50px 6%;
+  }
+
+  .customized-solutions-container {
+    gap: 40px;
+  }
+
+  .customized-solutions-ticker-track span {
+    font-size: 27px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .customized-solutions {
+    padding: 45px 6%;
+  }
+
+  .customized-solutions-container {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .customized-solutions-button-column {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .customized-solutions-ticker-track span {
+    font-size: 23px;
+
+    margin-right: 60px;
+  }
+
+  .customized-solutions-ticker-track span::before {
+    width: 7px;
+    height: 7px;
+
+    margin-right: 13px;
+  }
+
+  .customized-solutions-button {
+    padding: 12px 18px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .customized-solutions-ticker-track {
+    animation: none;
+  }
+
+  .customized-solutions-button,
+  .customized-solutions-arrow {
+    transition: none;
+  }
+}
