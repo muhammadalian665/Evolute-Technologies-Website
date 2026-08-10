@@ -11,8 +11,9 @@ function Home() {
     <>
       <Hero />
       <IntroSection />
-      <ClientsSection />
+      
       <Services />
+      <ClientsSection />
       <SoftwareHiring />
       <GrowthHiring />
       <Philosphy />
