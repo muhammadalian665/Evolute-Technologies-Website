@@ -7,6 +7,7 @@ import HubOfExpertise from "./Hub_of_Expertise/Hub_of_Expertise";
 import CompanyMetrics from "./Company_Metrics/Company_Metrics";
 import CustomizedSolutions from "./Customized_Solutions_Tigger/Customized_Solutions";
 import GotAProject from "./Got_A_Project/Got_A_Project";
+import HaveAQuery from "./Have_A_Query/Have_A_Query";
 
 function AboutPage() {
   return (
@@ -20,6 +21,7 @@ function AboutPage() {
       <CompanyMetrics />
       <CustomizedSolutions />
       <GotAProject />
+      <HaveAQuery />
     </>
   );
 }

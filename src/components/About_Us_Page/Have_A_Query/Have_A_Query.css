@@ -1,0 +1,250 @@
+/* =====================================================
+   HAVE A QUERY
+===================================================== */
+
+.have-a-query {
+  width: 100%;
+  min-height: 520px;
+
+  padding: 100px 8%;
+
+  position: relative;
+  overflow: hidden;
+
+  background-image: url("../src/assets/About_Us_Images/Have_a_query.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
+
+.have-a-query-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.48);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.have-a-query-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.have-a-query-content {
+  max-width: 600px;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.have-a-query-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #ffffff;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+/* BLUE LINE */
+
+.have-a-query-label::before {
+  content: "";
+
+  width: 4px;
+  height: 28px;
+
+  margin-right: 12px;
+
+  background: rgb(60, 210, 249);
+
+  border-radius: 2px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.have-a-query-content h2 {
+  margin: 0 0 35px;
+
+  font-size: 58px;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.have-a-query-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  padding: 14px 24px;
+
+  background: #ffffff;
+
+  color: #0950cd;
+
+  border: 1px solid #ffffff;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =====================================================
+   BUTTON ARROW
+===================================================== */
+
+.have-a-query-button span {
+  font-size: 19px;
+
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* =====================================================
+   BUTTON HOVER
+===================================================== */
+
+.have-a-query-button:hover {
+  background: rgb(60, 210, 249);
+
+  color: #ffffff;
+
+  border-color: rgb(60, 210, 249);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(60, 210, 249, 0.3);
+}
+
+
+.have-a-query-button:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .have-a-query {
+    min-height: 460px;
+
+    padding: 80px 6%;
+
+    background-position: center;
+  }
+
+  .have-a-query-content h2 {
+    font-size: 48px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .have-a-query {
+    min-height: 420px;
+
+    padding: 65px 6%;
+
+    background-position: center;
+  }
+
+  .have-a-query-overlay {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .have-a-query-content h2 {
+    font-size: 40px;
+
+    margin-bottom: 28px;
+  }
+
+  .have-a-query-label {
+    font-size: 14px;
+  }
+
+  .have-a-query-button {
+    padding: 13px 20px;
+
+    font-size: 14px;
+  }
+
+}
