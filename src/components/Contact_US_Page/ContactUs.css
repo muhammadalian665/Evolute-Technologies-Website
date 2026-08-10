@@ -2,9 +2,14 @@
    CONTACT US
 ===================================================== */
 
-.contact-us-page {
+.contact-us {
   width: 100%;
+  min-height: 100vh;
+
+  padding: 110px 8% 120px;
+
   background: #ffffff;
+
   color: #111111;
 }
 
@@ -13,75 +18,427 @@
 ===================================================== */
 
 .contact-us-hero {
-  width: 100%;
-  min-height: 520px;
+  max-width: 1000px;
 
-  padding: 120px 8%;
+  margin: 0 auto;
+
+  text-align: center;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-
-  background: #252525;
 }
 
 /* =====================================================
-   CONTAINER
+   CONTACT US HEADING
 ===================================================== */
 
-.contact-us-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+.contact-us-label {
+  margin-bottom: 30px;
+
+  color: #3cd2f9;
+
+  font-size: 72px;
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  text-shadow: 0 0 8px rgba(60, 210, 249, 0.25);
+}
+
+/* =====================================================
+   HIDE OLD HERO CONTENT
+===================================================== */
+
+.contact-us-hero h1,
+.contact-us-hero p {
+  display: none;
+}
+
+/* =====================================================
+   SCHEDULE CALL BUTTON
+===================================================== */
+
+.schedule-call-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  padding: 15px 26px;
+
+  background: #0950cd;
+
+  color: #ffffff;
+
+  border: 1px solid #0950cd;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =====================================================
+   SCHEDULE CALL ARROW
+===================================================== */
+
+.schedule-call-button span {
+  font-size: 19px;
+
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+/* =====================================================
+   SCHEDULE CALL HOVER
+===================================================== */
+
+.schedule-call-button:hover {
+  background: #3cd2f9;
+
+  border-color: #3cd2f9;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 30px rgba(60, 210, 249, 0.3);
+}
+
+.schedule-call-button:hover span {
+  transform: translateX(5px);
+}
+
+/* =====================================================
+   FORM WRAPPER
+===================================================== */
+
+.contact-form-wrapper {
+  max-width: 900px;
+
+  margin: 100px auto 0;
+
+  padding: 55px;
+
+  background: #ffffff;
+
+  border: 4px solid #3cd2f9;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 0 12px rgba(60, 210, 249, 0.25),
+    0 0 35px rgba(60, 210, 249, 0.08);
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* =====================================================
+   FORM HOVER
+===================================================== */
+
+.contact-form-wrapper:hover {
+  border-color: #0950cd;
+
+  box-shadow:
+    0 0 15px rgba(9, 80, 205, 0.35),
+    0 0 40px rgba(60, 210, 249, 0.18);
+}
+
+/* =====================================================
+   FORM ACTIVE / FOCUS STATE
+   Changes outer border while filling form
+===================================================== */
+
+.contact-form-wrapper:focus-within {
+  border-color: #0950cd;
+
+  box-shadow:
+    0 0 12px rgba(9, 80, 205, 0.45),
+    0 0 35px rgba(60, 210, 249, 0.25),
+    0 0 70px rgba(60, 210, 249, 0.12);
+}
+
+/* =====================================================
+   FORM HEADER
+===================================================== */
+
+.contact-form-header {
+  margin-bottom: 40px;
+}
+
+.contact-form-header span {
+  color: #0950cd;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.contact-form-header h2 {
+  margin: 10px 0 8px;
+
+  font-size: 36px;
+
+  line-height: 1.2;
+
+  color: #111111;
+}
+
+.contact-form-header p {
+  margin: 0;
+
+  font-size: 16px;
+
+  color: #666666;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.contact-form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+}
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
 }
 
 /* =====================================================
    LABEL
 ===================================================== */
 
-.contact-us-label {
-  display: inline-block;
+.form-group label {
+  font-size: 14px;
 
-  margin-bottom: 20px;
-
-  color: rgb(60, 210, 249);
-
-  font-size: 15px;
   font-weight: 600;
 
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #222222;
 }
 
 /* =====================================================
-   HEADING
+   INPUT / SELECT / TEXTAREA
 ===================================================== */
 
-.contact-us-container h1 {
-  max-width: 850px;
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
 
-  margin: 0 0 25px;
+  padding: 14px 15px;
+
+  background: #ffffff;
+
+  color: #222222;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =====================================================
+   INPUT FOCUS
+===================================================== */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3cd2f9;
+
+  box-shadow: 0 0 0 3px rgba(60, 210, 249, 0.12);
+}
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.form-group textarea {
+  resize: vertical;
+
+  min-height: 140px;
+}
+
+/* =====================================================
+   TERMS
+===================================================== */
+
+.terms-checkbox {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-top: 5px;
+}
+
+.terms-checkbox input {
+  width: 16px;
+
+  height: 16px;
+
+  margin-top: 2px;
+
+  accent-color: #0950cd;
+
+  cursor: pointer;
+}
+
+.terms-checkbox label {
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #666666;
+}
+
+.terms-checkbox a {
+  color: #0950cd;
+
+  font-weight: 600;
+
+  text-decoration: underline;
+}
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.submit-button {
+  grid-column: 1 / -1;
+
+  width: max-content;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  padding: 14px 25px;
+
+  background: #0950cd;
 
   color: #ffffff;
 
-  font-size: 64px;
-  line-height: 1.1;
+  border: 1px solid #0950cd;
 
-  font-weight: 700;
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.submit-button span {
+  font-size: 19px;
+
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #3cd2f9;
+
+  border-color: #3cd2f9;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(60, 210, 249, 0.3);
+}
+
+.submit-button:hover:not(:disabled) span {
+  transform: translateX(5px);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
 }
 
 /* =====================================================
-   DESCRIPTION
+   STATUS
 ===================================================== */
 
-.contact-us-container p {
-  max-width: 650px;
+.form-status,
+.form-success {
+  grid-column: 1 / -1;
 
   margin: 0;
 
-  color: #d0d0d0;
+  font-size: 14px;
 
-  font-size: 20px;
-  line-height: 1.7;
+  font-weight: 600;
+}
+
+.form-status {
+  color: #d9534f;
+}
+
+.form-success {
+  color: #16833b;
 }
 
 /* =====================================================
@@ -89,17 +446,18 @@
 ===================================================== */
 
 @media (max-width: 900px) {
-  .contact-us-hero {
-    min-height: 460px;
-    padding: 90px 6%;
+  .contact-us {
+    padding: 90px 6% 100px;
   }
 
-  .contact-us-container h1 {
-    font-size: 50px;
+  .contact-us-label {
+    font-size: 58px;
   }
 
-  .contact-us-container p {
-    font-size: 18px;
+  .contact-form-wrapper {
+    margin-top: 80px;
+
+    padding: 45px;
   }
 }
 
@@ -108,16 +466,43 @@
 ===================================================== */
 
 @media (max-width: 650px) {
-  .contact-us-hero {
-    min-height: 420px;
-    padding: 70px 6%;
+  .contact-us {
+    padding: 70px 6% 80px;
   }
 
-  .contact-us-container h1 {
-    font-size: 40px;
+  .contact-us-label {
+    font-size: 42px;
+
+    margin-bottom: 25px;
   }
 
-  .contact-us-container p {
-    font-size: 17px;
+  .contact-form-wrapper {
+    margin-top: 60px;
+
+    padding: 30px 22px;
+  }
+
+  .contact-form-header h2 {
+    font-size: 29px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .form-group.full-width {
+    grid-column: auto;
+  }
+
+  .terms-checkbox {
+    grid-column: auto;
+  }
+
+  .submit-button {
+    grid-column: auto;
+
+    width: 100%;
   }
 }
