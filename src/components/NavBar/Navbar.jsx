@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import Logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -7,34 +8,38 @@ function Navbar() {
 
       {/* Logo */}
       <div className="logo">
-        <img src={Logo} alt="Evolute Technologies" />
+        <Link to="/">
+          <img src={Logo} alt="Evolute Technologies" />
+        </Link>
       </div>
 
       {/* Navigation Links */}
       <ul className="nav-links">
+
         <li>
-          <a href="#home">Home</a>
+          <Link to="/">Home</Link>
         </li>
 
         <li>
-          <a href="#about">About Us</a>
+          <Link to="/about">About Us</Link>
         </li>
 
         <li>
-          <a href="#services">Services</a>
+          <Link to="/services">Services</Link>
         </li>
 
         <li>
-          <a href="#case-studies">Case Studies</a>
+          <Link to="/case-studies">Case Studies</Link>
         </li>
 
         <li>
-          <a href="#blogs">Blogs</a>
+          <Link to="/blogs">Blogs</Link>
         </li>
 
         <li>
-          <a href="#contact">Contact Us</a>
+          <Link to="/contact">Contact Us</Link>
         </li>
+
       </ul>
 
       {/* Hire Button */}
