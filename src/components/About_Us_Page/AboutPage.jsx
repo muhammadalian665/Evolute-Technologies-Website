@@ -6,6 +6,7 @@ import OurImpactfulMission from "./Our_Impactful_Mission/Our_Impactful_Mission";
 import HubOfExpertise from "./Hub_of_Expertise/Hub_of_Expertise";
 import CompanyMetrics from "./Company_Metrics/Company_Metrics";
 import CustomizedSolutions from "./Customized_Solutions_Tigger/Customized_Solutions";
+import GotAProject from "./Got_A_Project/Got_A_Project";
 
 function AboutPage() {
   return (
@@ -18,6 +19,7 @@ function AboutPage() {
       <HubOfExpertise />
       <CompanyMetrics />
       <CustomizedSolutions />
+      <GotAProject />
     </>
   );
 }
