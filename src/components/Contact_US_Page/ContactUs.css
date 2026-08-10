@@ -1,0 +1,123 @@
+/* =====================================================
+   CONTACT US
+===================================================== */
+
+.contact-us-page {
+  width: 100%;
+  background: #ffffff;
+  color: #111111;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.contact-us-hero {
+  width: 100%;
+  min-height: 520px;
+
+  padding: 120px 8%;
+
+  display: flex;
+  align-items: center;
+
+  background: #252525;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.contact-us-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.contact-us-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: rgb(60, 210, 249);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.contact-us-container h1 {
+  max-width: 850px;
+
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-size: 64px;
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.contact-us-container p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #d0d0d0;
+
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+  .contact-us-hero {
+    min-height: 460px;
+    padding: 90px 6%;
+  }
+
+  .contact-us-container h1 {
+    font-size: 50px;
+  }
+
+  .contact-us-container p {
+    font-size: 18px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+  .contact-us-hero {
+    min-height: 420px;
+    padding: 70px 6%;
+  }
+
+  .contact-us-container h1 {
+    font-size: 40px;
+  }
+
+  .contact-us-container p {
+    font-size: 17px;
+  }
+}
