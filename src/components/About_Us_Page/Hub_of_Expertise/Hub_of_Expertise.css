@@ -1,0 +1,106 @@
+/* =====================================================
+   HUB OF EXPERTISE
+===================================================== */
+
+.hub-expertise {
+  width: 100%;
+  padding: 110px 8%;
+  background: #ffffff;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.hub-expertise-container {
+  max-width: 900px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.hub-expertise-label {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #0950cd;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.hub-expertise-container h2 {
+  margin: 0 auto 24px;
+
+  max-width: 850px;
+
+  font-size: 42px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #111111;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hub-expertise-container p {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  font-size: 17px;
+  line-height: 1.75;
+
+  color: #555555;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .hub-expertise {
+    padding: 90px 6%;
+  }
+
+  .hub-expertise-container h2 {
+    font-size: 36px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .hub-expertise {
+    padding: 70px 6%;
+  }
+
+  .hub-expertise-container h2 {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .hub-expertise-container p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
