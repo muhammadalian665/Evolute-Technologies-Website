@@ -1,59 +1,87 @@
 import { useState } from "react";
 import "./Growth_Services.css";
 
-import AIIntegrationAutomation from "../../assets/Software_Services_Cards_Images/AI_Integration_Automation.png";
-import CustomSoftwareDevelopment from "../../assets/Software_Services_Cards_Images/Custom_Software_Development.jpg";
-import DedicatedDevelopmentTeams from "../../assets/Software_Services_Cards_Images/Dedicated_Development_Teams.png";
-import GameDevelopment from "../../assets/Software_Services_Cards_Images/Game_Development.png";
-import MaintainenceAndSupport from "../../assets/Software_Services_Cards_Images/Maintainence_And_Support.png";
-import SAASProductDevelopment from "../../assets/Software_Services_Cards_Images/SAAS_Product_Development.png";
+/* =====================================================
+   GROWTH SERVICES CARD IMAGES
+===================================================== */
+
+import AppointmentSetting from "../../assets/Growth_Services_Cards_Images/Appointment_Setting.png";
+import B2BLeadGeneration from "../../assets/Growth_Services_Cards_Images/B2B_Lead_Generation.png";
+import ColdEmailCampaigns from "../../assets/Growth_Services_Cards_Images/Cold_Email_Campaigns.png";
+import LinkedinProspectingOutreach from "../../assets/Growth_Services_Cards_Images/Linkedin_Prospecting_and_Outreach.png";
+import OutboundGrowthStrategies from "../../assets/Growth_Services_Cards_Images/Outbound_Growth_Strategies.png";
+import SalesAutomation from "../../assets/Growth_Services_Cards_Images/Sales_Automation.png";
+
 
 function Growth_Services() {
+
+    /* =====================================================
+       SERVICES DATA
+    ===================================================== */
+
     const services = [
         {
             title: "B2B Lead Generation",
+
             description:
                 "Generate high-quality B2B leads through targeted research, ideal customer profiling, and data-driven prospecting strategies.",
-            image: CustomSoftwareDevelopment,
+
+            image: B2BLeadGeneration,
         },
 
         {
             title: "LinkedIn Prospecting & Outreach",
+
             description:
                 "Reach the right decision-makers through personalized LinkedIn prospecting and strategic outreach campaigns.",
-            image: SAASProductDevelopment,
+
+            image: LinkedinProspectingOutreach,
         },
 
         {
             title: "Cold Email Campaigns",
+
             description:
                 "Build targeted cold email campaigns designed to start meaningful conversations and generate qualified business opportunities.",
-            image: AIIntegrationAutomation,
+
+            image: ColdEmailCampaigns,
         },
 
         {
             title: "Appointment Setting",
+
             description:
                 "Turn qualified prospects into booked meetings through structured outreach, follow-ups, and conversion-focused appointment setting.",
-            image: DedicatedDevelopmentTeams,
+
+            image: AppointmentSetting,
         },
 
         {
             title: "Sales Automation Systems",
+
             description:
                 "Automate repetitive sales processes, lead follow-ups, prospect management, and workflows to improve efficiency and scalability.",
-            image: GameDevelopment,
+
+            image: SalesAutomation,
         },
 
         {
             title: "Outbound Growth Strategies",
+
             description:
                 "Develop scalable outbound growth strategies that combine targeting, messaging, automation, and sales processes to drive predictable growth.",
-            image: MaintainenceAndSupport,
+
+            image: OutboundGrowthStrategies,
         },
     ];
 
-    const [currentPage, setCurrentPage] = useState(0);
+
+    /* =====================================================
+       PAGINATION STATE
+    ===================================================== */
+
+    const [currentPage, setCurrentPage] =
+        useState(0);
 
     const [isAnimating, setIsAnimating] =
         useState(false);
@@ -64,21 +92,37 @@ function Growth_Services() {
     const [hoveredCard, setHoveredCard] =
         useState(null);
 
+
+    /* =====================================================
+       PAGINATION CONFIG
+    ===================================================== */
+
     const cardsPerPage = 4;
 
     const totalPages = Math.ceil(
         services.length / cardsPerPage
     );
 
+
+    /* =====================================================
+       VISIBLE SERVICES
+    ===================================================== */
+
     const visibleServices = services.slice(
         currentPage * cardsPerPage,
         currentPage * cardsPerPage + cardsPerPage
     );
 
+
+    /* =====================================================
+       PAGE CHANGE
+    ===================================================== */
+
     const changePage = (
         newPage,
         newDirection
     ) => {
+
         if (isAnimating) {
             return;
         }
@@ -96,16 +140,32 @@ function Growth_Services() {
 
         setIsAnimating(true);
 
+
+        /* =============================================
+           CHANGE PAGE AFTER EXIT ANIMATION
+        ============================================= */
+
         setTimeout(() => {
             setCurrentPage(newPage);
         }, 300);
+
+
+        /* =============================================
+           END ANIMATION
+        ============================================= */
 
         setTimeout(() => {
             setIsAnimating(false);
         }, 900);
     };
 
+
+    /* =====================================================
+       NEXT PAGE
+    ===================================================== */
+
     const handleNext = () => {
+
         if (
             currentPage <
             totalPages - 1
@@ -117,7 +177,13 @@ function Growth_Services() {
         }
     };
 
+
+    /* =====================================================
+       PREVIOUS PAGE
+    ===================================================== */
+
     const handlePrevious = () => {
+
         if (currentPage > 0) {
             changePage(
                 currentPage - 1,
@@ -126,10 +192,17 @@ function Growth_Services() {
         }
     };
 
+
+    /* =====================================================
+       RETURN
+    ===================================================== */
+
     return (
+
         <section className="growth-services-section">
 
             <div className="growth-services-container">
+
 
                 {/* =====================================================
                     HEADER
@@ -171,6 +244,7 @@ function Growth_Services() {
                                     cardsPerPage +
                                 index;
 
+
                             return (
 
                                 <div
@@ -179,14 +253,22 @@ function Growth_Services() {
                                             ? "card-active"
                                             : ""
                                     }`}
+
                                     key={service.title}
+
                                     style={{
                                         "--card-index": index,
                                     }}
+
                                     onMouseEnter={() =>
                                         setHoveredCard(index)
                                     }
+
+                                    onMouseLeave={() =>
+                                        setHoveredCard(null)
+                                    }
                                 >
+
 
                                     {/* =================================================
                                         SERVICE IMAGE
@@ -208,7 +290,10 @@ function Growth_Services() {
 
                                     <div className="growth-service-card-content">
 
-                                        {/* Card Number */}
+
+                                        {/* =============================================
+                                            CARD NUMBER
+                                        ============================================= */}
 
                                         <div className="growth-service-card-number">
 
@@ -219,21 +304,27 @@ function Growth_Services() {
                                         </div>
 
 
-                                        {/* Card Title */}
+                                        {/* =============================================
+                                            CARD TITLE
+                                        ============================================= */}
 
                                         <h2>
                                             {service.title}
                                         </h2>
 
 
-                                        {/* Card Description */}
+                                        {/* =============================================
+                                            CARD DESCRIPTION
+                                        ============================================= */}
 
                                         <p>
                                             {service.description}
                                         </p>
 
 
-                                        {/* Card Button */}
+                                        {/* =============================================
+                                            CARD BUTTON
+                                        ============================================= */}
 
                                         <button
                                             type="button"
@@ -253,6 +344,7 @@ function Growth_Services() {
                                     </div>
 
                                 </div>
+
                             );
                         }
                     )}
@@ -266,23 +358,31 @@ function Growth_Services() {
 
                 <div className="growth-services-controls">
 
-                    {/* Previous */}
+
+                    {/* =================================================
+                        PREVIOUS BUTTON
+                    ================================================= */}
 
                     <button
                         type="button"
                         className="growth-services-arrow"
+
                         onClick={handlePrevious}
+
                         disabled={
                             currentPage === 0 ||
                             isAnimating
                         }
+
                         aria-label="Previous growth services"
                     >
                         ←
                     </button>
 
 
-                    {/* Page Indicators */}
+                    {/* =================================================
+                        PAGE INDICATORS
+                    ================================================= */}
 
                     <div className="growth-services-pages">
 
@@ -290,10 +390,12 @@ function Growth_Services() {
                             {
                                 length: totalPages,
                             },
+
                             (_, index) => (
 
                                 <span
                                     key={index}
+
                                     className={
                                         currentPage === index
                                             ? "active"
@@ -307,17 +409,22 @@ function Growth_Services() {
                     </div>
 
 
-                    {/* Next */}
+                    {/* =================================================
+                        NEXT BUTTON
+                    ================================================= */}
 
                     <button
                         type="button"
                         className="growth-services-arrow"
+
                         onClick={handleNext}
+
                         disabled={
                             currentPage ===
                                 totalPages - 1 ||
                             isAnimating
                         }
+
                         aria-label="Next growth services"
                     >
                         →
@@ -328,7 +435,9 @@ function Growth_Services() {
             </div>
 
         </section>
+
     );
 }
+
 
 export default Growth_Services;
