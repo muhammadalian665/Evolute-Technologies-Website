@@ -354,3 +354,10 @@ body {
     font-size: 26px;
   }
 }
+.service-card,
+.service-card:hover,
+.service-card:visited,
+.service-card:active {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,146 @@
+/* =====================================================
+   SOFTWARE SERVICES PAGE
+===================================================== */
+
+.software-services-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 120px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #082a66;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.software-services-container {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.software-services-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    background: #eef6ff;
+
+    color: #0950cd;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.software-services-container h1 {
+    margin: 0 0 25px;
+
+    font-size: 52px;
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #082a66;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.software-services-container p {
+    max-width: 720px;
+
+    margin: 0 auto 35px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #555555;
+}
+
+
+/* =====================================================
+   TEST BUTTON
+===================================================== */
+
+.software-services-test-button {
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #082a66,
+        #0950cd
+    );
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* =====================================================
+   BUTTON HOVER
+===================================================== */
+
+.software-services-test-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(9, 80, 205, 0.30);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .software-services-page {
+        padding: 90px 25px;
+    }
+
+    .software-services-container h1 {
+        font-size: 38px;
+    }
+
+    .software-services-container p {
+        font-size: 16px;
+    }
+
+}
