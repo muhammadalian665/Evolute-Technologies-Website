@@ -8,66 +8,110 @@ import AboutPage from "./components/About_Us_Page/AboutPage";
 
 import ContactUs from "./components/Contact_US_Page/ContactUs";
 
-import Software_Services from "./components/Software_Services_Page/Software_Services";
+import Software_Services
+    from "./components/Software_Services_Page/Software_Services";
 
-import Growth_Services from "./components/Growth_Services_Page/Growth_Services";
+import Growth_Services
+    from "./components/Growth_Services_Page/Growth_Services";
+
+import Custom_Software_Development
+    from "./components/Software_Services_Sub_Pages/Custom_Software_Development/Custom_software_development";
 
 import Footer from "./components/Footer/Footer";
 
 
 function App() {
+
     return (
+
         <BrowserRouter>
 
-            {/* Global Header */}
+            {/* =====================================================
+                GLOBAL HEADER
+            ===================================================== */}
+
             <Navbar />
 
 
-            {/* Pages */}
+            {/* =====================================================
+                PAGES
+            ===================================================== */}
+
             <Routes>
 
-                {/* Home */}
+                {/* =================================================
+                    HOME
+                ================================================= */}
+
                 <Route
                     path="/"
                     element={<Home />}
                 />
 
 
-                {/* About */}
+                {/* =================================================
+                    ABOUT
+                ================================================= */}
+
                 <Route
                     path="/about"
                     element={<AboutPage />}
                 />
 
 
-                {/* Contact */}
+                {/* =================================================
+                    CONTACT
+                ================================================= */}
+
                 <Route
                     path="/contact-us"
                     element={<ContactUs />}
                 />
 
 
-                {/* Software Services */}
+                {/* =================================================
+                    SOFTWARE SERVICES
+                ================================================= */}
+
                 <Route
                     path="/software-services"
                     element={<Software_Services />}
                 />
 
 
-                {/* Growth Services */}
+                {/* =================================================
+                    GROWTH SERVICES
+                ================================================= */}
+
                 <Route
                     path="/growth-services"
                     element={<Growth_Services />}
                 />
 
+
+                {/* =================================================
+                    CUSTOM SOFTWARE DEVELOPMENT
+                ================================================= */}
+
+                <Route
+                    path="/custom-software-development"
+                    element={<Custom_Software_Development />}
+                />
+
             </Routes>
 
 
-            {/* Global Footer */}
+            {/* =====================================================
+                GLOBAL FOOTER
+            ===================================================== */}
+
             <Footer />
 
         </BrowserRouter>
+
     );
+
 }
+
 
 export default App;
