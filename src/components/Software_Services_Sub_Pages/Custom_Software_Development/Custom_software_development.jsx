@@ -1,31 +1,41 @@
 import "./Custom_software_development.css";
 
+import Custom_Hero
+    from "./Custom_software_components/Custom_hero";
 
-function Custom_Software_Development() {
+
+function Custom_software_development() {
 
     return (
 
-        <section className="custom-software-development-page">
+        <main className="custom-software-development-page">
 
-            <div className="custom-software-development-container">
+            {/* =====================================================
+                CUSTOM SOFTWARE DEVELOPMENT HERO
+            ===================================================== */}
 
-                <h1>
-                    Custom Software Development
-                </h1>
+            <Custom_Hero />
 
-                <p>
-                    We build tailored software solutions designed
-                    around your business requirements, workflows,
-                    and long-term goals.
-                </p>
 
-            </div>
+            {/* =====================================================
+                FUTURE SECTIONS
+            ===================================================== */}
 
-        </section>
+            {/* 
+                Yahan future mein components add kar sakte ho:
+
+                <Custom_Software_Introduction />
+                <Custom_Software_Features />
+                <Custom_Software_Process />
+                <Custom_Software_Technologies />
+                <Custom_Software_CTA />
+            */}
+
+        </main>
 
     );
 
 }
 
 
-export default Custom_Software_Development;
+export default Custom_software_development;

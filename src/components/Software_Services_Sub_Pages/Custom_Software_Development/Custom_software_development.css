@@ -1,59 +1,9 @@
+/* Custom_software_development.css */
+
 .custom-software-development-page {
     width: 100%;
     min-height: 100vh;
-
-    padding: 140px 6% 100px;
-
-    background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(60, 210, 249, 0.12),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(9, 80, 205, 0.14),
-            transparent 30%
-        ),
-        #f7faff;
-
-    color: #071d49;
-}
-
-
-.custom-software-development-container {
-    width: 100%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-
-.custom-software-development-container h1 {
-    margin: 0 0 20px;
-
-    color: #071d49;
-
-    font-size: clamp(38px, 5vw, 64px);
-
-    line-height: 1.1;
-
-    font-weight: 800;
-
-    letter-spacing: -2px;
-}
-
-
-.custom-software-development-container p {
-    max-width: 750px;
-
-    margin: 0 auto;
-
-    color: #637083;
-
-    font-size: 18px;
-
-    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
