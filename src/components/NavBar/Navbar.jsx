@@ -4,25 +4,42 @@ import Logo from "../../assets/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
+
     const navigate = useNavigate();
-    const [servicesOpen, setServicesOpen] = useState(false);
+
+    const [servicesOpen, setServicesOpen] =
+        useState(false);
+
 
     return (
+
         <header className="navbar">
 
-            {/* Logo */}
+
+            {/* =====================================================
+                LOGO
+            ===================================================== */}
+
             <div className="logo">
+
                 <Link to="/">
                     <img
                         src={Logo}
                         alt="Evolute Technologies"
                     />
                 </Link>
+
             </div>
 
 
-            {/* Navigation Links */}
+            {/* =====================================================
+                NAVIGATION LINKS
+            ===================================================== */}
+
             <ul className="nav-links">
+
+
+                {/* HOME */}
 
                 <li>
                     <Link to="/">
@@ -31,6 +48,8 @@ function Navbar() {
                 </li>
 
 
+                {/* ABOUT */}
+
                 <li>
                     <Link to="/about">
                         About Us
@@ -38,45 +57,93 @@ function Navbar() {
                 </li>
 
 
-                {/* Services */}
+                {/* =================================================
+                    SERVICES DROPDOWN
+                ================================================= */}
+
                 <li
                     className="services-dropdown"
-                    onClick={() => setServicesOpen(!servicesOpen)}
+
+                    onClick={() =>
+                        setServicesOpen(!servicesOpen)
+                    }
                 >
+
                     <Link
                         to="/services"
-                        onClick={(e) => e.preventDefault()}
+
+                        onClick={(e) =>
+                            e.preventDefault()
+                        }
                     >
                         Services
                     </Link>
 
+
+                    {/* =================================================
+                        SERVICES MENU
+                    ================================================= */}
+
                     <div
                         className={`services-menu ${
-                            servicesOpen ? "services-menu-open" : ""
+                            servicesOpen
+                                ? "services-menu-open"
+                                : ""
                         }`}
                     >
 
-                        {/* Software Services */}
+
+                        {/* =============================================
+                            SOFTWARE SERVICES
+                        ============================================= */}
+
                         <div
                             className="services-menu-item"
+
                             onClick={(e) => {
+
                                 e.stopPropagation();
-                                navigate("/software-services");
+
+                                navigate(
+                                    "/software-services"
+                                );
+
                                 setServicesOpen(false);
+
                             }}
                         >
                             Software Services
                         </div>
 
 
-                        {/* Growth Services */}
-                        <div className="services-menu-item">
+                        {/* =============================================
+                            GROWTH SERVICES
+                        ============================================= */}
+
+                        <div
+                            className="services-menu-item"
+
+                            onClick={(e) => {
+
+                                e.stopPropagation();
+
+                                navigate(
+                                    "/growth-services"
+                                );
+
+                                setServicesOpen(false);
+
+                            }}
+                        >
                             Growth Services
                         </div>
 
                     </div>
+
                 </li>
 
+
+                {/* CASE STUDIES */}
 
                 <li>
                     <Link to="/case-studies">
@@ -84,6 +151,8 @@ function Navbar() {
                     </Link>
                 </li>
 
+
+                {/* CONTACT */}
 
                 <li>
                     <Link to="/contact-us">
@@ -94,16 +163,24 @@ function Navbar() {
             </ul>
 
 
-            {/* Hire Us Button */}
+            {/* =====================================================
+                HIRE US BUTTON
+            ===================================================== */}
+
             <button
                 className="hire-btn"
-                onClick={() => navigate("/contact-us")}
+
+                onClick={() =>
+                    navigate("/contact-us")
+                }
             >
                 Hire Us
             </button>
 
         </header>
+
     );
 }
+
 
 export default Navbar;

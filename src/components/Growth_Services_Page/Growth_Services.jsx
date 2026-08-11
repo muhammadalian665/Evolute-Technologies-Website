@@ -5,12 +5,23 @@ import "./Growth_Services.css";
    GROWTH SERVICES CARD IMAGES
 ===================================================== */
 
-import AppointmentSetting from "../../assets/Growth_Services_Cards_Images/Appointment_Setting.png";
-import B2BLeadGeneration from "../../assets/Growth_Services_Cards_Images/B2B_Lead_Generation.png";
-import ColdEmailCampaigns from "../../assets/Growth_Services_Cards_Images/Cold_Email_Campaigns.png";
-import LinkedinProspectingOutreach from "../../assets/Growth_Services_Cards_Images/Linkedin_Prospecting_and_Outreach.png";
-import OutboundGrowthStrategies from "../../assets/Growth_Services_Cards_Images/Outbound_Growth_Strategies.png";
-import SalesAutomation from "../../assets/Growth_Services_Cards_Images/Sales_Automation.png";
+import AppointmentSetting
+    from "../../assets/Growth_Services_Cards_Images/Appointment_Setting.png";
+
+import B2BLeadGeneration
+    from "../../assets/Growth_Services_Cards_Images/B2B_Lead_Generation.png";
+
+import ColdEmailCampaigns
+    from "../../assets/Growth_Services_Cards_Images/Cold_Email_Campaigns.png";
+
+import LinkedinProspectingOutreach
+    from "../../assets/Growth_Services_Cards_Images/Linkedin_Prospecting_and_Outreach.png";
+
+import OutboundGrowthStrategies
+    from "../../assets/Growth_Services_Cards_Images/Outbound_Growth_Strategies.png";
+
+import SalesAutomation
+    from "../../assets/Growth_Services_Cards_Images/Sales_Automation.png";
 
 
 function Growth_Services() {
@@ -142,11 +153,13 @@ function Growth_Services() {
 
 
         /* =============================================
-           CHANGE PAGE AFTER EXIT ANIMATION
+           CHANGE PAGE
         ============================================= */
 
         setTimeout(() => {
+
             setCurrentPage(newPage);
+
         }, 300);
 
 
@@ -155,7 +168,9 @@ function Growth_Services() {
         ============================================= */
 
         setTimeout(() => {
+
             setIsAnimating(false);
+
         }, 900);
     };
 
@@ -170,6 +185,7 @@ function Growth_Services() {
             currentPage <
             totalPages - 1
         ) {
+
             changePage(
                 currentPage + 1,
                 "next"
@@ -185,6 +201,7 @@ function Growth_Services() {
     const handlePrevious = () => {
 
         if (currentPage > 0) {
+
             changePage(
                 currentPage - 1,
                 "previous"
@@ -248,11 +265,7 @@ function Growth_Services() {
                             return (
 
                                 <div
-                                    className={`growth-service-card ${
-                                        hoveredCard === index
-                                            ? "card-active"
-                                            : ""
-                                    }`}
+                                    className="growth-service-card"
 
                                     key={service.title}
 
@@ -285,15 +298,13 @@ function Growth_Services() {
 
 
                                     {/* =================================================
-                                        WHITE CONTENT AREA
+                                        CARD CONTENT
                                     ================================================= */}
 
                                     <div className="growth-service-card-content">
 
 
-                                        {/* =============================================
-                                            CARD NUMBER
-                                        ============================================= */}
+                                        {/* CARD NUMBER */}
 
                                         <div className="growth-service-card-number">
 
@@ -304,27 +315,21 @@ function Growth_Services() {
                                         </div>
 
 
-                                        {/* =============================================
-                                            CARD TITLE
-                                        ============================================= */}
+                                        {/* CARD TITLE */}
 
                                         <h2>
                                             {service.title}
                                         </h2>
 
 
-                                        {/* =============================================
-                                            CARD DESCRIPTION
-                                        ============================================= */}
+                                        {/* CARD DESCRIPTION */}
 
                                         <p>
                                             {service.description}
                                         </p>
 
 
-                                        {/* =============================================
-                                            CARD BUTTON
-                                        ============================================= */}
+                                        {/* CARD BUTTON */}
 
                                         <button
                                             type="button"
@@ -359,9 +364,7 @@ function Growth_Services() {
                 <div className="growth-services-controls">
 
 
-                    {/* =================================================
-                        PREVIOUS BUTTON
-                    ================================================= */}
+                    {/* PREVIOUS */}
 
                     <button
                         type="button"
@@ -380,9 +383,7 @@ function Growth_Services() {
                     </button>
 
 
-                    {/* =================================================
-                        PAGE INDICATORS
-                    ================================================= */}
+                    {/* PAGE INDICATORS */}
 
                     <div className="growth-services-pages">
 
@@ -409,9 +410,7 @@ function Growth_Services() {
                     </div>
 
 
-                    {/* =================================================
-                        NEXT BUTTON
-                    ================================================= */}
+                    {/* NEXT */}
 
                     <button
                         type="button"
