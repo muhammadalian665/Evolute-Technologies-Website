@@ -1,0 +1,71 @@
+.web-mobile-test-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 6%;
+
+    background: #ffffff;
+    color: #111111;
+}
+
+
+.web-mobile-test-container {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+.web-mobile-test-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #0950CD;
+}
+
+
+.web-mobile-test-container h1 {
+    margin: 0 0 20px;
+
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.05;
+}
+
+
+.web-mobile-test-container p {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #555555;
+}
+
+
+.web-mobile-test-container button {
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #0950CD;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}

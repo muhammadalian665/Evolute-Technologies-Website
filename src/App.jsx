@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/NavBar/Navbar";
+import Navbar
+    from "./components/NavBar/Navbar";
 
 import Home
     from "./components/Home_Page/Home";
@@ -25,6 +26,9 @@ import SAAS_Product_Development
 
 import AI_Integration_and_Automation
     from "./components/Software_Services_Sub_Pages/AI_Integration_and_automation/AI_Integration_and_automation";
+
+import Web_AND_Mobile_Applications
+    from "./components/Software_Services_Sub_Pages/Web_AND_Mobile_Applications/Web_AND_Mobile_Applications";
 
 import Footer
     from "./components/Footer/Footer";
@@ -130,6 +134,15 @@ function App() {
                 />
 
 
+                {/* =================================================
+                    WEB & MOBILE APPLICATIONS
+                ================================================= */}
+
+                <Route
+                    path="/web-and-mobile-applications"
+                    element={<Web_AND_Mobile_Applications />}
+                />
+
             </Routes>
 
 
@@ -142,7 +155,6 @@ function App() {
         </BrowserRouter>
 
     );
-
 }
 
 

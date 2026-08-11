@@ -75,6 +75,8 @@ function Software_Services() {
                 "Modern web and mobile applications built for performance, usability, and scalability.",
 
             image: WebAndMobileApplications,
+
+            route: "/web-and-mobile-applications",
         },
 
         {
