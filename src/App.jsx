@@ -2,11 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/NavBar/Navbar";
 
-import Home from "./components/Home_Page/Home";
+import Home
+    from "./components/Home_Page/Home";
 
-import AboutPage from "./components/About_Us_Page/AboutPage";
+import AboutPage
+    from "./components/About_Us_Page/AboutPage";
 
-import ContactUs from "./components/Contact_US_Page/ContactUs";
+import ContactUs
+    from "./components/Contact_US_Page/ContactUs";
 
 import Software_Services
     from "./components/Software_Services_Page/Software_Services";
@@ -20,7 +23,11 @@ import Custom_Software_Development
 import SAAS_Product_Development
     from "./components/Software_Services_Sub_Pages/SAAS_Product_Development/SAAS_product_development";
 
-import Footer from "./components/Footer/Footer";
+import AI_Integration_and_Automation
+    from "./components/Software_Services_Sub_Pages/AI_Integration_and_automation/AI_Integration_and_automation";
+
+import Footer
+    from "./components/Footer/Footer";
 
 
 function App() {
@@ -112,6 +119,17 @@ function App() {
                     element={<SAAS_Product_Development />}
                 />
 
+
+                {/* =================================================
+                    AI INTEGRATION & AUTOMATION
+                ================================================= */}
+
+                <Route
+                    path="/ai-integration-and-automation"
+                    element={<AI_Integration_and_Automation />}
+                />
+
+
             </Routes>
 
 
@@ -124,6 +142,7 @@ function App() {
         </BrowserRouter>
 
     );
+
 }
 
 

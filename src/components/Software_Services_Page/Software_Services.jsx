@@ -64,6 +64,8 @@ function Software_Services() {
                 "Integrate AI-powered automation into your business to improve efficiency, productivity, and decision-making.",
 
             image: AIIntegrationAutomation,
+
+            route: "/ai-integration-and-automation",
         },
 
         {
