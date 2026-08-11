@@ -13,8 +13,10 @@ function Services() {
     const services = [
         {
             title: "Software Services",
+
             description:
                 "Build scalable software solutions, applications, SaaS products, AI solutions, and cloud systems designed to support your business.",
+
             icon: Code2,
 
             // Standby image
@@ -22,12 +24,17 @@ function Services() {
 
             // Hover image
             hoverImage: SoftwareServices,
+
+            // Page route
+            route: "/software-services",
         },
 
         {
             title: "Growth Services",
+
             description:
                 "Generate qualified opportunities and build predictable growth through targeted outreach, automation, and sales systems.",
+
             icon: Target,
 
             // Standby image
@@ -35,6 +42,9 @@ function Services() {
 
             // Hover image
             hoverImage: GrowthServices,
+
+            // Page route
+            route: "/growth-services",
         },
     ];
 
@@ -43,18 +53,26 @@ function Services() {
 
             <div className="services-container">
 
+                {/* Header */}
                 <div className="services-header">
-                    <h2>Our Services</h2>
+
+                    <h2>
+                        Our Services
+                    </h2>
+
                 </div>
 
+
+                {/* Services Grid */}
                 <div className="services-grid">
 
-                    {services.map((service, index) => (
+                    {services.map((service, index) => {
 
-                        service.title === "Software Services" ? (
+                        const ServiceIcon = service.icon;
 
+                        return (
                             <Link
-                                to="/software-services"
+                                to={service.route}
                                 className="service-card"
                                 key={index}
                             >
@@ -67,6 +85,7 @@ function Services() {
                                     }}
                                 ></div>
 
+
                                 {/* Hover Image */}
                                 <div
                                     className="card-image card-image-hover"
@@ -75,18 +94,28 @@ function Services() {
                                     }}
                                 ></div>
 
+
                                 {/* Overlay */}
                                 <div className="card-overlay"></div>
 
+
                                 {/* Icon */}
                                 <div className="service-icon">
-                                    <service.icon size={24} />
+
+                                    <ServiceIcon size={24} />
+
                                 </div>
 
-                                {/* Content */}
-                                <h3>{service.title}</h3>
 
-                                <p>{service.description}</p>
+                                {/* Content */}
+                                <h3>
+                                    {service.title}
+                                </h3>
+
+                                <p>
+                                    {service.description}
+                                </p>
+
 
                                 {/* Arrow */}
                                 <span className="service-arrow">
@@ -94,53 +123,8 @@ function Services() {
                                 </span>
 
                             </Link>
-
-                        ) : (
-
-                            <div
-                                className="service-card"
-                                key={index}
-                            >
-
-                                {/* Standby Image */}
-                                <div
-                                    className="card-image card-image-default"
-                                    style={{
-                                        backgroundImage: `url(${service.image})`,
-                                    }}
-                                ></div>
-
-                                {/* Hover Image */}
-                                <div
-                                    className="card-image card-image-hover"
-                                    style={{
-                                        backgroundImage: `url(${service.hoverImage})`,
-                                    }}
-                                ></div>
-
-                                {/* Overlay */}
-                                <div className="card-overlay"></div>
-
-                                {/* Icon */}
-                                <div className="service-icon">
-                                    <service.icon size={24} />
-                                </div>
-
-                                {/* Content */}
-                                <h3>{service.title}</h3>
-
-                                <p>{service.description}</p>
-
-                                {/* Arrow */}
-                                <span className="service-arrow">
-                                    →
-                                </span>
-
-                            </div>
-
-                        )
-
-                    ))}
+                        );
+                    })}
 
                 </div>
 
