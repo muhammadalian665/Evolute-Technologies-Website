@@ -55,13 +55,25 @@ function Navbar() {
                             servicesOpen ? "services-menu-open" : ""
                         }`}
                     >
-                        <div className="services-menu-item">
+
+                        {/* Software Services */}
+                        <div
+                            className="services-menu-item"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                navigate("/software-services");
+                                setServicesOpen(false);
+                            }}
+                        >
                             Software Services
                         </div>
 
+
+                        {/* Growth Services */}
                         <div className="services-menu-item">
                             Growth Services
                         </div>
+
                     </div>
                 </li>
 
