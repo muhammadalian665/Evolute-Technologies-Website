@@ -47,6 +47,10 @@
 }
 
 
+/* =====================================================
+   HEADER LABEL
+===================================================== */
+
 .software-services-label {
     display: inline-block;
 
@@ -147,8 +151,8 @@
             rgba(242, 248, 255, 0.82)
         );
 
-    /* PROMINENT STANDBY BORDER */
-    border: 2px solid rgba(9, 80, 205, 0.32);
+    border:
+        2px solid rgba(9, 80, 205, 0.32);
 
     border-radius: 22px;
 
@@ -237,11 +241,15 @@
 
     filter: blur(5px);
 
+    opacity: 0.8;
+
     transition:
         transform 0.5s ease,
         opacity 0.5s ease;
 
     z-index: 1;
+
+    pointer-events: none;
 }
 
 
@@ -451,6 +459,7 @@
 
 /* =====================================================
    CARD NUMBER
+   STANDBY
 ===================================================== */
 
 .software-service-card-number {
@@ -466,18 +475,20 @@
 
     margin-bottom: 18px;
 
-    border: 1px solid rgba(9, 80, 205, 0.18);
+    border:
+        2px solid rgba(8, 42, 102, 0.42);
 
     border-radius: 12px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(9, 80, 205, 0.08),
-            rgba(60, 210, 249, 0.12)
+            #071d49,
+            #082a66,
+            #0950cd
         );
 
-    color: #0950cd;
+    color: #ffffff;
 
     font-size: 13px;
 
@@ -486,13 +497,15 @@
     letter-spacing: 1px;
 
     box-shadow:
-        inset 0 0 15px rgba(60, 210, 249, 0.08);
+        0 6px 18px rgba(8, 42, 102, 0.18),
+        inset 0 0 15px rgba(60, 210, 249, 0.12);
 
     transition:
         transform 0.4s ease,
         background 0.4s ease,
         color 0.4s ease,
-        box-shadow 0.4s ease;
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
 
@@ -507,19 +520,23 @@
 
     inset: -4px;
 
-    border: 1px solid rgba(60, 210, 249, 0.12);
+    border:
+        1px solid rgba(60, 210, 249, 0.25);
 
     border-radius: 15px;
 
     opacity: 0;
 
     transition:
-        opacity 0.4s ease;
+        opacity 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 
 /* =====================================================
-   NUMBER ON HOVER
+   NUMBER HOVER
+   CYAN FUTURISTIC + WHITE TEXT
 ===================================================== */
 
 .software-service-card:hover
@@ -531,24 +548,35 @@
     background:
         linear-gradient(
             135deg,
-            #082a66,
+            #3cd2f9,
+            #17aee4,
             #0950cd
         );
 
     color: #ffffff;
 
+    border-color:
+        #3cd2f9;
+
     box-shadow:
-        0 0 25px rgba(9, 80, 205, 0.45);
+        0 0 25px rgba(60, 210, 249, 0.55),
+        0 0 45px rgba(9, 80, 205, 0.25);
 }
 
 
 /* =====================================================
-   NUMBER OUTER GLOW ON HOVER
+   NUMBER GLOW ON HOVER
 ===================================================== */
 
 .software-service-card:hover
 .software-service-card-number::before {
     opacity: 1;
+
+    border-color:
+        rgba(60, 210, 249, 0.75);
+
+    box-shadow:
+        0 0 15px rgba(60, 210, 249, 0.35);
 }
 
 
@@ -575,7 +603,7 @@
 
 
 /* =====================================================
-   CARD TITLE ON HOVER
+   CARD TITLE HOVER
 ===================================================== */
 
 .software-service-card:hover h2 {
@@ -600,6 +628,7 @@
 
 /* =====================================================
    CARD BUTTON
+   STANDBY
 ===================================================== */
 
 .software-service-card-button {
@@ -613,15 +642,20 @@
 
     padding: 11px 16px;
 
-    /* PROMINENT BUTTON BORDER */
-    border: 2px solid rgba(9, 80, 205, 0.32);
+    border:
+        2px solid rgba(8, 42, 102, 0.42);
 
     border-radius: 9px;
 
     background:
-        rgba(255, 255, 255, 0.75);
+        linear-gradient(
+            135deg,
+            #071d49,
+            #082a66,
+            #0950cd
+        );
 
-    color: #082a66;
+    color: #ffffff;
 
     font-size: 14px;
 
@@ -632,11 +666,12 @@
     overflow: hidden;
 
     box-shadow:
-        0 4px 14px rgba(9, 80, 205, 0.06);
+        0 7px 18px rgba(8, 42, 102, 0.16);
 
     transition:
         transform 0.3s ease,
         color 0.3s ease,
+        background 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
 }
@@ -656,8 +691,9 @@
     background:
         linear-gradient(
             90deg,
-            #082a66,
-            #0950cd
+            #3cd2f9,
+            #0950cd,
+            #071d49
         );
 
     transform:
@@ -671,30 +707,67 @@
 
 
 /* =====================================================
-   BUTTON HOVER
+   BUTTON COLOR ON CARD HOVER
+   CYAN + BLUE + WHITE TEXT
+===================================================== */
+
+.software-service-card:hover
+.software-service-card-button {
+    background:
+        linear-gradient(
+            135deg,
+            #3cd2f9,
+            #17aee4,
+            #0950cd
+        );
+
+    color: #ffffff;
+
+    border-color:
+        #3cd2f9;
+
+    box-shadow:
+        0 10px 28px rgba(9, 80, 205, 0.32),
+        0 0 22px rgba(60, 210, 249, 0.22);
+}
+
+
+/* =====================================================
+   BUTTON ANIMATION ON CARD HOVER
+===================================================== */
+
+.software-service-card:hover
+.software-service-card-button::before {
+    transform:
+        translateX(0);
+}
+
+
+/* =====================================================
+   DIRECT BUTTON HOVER
+   DARK BLUE + WHITE TEXT
 ===================================================== */
 
 .software-service-card-button:hover {
     transform:
         translateY(-3px);
 
+    background:
+        linear-gradient(
+            135deg,
+            #071d49,
+            #082a66,
+            #0950cd
+        );
+
     color: #ffffff;
 
     border-color:
-        #0950cd;
+        #3cd2f9;
 
     box-shadow:
-        0 8px 22px rgba(9, 80, 205, 0.25);
-}
-
-
-/* =====================================================
-   BUTTON BACKGROUND ON HOVER
-===================================================== */
-
-.software-service-card-button:hover::before {
-    transform:
-        translateX(0);
+        0 10px 28px rgba(9, 80, 205, 0.38),
+        0 0 25px rgba(60, 210, 249, 0.25);
 }
 
 
@@ -705,8 +778,11 @@
 .service-button-arrow {
     font-size: 18px;
 
+    color: #ffffff;
+
     transition:
-        transform 0.3s ease;
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
 
@@ -716,6 +792,8 @@
 
 .software-service-card-button:hover
 .service-button-arrow {
+    color: #ffffff;
+
     transform:
         translateX(5px);
 }
@@ -751,7 +829,8 @@
     align-items: center;
     justify-content: center;
 
-    border: 2px solid rgba(9, 80, 205, 0.28);
+    border:
+        2px solid rgba(9, 80, 205, 0.28);
 
     border-radius: 50%;
 
@@ -872,17 +951,19 @@
    PAGE SLIDE ANIMATION - NEXT
 ===================================================== */
 
-.slide-next .software-service-card {
+.slide-next
+.software-service-card {
     animation:
         slideNext
-        0.7s
-        cubic-bezier(0.65, 0, 0.35, 1)
+        0.55s
+        ease-in-out
         forwards;
-
-    animation-delay:
-        calc(var(--card-index) * 0.08s);
 }
 
+
+/* =====================================================
+   NEXT SWIPE
+===================================================== */
 
 @keyframes slideNext {
 
@@ -890,24 +971,14 @@
         opacity: 1;
 
         transform:
-            translateX(0)
-            scale(1);
-    }
-
-    45% {
-        opacity: 0.4;
-
-        transform:
-            translateX(-35px)
-            scale(0.96);
+            translateX(0);
     }
 
     100% {
         opacity: 0;
 
         transform:
-            translateX(-90px)
-            scale(0.92);
+            translateX(-45px);
     }
 }
 
@@ -916,17 +987,19 @@
    PAGE SLIDE ANIMATION - PREVIOUS
 ===================================================== */
 
-.slide-previous .software-service-card {
+.slide-previous
+.software-service-card {
     animation:
         slidePrevious
-        0.7s
-        cubic-bezier(0.65, 0, 0.35, 1)
+        0.55s
+        ease-in-out
         forwards;
-
-    animation-delay:
-        calc(var(--card-index) * 0.08s);
 }
 
+
+/* =====================================================
+   PREVIOUS SWIPE
+===================================================== */
 
 @keyframes slidePrevious {
 
@@ -934,24 +1007,14 @@
         opacity: 1;
 
         transform:
-            translateX(0)
-            scale(1);
-    }
-
-    45% {
-        opacity: 0.4;
-
-        transform:
-            translateX(35px)
-            scale(0.96);
+            translateX(0);
     }
 
     100% {
         opacity: 0;
 
         transform:
-            translateX(90px)
-            scale(0.92);
+            translateX(45px);
     }
 }
 
@@ -966,7 +1029,6 @@
         grid-template-columns:
             repeat(2, 1fr);
     }
-
 }
 
 
@@ -1046,23 +1108,50 @@
     }
 
 
+    /* =================================================
+       MOBILE NUMBER STANDBY
+    ================================================= */
+
     .software-service-card-number {
         margin-bottom: 18px;
+
+        border:
+            2px solid rgba(8, 42, 102, 0.42);
+
+        background:
+            linear-gradient(
+                135deg,
+                #071d49,
+                #082a66,
+                #0950cd
+            );
+
+        color: #ffffff;
     }
 
 
     /* =================================================
-       MOBILE BUTTON BORDER
+       MOBILE BUTTON STANDBY
     ================================================= */
 
     .software-service-card-button {
         border:
-            2px solid rgba(9, 80, 205, 0.32);
+            2px solid rgba(8, 42, 102, 0.42);
+
+        background:
+            linear-gradient(
+                135deg,
+                #071d49,
+                #082a66,
+                #0950cd
+            );
+
+        color: #ffffff;
     }
 
 
     /* =================================================
-       DISABLE DESKTOP HOVER DEPTH ON MOBILE
+       DISABLE DESKTOP HOVER DEPTH
     ================================================= */
 
     .software-services-grid:hover
@@ -1080,6 +1169,10 @@
     }
 
 
+    /* =================================================
+       MOBILE CARD HOVER
+    ================================================= */
+
     .software-services-grid
     .software-service-card:hover {
         transform:
@@ -1092,4 +1185,110 @@
             rgba(60, 210, 249, 0.9);
     }
 
+
+    /* =================================================
+       MOBILE NUMBER HOVER
+       WHITE TEXT
+    ================================================= */
+
+    .software-service-card:hover
+    .software-service-card-number {
+        background:
+            linear-gradient(
+                135deg,
+                #3cd2f9,
+                #17aee4,
+                #0950cd
+            );
+
+        color: #ffffff;
+
+        border-color:
+            #3cd2f9;
+
+        box-shadow:
+            0 0 22px rgba(60, 210, 249, 0.45);
+    }
+
+
+    /* =================================================
+       MOBILE BUTTON HOVER
+       WHITE TEXT
+    ================================================= */
+
+    .software-service-card:hover
+    .software-service-card-button {
+        background:
+            linear-gradient(
+                135deg,
+                #3cd2f9,
+                #17aee4,
+                #0950cd
+            );
+
+        color: #ffffff;
+
+        border-color:
+            #3cd2f9;
+
+        box-shadow:
+            0 10px 25px rgba(9, 80, 205, 0.28),
+            0 0 20px rgba(60, 210, 249, 0.18);
+    }
+
+
+    /* =================================================
+       MOBILE DIRECT BUTTON HOVER
+       WHITE TEXT
+    ================================================= */
+
+    .software-service-card-button:hover {
+        background:
+            linear-gradient(
+                135deg,
+                #071d49,
+                #082a66,
+                #0950cd
+            );
+
+        color: #ffffff;
+
+        border-color:
+            #3cd2f9;
+    }
+
+
+    /* =================================================
+       MOBILE ARROW
+       WHITE TEXT
+    ================================================= */
+
+    .software-service-card-button:hover
+    .service-button-arrow {
+        color: #ffffff;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .software-service-card,
+    .software-service-card-image img,
+    .software-service-card-number,
+    .software-service-card-button,
+    .software-service-card-content::before,
+    .software-service-card::after {
+        transition: none;
+    }
+
+    .slide-next
+    .software-service-card,
+    .slide-previous
+    .software-service-card {
+        animation: none;
+    }
 }
