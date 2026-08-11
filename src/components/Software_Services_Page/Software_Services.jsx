@@ -53,6 +53,7 @@ function Software_Services() {
     const [currentPage, setCurrentPage] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [direction, setDirection] = useState("next");
+    const [hoveredCard, setHoveredCard] = useState(null);
 
     const cardsPerPage = 4;
 
@@ -75,6 +76,7 @@ function Software_Services() {
             return;
         }
 
+        setHoveredCard(null);
         setDirection(newDirection);
         setIsAnimating(true);
 
@@ -140,54 +142,66 @@ function Software_Services() {
                 >
 
                     {visibleServices.map(
-                        (service, index) => (
-                            <div
-                                className="software-service-card"
-                                key={service.title}
-                                style={{
-                                    "--card-index": index,
-                                }}
-                            >
+                        (service, index) => {
 
-                                {/* Card Number */}
-                                <div className="software-service-card-number">
-                                    {String(
-                                        currentPage *
-                                            cardsPerPage +
-                                            index +
-                                            1
-                                    ).padStart(2, "0")}
+                            const globalIndex =
+                                currentPage *
+                                    cardsPerPage +
+                                index;
+
+                            return (
+                                <div
+                                    className={`software-service-card ${
+                                        hoveredCard === index
+                                            ? "card-active"
+                                            : ""
+                                    }`}
+                                    key={service.title}
+                                    style={{
+                                        "--card-index": index,
+                                    }}
+                                    onMouseEnter={() =>
+                                        setHoveredCard(index)
+                                    }
+                                >
+
+                                    {/* Card Number */}
+                                    <div className="software-service-card-number">
+                                        {String(
+                                            globalIndex + 1
+                                        ).padStart(2, "0")}
+                                    </div>
+
+
+                                    {/* Card Content */}
+                                    <div className="software-service-card-content">
+
+                                        <h2>
+                                            {service.title}
+                                        </h2>
+
+                                        <p>
+                                            {service.description}
+                                        </p>
+
+                                        <button
+                                            type="button"
+                                            className="software-service-card-button"
+                                        >
+                                            <span>
+                                                Explore Service
+                                            </span>
+
+                                            <span className="service-button-arrow">
+                                                →
+                                            </span>
+                                        </button>
+
+                                    </div>
+
                                 </div>
-
-
-                                {/* Card Content */}
-                                <div className="software-service-card-content">
-
-                                    <h2>
-                                        {service.title}
-                                    </h2>
-
-                                    <p>
-                                        {service.description}
-                                    </p>
-
-                                    <button
-                                        type="button"
-                                        className="software-service-card-button"
-                                    >
-                                        <span>
-                                            Explore Service
-                                        </span>
-
-                                        <span className="service-button-arrow">
-                                            →
-                                        </span>
-                                    </button>
-
-                                </div>
-
-                            </div>
-                        )
+                            );
+                        }
                     )}
 
                 </div>
