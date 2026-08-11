@@ -19,9 +19,9 @@ import Growth_Services
     from "./components/Growth_Services_Page/Growth_Services";
 
 
-// =====================================================
-// SOFTWARE SERVICES SUB PAGES
-// =====================================================
+/* =====================================================
+   SOFTWARE SERVICES SUB PAGES
+===================================================== */
 
 import Custom_Software_Development
     from "./components/Software_Services_Sub_Pages/Custom_Software_Development/Custom_software_development";
@@ -49,6 +49,29 @@ import Scalable_Cloud_Solution
 
 import Technology_Consultation
     from "./components/Software_Services_Sub_Pages/Technology_Consultation/Technology_Consultation";
+
+
+/* =====================================================
+   GROWTH SERVICES SUB PAGES
+===================================================== */
+
+import Appointment_Settings
+    from "./components/Growth_Services_sub_pages/Appointment_Settings/Appointment_Settings";
+
+import B2B_Lead_Generation
+    from "./components/Growth_Services_sub_pages/B2B_Lead_Generation/B2B_Lead_Generation";
+
+import Cold_email_campaigns
+    from "./components/Growth_Services_sub_pages/Cold_email_campaigns/Cold_email_campaigns";
+
+import Linkedin_Outreach
+    from "./components/Growth_Services_sub_pages/Linkedin_Outreach/Linkedin_Outreach";
+
+import Out_Bound_Growth_Strategy
+    from "./components/Growth_Services_sub_pages/Out_Bound_Growth_Strategy/Out_Bound_Growth_Strategy";
+
+import Sales_automation_Systems
+    from "./components/Growth_Services_sub_pages/Sales_automation_Systems/Sales_automation_Systems";
 
 
 import Footer
@@ -126,7 +149,7 @@ function App() {
 
 
                 {/* =================================================
-                    CUSTOM SOFTWARE DEVELOPMENT
+                    SOFTWARE SERVICE SUB PAGES
                 ================================================= */}
 
                 <Route
@@ -134,86 +157,80 @@ function App() {
                     element={<Custom_Software_Development />}
                 />
 
-
-                {/* =================================================
-                    SAAS PRODUCT DEVELOPMENT
-                ================================================= */}
-
                 <Route
                     path="/saas-product-development"
                     element={<SAAS_Product_Development />}
                 />
-
-
-                {/* =================================================
-                    AI INTEGRATION & AUTOMATION
-                ================================================= */}
 
                 <Route
                     path="/ai-integration-and-automation"
                     element={<AI_Integration_and_Automation />}
                 />
 
-
-                {/* =================================================
-                    WEB & MOBILE APPLICATIONS
-                ================================================= */}
-
                 <Route
                     path="/web-and-mobile-applications"
                     element={<Web_AND_Mobile_Applications />}
                 />
-
-
-                {/* =================================================
-                    DEDICATED DEVELOPMENT TEAMS
-                ================================================= */}
 
                 <Route
                     path="/dedicated-development-teams"
                     element={<Dedicated_Development_Teams />}
                 />
 
-
-                {/* =================================================
-                    GAME DEVELOPMENT
-                ================================================= */}
-
                 <Route
                     path="/game-development"
                     element={<Game_Development />}
                 />
-
-
-                {/* =================================================
-                    MAINTENANCE & SUPPORT
-                ================================================= */}
 
                 <Route
                     path="/maintenance-and-support"
                     element={<Maintainance_and_support />}
                 />
 
-
-                {/* =================================================
-                    SCALABLE CLOUD SOLUTIONS
-                ================================================= */}
-
                 <Route
                     path="/scalable-cloud-solutions"
                     element={<Scalable_Cloud_Solution />}
                 />
-
-
-                {/* =================================================
-                    TECHNOLOGY CONSULTATION
-                ================================================= */}
 
                 <Route
                     path="/technology-consultation"
                     element={<Technology_Consultation />}
                 />
 
+
+                {/* =================================================
+                    GROWTH SERVICE SUB PAGES
+                ================================================= */}
+
+                <Route
+                    path="/appointment-settings"
+                    element={<Appointment_Settings />}
+                />
+
+                <Route
+                    path="/b2b-lead-generation"
+                    element={<B2B_Lead_Generation />}
+                />
+
+                <Route
+                    path="/cold-email-campaigns"
+                    element={<Cold_email_campaigns />}
+                />
+
+                <Route
+                    path="/linkedin-outreach"
+                    element={<Linkedin_Outreach />}
+                />
+
+                <Route
+                    path="/outbound-growth-strategy"
+                    element={<Out_Bound_Growth_Strategy />}
+                />
+
+                <Route
+                    path="/sales-automation-systems"
+                    element={<Sales_automation_Systems />}
+                />
 
             </Routes>
 

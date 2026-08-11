@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./Growth_Services.css";
 
 /* =====================================================
@@ -31,6 +33,7 @@ function Growth_Services() {
     ===================================================== */
 
     const services = [
+
         {
             title: "B2B Lead Generation",
 
@@ -38,6 +41,8 @@ function Growth_Services() {
                 "Generate high-quality B2B leads through targeted research, ideal customer profiling, and data-driven prospecting strategies.",
 
             image: B2BLeadGeneration,
+
+            route: "/b2b-lead-generation",
         },
 
         {
@@ -47,6 +52,8 @@ function Growth_Services() {
                 "Reach the right decision-makers through personalized LinkedIn prospecting and strategic outreach campaigns.",
 
             image: LinkedinProspectingOutreach,
+
+            route: "/linkedin-outreach",
         },
 
         {
@@ -56,6 +63,8 @@ function Growth_Services() {
                 "Build targeted cold email campaigns designed to start meaningful conversations and generate qualified business opportunities.",
 
             image: ColdEmailCampaigns,
+
+            route: "/cold-email-campaigns",
         },
 
         {
@@ -65,6 +74,8 @@ function Growth_Services() {
                 "Turn qualified prospects into booked meetings through structured outreach, follow-ups, and conversion-focused appointment setting.",
 
             image: AppointmentSetting,
+
+            route: "/appointment-settings",
         },
 
         {
@@ -74,6 +85,8 @@ function Growth_Services() {
                 "Automate repetitive sales processes, lead follow-ups, prospect management, and workflows to improve efficiency and scalability.",
 
             image: SalesAutomation,
+
+            route: "/sales-automation-systems",
         },
 
         {
@@ -83,7 +96,10 @@ function Growth_Services() {
                 "Develop scalable outbound growth strategies that combine targeting, messaging, automation, and sales processes to drive predictable growth.",
 
             image: OutboundGrowthStrategies,
+
+            route: "/outbound-growth-strategy",
         },
+
     ];
 
 
@@ -152,10 +168,6 @@ function Growth_Services() {
         setIsAnimating(true);
 
 
-        /* =============================================
-           CHANGE PAGE
-        ============================================= */
-
         setTimeout(() => {
 
             setCurrentPage(newPage);
@@ -163,15 +175,12 @@ function Growth_Services() {
         }, 300);
 
 
-        /* =============================================
-           END ANIMATION
-        ============================================= */
-
         setTimeout(() => {
 
             setIsAnimating(false);
 
         }, 900);
+
     };
 
 
@@ -190,7 +199,9 @@ function Growth_Services() {
                 currentPage + 1,
                 "next"
             );
+
         }
+
     };
 
 
@@ -206,7 +217,9 @@ function Growth_Services() {
                 currentPage - 1,
                 "previous"
             );
+
         }
+
     };
 
 
@@ -308,9 +321,7 @@ function Growth_Services() {
                                     <div className="growth-service-card-content">
 
 
-                                        {/* =================================================
-                                            CARD NUMBER
-                                        ================================================= */}
+                                        {/* CARD NUMBER */}
 
                                         <div className="growth-service-card-number">
 
@@ -321,18 +332,14 @@ function Growth_Services() {
                                         </div>
 
 
-                                        {/* =================================================
-                                            CARD TITLE
-                                        ================================================= */}
+                                        {/* CARD TITLE */}
 
                                         <h2>
                                             {service.title}
                                         </h2>
 
 
-                                        {/* =================================================
-                                            CARD DESCRIPTION
-                                        ================================================= */}
+                                        {/* CARD DESCRIPTION */}
 
                                         <p>
                                             {service.description}
@@ -343,8 +350,8 @@ function Growth_Services() {
                                             CARD BUTTON
                                         ================================================= */}
 
-                                        <button
-                                            type="button"
+                                        <Link
+                                            to={service.route}
                                             className="growth-service-card-button"
                                         >
 
@@ -356,13 +363,14 @@ function Growth_Services() {
                                                 →
                                             </span>
 
-                                        </button>
+                                        </Link>
 
                                     </div>
 
                                 </div>
 
                             );
+
                         }
                     )}
 
@@ -376,31 +384,23 @@ function Growth_Services() {
                 <div className="growth-services-controls">
 
 
-                    {/* =================================================
-                        PREVIOUS BUTTON
-                    ================================================= */}
+                    {/* PREVIOUS */}
 
                     <button
                         type="button"
-
                         className="growth-services-arrow"
-
                         onClick={handlePrevious}
-
                         disabled={
                             currentPage === 0 ||
                             isAnimating
                         }
-
                         aria-label="Previous growth services"
                     >
                         ←
                     </button>
 
 
-                    {/* =================================================
-                        PAGE INDICATORS
-                    ================================================= */}
+                    {/* PAGE INDICATORS */}
 
                     <div className="growth-services-pages">
 
@@ -413,7 +413,6 @@ function Growth_Services() {
 
                                 <span
                                     key={index}
-
                                     className={
                                         currentPage === index
                                             ? "active"
@@ -427,23 +426,17 @@ function Growth_Services() {
                     </div>
 
 
-                    {/* =================================================
-                        NEXT BUTTON
-                    ================================================= */}
+                    {/* NEXT */}
 
                     <button
                         type="button"
-
                         className="growth-services-arrow"
-
                         onClick={handleNext}
-
                         disabled={
                             currentPage ===
                                 totalPages - 1 ||
                             isAnimating
                         }
-
                         aria-label="Next growth services"
                     >
                         →
