@@ -1,0 +1,32 @@
+.saas-test-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 120px 20px;
+
+    background: #f7faff;
+}
+
+.saas-test-container {
+    text-align: center;
+}
+
+.saas-test-container h1 {
+    margin: 0 0 15px;
+
+    color: #071d49;
+
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.saas-test-container p {
+    margin: 0;
+
+    color: #0950cd;
+
+    font-size: 18px;
+}
