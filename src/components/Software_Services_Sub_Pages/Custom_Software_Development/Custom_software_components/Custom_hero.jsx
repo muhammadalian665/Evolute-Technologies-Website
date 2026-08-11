@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Custom_Hero.css";
 
 /* =====================================================
-   RUBIK'S CUBE DATA
+RUBIK'S CUBE DATA
 ===================================================== */
 
 const cubePositions = [
@@ -43,9 +43,8 @@ const cubePositions = [
     [1, 1, 1],
 ];
 
-
 /* =====================================================
-   INDIVIDUAL CUBIE
+INDIVIDUAL CUBIE
 ===================================================== */
 
 function RubikCubie({ position, index }) {
@@ -114,36 +113,30 @@ function RubikCubie({ position, index }) {
                 {z === 1 && <span />}
             </div>
 
-
             {/* BACK */}
             <div className="rubik-sticker rubik-back">
                 {z === -1 && <span />}
             </div>
-
 
             {/* RIGHT */}
             <div className="rubik-sticker rubik-right">
                 {x === 1 && <span />}
             </div>
 
-
             {/* LEFT */}
             <div className="rubik-sticker rubik-left">
                 {x === -1 && <span />}
             </div>
-
 
             {/* TOP */}
             <div className="rubik-sticker rubik-top">
                 {y === -1 && <span />}
             </div>
 
-
             {/* BOTTOM */}
             <div className="rubik-sticker rubik-bottom">
                 {y === 1 && <span />}
             </div>
-
 
             {/* INTERNAL BLACK BODY */}
             <div className="rubik-core" />
@@ -152,9 +145,8 @@ function RubikCubie({ position, index }) {
     );
 }
 
-
 /* =====================================================
-   FLOATING MINI CUBES
+FLOATING MINI CUBES
 ===================================================== */
 
 const floatingCubes = [
@@ -231,9 +223,8 @@ const floatingCubes = [
     },
 ];
 
-
 /* =====================================================
-   MINI FLOATING CUBE
+MINI FLOATING CUBE
 ===================================================== */
 
 function FloatingCube({ cube }) {
@@ -261,16 +252,14 @@ function FloatingCube({ cube }) {
     );
 }
 
-
 /* =====================================================
-   MAIN HERO
+MAIN HERO
 ===================================================== */
 
 function CustomHero() {
 
     return (
         <section className="custom-hero">
-
 
             {/* =================================================
                 BACKGROUND GLOWS
@@ -286,13 +275,11 @@ function CustomHero() {
                 aria-hidden="true"
             />
 
-
             {/* =================================================
                 MAIN CONTAINER
             ================================================= */}
 
             <div className="custom-hero-container">
-
 
                 {/* =================================================
                     LEFT CONTENT
@@ -301,38 +288,26 @@ function CustomHero() {
                 <div className="custom-hero-content">
 
                     <span className="custom-hero-eyebrow">
-                        CUSTOM SOFTWARE DEVELOPMENT SERVICES
+                        ENGINEERED FOR YOUR BUSINESS
                     </span>
-
 
                     <h1 className="custom-hero-title">
 
-                        Custom Software Solutions For Your
-
-                        <br />
-
-                        Exact Business Needs
+                        Custom Software That Turns Your Ideas Into Powerful Digital Solutions
 
                     </h1>
 
-
                     <p className="custom-hero-description">
 
-                        Your business has specific workflows, specific
-                        teams, and specific problems. Your software should
-                        too. Our software development builds tools that
-                        match exactly how you work, eliminating the
-                        friction of rigid off-the-shelf software.
+                        Stop adapting your business to generic software. We build custom digital solutions around your exact requirements, workflows, and goals—giving you the flexibility, performance, and scalability you need to move your business forward.
 
                     </p>
-
 
                     {/* =================================================
                         CTA BUTTONS
                     ================================================= */}
 
                     <div className="custom-hero-actions">
-
 
                         {/* PRIMARY BUTTON */}
 
@@ -345,7 +320,7 @@ function CustomHero() {
                         >
 
                             <span>
-                                Start My Project
+                                Start Your Project
                             </span>
 
                             <span className="custom-hero-button-arrow">
@@ -353,7 +328,6 @@ function CustomHero() {
                             </span>
 
                         </Link>
-
 
                         {/* SECONDARY BUTTON */}
 
@@ -366,7 +340,7 @@ function CustomHero() {
                         >
 
                             <span>
-                                Book a Call
+                                Book a Consultation
                             </span>
 
                             <span className="custom-hero-button-arrow">
@@ -379,7 +353,6 @@ function CustomHero() {
 
                 </div>
 
-
                 {/* =================================================
                     RIGHT 3D RUBIK'S CUBE
                 ================================================= */}
@@ -390,7 +363,6 @@ function CustomHero() {
                 >
 
                     <div className="rubik-scene">
-
 
                         {/* =================================================
                             FLOATING CUBES
@@ -408,7 +380,6 @@ function CustomHero() {
                             ))}
 
                         </div>
-
 
                         {/* =================================================
                             MAIN RUBIK CUBE
@@ -447,6 +418,5 @@ function CustomHero() {
         </section>
     );
 }
-
 
 export default CustomHero;
