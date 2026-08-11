@@ -1,0 +1,71 @@
+/* =====================================================
+   DEDICATED DEVELOPMENT TEAMS - TEST CSS
+===================================================== */
+
+.dedicated-development-teams-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 6%;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(60, 210, 249, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(9, 80, 205, 0.18),
+            transparent 30%
+        ),
+        #050b18;
+
+    color: #ffffff;
+}
+
+.dedicated-development-teams-container {
+    width: 100%;
+    max-width: 1200px;
+
+    text-align: center;
+}
+
+.dedicated-development-teams-container h1 {
+    margin-bottom: 20px;
+
+    font-size: 52px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.dedicated-development-teams-container p {
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #b8c4d9;
+}
+
+.dedicated-development-teams-test {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border-radius: 8px;
+
+    background: #0950cd;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+}

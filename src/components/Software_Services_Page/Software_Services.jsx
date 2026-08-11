@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 
 import "./Software_Services.css";
 
+
+// =====================================================
+// SERVICE IMAGES
+// =====================================================
+
 import AIIntegrationAutomation
     from "../../assets/Software_Services_Cards_Images/AI_Integration_Automation.png";
 
@@ -33,6 +38,11 @@ import WebAndMobileApplications
 
 function Software_Services() {
 
+
+    // =====================================================
+    // SERVICES DATA
+    // =====================================================
+
     const services = [
 
         {
@@ -46,6 +56,7 @@ function Software_Services() {
             route: "/custom-software-development",
         },
 
+
         {
             title: "SaaS Product Development",
 
@@ -56,6 +67,7 @@ function Software_Services() {
 
             route: "/saas-product-development",
         },
+
 
         {
             title: "AI Integration & Automation",
@@ -68,6 +80,7 @@ function Software_Services() {
             route: "/ai-integration-and-automation",
         },
 
+
         {
             title: "Web & Mobile Applications",
 
@@ -79,6 +92,7 @@ function Software_Services() {
             route: "/web-and-mobile-applications",
         },
 
+
         {
             title: "Scalable Cloud Solutions",
 
@@ -86,7 +100,10 @@ function Software_Services() {
                 "Secure and scalable cloud solutions that help your applications perform reliably as your business grows.",
 
             image: ScalableCloudSolutions,
+
+            route: "/scalable-cloud-solutions",
         },
+
 
         {
             title: "Dedicated Development Teams",
@@ -95,7 +112,10 @@ function Software_Services() {
                 "Build your own dedicated development team with skilled professionals aligned with your project goals.",
 
             image: DedicatedDevelopmentTeams,
+
+            route: "/dedicated-development-teams",
         },
+
 
         {
             title: "Game Development",
@@ -104,7 +124,10 @@ function Software_Services() {
                 "Engaging and interactive game experiences built with modern technologies and performance in mind.",
 
             image: GameDevelopment,
+
+            route: "/game-development",
         },
+
 
         {
             title: "Maintenance & Support",
@@ -113,7 +136,10 @@ function Software_Services() {
                 "Reliable ongoing maintenance, monitoring, optimization, and technical support for your software.",
 
             image: MaintainenceAndSupport,
+
+            route: "/maintenance-and-support",
         },
+
 
         {
             title: "Technology Consultation",
@@ -122,36 +148,56 @@ function Software_Services() {
                 "Expert technology guidance to help you choose the right architecture, tools, and development strategy.",
 
             image: TechnologyConsultation,
+
+            route: "/technology-consultation",
         },
 
     ];
 
 
-    const [currentPage, setCurrentPage] = useState(0);
+    // =====================================================
+    // PAGINATION STATE
+    // =====================================================
+
+    const [currentPage, setCurrentPage] =
+        useState(0);
+
 
     const [isAnimating, setIsAnimating] =
         useState(false);
 
+
     const [direction, setDirection] =
         useState("next");
+
 
     const [hoveredCard, setHoveredCard] =
         useState(null);
 
 
+    // =====================================================
+    // PAGINATION SETTINGS
+    // =====================================================
+
     const cardsPerPage = 4;
 
 
-    const totalPages = Math.ceil(
-        services.length / cardsPerPage
-    );
+    const totalPages =
+        Math.ceil(
+            services.length / cardsPerPage
+        );
 
 
-    const visibleServices = services.slice(
-        currentPage * cardsPerPage,
-        currentPage * cardsPerPage + cardsPerPage
-    );
+    const visibleServices =
+        services.slice(
+            currentPage * cardsPerPage,
+            currentPage * cardsPerPage + cardsPerPage
+        );
 
+
+    // =====================================================
+    // PAGE CHANGE
+    // =====================================================
 
     const changePage = (
         newPage,
@@ -194,6 +240,10 @@ function Software_Services() {
     };
 
 
+    // =====================================================
+    // NEXT PAGE
+    // =====================================================
+
     const handleNext = () => {
 
         if (
@@ -211,6 +261,10 @@ function Software_Services() {
     };
 
 
+    // =====================================================
+    // PREVIOUS PAGE
+    // =====================================================
+
     const handlePrevious = () => {
 
         if (currentPage > 0) {
@@ -224,6 +278,10 @@ function Software_Services() {
 
     };
 
+
+    // =====================================================
+    // JSX
+    // =====================================================
 
     return (
 
@@ -306,7 +364,7 @@ function Software_Services() {
 
 
                                     {/* =================================================
-                                        WHITE CONTENT AREA
+                                        CARD CONTENT
                                     ================================================= */}
 
                                     <div className="software-service-card-content">
@@ -338,46 +396,24 @@ function Software_Services() {
 
 
                                         {/* =================================================
-                                            CARD BUTTON
+                                            EXPLORE BUTTON
                                         ================================================= */}
 
-                                        {service.route ? (
+                                        <Link
+                                            to={service.route}
+                                            className="software-service-card-button"
+                                        >
 
-                                            <Link
-                                                to={service.route}
-                                                className="software-service-card-button"
-                                            >
-
-                                                <span>
-                                                    Explore Service
-                                                </span>
+                                            <span>
+                                                Explore Service
+                                            </span>
 
 
-                                                <span className="service-button-arrow">
-                                                    →
-                                                </span>
+                                            <span className="service-button-arrow">
+                                                →
+                                            </span>
 
-                                            </Link>
-
-                                        ) : (
-
-                                            <button
-                                                type="button"
-                                                className="software-service-card-button"
-                                            >
-
-                                                <span>
-                                                    Explore Service
-                                                </span>
-
-
-                                                <span className="service-button-arrow">
-                                                    →
-                                                </span>
-
-                                            </button>
-
-                                        )}
+                                        </Link>
 
 
                                     </div>

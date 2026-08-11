@@ -18,6 +18,11 @@ import Software_Services
 import Growth_Services
     from "./components/Growth_Services_Page/Growth_Services";
 
+
+// =====================================================
+// SOFTWARE SERVICES SUB PAGES
+// =====================================================
+
 import Custom_Software_Development
     from "./components/Software_Services_Sub_Pages/Custom_Software_Development/Custom_software_development";
 
@@ -29,6 +34,22 @@ import AI_Integration_and_Automation
 
 import Web_AND_Mobile_Applications
     from "./components/Software_Services_Sub_Pages/Web_AND_Mobile_Applications/Web_AND_Mobile_Applications";
+
+import Dedicated_Development_Teams
+    from "./components/Software_Services_Sub_Pages/Dedicated_Development_Teams/Dedicated_Development_Teams";
+
+import Game_Development
+    from "./components/Software_Services_Sub_Pages/Game_Development/Game_Development";
+
+import Maintainance_and_support
+    from "./components/Software_Services_Sub_Pages/Maintainance_and_support/Maintainance_and_support";
+
+import Scalable_Cloud_Solution
+    from "./components/Software_Services_Sub_Pages/Scalable_Cloud_Solution/Scalable_Cloud_Solution";
+
+import Technology_Consultation
+    from "./components/Software_Services_Sub_Pages/Technology_Consultation/Technology_Consultation";
+
 
 import Footer
     from "./components/Footer/Footer";
@@ -48,7 +69,7 @@ function App() {
 
 
             {/* =====================================================
-                PAGES
+                ALL PAGES
             ===================================================== */}
 
             <Routes>
@@ -142,6 +163,57 @@ function App() {
                     path="/web-and-mobile-applications"
                     element={<Web_AND_Mobile_Applications />}
                 />
+
+
+                {/* =================================================
+                    DEDICATED DEVELOPMENT TEAMS
+                ================================================= */}
+
+                <Route
+                    path="/dedicated-development-teams"
+                    element={<Dedicated_Development_Teams />}
+                />
+
+
+                {/* =================================================
+                    GAME DEVELOPMENT
+                ================================================= */}
+
+                <Route
+                    path="/game-development"
+                    element={<Game_Development />}
+                />
+
+
+                {/* =================================================
+                    MAINTENANCE & SUPPORT
+                ================================================= */}
+
+                <Route
+                    path="/maintenance-and-support"
+                    element={<Maintainance_and_support />}
+                />
+
+
+                {/* =================================================
+                    SCALABLE CLOUD SOLUTIONS
+                ================================================= */}
+
+                <Route
+                    path="/scalable-cloud-solutions"
+                    element={<Scalable_Cloud_Solution />}
+                />
+
+
+                {/* =================================================
+                    TECHNOLOGY CONSULTATION
+                ================================================= */}
+
+                <Route
+                    path="/technology-consultation"
+                    element={<Technology_Consultation />}
+                />
+
 
             </Routes>
 
