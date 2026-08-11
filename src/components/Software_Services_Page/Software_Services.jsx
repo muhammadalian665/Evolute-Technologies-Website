@@ -1,289 +1,246 @@
 import { useState } from "react";
 import "./Software_Services.css";
 
-import { Link } from "react-router-dom";
-
-import {
-    Code2,
-    Cloud,
-    BrainCircuit,
-    Smartphone,
-    Layers3,
-    Users,
-    Gamepad2,
-    Headphones,
-    Lightbulb,
-} from "lucide-react";
-
 function Software_Services() {
-
     const services = [
         {
             title: "Custom Software Development",
             description:
-                "Build powerful, scalable software tailored around your business needs and workflows.",
-            icon: Code2,
+                "Tailored software solutions built around your business requirements, workflows, and long-term goals.",
         },
-
         {
             title: "SaaS Product Development",
             description:
-                "Turn your product idea into a scalable SaaS platform built for long-term growth.",
-            icon: Layers3,
+                "Scalable SaaS products designed to deliver seamless user experiences and support business growth.",
         },
-
         {
             title: "AI Integration & Automation",
             description:
-                "Integrate intelligent AI solutions and automation to make your business smarter and faster.",
-            icon: BrainCircuit,
+                "Integrate AI-powered automation into your business to improve efficiency, productivity, and decision-making.",
         },
-
         {
             title: "Web & Mobile Applications",
             description:
-                "Create modern web and mobile applications that deliver seamless digital experiences.",
-            icon: Smartphone,
+                "Modern web and mobile applications built for performance, usability, and scalability.",
         },
-
         {
             title: "Scalable Cloud Solutions",
             description:
-                "Build secure and scalable cloud infrastructure that grows with your business.",
-            icon: Cloud,
+                "Secure and scalable cloud solutions that help your applications perform reliably as your business grows.",
         },
-
         {
             title: "Dedicated Development Teams",
             description:
-                "Extend your capabilities with experienced developers dedicated to your product and goals.",
-            icon: Users,
+                "Build your own dedicated development team with skilled professionals aligned with your project goals.",
         },
-
         {
             title: "Game Development",
             description:
-                "Develop engaging and immersive games with modern technologies and interactive experiences.",
-            icon: Gamepad2,
+                "Engaging and interactive game experiences built with modern technologies and performance in mind.",
         },
-
         {
             title: "Maintenance & Support",
             description:
-                "Keep your software secure, reliable, updated, and performing at its best.",
-            icon: Headphones,
+                "Reliable ongoing maintenance, monitoring, optimization, and technical support for your software.",
         },
-
         {
             title: "Technology Consultation",
             description:
-                "Get expert technical guidance to choose the right technology and strategy for your project.",
-            icon: Lightbulb,
+                "Expert technology guidance to help you choose the right architecture, tools, and development strategy.",
         },
     ];
 
+    const [currentPage, setCurrentPage] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [direction, setDirection] = useState("next");
 
-    // =========================================
-    // 4 CARDS PER SLIDE
-    // =========================================
+    const cardsPerPage = 4;
 
-    const cardsPerView = 4;
-
-    const totalSlides = Math.ceil(
-        services.length / cardsPerView
+    const totalPages = Math.ceil(
+        services.length / cardsPerPage
     );
 
+    const visibleServices = services.slice(
+        currentPage * cardsPerPage,
+        currentPage * cardsPerPage + cardsPerPage
+    );
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const changePage = (newPage, newDirection) => {
+        if (isAnimating) return;
 
+        if (
+            newPage < 0 ||
+            newPage >= totalPages
+        ) {
+            return;
+        }
 
-    // =========================================
-    // NEXT
-    // =========================================
+        setDirection(newDirection);
+        setIsAnimating(true);
+
+        setTimeout(() => {
+            setCurrentPage(newPage);
+        }, 300);
+
+        setTimeout(() => {
+            setIsAnimating(false);
+        }, 900);
+    };
 
     const handleNext = () => {
-
-        setCurrentSlide((prev) => {
-
-            if (prev < totalSlides - 1) {
-                return prev + 1;
-            }
-
-            return 0;
-        });
+        if (currentPage < totalPages - 1) {
+            changePage(
+                currentPage + 1,
+                "next"
+            );
+        }
     };
-
-
-    // =========================================
-    // PREVIOUS
-    // =========================================
 
     const handlePrevious = () => {
-
-        setCurrentSlide((prev) => {
-
-            if (prev > 0) {
-                return prev - 1;
-            }
-
-            return totalSlides - 1;
-        });
+        if (currentPage > 0) {
+            changePage(
+                currentPage - 1,
+                "previous"
+            );
+        }
     };
 
-
     return (
-        <section className="software-services-page">
+        <section className="software-services-section">
 
-            {/* =========================================
-                HEADER
-            ========================================= */}
+            <div className="software-services-container">
 
-            <div className="software-services-header">
+                {/* Header */}
+                <div className="software-services-header">
 
-                <span className="software-services-eyebrow">
-                    OUR TECHNOLOGY SERVICES
-                </span>
+                    <span className="software-services-label">
+                        Our Technology Expertise
+                    </span>
 
-                <h1>
-                    Technology & Product Development
-                </h1>
+                    <h1>
+                        Technology & Product Development
+                    </h1>
 
-                <p>
-                    From powerful software products to intelligent AI
-                    solutions, we build technology that helps businesses
-                    innovate, scale, and grow.
-                </p>
-
-            </div>
-
-
-            {/* =========================================
-                CAROUSEL
-            ========================================= */}
-
-            <div className="software-services-carousel">
-
-                <div className="software-services-track-wrapper">
-
-                    <div
-                        className="software-services-track"
-                        style={{
-                            transform: `translateX(-${
-                                currentSlide * 44.444444
-                            }%)`,
-                        }}
-                    >
-
-                        {services.map((service, index) => {
-
-                            const Icon = service.icon;
-
-                            return (
-                                <div
-                                    className="software-service-slide"
-                                    key={index}
-                                >
-
-                                    <div className="software-service-card">
-
-                                        <span className="software-service-number">
-                                            {String(index + 1).padStart(2, "0")}
-                                        </span>
-
-
-                                        <div className="software-service-icon">
-                                            <Icon
-                                                size={27}
-                                                strokeWidth={1.8}
-                                            />
-                                        </div>
-
-
-                                        <div className="software-service-content">
-
-                                            <h2>
-                                                {service.title}
-                                            </h2>
-
-                                            <p>
-                                                {service.description}
-                                            </p>
-
-                                        </div>
-
-
-                                        <Link
-                                            to="#"
-                                            className="software-service-link"
-                                        >
-
-                                            <span>
-                                                Explore Service
-                                            </span>
-
-                                            <span className="software-service-arrow">
-                                                →
-                                            </span>
-
-                                        </Link>
-
-                                    </div>
-
-                                </div>
-                            );
-                        })}
-
-                    </div>
+                    <p>
+                        Transform your ideas into powerful digital
+                        products with scalable technology solutions
+                        designed to accelerate your business growth.
+                    </p>
 
                 </div>
 
 
-                {/* =========================================
-                    CONTROLS
-                ========================================= */}
+                {/* Services Cards */}
+                <div
+                    className={`software-services-grid ${
+                        isAnimating
+                            ? `slide-${direction}`
+                            : ""
+                    }`}
+                >
 
+                    {visibleServices.map(
+                        (service, index) => (
+                            <div
+                                className="software-service-card"
+                                key={service.title}
+                                style={{
+                                    "--card-index": index,
+                                }}
+                            >
+
+                                {/* Card Number */}
+                                <div className="software-service-card-number">
+                                    {String(
+                                        currentPage *
+                                            cardsPerPage +
+                                            index +
+                                            1
+                                    ).padStart(2, "0")}
+                                </div>
+
+
+                                {/* Card Content */}
+                                <div className="software-service-card-content">
+
+                                    <h2>
+                                        {service.title}
+                                    </h2>
+
+                                    <p>
+                                        {service.description}
+                                    </p>
+
+                                    <button
+                                        type="button"
+                                        className="software-service-card-button"
+                                    >
+                                        <span>
+                                            Explore Service
+                                        </span>
+
+                                        <span className="service-button-arrow">
+                                            →
+                                        </span>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        )
+                    )}
+
+                </div>
+
+
+                {/* Navigation Controls */}
                 <div className="software-services-controls">
 
+                    {/* Previous */}
                     <button
-                        className="software-services-arrow-button"
+                        type="button"
+                        className="software-services-arrow"
                         onClick={handlePrevious}
+                        disabled={
+                            currentPage === 0 ||
+                            isAnimating
+                        }
                         aria-label="Previous services"
                     >
                         ←
                     </button>
 
 
-                    <div className="software-services-indicator">
+                    {/* Page Indicators */}
+                    <div className="software-services-pages">
 
-                        <span>
-                            {String(currentSlide + 1).padStart(2, "0")}
-                        </span>
-
-                        <div className="software-services-progress">
-
-                            <div
-                                className="software-services-progress-fill"
-                                style={{
-                                    width: `${
-                                        ((currentSlide + 1) /
-                                            totalSlides) *
-                                        100
-                                    }%`,
-                                }}
-                            ></div>
-
-                        </div>
-
-                        <span>
-                            {String(totalSlides).padStart(2, "0")}
-                        </span>
+                        {Array.from(
+                            { length: totalPages },
+                            (_, index) => (
+                                <span
+                                    key={index}
+                                    className={
+                                        currentPage === index
+                                            ? "active"
+                                            : ""
+                                    }
+                                ></span>
+                            )
+                        )}
 
                     </div>
 
 
+                    {/* Next */}
                     <button
-                        className="software-services-arrow-button"
+                        type="button"
+                        className="software-services-arrow"
                         onClick={handleNext}
+                        disabled={
+                            currentPage ===
+                                totalPages - 1 ||
+                            isAnimating
+                        }
                         aria-label="Next services"
                     >
                         →

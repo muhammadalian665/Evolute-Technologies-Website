@@ -1,27 +1,38 @@
 /* =====================================================
-   SOFTWARE SERVICES PAGE
+   SOFTWARE SERVICES SECTION
 ===================================================== */
 
-.software-services-page {
+.software-services-section {
     width: 100%;
     min-height: 100vh;
 
-    padding: 120px 7% 130px;
+    padding: 110px 6% 100px;
 
     background:
         radial-gradient(
-            circle at 10% 10%,
-            rgba(60, 210, 249, 0.08),
-            transparent 30%
+            circle at 15% 15%,
+            rgba(60, 210, 249, 0.12),
+            transparent 28%
         ),
         radial-gradient(
-            circle at 90% 30%,
-            rgba(9, 80, 205, 0.08),
-            transparent 32%
+            circle at 85% 75%,
+            rgba(9, 80, 205, 0.14),
+            transparent 30%
         ),
-        #ffffff;
+        #f7faff;
 
-    color: #082a66;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.software-services-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 
@@ -30,183 +41,169 @@
 ===================================================== */
 
 .software-services-header {
-    max-width: 850px;
-
-    margin: 0 auto 70px;
-
     text-align: center;
+    max-width: 850px;
+    margin: 0 auto 65px;
 }
 
-
-/* =====================================================
-   EYEBROW
-===================================================== */
-
-.software-services-eyebrow {
+.software-services-label {
     display: inline-block;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
+    padding: 8px 17px;
 
-    padding: 8px 16px;
-
-    border: 1px solid rgba(9, 80, 205, 0.15);
-
+    border: 1px solid rgba(9, 80, 205, 0.18);
     border-radius: 30px;
 
-    background: rgba(238, 247, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
 
     color: #0950cd;
 
-    font-size: 12px;
-
+    font-size: 14px;
     font-weight: 700;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 0.6px;
+
+    box-shadow:
+        0 5px 20px rgba(9, 80, 205, 0.08);
 }
-
-
-/* =====================================================
-   MAIN HEADING
-===================================================== */
 
 .software-services-header h1 {
-    margin: 0 0 20px;
+    margin: 0 0 18px;
 
-    font-size: 48px;
+    color: #071d49;
 
+    font-size: clamp(34px, 4vw, 52px);
     line-height: 1.15;
 
-    font-weight: 750;
+    font-weight: 800;
 
-    color: #082a66;
+    letter-spacing: -1.5px;
 }
 
-
-/* =====================================================
-   HEADER DESCRIPTION
-===================================================== */
-
 .software-services-header p {
-    max-width: 720px;
-
     margin: 0 auto;
 
-    color: #5c6675;
+    max-width: 720px;
+
+    color: #607089;
 
     font-size: 17px;
-
     line-height: 1.7;
 }
 
 
 /* =====================================================
-   CAROUSEL
+   SERVICES GRID
 ===================================================== */
 
-.software-services-carousel {
-    width: 100%;
+.software-services-grid {
+    display: grid;
 
-    max-width: 1400px;
+    grid-template-columns: repeat(4, 1fr);
 
-    margin: 0 auto;
+    gap: 20px;
+
+    min-height: 390px;
+
+    perspective: 1400px;
 }
 
 
 /* =====================================================
-   TRACK WRAPPER
-===================================================== */
-
-.software-services-track-wrapper {
-    width: 100%;
-
-    overflow: hidden;
-
-    padding: 15px 5px 30px;
-}
-
-
-/* =====================================================
-   TRACK
-===================================================== */
-
-.software-services-track {
-    width: 225%;
-
-    display: flex;
-
-    transition:
-        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-
-/* =====================================================
-   SLIDE
-===================================================== */
-
-.software-service-slide {
-    width: 11.111111%;
-
-    flex: 0 0 11.111111%;
-
-    padding: 0 10px;
-
-    box-sizing: border-box;
-}
-
-
-/* =====================================================
-   SERVICE CARD
+   FUTURISTIC SERVICE CARD
 ===================================================== */
 
 .software-service-card {
     position: relative;
 
-    min-height: 330px;
+    min-height: 360px;
 
-    height: 100%;
-
-    padding: 30px 27px 25px;
+    padding: 28px;
 
     display: flex;
-
     flex-direction: column;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(9, 80, 205, 0.12);
-
-    border-radius: 16px;
+    justify-content: space-between;
 
     background:
         linear-gradient(
             145deg,
-            #ffffff 0%,
-            #f8fbff 100%
+            rgba(255, 255, 255, 0.92),
+            rgba(242, 248, 255, 0.82)
         );
 
+    border: 1px solid rgba(9, 80, 205, 0.14);
+
+    border-radius: 22px;
+
     box-shadow:
-        0 8px 25px rgba(8, 42, 102, 0.06);
+        0 15px 45px rgba(7, 50, 110, 0.08);
+
+    overflow: hidden;
+
+    transform:
+        translateY(0)
+        rotateX(0)
+        rotateY(0);
 
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    isolation: isolate;
 }
 
 
 /* =====================================================
-   CARD GLOW
+   FUTURISTIC GRID PATTERN
 ===================================================== */
 
 .software-service-card::before {
     content: "";
 
     position: absolute;
+    inset: 0;
 
-    width: 170px;
-    height: 170px;
+    background-image:
+        linear-gradient(
+            rgba(9, 80, 205, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.045) 1px,
+            transparent 1px
+        );
 
-    top: -90px;
+    background-size: 28px 28px;
+
+    mask-image:
+        linear-gradient(
+            to bottom right,
+            black,
+            transparent 75%
+        );
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/* =====================================================
+   NEON GLOW
+===================================================== */
+
+.software-service-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -80px;
     right: -70px;
 
     border-radius: 50%;
@@ -214,14 +211,18 @@
     background:
         radial-gradient(
             circle,
-            rgba(60, 210, 249, 0.20),
-            transparent 70%
+            rgba(60, 210, 249, 0.28),
+            rgba(60, 210, 249, 0.08) 45%,
+            transparent 72%
         );
 
-    opacity: 0;
+    filter: blur(5px);
 
     transition:
-        opacity 0.35s ease;
+        transform 0.5s ease,
+        opacity 0.5s ease;
+
+    z-index: -1;
 }
 
 
@@ -230,84 +231,130 @@
 ===================================================== */
 
 .software-service-card:hover {
-    transform: translateY(-9px);
+    transform:
+        translateY(-12px)
+        rotateX(3deg)
+        rotateY(-2deg);
 
     border-color:
-        rgba(9, 80, 205, 0.30);
+        rgba(60, 210, 249, 0.55);
 
     box-shadow:
-        0 18px 45px rgba(9, 80, 205, 0.14);
+        0 25px 60px rgba(9, 80, 205, 0.16),
+        0 0 35px rgba(60, 210, 249, 0.12);
 }
 
+.software-service-card:hover::after {
+    transform:
+        scale(1.35)
+        translate(-15px, 15px);
 
-.software-service-card:hover::before {
     opacity: 1;
 }
 
 
 /* =====================================================
-   SERVICE NUMBER
+   TOP TECH LINE
 ===================================================== */
 
-.software-service-number {
+.software-service-card-content::before {
+    content: "";
+
     position: absolute;
 
-    top: 22px;
-    right: 25px;
+    top: -2px;
+    left: 0;
 
-    color: rgba(9, 80, 205, 0.18);
+    width: 48px;
+    height: 3px;
 
-    font-size: 30px;
+    border-radius: 10px;
 
-    font-weight: 800;
+    background:
+        linear-gradient(
+            90deg,
+            #0950cd,
+            #3cd2f9
+        );
 
-    line-height: 1;
+    box-shadow:
+        0 0 12px rgba(60, 210, 249, 0.7);
+
+    transition:
+        width 0.4s ease;
+}
+
+.software-service-card:hover
+.software-service-card-content::before {
+    width: 100px;
 }
 
 
 /* =====================================================
-   SERVICE ICON
+   CARD NUMBER
 ===================================================== */
 
-.software-service-icon {
-    width: 58px;
-    height: 58px;
+.software-service-card-number {
+    position: relative;
 
-    margin-bottom: 28px;
+    width: 48px;
+    height: 48px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    border-radius: 14px;
+    margin-bottom: 35px;
+
+    border: 1px solid rgba(9, 80, 205, 0.18);
+    border-radius: 12px;
 
     background:
         linear-gradient(
             135deg,
-            #eef7ff,
-            #dceeff
+            rgba(9, 80, 205, 0.08),
+            rgba(60, 210, 249, 0.12)
         );
 
     color: #0950cd;
 
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
     box-shadow:
-        inset 0 0 0 1px
-        rgba(9, 80, 205, 0.08);
+        inset 0 0 15px rgba(60, 210, 249, 0.08);
 
     transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+        transform 0.4s ease,
+        background 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
+.software-service-card-number::before {
+    content: "";
 
-/* =====================================================
-   ICON HOVER
-===================================================== */
+    position: absolute;
+    inset: -4px;
+
+    border: 1px solid rgba(60, 210, 249, 0.12);
+
+    border-radius: 15px;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+}
 
 .software-service-card:hover
-.software-service-icon {
+.software-service-card-number {
+    transform:
+        rotate(8deg)
+        scale(1.08);
+
     background:
         linear-gradient(
             135deg,
@@ -317,160 +364,178 @@
 
     color: #ffffff;
 
-    transform: scale(1.05);
+    box-shadow:
+        0 0 20px rgba(9, 80, 205, 0.35);
+}
+
+.software-service-card:hover
+.software-service-card-number::before {
+    opacity: 1;
 }
 
 
 /* =====================================================
-   CONTENT
+   CARD CONTENT
 ===================================================== */
 
-.software-service-content {
+.software-service-card-content {
     position: relative;
 
     z-index: 2;
-
-    flex: 1;
 }
 
 
 /* =====================================================
-   SERVICE TITLE
+   CARD TITLE
 ===================================================== */
 
-.software-service-content h2 {
-    margin: 0 0 13px;
+.software-service-card h2 {
+    margin: 0 0 15px;
 
-    color: #082a66;
+    color: #071d49;
 
-    font-size: 21px;
+    font-size: 22px;
 
-    line-height: 1.3;
+    line-height: 1.25;
 
-    font-weight: 700;
+    font-weight: 750;
+
+    letter-spacing: -0.3px;
+
+    transition:
+        color 0.3s ease;
+}
+
+.software-service-card:hover h2 {
+    color: #0950cd;
 }
 
 
 /* =====================================================
-   SERVICE DESCRIPTION
+   CARD DESCRIPTION
 ===================================================== */
 
-.software-service-content p {
-    margin: 0;
+.software-service-card p {
+    margin: 0 0 25px;
 
-    color: #657083;
+    color: #637083;
 
-    font-size: 14px;
+    font-size: 15px;
 
     line-height: 1.65;
 }
 
 
 /* =====================================================
-   SERVICE LINK
+   CARD BUTTON
 ===================================================== */
 
-.software-service-link {
+.software-service-card-button {
     position: relative;
 
-    z-index: 2;
-
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
 
-    justify-content: space-between;
+    gap: 12px;
 
-    margin-top: 25px;
+    padding: 11px 16px;
 
-    padding-top: 17px;
+    border: 1px solid rgba(9, 80, 205, 0.16);
 
-    border-top:
-        1px solid
-        rgba(9, 80, 205, 0.10);
+    border-radius: 9px;
 
-    text-decoration: none;
+    background: rgba(255, 255, 255, 0.75);
 
-    color: #0950cd;
+    color: #082a66;
 
     font-size: 14px;
 
     font-weight: 700;
 
-    transition:
-        color 0.3s ease;
-}
+    cursor: pointer;
 
-
-/* =====================================================
-   SERVICE ARROW
-===================================================== */
-
-.software-service-arrow {
-    width: 30px;
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #eef6ff;
-
-    color: #0950cd;
-
-    font-size: 18px;
+    overflow: hidden;
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
+.software-service-card-button::before {
+    content: "";
 
-/* =====================================================
-   LINK HOVER
-===================================================== */
+    position: absolute;
 
-.software-service-link:hover {
-    color: #082a66;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #082a66,
+            #0950cd
+        );
+
+    transform: translateX(-101%);
+
+    transition:
+        transform 0.35s ease;
+
+    z-index: -1;
 }
 
-
-.software-service-link:hover
-.software-service-arrow {
-    background: #0950cd;
+.software-service-card-button:hover {
+    transform: translateY(-3px);
 
     color: #ffffff;
 
-    transform: translateX(4px);
+    border-color: #0950cd;
+
+    box-shadow:
+        0 8px 22px rgba(9, 80, 205, 0.25);
+}
+
+.software-service-card-button:hover::before {
+    transform: translateX(0);
+}
+
+.service-button-arrow {
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.software-service-card-button:hover
+.service-button-arrow {
+    transform: translateX(5px);
 }
 
 
 /* =====================================================
-   CAROUSEL CONTROLS
+   CONTROLS
 ===================================================== */
 
 .software-services-controls {
-    display: flex;
+    margin-top: 45px;
 
-    align-items: center;
+    display: flex;
 
     justify-content: center;
 
-    gap: 28px;
+    align-items: center;
 
-    margin-top: 10px;
+    gap: 25px;
 }
 
 
 /* =====================================================
-   NAVIGATION BUTTON
+   NAVIGATION ARROWS
 ===================================================== */
 
-.software-services-arrow-button {
+.software-services-arrow {
     width: 48px;
     height: 48px;
 
@@ -483,7 +548,8 @@
 
     border-radius: 50%;
 
-    background: #ffffff;
+    background:
+        rgba(255, 255, 255, 0.85);
 
     color: #082a66;
 
@@ -492,21 +558,18 @@
     cursor: pointer;
 
     box-shadow:
-        0 5px 18px rgba(9, 80, 205, 0.08);
+        0 8px 22px rgba(9, 80, 205, 0.08);
 
     transition:
+        transform 0.3s ease,
         background 0.3s ease,
         color 0.3s ease,
-        transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
+.software-services-arrow:hover:not(:disabled) {
+    transform: translateY(-3px);
 
-/* =====================================================
-   NAVIGATION BUTTON HOVER
-===================================================== */
-
-.software-services-arrow-button:hover {
     background:
         linear-gradient(
             135deg,
@@ -516,54 +579,47 @@
 
     color: #ffffff;
 
-    transform: translateY(-3px);
-
     box-shadow:
-        0 8px 22px rgba(9, 80, 205, 0.25);
+        0 12px 28px rgba(9, 80, 205, 0.25);
+}
+
+.software-services-arrow:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
 }
 
 
 /* =====================================================
-   PROGRESS INDICATOR
+   PAGE INDICATORS
 ===================================================== */
 
-.software-services-indicator {
+.software-services-pages {
     display: flex;
 
     align-items: center;
 
-    gap: 12px;
-
-    color: #082a66;
-
-    font-size: 13px;
-
-    font-weight: 700;
+    gap: 7px;
 }
 
+.software-services-pages span {
+    width: 7px;
+    height: 7px;
 
-/* =====================================================
-   PROGRESS BAR
-===================================================== */
+    border-radius: 50%;
 
-.software-services-progress {
-    width: 110px;
-    height: 3px;
+    background: #cbd8e8;
 
-    overflow: hidden;
-
-    border-radius: 10px;
-
-    background: #dceeff;
+    transition:
+        width 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-
-/* =====================================================
-   PROGRESS FILL
-===================================================== */
-
-.software-services-progress-fill {
-    height: 100%;
+.software-services-pages span.active {
+    width: 26px;
 
     border-radius: 10px;
 
@@ -575,8 +631,90 @@
             #3cd2f9
         );
 
-    transition:
-        width 0.5s ease;
+    box-shadow:
+        0 0 10px rgba(60, 210, 249, 0.35);
+}
+
+
+/* =====================================================
+   PAGE SLIDE ANIMATION
+===================================================== */
+
+.slide-next .software-service-card {
+    animation:
+        slideNext
+        0.7s
+        cubic-bezier(0.65, 0, 0.35, 1)
+        forwards;
+
+    animation-delay:
+        calc(var(--card-index) * 0.08s);
+}
+
+@keyframes slideNext {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+
+    45% {
+        opacity: 0.4;
+
+        transform:
+            translateX(-35px)
+            scale(0.96);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(-90px)
+            scale(0.92);
+    }
+}
+
+
+.slide-previous .software-service-card {
+    animation:
+        slidePrevious
+        0.7s
+        cubic-bezier(0.65, 0, 0.35, 1)
+        forwards;
+
+    animation-delay:
+        calc(var(--card-index) * 0.08s);
+}
+
+@keyframes slidePrevious {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+
+    45% {
+        opacity: 0.4;
+
+        transform:
+            translateX(35px)
+            scale(0.96);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(90px)
+            scale(0.92);
+    }
 }
 
 
@@ -586,14 +724,8 @@
 
 @media (max-width: 1100px) {
 
-    .software-services-track {
-        width: 300%;
-    }
-
-    .software-service-slide {
-        width: 16.666667%;
-
-        flex: 0 0 16.666667%;
+    .software-services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
@@ -603,12 +735,10 @@
    MOBILE
 ===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
 
-    .software-services-page {
-        padding:
-            80px 20px
-            90px;
+    .software-services-section {
+        padding: 80px 20px;
     }
 
 
@@ -627,35 +757,32 @@
     }
 
 
-    .software-services-track {
-        width: 900%;
-    }
+    .software-services-grid {
+        grid-template-columns: 1fr;
 
-
-    .software-service-slide {
-        width: 100%;
-
-        flex: 0 0 100%;
-
-        padding:
-            0 5px;
+        min-height: auto;
     }
 
 
     .software-service-card {
-        min-height: 310px;
+        min-height: 320px;
+
+        padding: 25px;
     }
 
 
-    .software-services-controls {
-        gap: 18px;
-
-        margin-top: 5px;
+    .software-service-card h2 {
+        font-size: 21px;
     }
 
 
-    .software-services-progress {
-        width: 70px;
+    .software-service-card p {
+        font-size: 14px;
+    }
+
+
+    .software-service-card-number {
+        margin-bottom: 28px;
     }
 
 }
