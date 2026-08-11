@@ -265,9 +265,13 @@ function Growth_Services() {
                             return (
 
                                 <div
-                                    className="growth-service-card"
-
                                     key={service.title}
+
+                                    className={`growth-service-card ${
+                                        hoveredCard === index
+                                            ? "card-active"
+                                            : ""
+                                    }`}
 
                                     style={{
                                         "--card-index": index,
@@ -304,7 +308,9 @@ function Growth_Services() {
                                     <div className="growth-service-card-content">
 
 
-                                        {/* CARD NUMBER */}
+                                        {/* =================================================
+                                            CARD NUMBER
+                                        ================================================= */}
 
                                         <div className="growth-service-card-number">
 
@@ -315,21 +321,27 @@ function Growth_Services() {
                                         </div>
 
 
-                                        {/* CARD TITLE */}
+                                        {/* =================================================
+                                            CARD TITLE
+                                        ================================================= */}
 
                                         <h2>
                                             {service.title}
                                         </h2>
 
 
-                                        {/* CARD DESCRIPTION */}
+                                        {/* =================================================
+                                            CARD DESCRIPTION
+                                        ================================================= */}
 
                                         <p>
                                             {service.description}
                                         </p>
 
 
-                                        {/* CARD BUTTON */}
+                                        {/* =================================================
+                                            CARD BUTTON
+                                        ================================================= */}
 
                                         <button
                                             type="button"
@@ -364,10 +376,13 @@ function Growth_Services() {
                 <div className="growth-services-controls">
 
 
-                    {/* PREVIOUS */}
+                    {/* =================================================
+                        PREVIOUS BUTTON
+                    ================================================= */}
 
                     <button
                         type="button"
+
                         className="growth-services-arrow"
 
                         onClick={handlePrevious}
@@ -383,7 +398,9 @@ function Growth_Services() {
                     </button>
 
 
-                    {/* PAGE INDICATORS */}
+                    {/* =================================================
+                        PAGE INDICATORS
+                    ================================================= */}
 
                     <div className="growth-services-pages">
 
@@ -410,10 +427,13 @@ function Growth_Services() {
                     </div>
 
 
-                    {/* NEXT */}
+                    {/* =================================================
+                        NEXT BUTTON
+                    ================================================= */}
 
                     <button
                         type="button"
+
                         className="growth-services-arrow"
 
                         onClick={handleNext}
