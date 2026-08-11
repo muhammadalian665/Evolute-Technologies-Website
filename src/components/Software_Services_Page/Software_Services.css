@@ -46,6 +46,7 @@
     margin: 0 auto 65px;
 }
 
+
 .software-services-label {
     display: inline-block;
 
@@ -129,15 +130,15 @@
 .software-service-card {
     position: relative;
 
-    min-height: 360px;
+    min-height: 500px;
 
-    padding: 28px;
+    padding: 0;
 
     display: flex;
 
     flex-direction: column;
 
-    justify-content: space-between;
+    justify-content: flex-start;
 
     background:
         linear-gradient(
@@ -205,7 +206,7 @@
 
     pointer-events: none;
 
-    z-index: -2;
+    z-index: 3;
 }
 
 
@@ -240,7 +241,88 @@
         transform 0.5s ease,
         opacity 0.5s ease;
 
-    z-index: -1;
+    z-index: 1;
+}
+
+
+/* =====================================================
+   SERVICE IMAGE AREA
+===================================================== */
+
+.software-service-card-image {
+    position: relative;
+
+    width: 100%;
+    height: 190px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf6ff,
+            #f7fbff
+        );
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   SERVICE IMAGE
+===================================================== */
+
+.software-service-card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.software-service-card-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(7, 29, 73, 0.02),
+            rgba(7, 29, 73, 0.12)
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   IMAGE HOVER
+===================================================== */
+
+.software-service-card:hover
+.software-service-card-image img {
+    transform: scale(1.06);
+
+    filter: brightness(1.04);
 }
 
 
@@ -309,6 +391,23 @@
 
 
 /* =====================================================
+   WHITE CARD CONTENT
+===================================================== */
+
+.software-service-card-content {
+    position: relative;
+
+    z-index: 4;
+
+    flex: 1;
+
+    padding: 22px 28px 28px;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
    TOP TECH LINE
 ===================================================== */
 
@@ -365,7 +464,7 @@
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 35px;
+    margin-bottom: 18px;
 
     border: 1px solid rgba(9, 80, 205, 0.18);
 
@@ -450,17 +549,6 @@
 .software-service-card:hover
 .software-service-card-number::before {
     opacity: 1;
-}
-
-
-/* =====================================================
-   CARD CONTENT
-===================================================== */
-
-.software-service-card-content {
-    position: relative;
-
-    z-index: 2;
 }
 
 
@@ -878,6 +966,7 @@
         grid-template-columns:
             repeat(2, 1fr);
     }
+
 }
 
 
@@ -919,13 +1008,31 @@
 
 
     .software-service-card {
-        min-height: 320px;
+        min-height: 480px;
 
-        padding: 25px;
+        padding: 0;
 
-        /* Prominent mobile card border */
         border:
             2px solid rgba(9, 80, 205, 0.32);
+    }
+
+
+    /* =================================================
+       MOBILE IMAGE
+    ================================================= */
+
+    .software-service-card-image {
+        height: 175px;
+    }
+
+
+    /* =================================================
+       MOBILE CONTENT
+    ================================================= */
+
+    .software-service-card-content {
+        padding:
+            20px 25px 25px;
     }
 
 
@@ -940,7 +1047,7 @@
 
 
     .software-service-card-number {
-        margin-bottom: 28px;
+        margin-bottom: 18px;
     }
 
 
@@ -984,4 +1091,5 @@
         border-color:
             rgba(60, 210, 249, 0.9);
     }
+
 }
