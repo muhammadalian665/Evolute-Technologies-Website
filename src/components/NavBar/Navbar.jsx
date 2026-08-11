@@ -1,9 +1,11 @@
+import { useState } from "react";
 import "./Navbar.css";
 import Logo from "../../assets/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
     const navigate = useNavigate();
+    const [servicesOpen, setServicesOpen] = useState(false);
 
     return (
         <header className="navbar">
@@ -28,23 +30,48 @@ function Navbar() {
                     </Link>
                 </li>
 
+
                 <li>
                     <Link to="/about">
                         About Us
                     </Link>
                 </li>
 
-                <li>
-                    <Link to="/services">
+
+                {/* Services */}
+                <li
+                    className="services-dropdown"
+                    onClick={() => setServicesOpen(!servicesOpen)}
+                >
+                    <Link
+                        to="/services"
+                        onClick={(e) => e.preventDefault()}
+                    >
                         Services
                     </Link>
+
+                    <div
+                        className={`services-menu ${
+                            servicesOpen ? "services-menu-open" : ""
+                        }`}
+                    >
+                        <div className="services-menu-item">
+                            Software Services
+                        </div>
+
+                        <div className="services-menu-item">
+                            Growth Services
+                        </div>
+                    </div>
                 </li>
+
 
                 <li>
                     <Link to="/case-studies">
                         Case Studies
                     </Link>
                 </li>
+
 
                 <li>
                     <Link to="/contact-us">
@@ -55,7 +82,7 @@ function Navbar() {
             </ul>
 
 
-            {/* Hire Button */}
+            {/* Hire Us Button */}
             <button
                 className="hire-btn"
                 onClick={() => navigate("/contact-us")}

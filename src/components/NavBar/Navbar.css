@@ -1,75 +1,381 @@
-/* Navbar */
+/* =====================================================
+   NAVBAR
+===================================================== */
+
 .navbar {
-  width: 100%;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #ffffff 25%,
-    #e2f1ff 30%,
-    #a3d2ff 45%,
-    #67aefa 65%,
-    #3a84e8 82%,
-    #2a6fd8 100%
-  );
+    width: 100%;
+    padding: 20px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffffff 25%,
+        #e2f1ff 30%,
+        #a3d2ff 45%,
+        #67aefa 65%,
+        #3a84e8 82%,
+        #2a6fd8 100%
+    );
 }
 
-/* Logo */
+
+/* =====================================================
+   LOGO
+===================================================== */
+
 .logo img {
-  width: 160px;
-  height: auto;
-  display: block;
+    width: 160px;
+    height: auto;
+    display: block;
 }
 
-/* Menu */
+
+/* =====================================================
+   MENU
+===================================================== */
+
 .nav-links {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  align-items: center;
+    display: flex;
+    gap: 30px;
+
+    list-style: none;
+    align-items: center;
 }
 
-/* Navigation Links */
+
+/* =====================================================
+   NAVIGATION LINKS
+===================================================== */
+
 .nav-links a {
-  text-decoration: none;
-  color: #082a66;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+    text-decoration: none;
+
+    color: #082a66;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
 }
 
-/* Navigation Link Hover */
+
+/* =====================================================
+   NAVIGATION LINK HOVER
+===================================================== */
+
 .nav-links a:hover {
-  color: #0950cd;
+    color: #0950cd;
 }
 
-/* Hire Us Button */
+
+/* =====================================================
+   HIRE US BUTTON
+===================================================== */
+
 .hire-btn {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(
-    135deg,
-    #082a66,
-    #0950cd
-  );
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #082a66,
+        #0950cd
+    );
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
-/* Hire Us Hover */
+
+/* =====================================================
+   HIRE US HOVER
+===================================================== */
+
 .hire-btn:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(
-    135deg,
-    #0950cd,
-    #0a4db8
-  );
-  box-shadow: 0 8px 25px rgba(9, 80, 205, 0.35);
+    transform: translateY(-2px);
+
+    background: linear-gradient(
+        135deg,
+        #0950cd,
+        #0a4db8
+    );
+
+    box-shadow:
+        0 8px 25px rgba(9, 80, 205, 0.35);
+}
+
+
+/* =====================================================
+   SERVICES DROPDOWN
+===================================================== */
+
+.services-dropdown {
+    position: relative;
+}
+
+
+/* =====================================================
+   SERVICES MENU
+===================================================== */
+
+.services-menu {
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 14px);
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 260px;
+
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid rgba(9, 80, 205, 0.15);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(9, 80, 205, 0.20),
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    z-index: 9999;
+
+    overflow: visible;
+}
+
+
+/* =====================================================
+   SERVICES POINTING TIP
+===================================================== */
+
+.services-menu::before {
+    content: "";
+
+    position: absolute;
+
+    top: -8px;
+    left: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    background: #ffffff;
+
+    transform: translateX(-50%) rotate(45deg);
+
+    border-left: 1px solid rgba(9, 80, 205, 0.15);
+    border-top: 1px solid rgba(9, 80, 205, 0.15);
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   DROPDOWN TOP ACCENT
+===================================================== */
+
+.services-menu::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #082a66,
+        #0950cd,
+        #3cd2f9
+    );
+
+    border-radius: 12px 12px 0 0;
+}
+
+
+/* =====================================================
+   SHOW MENU ONLY ON HOVER
+===================================================== */
+
+.services-dropdown:hover .services-menu {
+    display: block;
+}
+
+
+/* =====================================================
+   MENU OPTIONS
+===================================================== */
+
+.services-menu-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    margin: 3px 0;
+
+    border-radius: 8px;
+
+    color: #082a66;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =====================================================
+   SERVICE ARROW INDICATOR
+===================================================== */
+
+.services-menu-item::after {
+    content: "→";
+
+    margin-left: auto;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef6ff;
+
+    color: #0950cd;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =====================================================
+   LEFT ACCENT LINE
+===================================================== */
+
+.services-menu-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 3px;
+    height: 0;
+
+    background: #0950cd;
+
+    border-radius: 10px;
+
+    transform: translateY(-50%);
+
+    transition: height 0.25s ease;
+}
+
+
+/* =====================================================
+   SOFTWARE SERVICES
+===================================================== */
+
+.services-menu-item:first-child {
+    background: linear-gradient(
+        90deg,
+        rgba(238, 247, 255, 0.7),
+        rgba(255, 255, 255, 0.9)
+    );
+}
+
+
+/* =====================================================
+   GROWTH SERVICES
+===================================================== */
+
+.services-menu-item:last-child {
+    background: linear-gradient(
+        90deg,
+        rgba(242, 249, 255, 0.7),
+        rgba(255, 255, 255, 0.9)
+    );
+}
+
+
+/* =====================================================
+   MENU OPTION HOVER
+===================================================== */
+
+.services-menu-item:hover {
+    background: linear-gradient(
+        90deg,
+        #eef7ff,
+        #dceeff
+    );
+
+    color: #0950cd;
+
+    transform: translateX(4px);
+
+    box-shadow:
+        0 5px 15px rgba(9, 80, 205, 0.10);
+}
+
+
+/* =====================================================
+   ACCENT LINE HOVER
+===================================================== */
+
+.services-menu-item:hover::before {
+    height: 65%;
+}
+
+
+/* =====================================================
+   ARROW HOVER
+===================================================== */
+
+.services-menu-item:hover::after {
+    background: #0950cd;
+
+    color: #ffffff;
+
+    transform: translateX(3px);
 }
