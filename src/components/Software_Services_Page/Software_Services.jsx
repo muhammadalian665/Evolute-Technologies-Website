@@ -115,10 +115,6 @@ function Software_Services() {
                 {/* Header */}
                 <div className="software-services-header">
 
-                    <span className="software-services-label">
-                        Our Technology Expertise
-                    </span>
-
                     <h1>
                         Technology & Product Development
                     </h1>
