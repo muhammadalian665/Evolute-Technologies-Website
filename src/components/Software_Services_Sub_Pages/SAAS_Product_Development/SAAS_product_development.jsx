@@ -1,12 +1,21 @@
+import { useNavigate } from "react-router-dom";
+
 import CardSwap, {
     Card,
 } from "./CardSwap";
 
 import "./SAAS_product_development.css";
 
+
 function SAAS_product_development() {
+
+    const navigate = useNavigate();
+
+
     return (
+
         <section className="saas-product-development">
+
 
             {/* =================================================
                HERO CONTENT
@@ -14,39 +23,81 @@ function SAAS_product_development() {
 
             <div className="saas-product-development-content">
 
+
                 <span className="saas-product-development-eyebrow">
+
                     SAAS PRODUCT DEVELOPMENT
+
                 </span>
 
+
                 <h1>
+
                     Build Scalable SaaS
+
                     Products That Grow
+
                     With Your Business
+
                 </h1>
 
+
                 <p>
+
                     We design and develop powerful,
+
                     scalable SaaS products that turn
+
                     complex ideas into reliable,
+
                     high-performing digital platforms.
+
                 </p>
+
 
                 <div className="saas-product-development-buttons">
 
-                    <button type="button">
+
+                    {/* =================================================
+                       START YOUR PROJECT
+                       → CONTACT US
+                    ================================================= */}
+
+                    <button
+                        type="button"
+                        onClick={() =>
+                            navigate("/contact-us")
+                        }
+                    >
+
                         Start Your Project
+
                     </button>
+
+
+                    {/* =================================================
+                       EXPLORE OUR SERVICES
+                       → SOFTWARE SERVICES
+                    ================================================= */}
 
                     <button
                         type="button"
                         className="secondary-button"
+                        onClick={() =>
+                            navigate("/software-services")
+                        }
                     >
+
                         Explore Our Services
+
                     </button>
+
 
                 </div>
 
+
             </div>
+
 
             {/* =================================================
                CARD SWAP
@@ -54,14 +105,23 @@ function SAAS_product_development() {
 
             <div className="saas-product-development-cards">
 
+
                 <CardSwap
+
                     width={500}
+
                     height={400}
+
                     cardDistance={70}
+
                     verticalDistance={70}
+
                     skewAmount={6}
+
                     easing="elastic"
+
                 >
+
 
                     {/* =================================================
                        CARD 01
@@ -90,6 +150,7 @@ function SAAS_product_development() {
 
                     </Card>
 
+
                     {/* =================================================
                        CARD 02
                     ================================================= */}
@@ -116,6 +177,7 @@ function SAAS_product_development() {
                         </div>
 
                     </Card>
+
 
                     {/* =================================================
                        CARD 03
@@ -144,6 +206,7 @@ function SAAS_product_development() {
 
                     </Card>
 
+
                     {/* =================================================
                        CARD 04
                     ================================================= */}
@@ -169,6 +232,7 @@ function SAAS_product_development() {
                         </div>
 
                     </Card>
+
 
                     {/* =================================================
                        CARD 05
@@ -197,6 +261,7 @@ function SAAS_product_development() {
 
                     </Card>
 
+
                     {/* =================================================
                        CARD 06
                     ================================================= */}
@@ -223,6 +288,7 @@ function SAAS_product_development() {
                         </div>
 
                     </Card>
+
 
                     {/* =================================================
                        CARD 07
@@ -251,6 +317,7 @@ function SAAS_product_development() {
 
                     </Card>
 
+
                     {/* =================================================
                        CARD 08
                     ================================================= */}
@@ -277,6 +344,7 @@ function SAAS_product_development() {
                         </div>
 
                     </Card>
+
 
                     {/* =================================================
                        CARD 09
@@ -305,6 +373,7 @@ function SAAS_product_development() {
 
                     </Card>
 
+
                     {/* =================================================
                        CARD 10
                     ================================================= */}
@@ -330,6 +399,7 @@ function SAAS_product_development() {
                         </div>
 
                     </Card>
+
 
                     {/* =================================================
                        CARD 11
@@ -358,6 +428,7 @@ function SAAS_product_development() {
 
                     </Card>
 
+
                     {/* =================================================
                        CARD 12
                     ================================================= */}
@@ -384,12 +455,17 @@ function SAAS_product_development() {
 
                     </Card>
 
+
                 </CardSwap>
+
 
             </div>
 
+
         </section>
+
     );
 }
+
 
 export default SAAS_product_development;
