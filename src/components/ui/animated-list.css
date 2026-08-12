@@ -1,0 +1,59 @@
+/* =====================================================
+   ANIMATED LIST
+===================================================== */
+
+.animated-list {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    gap: 14px;
+
+    overflow: hidden;
+
+    padding: 10px;
+}
+
+
+/* =====================================================
+   LIST ITEM
+===================================================== */
+
+.animated-list-item {
+    width: 100%;
+
+    animation:
+        animated-list-enter 0.6s
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: transform, opacity;
+}
+
+
+/* =====================================================
+   ENTRY ANIMATION
+===================================================== */
+
+@keyframes animated-list-enter {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
