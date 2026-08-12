@@ -1,55 +1,194 @@
 /* =====================================================
-   CONTACT US
+   CONTACT US — FUTURISTIC 3D
 ===================================================== */
 
 .contact-us {
-  width: 100%;
-  min-height: 100vh;
+    position: relative;
 
-  padding: 110px 8% 120px;
+    width: 100%;
+    min-height: 100vh;
 
-  background: #ffffff;
+    padding: 90px 7% 105px;
 
-  color: #111111;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 12% 20%,
+            rgba(60, 210, 249, 0.14),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 88% 60%,
+            rgba(9, 80, 205, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(60, 210, 249, 0.06),
+            transparent 35%
+        ),
+        #07111f;
+
+    color: #ffffff;
+
+    perspective: 1200px;
 }
+
+
+/* =====================================================
+   BACKGROUND GRID
+===================================================== */
+
+.contact-us::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(60, 210, 249, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(60, 210, 249, 0.055) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+}
+
+
+/* =====================================================
+   AMBIENT GLOW
+===================================================== */
+
+.contact-us::after {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: -320px;
+    right: 5%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(60, 210, 249, 0.14);
+
+    filter: blur(120px);
+
+    pointer-events: none;
+}
+
 
 /* =====================================================
    HERO
 ===================================================== */
 
 .contact-us-hero {
-  max-width: 1000px;
+    position: relative;
 
-  margin: 0 auto;
+    z-index: 5;
 
-  text-align: center;
+    max-width: 850px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    margin: 0 auto;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
 }
 
+
 /* =====================================================
-   CONTACT US HEADING
+   CONTACT US LABEL
 ===================================================== */
 
 .contact-us-label {
-  margin-bottom: 30px;
+    position: relative;
 
-  color: #3cd2f9;
+    display: inline-block;
 
-  font-size: 72px;
+    margin-bottom: 18px;
 
-  line-height: 1.05;
+    color: #3cd2f9;
 
-  font-weight: 700;
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            64px
+        );
 
-  text-transform: uppercase;
+    line-height: 0.95;
 
-  letter-spacing: 1px;
+    font-weight: 900;
 
-  text-shadow: 0 0 8px rgba(60, 210, 249, 0.25);
+    letter-spacing: -0.055em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 3px 0 rgba(0, 0, 0, 0.25),
+        0 0 30px rgba(60, 210, 249, 0.30);
 }
+
+
+/* =====================================================
+   LABEL ACCENT
+===================================================== */
+
+.contact-us-label::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 3px;
+
+    margin: 15px auto 0;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0950cd,
+            #3cd2f9
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(60, 210, 249, 0.65);
+}
+
 
 /* =====================================================
    HIDE OLD HERO CONTENT
@@ -57,367 +196,642 @@
 
 .contact-us-hero h1,
 .contact-us-hero p {
-  display: none;
+    display: none;
 }
 
+
 /* =====================================================
-   SCHEDULE CALL BUTTON
+   SCHEDULE BUTTON
 ===================================================== */
 
 .schedule-call-button {
-  display: inline-flex;
+    position: relative;
 
-  align-items: center;
-  justify-content: center;
+    display: inline-flex;
 
-  gap: 16px;
+    align-items: center;
+    justify-content: center;
 
-  padding: 15px 26px;
+    gap: 13px;
 
-  background: #0950cd;
+    margin-top: 3px;
 
-  color: #ffffff;
+    padding: 12px 21px;
 
-  border: 1px solid #0950cd;
+    overflow: hidden;
 
-  border-radius: 4px;
+    background:
+        linear-gradient(
+            135deg,
+            #0950cd,
+            #063b9e
+        );
 
-  text-decoration: none;
+    color: #ffffff;
 
-  font-size: 15px;
+    border:
+        1px solid
+        rgba(60, 210, 249, 0.55);
 
-  font-weight: 600;
+    border-radius: 8px;
 
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 22px
+        rgba(9, 80, 205, 0.30),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
+
 /* =====================================================
-   SCHEDULE CALL ARROW
+   BUTTON SHINE
+===================================================== */
+
+.schedule-call-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.30),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.6s ease;
+}
+
+
+.schedule-call-button:hover::before {
+    left: 140%;
+}
+
+
+.schedule-call-button:hover {
+    transform:
+        translateY(-4px)
+        scale(1.02);
+
+    border-color:
+        rgba(60, 210, 249, 0.9);
+
+    box-shadow:
+        0 16px 35px
+        rgba(9, 80, 205, 0.38),
+
+        0 0 25px
+        rgba(60, 210, 249, 0.20);
+}
+
+
+/* =====================================================
+   SCHEDULE ARROW
 ===================================================== */
 
 .schedule-call-button span {
-  font-size: 19px;
+    font-size: 17px;
 
-  line-height: 1;
+    line-height: 1;
 
-  transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 }
 
-/* =====================================================
-   SCHEDULE CALL HOVER
-===================================================== */
-
-.schedule-call-button:hover {
-  background: #3cd2f9;
-
-  border-color: #3cd2f9;
-
-  transform: translateY(-3px);
-
-  box-shadow: 0 10px 30px rgba(60, 210, 249, 0.3);
-}
 
 .schedule-call-button:hover span {
-  transform: translateX(5px);
+    transform:
+        translateX(5px);
 }
+
 
 /* =====================================================
    FORM WRAPPER
+   KEEP WHITE
 ===================================================== */
 
 .contact-form-wrapper {
-  max-width: 900px;
+    position: relative;
 
-  margin: 100px auto 0;
+    z-index: 5;
 
-  padding: 55px;
+    width: 100%;
 
-  /* Subtle light blue background */
-  background: #f5fbff;
+    max-width: 900px;
 
-  border: 4px solid #3cd2f9;
+    margin: 65px auto 0;
 
-  border-radius: 8px;
+    padding: 38px 42px;
 
-  box-shadow:
-    0 0 12px rgba(60, 210, 249, 0.25),
-    0 0 35px rgba(60, 210, 249, 0.08);
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7fbff
+        );
 
-  transition:
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    border:
+        1px solid
+        rgba(60, 210, 249, 0.25);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 65px
+        rgba(0, 0, 0, 0.28),
+
+        0 0 35px
+        rgba(60, 210, 249, 0.08),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 1);
+
+    transform:
+        translateZ(0);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
+
 /* =====================================================
-   FORM HOVER
+   FORM 3D HOVER
 ===================================================== */
 
 .contact-form-wrapper:hover {
-  border-color: #0950cd;
+    transform:
+        translateY(-5px)
+        rotateX(0.5deg);
 
-  box-shadow:
-    0 0 15px rgba(9, 80, 205, 0.35),
-    0 0 40px rgba(60, 210, 249, 0.18);
+    border-color:
+        rgba(60, 210, 249, 0.45);
+
+    box-shadow:
+        0 35px 85px
+        rgba(0, 0, 0, 0.32),
+
+        0 0 40px
+        rgba(60, 210, 249, 0.12),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 1);
 }
+
 
 /* =====================================================
-   FORM ACTIVE / FOCUS STATE
-   Changes outer border while filling form
+   TOP NEON EDGE
 ===================================================== */
 
-.contact-form-wrapper:focus-within {
-  border-color: #0950cd;
+.contact-form-wrapper::before {
+    content: "";
 
-  box-shadow:
-    0 0 12px rgba(9, 80, 205, 0.45),
-    0 0 35px rgba(60, 210, 249, 0.25),
-    0 0 70px rgba(60, 210, 249, 0.12);
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+
+    width: 76%;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #3cd2f9,
+            #0950cd,
+            #3cd2f9,
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(60, 210, 249, 0.55);
 }
+
+
+/* =====================================================
+   CORNER GLOW
+===================================================== */
+
+.contact-form-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    right: -100px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(60, 210, 249, 0.10);
+
+    filter: blur(45px);
+
+    pointer-events: none;
+}
+
 
 /* =====================================================
    FORM HEADER
 ===================================================== */
 
 .contact-form-header {
-  margin-bottom: 40px;
+    position: relative;
+
+    margin-bottom: 28px;
 }
+
 
 .contact-form-header span {
-  color: #0950cd;
+    display: inline-flex;
 
-  font-size: 14px;
+    align-items: center;
 
-  font-weight: 600;
+    gap: 7px;
 
-  text-transform: uppercase;
+    color: #0950cd;
 
-  letter-spacing: 1px;
+    font-size: 10px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.18em;
 }
+
+
+.contact-form-header span::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #3cd2f9;
+
+    box-shadow:
+        0 0 10px
+        rgba(60, 210, 249, 0.8);
+}
+
 
 .contact-form-header h2 {
-  margin: 10px 0 8px;
+    margin: 9px 0 6px;
 
-  font-size: 36px;
+    font-size:
+        clamp(
+            26px,
+            3vw,
+            36px
+        );
 
-  line-height: 1.2;
+    line-height: 1.1;
 
-  color: #111111;
+    font-weight: 850;
+
+    letter-spacing: -0.045em;
+
+    color: #101827;
 }
+
 
 .contact-form-header p {
-  margin: 0;
+    margin: 0;
 
-  font-size: 16px;
+    font-size: 13px;
 
-  color: #666666;
+    line-height: 1.6;
+
+    color: #718096;
 }
 
+
 /* =====================================================
-   FORM
+   FORM GRID
 ===================================================== */
 
 .contact-form {
-  display: grid;
+    display: grid;
 
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
-  gap: 25px;
+    gap: 18px;
 }
+
 
 /* =====================================================
    FORM GROUP
 ===================================================== */
 
 .form-group {
-  display: flex;
+    display: flex;
 
-  flex-direction: column;
+    flex-direction: column;
 
-  gap: 9px;
+    gap: 7px;
 }
+
 
 .form-group.full-width {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
 }
+
 
 /* =====================================================
    LABEL
 ===================================================== */
 
 .form-group label {
-  font-size: 14px;
+    font-size: 11px;
 
-  font-weight: 600;
+    font-weight: 800;
 
-  color: #222222;
+    color: #243044;
+
+    letter-spacing: 0.02em;
 }
 
+
 /* =====================================================
-   INPUT / SELECT / TEXTAREA
+   INPUTS
 ===================================================== */
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 100%;
+    width: 100%;
 
-  padding: 14px 15px;
+    box-sizing: border-box;
 
-  background: #ffffff;
+    padding: 12px 13px;
 
-  color: #222222;
+    background:
+        rgba(255, 255, 255, 0.90);
 
-  border: 1px solid #d8d8d8;
+    color: #172033;
 
-  border-radius: 4px;
+    border:
+        1px solid
+        #dce5ef;
 
-  outline: none;
+    border-radius: 8px;
 
-  font-family: inherit;
+    outline: none;
 
-  font-size: 14px;
+    font-family: inherit;
 
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    font-size: 13px;
+
+    box-shadow:
+        inset 0 1px 3px
+        rgba(9, 80, 205, 0.025);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
 }
 
+
 /* =====================================================
-   INPUT FOCUS
+   PLACEHOLDER
+===================================================== */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a2adbb;
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FOCUS
 ===================================================== */
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: #3cd2f9;
+    background: #ffffff;
 
-  box-shadow: 0 0 0 3px rgba(60, 210, 249, 0.12);
+    border-color:
+        #3cd2f9;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(60, 210, 249, 0.10),
+
+        0 7px 20px
+        rgba(9, 80, 205, 0.08);
 }
+
 
 /* =====================================================
    TEXTAREA
 ===================================================== */
 
 .form-group textarea {
-  resize: vertical;
+    min-height: 110px;
 
-  min-height: 140px;
+    resize: vertical;
+
+    line-height: 1.5;
 }
+
 
 /* =====================================================
    TERMS
 ===================================================== */
 
 .terms-checkbox {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
 
-  display: flex;
+    display: flex;
 
-  align-items: flex-start;
+    align-items: flex-start;
 
-  gap: 10px;
+    gap: 9px;
 
-  margin-top: 5px;
+    margin-top: 2px;
 }
+
 
 .terms-checkbox input {
-  width: 16px;
+    width: 15px;
+    height: 15px;
 
-  height: 16px;
+    margin-top: 1px;
 
-  margin-top: 2px;
+    accent-color: #0950cd;
 
-  accent-color: #0950cd;
-
-  cursor: pointer;
+    cursor: pointer;
 }
+
 
 .terms-checkbox label {
-  font-size: 13px;
+    font-size: 11px;
 
-  line-height: 1.5;
+    line-height: 1.5;
 
-  color: #666666;
+    color: #718096;
 }
+
 
 .terms-checkbox a {
-  color: #0950cd;
+    color: #0950cd;
 
-  font-weight: 600;
+    font-weight: 700;
 
-  text-decoration: underline;
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
 }
+
+
+.terms-checkbox a:hover {
+    color: #3cd2f9;
+}
+
 
 /* =====================================================
    SUBMIT BUTTON
 ===================================================== */
 
 .submit-button {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
 
-  width: max-content;
+    width: max-content;
 
-  display: inline-flex;
+    min-width: 140px;
 
-  align-items: center;
-  justify-content: center;
+    display: inline-flex;
 
-  gap: 16px;
+    align-items: center;
 
-  padding: 14px 25px;
+    justify-content: center;
 
-  background: #0950cd;
+    gap: 13px;
 
-  color: #ffffff;
+    padding: 12px 20px;
 
-  border: 1px solid #0950cd;
+    background:
+        linear-gradient(
+            135deg,
+            #0950cd,
+            #063b9e
+        );
 
-  border-radius: 4px;
+    color: #ffffff;
 
-  cursor: pointer;
+    border:
+        1px solid
+        rgba(60, 210, 249, 0.45);
 
-  font-family: inherit;
+    border-radius: 8px;
 
-  font-size: 15px;
+    cursor: pointer;
 
-  font-weight: 600;
+    font-family: inherit;
 
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    font-size: 13px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 25px
+        rgba(9, 80, 205, 0.20),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.submit-button span {
-  font-size: 19px;
-
-  transition: transform 0.3s ease;
-}
 
 .submit-button:hover:not(:disabled) {
-  background: #3cd2f9;
+    transform:
+        translateY(-3px);
 
-  border-color: #3cd2f9;
+    border-color:
+        #3cd2f9;
 
-  transform: translateY(-3px);
+    box-shadow:
+        0 16px 32px
+        rgba(9, 80, 205, 0.28),
 
-  box-shadow: 0 10px 25px rgba(60, 210, 249, 0.3);
+        0 0 22px
+        rgba(60, 210, 249, 0.14);
 }
+
+
+.submit-button span {
+    font-size: 17px;
+
+    transition:
+        transform 0.3s ease;
+}
+
 
 .submit-button:hover:not(:disabled) span {
-  transform: translateX(5px);
+    transform:
+        translateX(5px);
 }
+
 
 .submit-button:disabled {
-  opacity: 0.7;
+    opacity: 0.6;
 
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
+
 
 /* =====================================================
    STATUS
@@ -425,85 +839,141 @@
 
 .form-status,
 .form-success {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
 
-  margin: 0;
+    margin: -2px 0 0;
 
-  font-size: 14px;
+    padding: 10px 13px;
 
-  font-weight: 600;
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: 700;
 }
+
 
 .form-status {
-  color: #d9534f;
+    color: #b42318;
+
+    background:
+        rgba(217, 83, 79, 0.06);
+
+    border:
+        1px solid
+        rgba(217, 83, 79, 0.12);
 }
 
+
 .form-success {
-  color: #16833b;
+    color: #16833b;
+
+    background:
+        rgba(22, 131, 59, 0.06);
+
+    border:
+        1px solid
+        rgba(22, 131, 59, 0.12);
 }
+
 
 /* =====================================================
    TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
-  .contact-us {
-    padding: 90px 6% 100px;
-  }
 
-  .contact-us-label {
-    font-size: 58px;
-  }
+    .contact-us {
+        padding:
+            85px 6% 95px;
+    }
 
-  .contact-form-wrapper {
-    margin-top: 80px;
+    .contact-form-wrapper {
+        max-width: 850px;
 
-    padding: 45px;
-  }
+        padding:
+            34px;
+    }
 }
+
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
 @media (max-width: 650px) {
-  .contact-us {
-    padding: 70px 6% 80px;
-  }
 
-  .contact-us-label {
-    font-size: 42px;
+    .contact-us {
+        padding:
+            70px 18px 80px;
+    }
 
-    margin-bottom: 25px;
-  }
+    .contact-us-label {
+        font-size:
+            clamp(
+                38px,
+                12vw,
+                54px
+            );
+    }
 
-  .contact-form-wrapper {
-    margin-top: 60px;
+    .schedule-call-button {
+        padding:
+            12px 20px;
 
-    padding: 30px 22px;
-  }
+        font-size: 12px;
+    }
 
-  .contact-form-header h2 {
-    font-size: 29px;
-  }
+    .contact-form-wrapper {
+        margin-top: 50px;
 
-  .contact-form {
-    grid-template-columns: 1fr;
+        padding:
+            28px 20px;
 
-    gap: 22px;
-  }
+        border-radius: 16px;
+    }
 
-  .form-group.full-width {
-    grid-column: auto;
-  }
+    .contact-form {
+        grid-template-columns:
+            1fr;
 
-  .terms-checkbox {
-    grid-column: auto;
-  }
+        gap: 17px;
+    }
 
-  .submit-button {
-    grid-column: auto;
+    .form-group.full-width {
+        grid-column: auto;
+    }
 
-    width: 100%;
-  }
+    .terms-checkbox {
+        grid-column: auto;
+    }
+
+    .submit-button {
+        grid-column: auto;
+
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .contact-us {
+        padding-left: 14px;
+
+        padding-right: 14px;
+    }
+
+    .contact-form-wrapper {
+        padding:
+            25px 17px;
+    }
+
+    .contact-form-header h2 {
+        font-size: 25px;
+    }
 }
