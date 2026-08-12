@@ -1,0 +1,173 @@
+/* =====================================================
+   CIRCULAR GALLERY
+===================================================== */
+
+.circular-gallery {
+    position: relative;
+
+    width: 100%;
+    height: 680px;
+
+    overflow: hidden;
+
+    cursor: grab;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    touch-action: pan-y;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(60, 210, 249, 0.16),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(9, 80, 205, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #071426 0%,
+            #0a1d35 50%,
+            #071426 100%
+        );
+}
+
+
+/* =====================================================
+   SUBTLE CENTER GLOW
+===================================================== */
+
+.circular-gallery::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 520px;
+    height: 520px;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.08) 0%,
+            rgba(9, 80, 205, 0.04) 35%,
+            transparent 70%
+        );
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   SUBTLE BORDER
+===================================================== */
+
+.circular-gallery::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border: 1px solid rgba(60, 210, 249, 0.08);
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   ACTIVE / DRAGGING
+===================================================== */
+
+.circular-gallery:active {
+    cursor: grabbing;
+}
+
+
+/* =====================================================
+   CANVAS
+===================================================== */
+
+.circular-gallery canvas {
+    position: relative;
+
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+.circular-gallery:focus-visible {
+    outline: 2px solid #3cd2f9;
+
+    outline-offset: 4px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .circular-gallery {
+        width: 100%;
+
+        height: 520px;
+
+        min-height: 400px;
+    }
+
+    .circular-gallery::before {
+        width: 380px;
+        height: 380px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .circular-gallery {
+        width: 100%;
+
+        height: 440px;
+
+        min-height: 350px;
+    }
+
+    .circular-gallery::before {
+        width: 280px;
+        height: 280px;
+    }
+
+}
