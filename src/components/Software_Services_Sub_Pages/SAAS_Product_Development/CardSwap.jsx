@@ -14,6 +14,68 @@ import gsap from "gsap";
 
 import "./CardSwap.css";
 
+
+/* =====================================================
+   SAAS CARD IMAGES
+===================================================== */
+
+import APIEncryption
+    from "../../../assets/SAAS_Card_Images/API_Encryption.png";
+
+import BusinessWorkflowAutomation
+    from "../../../assets/SAAS_Card_Images/Business_workflow_automation.png";
+
+import CloudNativeArchitecture
+    from "../../../assets/SAAS_Card_Images/Cloud_Native_Architecture.png";
+
+import ConnectedApps
+    from "../../../assets/SAAS_Card_Images/Connected aps.png";
+
+import ContinuousUpdates
+    from "../../../assets/SAAS_Card_Images/Continuous_updates.png";
+
+import DataSecurityEncryption
+    from "../../../assets/SAAS_Card_Images/Data_Security_Encryption.png";
+
+import HighAvailability
+    from "../../../assets/SAAS_Card_Images/High_Availability.png";
+
+import MultiTenantArchitecture
+    from "../../../assets/SAAS_Card_Images/Multi_Tenant_Architecture.png";
+
+import RealTimeAnalyticsDashboard
+    from "../../../assets/SAAS_Card_Images/Real_Time_Analytics_Dashboard.png";
+
+import ScalableCloudInfrastructure
+    from "../../../assets/SAAS_Card_Images/Scalable_cloud_infrastructure.png";
+
+import SubscriptionBillingDashboard
+    from "../../../assets/SAAS_Card_Images/Subscription_billing_dashboard.png";
+
+import UserAccessManagement
+    from "../../../assets/SAAS_Card_Images/User_access_management.png";
+
+
+/* =====================================================
+   CARD IMAGES ARRAY
+===================================================== */
+
+const cardImages = [
+    APIEncryption,
+    BusinessWorkflowAutomation,
+    CloudNativeArchitecture,
+    ConnectedApps,
+    ContinuousUpdates,
+    DataSecurityEncryption,
+    HighAvailability,
+    MultiTenantArchitecture,
+    RealTimeAnalyticsDashboard,
+    ScalableCloudInfrastructure,
+    SubscriptionBillingDashboard,
+    UserAccessManagement,
+];
+
+
 /* =====================================================
    CARD
 ===================================================== */
@@ -27,17 +89,22 @@ export const Card = forwardRef(
         },
         ref
     ) => {
+
         return (
             <div
                 ref={ref}
                 {...rest}
-                className={`card ${customClass} ${className}`.trim()}
+                className={
+                    `card ${customClass} ${className}`.trim()
+                }
             />
         );
+
     }
 );
 
 Card.displayName = "Card";
+
 
 /* =====================================================
    CARD SLOT
@@ -49,7 +116,9 @@ const makeSlot = (
     verticalDistance,
     total
 ) => {
+
     return {
+
         x:
             index *
             cardDistance,
@@ -66,7 +135,9 @@ const makeSlot = (
         zIndex:
             total - index,
     };
+
 };
+
 
 /* =====================================================
    PLACE CARD
@@ -77,6 +148,7 @@ const placeCard = (
     slot,
     skewAmount
 ) => {
+
     if (!element) {
         return;
     }
@@ -84,17 +156,23 @@ const placeCard = (
     gsap.set(
         element,
         {
-            x: slot.x,
+            x:
+                slot.x,
 
-            y: slot.y,
+            y:
+                slot.y,
 
-            z: slot.z,
+            z:
+                slot.z,
 
-            xPercent: -50,
+            xPercent:
+                -50,
 
-            yPercent: -50,
+            yPercent:
+                -50,
 
-            skewY: skewAmount,
+            skewY:
+                skewAmount,
 
             transformOrigin:
                 "center center",
@@ -102,19 +180,23 @@ const placeCard = (
             zIndex:
                 slot.zIndex,
 
-            force3D: true,
+            force3D:
+                true,
         }
     );
+
 };
+
 
 /* =====================================================
    CARD SWAP
 ===================================================== */
 
 const CardSwap = ({
-    width = 500,
 
-    height = 400,
+    width = 560,
+
+    height = 440,
 
     cardDistance = 60,
 
@@ -129,7 +211,9 @@ const CardSwap = ({
     easing = "elastic",
 
     children,
+
 }) => {
+
 
     /* =================================================
        ANIMATION CONFIG
@@ -143,7 +227,9 @@ const CardSwap = ({
                     easing ===
                     "elastic"
                 ) {
+
                     return {
+
                         ease:
                             "elastic.out(0.6,0.9)",
 
@@ -162,9 +248,11 @@ const CardSwap = ({
                         returnDelay:
                             0.05,
                     };
+
                 }
 
                 return {
+
                     ease:
                         "power1.inOut",
 
@@ -183,6 +271,7 @@ const CardSwap = ({
                     returnDelay:
                         0.2,
                 };
+
             },
             [easing]
         );
@@ -212,11 +301,6 @@ const CardSwap = ({
 
     /* =================================================
        CARD REFS
-
-       Refs are created once per card count.
-
-       We NEVER access .current
-       during render.
     ================================================= */
 
     const cardRefs =
@@ -353,9 +437,11 @@ const CardSwap = ({
                         if (
                             element
                         ) {
+
                             gsap.killTweensOf(
                                 element
                             );
+
                         }
 
                     }
@@ -807,6 +893,17 @@ const CardSwap = ({
                     child.props.onClick;
 
 
+                /* ---------------------------------
+                   GET IMAGE
+                --------------------------------- */
+
+                const image =
+                    cardImages[
+                        index %
+                        cardImages.length
+                    ];
+
+
                 return (
                     <div
                         key={
@@ -852,6 +949,12 @@ const CardSwap = ({
 
                             transformOrigin:
                                 "center center",
+
+                            overflow:
+                                "hidden",
+
+                            borderRadius:
+                                "24px",
                         }}
 
                         onClick={
@@ -873,38 +976,91 @@ const CardSwap = ({
                         }
                     >
 
-                        {cloneElement(
-                            child,
-                            {
-                                style: {
-                                    width:
-                                        "100%",
+                        {/* =================================
+                           IMAGE
+                        ================================= */}
 
-                                    height:
-                                        "100%",
-
-                                    minWidth:
-                                        "100%",
-
-                                    minHeight:
-                                        "100%",
-
-                                    boxSizing:
-                                        "border-box",
-
-                                    display:
-                                        "block",
-
-                                    ...(child
-                                        .props
-                                        .style ??
-                                        {}),
-                                },
+                        <img
+                            src={
+                                image
                             }
-                        )}
+
+                            alt={
+                                `SaaS feature ${index + 1}`
+                            }
+
+                            className="card-swap-image"
+
+                            draggable={
+                                false
+                            }
+                        />
+
+
+                        {/* =================================
+                           DARK OVERLAY
+                        ================================= */}
+
+                        <div
+                            className="card-swap-overlay"
+                        />
+
+
+                        {/* =================================
+                           CARD CONTENT
+                        ================================= */}
+
+                        <div
+                            className="card-swap-content"
+                        >
+
+                            {cloneElement(
+                                child,
+                                {
+                                    style: {
+                                        width:
+                                            "100%",
+
+                                        height:
+                                            "100%",
+
+                                        minWidth:
+                                            "100%",
+
+                                        minHeight:
+                                            "100%",
+
+                                        boxSizing:
+                                            "border-box",
+
+                                        display:
+                                            "block",
+
+                                        position:
+                                            "relative",
+
+                                        zIndex:
+                                            "3",
+
+                                        background:
+                                            "transparent",
+
+                                        backgroundColor:
+                                            "transparent",
+
+                                        ...(child
+                                            .props
+                                            .style ??
+                                            {}),
+                                    },
+                                }
+                            )}
+
+                        </div>
 
                     </div>
                 );
+
             }
         );
 
@@ -946,6 +1102,8 @@ const CardSwap = ({
 
         </div>
     );
+
 };
+
 
 export default CardSwap;
