@@ -1,8 +1,10 @@
-import React, {
+import {
     Children,
     cloneElement,
+    createRef,
     forwardRef,
     isValidElement,
+    useCallback,
     useEffect,
     useMemo,
     useRef,
@@ -17,15 +19,22 @@ import "./CardSwap.css";
 ===================================================== */
 
 export const Card = forwardRef(
-    ({ customClass, ...rest }, ref) => (
-        <div
-            ref={ref}
-            {...rest}
-            className={`card ${customClass ?? ""} ${
-                rest.className ?? ""
-            }`.trim()}
-        />
-    )
+    (
+        {
+            customClass = "",
+            className = "",
+            ...rest
+        },
+        ref
+    ) => {
+        return (
+            <div
+                ref={ref}
+                {...rest}
+                className={`card ${customClass} ${className}`.trim()}
+            />
+        );
+    }
 );
 
 Card.displayName = "Card";
@@ -35,44 +44,68 @@ Card.displayName = "Card";
 ===================================================== */
 
 const makeSlot = (
-    i,
-    distX,
-    distY,
+    index,
+    cardDistance,
+    verticalDistance,
     total
-) => ({
-    x: i * distX,
-    y: -i * distY,
-    z: -i * distX * 1.5,
-    zIndex: total - i,
-});
+) => {
+    return {
+        x:
+            index *
+            cardDistance,
 
-/* =====================================================
-   INITIAL CARD POSITION
-===================================================== */
+        y:
+            -index *
+            verticalDistance,
 
-const placeNow = (
-    el,
-    slot,
-    skew
-) =>
-    gsap.set(el, {
-        x: slot.x,
-        y: slot.y,
-        z: slot.z,
-
-        xPercent: -50,
-        yPercent: -50,
-
-        skewY: skew,
-
-        transformOrigin:
-            "center center",
+        z:
+            -index *
+            cardDistance *
+            1.5,
 
         zIndex:
-            slot.zIndex,
+            total - index,
+    };
+};
 
-        force3D: true,
-    });
+/* =====================================================
+   PLACE CARD
+===================================================== */
+
+const placeCard = (
+    element,
+    slot,
+    skewAmount
+) => {
+    if (!element) {
+        return;
+    }
+
+    gsap.set(
+        element,
+        {
+            x: slot.x,
+
+            y: slot.y,
+
+            z: slot.z,
+
+            xPercent: -50,
+
+            yPercent: -50,
+
+            skewY: skewAmount,
+
+            transformOrigin:
+                "center center",
+
+            zIndex:
+                slot.zIndex,
+
+            force3D: true,
+        }
+    );
+};
 
 /* =====================================================
    CARD SWAP
@@ -80,12 +113,12 @@ const placeNow = (
 
 const CardSwap = ({
     width = 500,
+
     height = 400,
 
     cardDistance = 60,
-    verticalDistance = 70,
 
-    delay = 5000,
+    verticalDistance = 70,
 
     pauseOnHover = false,
 
@@ -97,415 +130,784 @@ const CardSwap = ({
 
     children,
 }) => {
+
     /* =================================================
        ANIMATION CONFIG
     ================================================= */
 
     const config =
-        easing === "elastic"
-            ? {
-                  ease:
-                      "elastic.out(0.6,0.9)",
+        useMemo(
+            () => {
 
-                  durDrop: 2,
+                if (
+                    easing ===
+                    "elastic"
+                ) {
+                    return {
+                        ease:
+                            "elastic.out(0.6,0.9)",
 
-                  durMove: 2,
+                        durDrop:
+                            1.2,
 
-                  durReturn: 2,
+                        durMove:
+                            1.2,
 
-                  promoteOverlap: 0.9,
+                        durReturn:
+                            1.2,
 
-                  returnDelay: 0.05,
-              }
-            : {
-                  ease:
-                      "power1.inOut",
+                        promoteOverlap:
+                            0.8,
 
-                  durDrop: 0.8,
+                        returnDelay:
+                            0.05,
+                    };
+                }
 
-                  durMove: 0.8,
+                return {
+                    ease:
+                        "power1.inOut",
 
-                  durReturn: 0.8,
+                    durDrop:
+                        0.8,
 
-                  promoteOverlap: 0.45,
+                    durMove:
+                        0.8,
 
-                  returnDelay: 0.2,
-              };
+                    durReturn:
+                        0.8,
+
+                    promoteOverlap:
+                        0.45,
+
+                    returnDelay:
+                        0.2,
+                };
+            },
+            [easing]
+        );
+
 
     /* =================================================
        CHILDREN
     ================================================= */
 
-    const childArr = useMemo(
-        () =>
-            Children.toArray(
-                children
-            ),
-        [children]
-    );
-
-    /* =================================================
-       REFS
-    ================================================= */
-
-    const refs = useMemo(
-        () =>
-            childArr.map(() =>
-                React.createRef()
-            ),
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [childArr.length]
-    );
-
-    /* =================================================
-       ORDER
-    ================================================= */
-
-    const order = useRef(
-        Array.from(
-            {
-                length:
-                    childArr.length,
-            },
-            (_, i) => i
-        )
-    );
-
-    const tlRef = useRef(null);
-
-    const intervalRef =
-        useRef(null);
-
-    const container =
-        useRef(null);
-
-    /* =================================================
-       SWAP EFFECT
-    ================================================= */
-
-    useEffect(() => {
-        const total = refs.length;
-
-        if (total === 0) {
-            return;
-        }
-
-        /* ---------------------------------------------
-           INITIAL POSITIONS
-        --------------------------------------------- */
-
-        refs.forEach(
-            (ref, index) => {
-                if (!ref.current) {
-                    return;
-                }
-
-                placeNow(
-                    ref.current,
-                    makeSlot(
-                        index,
-                        cardDistance,
-                        verticalDistance,
-                        total
-                    ),
-                    skewAmount
-                );
-            }
+    const cardArray =
+        useMemo(
+            () =>
+                Children.toArray(
+                    children
+                ),
+            [children]
         );
 
-        /* ---------------------------------------------
-           SWAP FUNCTION
-        --------------------------------------------- */
 
-        const swap = () => {
+    /* =================================================
+       CARD COUNT
+    ================================================= */
+
+    const cardCount =
+        cardArray.length;
+
+
+    /* =================================================
+       CARD REFS
+
+       Refs are created once per card count.
+
+       We NEVER access .current
+       during render.
+    ================================================= */
+
+    const cardRefs =
+        useMemo(
+            () =>
+                Array.from(
+                    {
+                        length:
+                            cardCount,
+                    },
+                    () =>
+                        createRef()
+                ),
+            [cardCount]
+        );
+
+
+    /* =================================================
+       CARD ORDER
+    ================================================= */
+
+    const orderRef =
+        useRef([]);
+
+
+    /* =================================================
+       CONTAINER REF
+    ================================================= */
+
+    const containerRef =
+        useRef(null);
+
+
+    /* =================================================
+       TIMELINE REF
+    ================================================= */
+
+    const timelineRef =
+        useRef(null);
+
+
+    /* =================================================
+       INITIALIZE CARD ORDER
+    ================================================= */
+
+    useEffect(
+        () => {
+
+            orderRef.current =
+                Array.from(
+                    {
+                        length:
+                            cardCount,
+                    },
+                    (
+                        _,
+                        index
+                    ) =>
+                        index
+                );
+
+        },
+        [cardCount]
+    );
+
+
+    /* =================================================
+       INITIAL CARD POSITIONS
+    ================================================= */
+
+    useEffect(
+        () => {
+
+            const total =
+                cardRefs.length;
+
             if (
-                order.current.length <
-                2
+                total === 0
             ) {
                 return;
             }
 
-            const [
-                front,
-                ...rest
-            ] = order.current;
 
-            const elFront =
-                refs[front].current;
+            cardRefs.forEach(
+                (
+                    cardRef,
+                    index
+                ) => {
 
-            if (!elFront) {
-                return;
-            }
+                    const element =
+                        cardRef.current;
 
-            const tl =
-                gsap.timeline();
-
-            tlRef.current = tl;
-
-            /* -----------------------------------------
-               DROP FRONT CARD
-            ----------------------------------------- */
-
-            tl.to(elFront, {
-                y: "+=500",
-
-                duration:
-                    config.durDrop,
-
-                ease:
-                    config.ease,
-            });
-
-            /* -----------------------------------------
-               PROMOTE CARDS
-            ----------------------------------------- */
-
-            tl.addLabel(
-                "promote",
-                `-=${
-                    config.durDrop *
-                    config.promoteOverlap
-                }`
-            );
-
-            rest.forEach(
-                (index, i) => {
-                    const el =
-                        refs[index]
-                            .current;
-
-                    if (!el) {
+                    if (
+                        !element
+                    ) {
                         return;
                     }
 
+
                     const slot =
                         makeSlot(
-                            i,
+                            index,
+
                             cardDistance,
+
                             verticalDistance,
+
                             total
                         );
 
-                    tl.set(
-                        el,
-                        {
-                            zIndex:
-                                slot.zIndex,
-                        },
-                        "promote"
+
+                    placeCard(
+                        element,
+
+                        slot,
+
+                        skewAmount
                     );
 
-                    tl.to(
-                        el,
-                        {
-                            x: slot.x,
-                            y: slot.y,
-                            z: slot.z,
-
-                            duration:
-                                config.durMove,
-
-                            ease:
-                                config.ease,
-                        },
-                        `promote+=${i * 0.15}`
-                    );
                 }
             );
 
-            /* -----------------------------------------
-               RETURN FRONT CARD TO BACK
-            ----------------------------------------- */
-
-            const backSlot =
-                makeSlot(
-                    total - 1,
-                    cardDistance,
-                    verticalDistance,
-                    total
-                );
-
-            tl.addLabel(
-                "return",
-                `promote+=${config.durMove * config.returnDelay}`
-            );
-
-            tl.call(
-                () => {
-                    gsap.set(
-                        elFront,
-                        {
-                            zIndex:
-                                backSlot.zIndex,
-                        }
-                    );
-                },
-                undefined,
-                "return"
-            );
-
-            tl.to(
-                elFront,
-                {
-                    x: backSlot.x,
-
-                    y: backSlot.y,
-
-                    z: backSlot.z,
-
-                    duration:
-                        config.durReturn,
-
-                    ease:
-                        config.ease,
-                },
-                "return"
-            );
-
-            /* -----------------------------------------
-               UPDATE ORDER
-            ----------------------------------------- */
-
-            tl.call(() => {
-                order.current = [
-                    ...rest,
-                    front,
-                ];
-            });
-        };
-
-        /* =================================================
-           FIRST SWAP
-        ================================================= */
-
-        swap();
-
-        /* =================================================
-           AUTO SWAP
-        ================================================= */
-
-        intervalRef.current =
-            window.setInterval(
-                swap,
-                delay
-            );
-
-        /* =================================================
-           PAUSE ON HOVER
-        ================================================= */
-
-        if (pauseOnHover) {
-            const node =
-                container.current;
-
-            const pause = () => {
-                tlRef.current?.pause();
-
-                clearInterval(
-                    intervalRef.current
-                );
-            };
-
-            const resume = () => {
-                tlRef.current?.play();
-
-                intervalRef.current =
-                    window.setInterval(
-                        swap,
-                        delay
-                    );
-            };
-
-            node?.addEventListener(
-                "mouseenter",
-                pause
-            );
-
-            node?.addEventListener(
-                "mouseleave",
-                resume
-            );
 
             return () => {
-                node?.removeEventListener(
-                    "mouseenter",
-                    pause
+
+                cardRefs.forEach(
+                    (
+                        cardRef
+                    ) => {
+
+                        const element =
+                            cardRef.current;
+
+                        if (
+                            element
+                        ) {
+                            gsap.killTweensOf(
+                                element
+                            );
+                        }
+
+                    }
                 );
 
-                node?.removeEventListener(
-                    "mouseleave",
-                    resume
-                );
-
-                clearInterval(
-                    intervalRef.current
-                );
-
-                tlRef.current?.kill();
             };
-        }
 
-        return () => {
-            clearInterval(
-                intervalRef.current
+        },
+        [
+            cardRefs,
+            cardDistance,
+            verticalDistance,
+            skewAmount,
+        ]
+    );
+
+
+    /* =================================================
+       SWAP CARDS
+    ================================================= */
+
+    const swapCards =
+        useCallback(
+            () => {
+
+                const currentOrder =
+                    orderRef.current;
+
+
+                if (
+                    currentOrder.length <
+                    2
+                ) {
+                    return;
+                }
+
+
+                /* ---------------------------------
+                   PREVENT DOUBLE CLICK
+                --------------------------------- */
+
+                if (
+                    timelineRef.current &&
+                    timelineRef.current.isActive()
+                ) {
+                    return;
+                }
+
+
+                /* ---------------------------------
+                   FRONT CARD
+                --------------------------------- */
+
+                const [
+                    frontIndex,
+                    ...remainingIndexes
+                ] =
+                    currentOrder;
+
+
+                const frontRef =
+                    cardRefs[
+                        frontIndex
+                    ];
+
+
+                const frontElement =
+                    frontRef?.current;
+
+
+                if (
+                    !frontElement
+                ) {
+                    return;
+                }
+
+
+                const total =
+                    cardRefs.length;
+
+
+                /* ---------------------------------
+                   CREATE TIMELINE
+                --------------------------------- */
+
+                const timeline =
+                    gsap.timeline();
+
+
+                timelineRef.current =
+                    timeline;
+
+
+                /* ---------------------------------
+                   DROP FRONT CARD
+                --------------------------------- */
+
+                timeline.to(
+                    frontElement,
+                    {
+                        y:
+                            "+=500",
+
+                        duration:
+                            config.durDrop,
+
+                        ease:
+                            config.ease,
+                    }
+                );
+
+
+                /* ---------------------------------
+                   PROMOTE LABEL
+                --------------------------------- */
+
+                timeline.addLabel(
+                    "promote",
+
+                    `-=${
+                        config.durDrop *
+                        config.promoteOverlap
+                    }`
+                );
+
+
+                /* ---------------------------------
+                   PROMOTE REMAINING CARDS
+                --------------------------------- */
+
+                remainingIndexes.forEach(
+                    (
+                        cardIndex,
+                        position
+                    ) => {
+
+                        const ref =
+                            cardRefs[
+                                cardIndex
+                            ];
+
+
+                        const element =
+                            ref?.current;
+
+
+                        if (
+                            !element
+                        ) {
+                            return;
+                        }
+
+
+                        const slot =
+                            makeSlot(
+                                position,
+
+                                cardDistance,
+
+                                verticalDistance,
+
+                                total
+                            );
+
+
+                        /* -------------------------
+                           Z INDEX
+                        ------------------------- */
+
+                        timeline.set(
+                            element,
+                            {
+                                zIndex:
+                                    slot.zIndex,
+                            },
+                            "promote"
+                        );
+
+
+                        /* -------------------------
+                           MOVE CARD
+                        ------------------------- */
+
+                        timeline.to(
+                            element,
+                            {
+                                x:
+                                    slot.x,
+
+                                y:
+                                    slot.y,
+
+                                z:
+                                    slot.z,
+
+                                duration:
+                                    config.durMove,
+
+                                ease:
+                                    config.ease,
+                            },
+
+                            `promote+=${position * 0.12}`
+                        );
+
+                    }
+                );
+
+
+                /* ---------------------------------
+                   BACK SLOT
+                --------------------------------- */
+
+                const backSlot =
+                    makeSlot(
+                        total - 1,
+
+                        cardDistance,
+
+                        verticalDistance,
+
+                        total
+                    );
+
+
+                /* ---------------------------------
+                   RETURN LABEL
+                --------------------------------- */
+
+                timeline.addLabel(
+                    "return",
+
+                    `promote+=${config.durMove * config.returnDelay}`
+                );
+
+
+                /* ---------------------------------
+                   UPDATE Z INDEX
+                --------------------------------- */
+
+                timeline.call(
+                    () => {
+
+                        gsap.set(
+                            frontElement,
+                            {
+                                zIndex:
+                                    backSlot.zIndex,
+                            }
+                        );
+
+                    },
+
+                    undefined,
+
+                    "return"
+                );
+
+
+                /* ---------------------------------
+                   MOVE FRONT TO BACK
+                --------------------------------- */
+
+                timeline.to(
+                    frontElement,
+                    {
+                        x:
+                            backSlot.x,
+
+                        y:
+                            backSlot.y,
+
+                        z:
+                            backSlot.z,
+
+                        duration:
+                            config.durReturn,
+
+                        ease:
+                            config.ease,
+                    },
+
+                    "return"
+                );
+
+
+                /* ---------------------------------
+                   UPDATE ORDER
+                --------------------------------- */
+
+                timeline.call(
+                    () => {
+
+                        orderRef.current =
+                            [
+                                ...remainingIndexes,
+
+                                frontIndex,
+                            ];
+
+                    }
+                );
+
+            },
+
+            [
+                cardRefs,
+                cardDistance,
+                verticalDistance,
+                config,
+            ]
+        );
+
+
+    /* =================================================
+       PAUSE ON HOVER
+    ================================================= */
+
+    useEffect(
+        () => {
+
+            if (
+                !pauseOnHover
+            ) {
+                return;
+            }
+
+
+            const container =
+                containerRef.current;
+
+
+            if (
+                !container
+            ) {
+                return;
+            }
+
+
+            const handleMouseEnter =
+                () => {
+
+                    timelineRef.current?.pause();
+
+                };
+
+
+            const handleMouseLeave =
+                () => {
+
+                    timelineRef.current?.resume();
+
+                };
+
+
+            container.addEventListener(
+                "mouseenter",
+                handleMouseEnter
             );
 
-            tlRef.current?.kill();
-        };
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [
-        cardDistance,
-        verticalDistance,
-        delay,
-        pauseOnHover,
-        skewAmount,
-        easing,
-    ]);
+            container.addEventListener(
+                "mouseleave",
+                handleMouseLeave
+            );
+
+
+            return () => {
+
+                container.removeEventListener(
+                    "mouseenter",
+                    handleMouseEnter
+                );
+
+
+                container.removeEventListener(
+                    "mouseleave",
+                    handleMouseLeave
+                );
+
+            };
+
+        },
+        [pauseOnHover]
+    );
+
+
+    /* =================================================
+       CLEANUP
+    ================================================= */
+
+    useEffect(
+        () => {
+
+            return () => {
+
+                timelineRef.current?.kill();
+
+
+                cardRefs.forEach(
+                    (
+                        cardRef
+                    ) => {
+
+                        const element =
+                            cardRef.current;
+
+                        if (
+                            element
+                        ) {
+
+                            gsap.killTweensOf(
+                                element
+                            );
+
+                        }
+
+                    }
+                );
+
+            };
+
+        },
+        [cardRefs]
+    );
+
 
     /* =================================================
        RENDER CARDS
     ================================================= */
 
-    const rendered =
-        childArr.map(
-            (child, index) =>
-                isValidElement(child)
-                    ? cloneElement(
-                          child,
-                          {
-                              key: index,
+    const renderedCards =
+        cardArray.map(
+            (
+                child,
+                index
+            ) => {
 
-                              ref:
-                                  refs[
-                                      index
-                                  ],
+                if (
+                    !isValidElement(
+                        child
+                    )
+                ) {
+                    return child;
+                }
 
-                              style: {
-                                  width,
-                                  height,
 
-                                  ...(
-                                      child
-                                          .props
-                                          .style ??
-                                      {}
-                                  ),
-                              },
+                const originalClick =
+                    child.props.onClick;
 
-                              onClick: (e) => {
-                                  child.props.onClick?.(
-                                      e
-                                  );
 
-                                  onCardClick?.(
-                                      index
-                                  );
-                              },
-                          }
-                      )
-                    : child
+                return (
+                    <div
+                        key={
+                            child.key ??
+                            index
+                        }
+
+                        ref={
+                            cardRefs[
+                                index
+                            ]
+                        }
+
+                        className="card-swap-item"
+
+                        style={{
+                            width:
+                                `${width}px`,
+
+                            height:
+                                `${height}px`,
+
+                            position:
+                                "absolute",
+
+                            top:
+                                "50%",
+
+                            left:
+                                "50%",
+
+                            display:
+                                "block",
+
+                            boxSizing:
+                                "border-box",
+
+                            cursor:
+                                "pointer",
+
+                            transformStyle:
+                                "preserve-3d",
+
+                            transformOrigin:
+                                "center center",
+                        }}
+
+                        onClick={
+                            (event) => {
+
+                                originalClick?.(
+                                    event
+                                );
+
+
+                                swapCards();
+
+
+                                onCardClick?.(
+                                    index
+                                );
+
+                            }
+                        }
+                    >
+
+                        {cloneElement(
+                            child,
+                            {
+                                style: {
+                                    width:
+                                        "100%",
+
+                                    height:
+                                        "100%",
+
+                                    minWidth:
+                                        "100%",
+
+                                    minHeight:
+                                        "100%",
+
+                                    boxSizing:
+                                        "border-box",
+
+                                    display:
+                                        "block",
+
+                                    ...(child
+                                        .props
+                                        .style ??
+                                        {}),
+                                },
+                            }
+                        )}
+
+                    </div>
+                );
+            }
         );
+
 
     /* =================================================
        JSX
@@ -513,14 +915,35 @@ const CardSwap = ({
 
     return (
         <div
-            ref={container}
+            ref={
+                containerRef
+            }
+
             className="card-swap-container"
+
             style={{
-                width,
-                height,
+                width:
+                    `${width}px`,
+
+                height:
+                    `${height}px`,
+
+                position:
+                    "relative",
+
+                overflow:
+                    "visible",
+
+                perspective:
+                    "1200px",
+
+                transformStyle:
+                    "preserve-3d",
             }}
         >
-            {rendered}
+
+            {renderedCards}
+
         </div>
     );
 };

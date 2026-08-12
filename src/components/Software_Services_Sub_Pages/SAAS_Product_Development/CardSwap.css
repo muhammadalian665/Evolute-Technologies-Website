@@ -8,15 +8,65 @@
     bottom: 0;
     right: 0;
 
+    width: 560px;
+    height: 440px;
+
     transform:
         translate(5%, 20%);
 
     transform-origin:
         bottom right;
 
-    perspective: 900px;
+    perspective:
+        1200px;
 
-    overflow: visible;
+    overflow:
+        visible;
+
+    touch-action:
+        manipulation;
+
+    pointer-events:
+        auto;
+
+    transform-style:
+        preserve-3d;
+}
+
+
+/* =====================================================
+   CARD SWAP ITEM
+===================================================== */
+
+.card-swap-item {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 560px;
+    height: 440px;
+
+    box-sizing:
+        border-box;
+
+    display:
+        block;
+
+    overflow:
+        visible;
+
+    transform-style:
+        preserve-3d;
+
+    transform-origin:
+        center center;
+
+    will-change:
+        transform;
+
+    pointer-events:
+        auto;
 }
 
 
@@ -25,16 +75,34 @@
 ===================================================== */
 
 .card {
-    position: absolute;
+    position: relative;
 
-    top: 50%;
-    left: 50%;
+    width: 100%;
+    height: 100%;
 
-    border-radius: 12px;
+    min-width: 100%;
+    min-height: 100%;
 
-    border: 1px solid #ffffff;
+    box-sizing:
+        border-box;
 
-    background: #000000;
+    display:
+        block;
+
+    border-radius:
+        24px;
+
+    border:
+        1px solid
+        rgba(
+            60,
+            210,
+            249,
+            0.28
+        );
+
+    background:
+        #05070b;
 
     transform-style:
         preserve-3d;
@@ -47,6 +115,65 @@
 
     -webkit-backface-visibility:
         hidden;
+
+    cursor:
+        pointer;
+
+    user-select:
+        none;
+
+    -webkit-user-select:
+        none;
+
+    touch-action:
+        manipulation;
+
+    overflow:
+        hidden;
+
+    transition:
+        border-color
+        0.3s ease,
+
+        box-shadow
+        0.3s ease;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.card > * {
+    box-sizing:
+        border-box;
+
+    max-width:
+        100%;
+}
+
+
+/* =====================================================
+   FRONT CARD HOVER
+===================================================== */
+
+.card:hover {
+    border-color:
+        rgba(
+            60,
+            210,
+            249,
+            0.65
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            60,
+            210,
+            249,
+            0.12
+        );
 }
 
 
@@ -55,10 +182,26 @@
 ===================================================== */
 
 @media (max-width: 768px) {
+
     .card-swap-container {
+        width:
+            480px;
+
+        height:
+            380px;
+
         transform:
             scale(0.75)
             translate(25%, 25%);
+    }
+
+
+    .card-swap-item {
+        width:
+            480px;
+
+        height:
+            380px;
     }
 }
 
@@ -68,9 +211,25 @@
 ===================================================== */
 
 @media (max-width: 480px) {
+
     .card-swap-container {
+        width:
+            380px;
+
+        height:
+            320px;
+
         transform:
             scale(0.55)
             translate(25%, 25%);
+    }
+
+
+    .card-swap-item {
+        width:
+            380px;
+
+        height:
+            320px;
     }
 }
