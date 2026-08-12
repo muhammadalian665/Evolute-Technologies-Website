@@ -9,15 +9,19 @@ import {
 import "./animated-list.css";
 
 
+/* =====================================================
+   ANIMATED LIST
+===================================================== */
+
 export function AnimatedList({
     children,
-    delay = 1000,
+    delay = 2500,
     className = "",
 }) {
 
-    /* =====================================================
-       CONVERT CHILDREN INTO STABLE ARRAY
-    ===================================================== */
+    /* =================================================
+       CONVERT CHILDREN INTO ARRAY
+    ================================================= */
 
     const items = useMemo(
         () => Children.toArray(children),
@@ -25,23 +29,26 @@ export function AnimatedList({
     );
 
 
-    /* =====================================================
+    /* =================================================
        VISIBLE ITEMS
-    ===================================================== */
+       
+       Notifications stay visible once added.
+    ================================================= */
 
-    const [visibleItems, setVisibleItems] = useState(() => {
+    const [visibleItems, setVisibleItems] = useState(
+        () => {
+            if (items.length === 0) {
+                return [];
+            }
 
-        if (items.length === 0) {
-            return [];
+            return [items[0]];
         }
-
-        return [items[0]];
-    });
+    );
 
 
-    /* =====================================================
-       ANIMATION LOOP
-    ===================================================== */
+    /* =================================================
+       ADD NOTIFICATIONS ONE BY ONE
+    ================================================= */
 
     useEffect(() => {
 
@@ -55,42 +62,32 @@ export function AnimatedList({
 
         const interval = setInterval(() => {
 
-            setVisibleItems((currentItems) => {
-
-                const nextItem =
-                    items[currentIndex];
-
-
-                currentIndex =
-                    (currentIndex + 1) %
-                    items.length;
+            if (currentIndex >= items.length) {
+                clearInterval(interval);
+                return;
+            }
 
 
-                const updatedItems = [
+            const nextItem =
+                items[currentIndex];
+
+
+            setVisibleItems(
+                (currentItems) => [
                     ...currentItems,
                     nextItem,
-                ];
+                ]
+            );
 
 
-                /* =========================================
-                   KEEP ONLY LAST 4 NOTIFICATIONS
-                ========================================= */
-
-                if (updatedItems.length > 4) {
-                    updatedItems.shift();
-                }
-
-
-                return updatedItems;
-
-            });
+            currentIndex += 1;
 
         }, delay);
 
 
-        /* ================================================
+        /* =================================================
            CLEANUP
-        ================================================ */
+        ================================================= */
 
         return () => {
             clearInterval(interval);
@@ -99,9 +96,9 @@ export function AnimatedList({
     }, [delay, items]);
 
 
-    /* =====================================================
+    /* =================================================
        RENDER
-    ===================================================== */
+    ================================================= */
 
     return (
 
@@ -109,20 +106,23 @@ export function AnimatedList({
             className={`animated-list ${className}`}
         >
 
-            {visibleItems.map((item, index) => (
+            {visibleItems.map(
+                (item, index) => (
 
-                <div
-                    key={`${index}-${item.key ?? index}`}
-                    className="animated-list-item"
-                >
+                    <div
+                        key={
+                            `${index}-${item.key ?? index}`
+                        }
+                        className="animated-list-item"
+                    >
 
-                    {cloneElement(item)}
+                        {cloneElement(item)}
 
-                </div>
+                    </div>
 
-            ))}
+                )
+            )}
 
         </div>
-
     );
 }

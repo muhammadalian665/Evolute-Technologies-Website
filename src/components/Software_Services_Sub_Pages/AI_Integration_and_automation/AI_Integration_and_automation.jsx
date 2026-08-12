@@ -4,128 +4,130 @@ import { AnimatedList } from "../../ui/animated-list";
 
 import "./AI_Integration_and_automation.css";
 
+
 /* =====================================================
-   AI NOTIFICATIONS
+   AI INTEGRATION & AUTOMATION SERVICES
 ===================================================== */
 
 const notifications = [
     {
-        name: "Workflow Automated",
+        number: "01",
+        name: "AI Automation",
         description:
-            "Repetitive tasks are now handled automatically by AI.",
-        status: "Automation Active",
-        icon: "⚡",
+            "Automate repetitive workflows and business processes with intelligent AI-driven systems.",
+        status: "Automation Ready",
         color: "#3CD2F9",
     },
 
     {
-        name: "AI Assistant Online",
+        number: "02",
+        name: "AI Chatbots",
         description:
-            "Your AI assistant is responding to customer queries 24/7.",
-        status: "Online",
-        icon: "🤖",
+            "Deploy intelligent AI assistants that engage customers and provide instant support 24/7.",
+        status: "Always Online",
         color: "#3CD2F9",
     },
 
     {
-        name: "Document Processed",
+        number: "03",
+        name: "Document Processing",
         description:
-            "AI extracted key information from the uploaded document.",
-        status: "Analysis Complete",
-        icon: "📄",
+            "Extract, classify, and process information from documents automatically using AI.",
+        status: "Processing Automated",
         color: "#60A5FA",
     },
 
     {
-        name: "New Insight Detected",
+        number: "04",
+        name: "AI-Powered Analytics",
         description:
-            "AI identified a significant trend in your business data.",
-        status: "Insight Ready",
-        icon: "📊",
+            "Turn your business data into actionable insights with intelligent AI-powered analytics.",
+        status: "Insights Generated",
         color: "#3CD2F9",
     },
 
     {
-        name: "Prediction Generated",
+        number: "05",
+        name: "Predictive AI",
         description:
-            "AI analyzed historical data and generated a predictive forecast.",
+            "Analyze historical data to forecast trends, demand, risks, and future business outcomes.",
         status: "Prediction Ready",
-        icon: "🔮",
         color: "#818CF8",
     },
 
     {
-        name: "AI Model Deployed",
+        number: "06",
+        name: "Custom AI Solutions",
         description:
-            "Your custom AI model is now running in production.",
-        status: "Deployment Successful",
-        icon: "🧠",
+            "Build tailored AI solutions designed around your unique business requirements and workflows.",
+        status: "Custom Built",
         color: "#3CD2F9",
     },
 
     {
-        name: "Recommendation Ready",
+        number: "07",
+        name: "AI Recommendations",
         description:
-            "AI analyzed user behavior and generated personalized recommendations.",
-        status: "Updated Just Now",
-        icon: "✨",
+            "Deliver personalized recommendations based on customer behavior, preferences, and data.",
+        status: "Personalization Active",
         color: "#22D3EE",
     },
 
     {
-        name: "Content Generated",
+        number: "08",
+        name: "AI Content Generation",
         description:
-            "AI created new content based on your requirements and brand guidelines.",
-        status: "Generation Complete",
-        icon: "✍️",
+            "Generate high-quality content aligned with your brand, audience, and business objectives.",
+        status: "Generation Active",
         color: "#38BDF8",
     },
 
     {
-        name: "Voice Agent Active",
+        number: "09",
+        name: "Voice AI",
         description:
-            "Your AI voice agent is handling conversations automatically.",
-        status: "Listening",
-        icon: "🎙️",
+            "Build AI voice agents that handle conversations, support customers, and automate communication.",
+        status: "Voice Active",
         color: "#67E8F9",
     },
 
     {
-        name: "Integration Connected",
+        number: "10",
+        name: "AI System Integration",
         description:
-            "AI is now connected with your existing business systems and APIs.",
-        status: "Connected",
-        icon: "🔗",
+            "Connect AI capabilities with your existing software, APIs, CRMs, ERPs, and business platforms.",
+        status: "Integration Connected",
         color: "#3CD2F9",
     },
 
     {
-        name: "Security Check Complete",
+        number: "11",
+        name: "AI Security & Monitoring",
         description:
-            "AI-powered monitoring detected no suspicious activity.",
-        status: "System Secure",
-        icon: "🛡️",
+            "Add intelligent monitoring and security capabilities to help protect your AI-powered systems.",
+        status: "Monitoring Active",
         color: "#34D399",
     },
 
     {
-        name: "Model Optimization Complete",
+        number: "12",
+        name: "Continuous AI Optimization",
         description:
-            "AI performance has been analyzed and optimization recommendations are ready.",
-        status: "Optimization Ready",
-        icon: "⚙️",
+            "Continuously analyze and improve AI performance as your business, data, and requirements evolve.",
+        status: "Optimization Active",
         color: "#60A5FA",
     },
 ];
+
 
 /* =====================================================
    NOTIFICATION CARD
 ===================================================== */
 
 const Notification = ({
+    number,
     name,
     description,
-    icon,
     color,
     status,
 }) => {
@@ -134,18 +136,16 @@ const Notification = ({
         <div className="ai-notification">
 
             {/* =================================================
-               ICON
+               NOTIFICATION NUMBER
             ================================================= */}
 
             <div
-                className="ai-notification-icon"
+                className="ai-notification-number"
                 style={{
                     "--notification-color": color,
                 }}
             >
-                <span>
-                    {icon}
-                </span>
+                {number}
             </div>
 
 
@@ -185,20 +185,15 @@ const Notification = ({
 
 function AI_Integration_and_automation() {
 
-    /*
-     * Repeat notifications so the AnimatedList
-     * continuously has enough items to animate.
-     */
+    /* =================================================
+       NOTIFICATIONS
+
+       Each service appears only once.
+       Nothing is duplicated.
+    ================================================= */
 
     const animatedNotifications = useMemo(
-        () =>
-            Array.from(
-                {
-                    length: 3,
-                },
-                () => notifications
-            ).flat(),
-
+        () => notifications,
         []
     );
 
@@ -226,11 +221,12 @@ function AI_Integration_and_automation() {
 
 
                 <p>
-                    We integrate intelligent AI capabilities
-                    into your existing systems and build custom
-                    AI solutions that automate processes,
-                    improve decisions, and create better
-                    customer experiences.
+                    We integrate intelligent AI solutions into
+                    your existing systems and build custom AI
+                    applications that automate workflows,
+                    enhance decision-making, and help your
+                    business operate smarter, faster, and
+                    more efficiently.
                 </p>
 
 
@@ -253,41 +249,50 @@ function AI_Integration_and_automation() {
 
 
             {/* =================================================
-               AI NOTIFICATION AREA
+               AI SERVICES AREA
             ================================================= */}
 
             <div className="ai-notification-area">
 
-                {/* Decorative glow */}
+                {/* =================================================
+                   DECORATIVE GLOW
+                ================================================= */}
 
                 <div className="ai-notification-glow" />
 
 
-                {/* Notification header */}
+                {/* =================================================
+                   SERVICES HEADER
+                ================================================= */}
 
                 <div className="ai-notification-header">
 
                     <div className="ai-status-indicator" />
 
                     <span>
-                        AI SYSTEM ACTIVITY
+                        AI CAPABILITIES
                     </span>
 
                 </div>
 
 
-                {/* Animated notifications */}
+                {/* =================================================
+                   ANIMATED SERVICES
+                ================================================= */}
 
                 <div className="ai-notification-list">
 
-                    <AnimatedList>
+                    <AnimatedList
+                        delay={2500}
+                        direction="up"
+                    >
 
                         {animatedNotifications.map(
-                            (notification, index) => (
+                            (notification) => (
 
                                 <Notification
                                     {...notification}
-                                    key={index}
+                                    key={notification.number}
                                 />
 
                             )
