@@ -1,9 +1,9 @@
 import { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { AnimatedList } from "../../ui/animated-list";
 
 import "./AI_Integration_and_automation.css";
-
 
 /* =====================================================
    AI INTEGRATION & AUTOMATION SERVICES
@@ -119,7 +119,6 @@ const notifications = [
     },
 ];
 
-
 /* =====================================================
    NOTIFICATION CARD
 ===================================================== */
@@ -186,6 +185,13 @@ const Notification = ({
 function AI_Integration_and_automation() {
 
     /* =================================================
+       NAVIGATION
+    ================================================= */
+
+    const navigate = useNavigate();
+
+
+    /* =================================================
        NOTIFICATIONS
 
        Each service appears only once.
@@ -201,6 +207,7 @@ function AI_Integration_and_automation() {
     return (
 
         <section className="ai-integration-development">
+
 
             {/* =================================================
                HERO CONTENT
@@ -239,8 +246,9 @@ function AI_Integration_and_automation() {
                     <button
                         type="button"
                         className="ai-primary-button"
+                        onClick={() => navigate("/contact-us")}
                     >
-                        Build With AI
+                        Lets Talk
                     </button>
 
                 </div>
@@ -253,6 +261,7 @@ function AI_Integration_and_automation() {
             ================================================= */}
 
             <div className="ai-notification-area">
+
 
                 {/* =================================================
                    DECORATIVE GLOW
@@ -307,6 +316,5 @@ function AI_Integration_and_automation() {
         </section>
     );
 }
-
 
 export default AI_Integration_and_automation;
