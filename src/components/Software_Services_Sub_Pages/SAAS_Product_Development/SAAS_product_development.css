@@ -1,32 +1,505 @@
-.saas-test-page {
+/* =====================================================
+   SAAS PRODUCT DEVELOPMENT
+===================================================== */
+
+.saas-product-development {
+    position: relative;
+
+    width: 100%;
     min-height: 100vh;
 
     display: flex;
     align-items: center;
+
+    padding: 120px 7%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(60, 210, 249, 0.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(9, 80, 205, 0.14),
+            transparent 32%
+        ),
+        #05070b;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.saas-product-development-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 50%;
+
+    max-width: 700px;
+}
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.saas-product-development-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    font-family:
+        "Figtree",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    color: #3cd2f9;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.saas-product-development-content h1 {
+    margin: 0;
+
+    max-width: 680px;
+
+    font-family:
+        "Figtree",
+        sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            5vw,
+            78px
+        );
+
+    line-height: 1.02;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.saas-product-development-content p {
+    max-width: 600px;
+
+    margin:
+        28px 0 35px;
+
+    font-family:
+        "Figtree",
+        sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.68
+        );
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.saas-product-development-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.saas-product-development-buttons button {
+    padding:
+        15px 28px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0950cd,
+            #3cd2f9
+        );
+
+    color: #ffffff;
+
+    font-family:
+        "Figtree",
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.saas-product-development-buttons button:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            60,
+            210,
+            249,
+            0.25
+        );
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.saas-product-development-buttons
+.secondary-button {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   CARD AREA
+===================================================== */
+
+.saas-product-development-cards {
+    position: absolute;
+
+    top: 50%;
+
+    right: 5%;
+
+    width: 550px;
+
+    height: 500px;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   SAAS CARD
+===================================================== */
+
+.saas-product-development-cards
+.card {
+    display: flex;
+
+    align-items: center;
+
     justify-content: center;
 
-    padding: 120px 20px;
+    padding: 45px;
 
-    background: #f7faff;
+    border:
+        1px solid
+        rgba(
+            60,
+            210,
+            249,
+            0.28
+        );
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.10
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                0.025
+            )
+        );
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        ),
+
+        inset 0 1px 0
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
 }
 
-.saas-test-container {
-    text-align: center;
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.saas-card-content {
+    width: 100%;
 }
 
-.saas-test-container h1 {
-    margin: 0 0 15px;
 
-    color: #071d49;
+/* =====================================================
+   CARD NUMBER
+===================================================== */
 
-    font-size: 48px;
+.saas-card-content span {
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-family:
+        "Figtree",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #3cd2f9;
+}
+
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
+.saas-card-content h3 {
+    margin: 0 0 18px;
+
+    font-family:
+        "Figtree",
+        sans-serif;
+
+    font-size: 34px;
+
+    line-height: 1.1;
+
     font-weight: 800;
 }
 
-.saas-test-container p {
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
+.saas-card-content p {
     margin: 0;
 
-    color: #0950cd;
+    font-family:
+        "Figtree",
+        sans-serif;
 
-    font-size: 18px;
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .saas-product-development {
+        padding:
+            100px 6%;
+    }
+
+    .saas-product-development-content {
+        width: 55%;
+    }
+
+    .saas-product-development-cards {
+        right: -100px;
+
+        transform:
+            translateY(-50%)
+            scale(0.8);
+    }
+
+    .saas-product-development-content h1 {
+        font-size: 58px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .saas-product-development {
+        min-height: auto;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding:
+            90px 6% 120px;
+    }
+
+    .saas-product-development-content {
+        width: 100%;
+    }
+
+    .saas-product-development-content h1 {
+        font-size: 46px;
+
+        letter-spacing:
+            -1.5px;
+    }
+
+    .saas-product-development-content p {
+        font-size: 16px;
+    }
+
+    .saas-product-development-buttons {
+        flex-wrap: wrap;
+    }
+
+    .saas-product-development-cards {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        width: 100%;
+
+        height: 480px;
+
+        margin-top: 70px;
+
+        transform: none;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .saas-product-development {
+        padding:
+            75px 5% 100px;
+    }
+
+    .saas-product-development-content h1 {
+        font-size: 38px;
+    }
+
+    .saas-product-development-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .saas-product-development-buttons button {
+        width: 100%;
+    }
+
+    .saas-product-development-cards {
+        height: 430px;
+    }
+
+    .saas-product-development-cards
+    .card {
+        padding: 30px;
+    }
+
+    .saas-card-content h3 {
+        font-size: 28px;
+    }
 }
