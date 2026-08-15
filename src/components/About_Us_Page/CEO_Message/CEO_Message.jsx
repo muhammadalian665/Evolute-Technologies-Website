@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import "./CEO_Message.css";
 import CEOImage from "../../../assets/About_Us_Images/CEO_Evolute_Technologies.png";
 
-function CEOMessage() {
-  const fullMessage = `Hey Everyone,
+/* =====================================================
+   CEO MESSAGE
+===================================================== */
+
+const fullMessage = `Hey Everyone,
 
 Welcome to Evolute Technologies, where we help businesses turn ideas into powerful digital solutions. Our goal is to combine technology, innovation, and growth to create solutions that make a real business impact.
 
@@ -15,7 +18,17 @@ At Evolute Technologies, we believe in transparency, quality, and long-term part
 
 Let's build something meaningful, scalable, and impactful together.`;
 
+
+/* =====================================================
+   CEO MESSAGE COMPONENT
+===================================================== */
+
+function CEOMessage() {
   const [displayedText, setDisplayedText] = useState("");
+
+  /* =====================================================
+     TYPING EFFECT
+  ===================================================== */
 
   useEffect(() => {
     let index = 0;
@@ -32,11 +45,18 @@ Let's build something meaningful, scalable, and impactful together.`;
     return () => clearInterval(typingInterval);
   }, []);
 
+  /* =====================================================
+     RENDER
+  ===================================================== */
+
   return (
     <section className="ceo-message">
       <div className="ceo-message-container">
 
-        {/* Left Column */}
+        {/* =================================================
+           LEFT COLUMN
+        ================================================= */}
+
         <div className="ceo-message-text">
 
           <span className="ceo-message-label">
@@ -48,12 +68,11 @@ Let's build something meaningful, scalable, and impactful together.`;
           </h2>
 
           <div className="ceo-typing-text">
-            {displayedText.split("\n").map((line, index) => (
+            {displayedText.split("\n").map((line, index, lines) => (
               <span key={index}>
                 {line}
-                {index < displayedText.split("\n").length - 1 && (
-                  <br />
-                )}
+
+                {index < lines.length - 1 && <br />}
               </span>
             ))}
 
@@ -62,11 +81,16 @@ Let's build something meaningful, scalable, and impactful together.`;
 
         </div>
 
-        {/* Right Column */}
+
+        {/* =================================================
+           RIGHT COLUMN
+        ================================================= */}
+
         <div className="ceo-profile-column">
 
           <div className="ceo-profile-card">
 
+            {/* CEO IMAGE */}
             <div className="ceo-profile-image">
               <img
                 src={CEOImage}
@@ -74,11 +98,24 @@ Let's build something meaningful, scalable, and impactful together.`;
               />
             </div>
 
-            <h3>Muhammad Umar</h3>
 
-            <p>Founder</p>
+            {/* CEO DETAILS */}
+            <h3>
+              Muhammad Umar
+            </h3>
 
-            <span>Evolute Technologies</span>
+            <p>
+              Founder
+            </p>
+
+            <span>
+              Evolute Technologies
+            </span>
+
+
+            {/* =================================================
+               SOCIAL LINKS
+            ================================================= */}
 
             <div className="ceo-socials">
 
