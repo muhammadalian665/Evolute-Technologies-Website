@@ -1,9 +1,8 @@
-import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { AnimatedList } from "../../ui/animated-list";
+import { motion } from "framer-motion";
 
 import "./AI_Integration_and_automation.css";
+
 
 /* =====================================================
    AI INTEGRATION & AUTOMATION SERVICES
@@ -119,6 +118,7 @@ const notifications = [
     },
 ];
 
+
 /* =====================================================
    NOTIFICATION CARD
 ===================================================== */
@@ -132,18 +132,19 @@ const Notification = ({
 }) => {
 
     return (
-        <div className="ai-notification">
+
+        <div
+            className="ai-notification"
+            style={{
+                "--notification-color": color,
+            }}
+        >
 
             {/* =================================================
                NOTIFICATION NUMBER
             ================================================= */}
 
-            <div
-                className="ai-notification-number"
-                style={{
-                    "--notification-color": color,
-                }}
-            >
+            <div className="ai-notification-number">
                 {number}
             </div>
 
@@ -191,19 +192,6 @@ function AI_Integration_and_automation() {
     const navigate = useNavigate();
 
 
-    /* =================================================
-       NOTIFICATIONS
-
-       Each service appears only once.
-       Nothing is duplicated.
-    ================================================= */
-
-    const animatedNotifications = useMemo(
-        () => notifications,
-        []
-    );
-
-
     return (
 
         <section className="ai-integration-development">
@@ -246,7 +234,9 @@ function AI_Integration_and_automation() {
                     <button
                         type="button"
                         className="ai-primary-button"
-                        onClick={() => navigate("/contact-us")}
+                        onClick={() =>
+                            navigate("/contact-us")
+                        }
                     >
                         Lets Talk
                     </button>
@@ -286,28 +276,60 @@ function AI_Integration_and_automation() {
 
 
                 {/* =================================================
-                   ANIMATED SERVICES
+                   SCROLLABLE NOTIFICATION VIEWER
                 ================================================= */}
 
-                <div className="ai-notification-list">
+                <div className="ai-notification-list-wrapper">
 
-                    <AnimatedList
-                        delay={2500}
-                        direction="up"
-                    >
+                    <div className="ai-notification-list">
 
-                        {animatedNotifications.map(
-                            (notification) => (
+                        {notifications.map(
+                            (
+                                notification,
+                                index
+                            ) => (
 
-                                <Notification
-                                    {...notification}
-                                    key={notification.number}
-                                />
+                                <motion.div
+                                    key={
+                                        notification.number
+                                    }
+
+                                    className="ai-notification-feed-item"
+
+                                    initial={{
+                                        opacity: 0,
+                                        y: 20,
+                                    }}
+
+                                    animate={{
+                                        opacity: 1,
+                                        y: 0,
+                                    }}
+
+                                    transition={{
+                                        duration: 0.4,
+                                        delay:
+                                            index *
+                                            0.04,
+                                        ease: [
+                                            0.22,
+                                            1,
+                                            0.36,
+                                            1,
+                                        ],
+                                    }}
+                                >
+
+                                    <Notification
+                                        {...notification}
+                                    />
+
+                                </motion.div>
 
                             )
                         )}
 
-                    </AnimatedList>
+                    </div>
 
                 </div>
 
@@ -316,5 +338,6 @@ function AI_Integration_and_automation() {
         </section>
     );
 }
+
 
 export default AI_Integration_and_automation;

@@ -1,8 +1,19 @@
 /* =====================================================
-   AI INTEGRATION & DEVELOPMENT
+   AI INTEGRATION & AUTOMATION
+   NAVBAR COLOR SYSTEM
 ===================================================== */
 
 .ai-integration-development {
+    --ai-dark: #082a66;
+    --ai-deep: #041a3f;
+    --ai-blue: #0950CD;
+    --ai-cyan: #3CD2F9;
+    --ai-light-blue: #e2f1ff;
+    --ai-soft-blue: #eef6ff;
+    --ai-text: #172033;
+    --ai-muted: #667085;
+    --ai-white: #ffffff;
+
     position: relative;
 
     width: 100%;
@@ -20,20 +31,26 @@
 
     background:
         radial-gradient(
-            circle at 15% 35%,
-            rgba(60, 210, 249, 0.12),
+            circle at 10% 30%,
+            rgba(60, 210, 249, 0.16),
             transparent 30%
         ),
 
         radial-gradient(
-            circle at 85% 50%,
-            rgba(60, 210, 249, 0.08),
+            circle at 90% 55%,
+            rgba(9, 80, 205, 0.12),
             transparent 32%
         ),
 
-        #05070b;
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f4f9ff 42%,
+            #eaf5ff 70%,
+            #f8fbff 100%
+        );
 
-    color: #ffffff;
+    color: var(--ai-text);
 }
 
 
@@ -52,18 +69,17 @@
 
     background-image:
         linear-gradient(
-            rgba(255, 255, 255, 0.025) 1px,
+            rgba(9, 80, 205, 0.045) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.025) 1px,
+            rgba(9, 80, 205, 0.045) 1px,
             transparent 1px
         );
 
-    background-size:
-        60px 60px;
+    background-size: 60px 60px;
 
     mask-image:
         linear-gradient(
@@ -78,6 +94,37 @@
             black,
             transparent 90%
         );
+}
+
+
+/* =====================================================
+   BACKGROUND COLOR GLOW
+===================================================== */
+
+.ai-integration-development::after {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -240px;
+    bottom: -260px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.16),
+            rgba(9, 80, 205, 0.06) 45%,
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
 }
 
 
@@ -111,34 +158,30 @@
 
     border:
         1px solid
-        rgba(
-            60,
-            210,
-            249,
-            0.28
-        );
+        rgba(9, 80, 205, 0.22);
 
     border-radius: 999px;
 
     background:
-        rgba(
-            60,
-            210,
-            249,
-            0.06
+        linear-gradient(
+            90deg,
+            rgba(226, 241, 255, 0.85),
+            rgba(60, 210, 249, 0.10)
         );
 
-    color:
-        #3CD2F9;
+    color: var(--ai-dark);
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    letter-spacing:
-        0.16em;
+    letter-spacing: 0.16em;
+
+    box-shadow:
+        0 8px 25px
+        rgba(9, 80, 205, 0.08);
+
+    backdrop-filter: blur(8px);
 }
 
 
@@ -158,32 +201,46 @@
             76px
         );
 
-    line-height:
-        1.04;
+    line-height: 1.04;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    letter-spacing:
-        -0.045em;
+    letter-spacing: -0.045em;
 
-    color:
-        #ffffff;
+    color: var(--ai-dark);
 }
 
 
 /* =====================================================
-   HEADING ACCENT
+   GRADIENT TEXT
+===================================================== */
+
+.ai-integration-content h1 span {
+    background:
+        linear-gradient(
+            135deg,
+            #082a66 0%,
+            #0950CD 48%,
+            #3CD2F9 100%
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =====================================================
+   HEADING SELECTION
 ===================================================== */
 
 .ai-integration-content h1::selection {
     background:
-        rgba(
-            60,
-            210,
-            249,
-            0.3
-        );
+        rgba(60, 210, 249, 0.25);
+
+    color: var(--ai-dark);
 }
 
 
@@ -192,25 +249,15 @@
 ===================================================== */
 
 .ai-integration-content p {
-    max-width:
-        610px;
+    max-width: 610px;
 
-    margin:
-        28px 0 0;
+    margin: 28px 0 0;
 
-    font-size:
-        17px;
+    font-size: 17px;
 
-    line-height:
-        1.75;
+    line-height: 1.75;
 
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.62
-        );
+    color: var(--ai-muted);
 }
 
 
@@ -219,14 +266,11 @@
 ===================================================== */
 
 .ai-integration-buttons {
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    margin-top:
-        36px;
+    margin-top: 36px;
 }
 
 
@@ -235,70 +279,61 @@
 ===================================================== */
 
 .ai-primary-button {
-    position:
-        relative;
+    position: relative;
 
-    padding:
-        15px 28px;
+    padding: 15px 28px;
 
     border:
         1px solid
-        rgba(
-            60,
-            210,
-            249,
-            0.6
-        );
+        rgba(8, 42, 102, 0.35);
 
-    border-radius:
-        10px;
+    border-radius: 8px;
 
     background:
         linear-gradient(
             135deg,
-            #3CD2F9,
-            #0950CD
+            #082a66 0%,
+            #0950CD 58%,
+            #3CD2F9 100%
         );
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size:
-        15px;
+    font-size: 15px;
 
-    font-weight:
-        600;
+    font-weight: 600;
 
-    cursor:
-        pointer;
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(9, 80, 205, 0.20);
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
 
 
 .ai-primary-button:hover {
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     border-color:
-        rgba(
-            60,
-            210,
-            249,
-            0.9
+        rgba(9, 80, 205, 0.65);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0950CD,
+            #0a4db8,
+            #3CD2F9
         );
 
     box-shadow:
         0 15px 40px
-        rgba(
-            60,
-            210,
-            249,
-            0.22
-        );
+        rgba(9, 80, 205, 0.30);
 }
 
 
@@ -307,64 +342,211 @@
 ===================================================== */
 
 .ai-notification-area {
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        5;
+    z-index: 5;
 
-    width:
-        520px;
+    width: 520px;
 
-    height:
-        570px;
+    height: 570px;
 
-    flex-shrink:
-        0;
+    flex-shrink: 0;
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    justify-content:
-        center;
-
-    padding:
-        25px;
+    padding: 25px;
 
     border:
         1px solid
-        rgba(
-            60,
-            210,
-            249,
-            0.14
+        rgba(9, 80, 205, 0.18);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(226, 241, 255, 0.84)
+        );
+
+    /*
+       DEEP TECH DEPTH
+
+       Dark navy shadow sits behind
+       the notification panel.
+    */
+
+    box-shadow:
+
+        /* deepest navy depth */
+        0 55px 100px
+        rgba(4, 26, 63, 0.32),
+
+        /* secondary navy shadow */
+        0 32px 70px
+        rgba(8, 42, 102, 0.25),
+
+        /* blue ambient glow */
+        0 18px 50px
+        rgba(9, 80, 205, 0.14),
+
+        /* cyan edge glow */
+        0 0 55px
+        rgba(60, 210, 249, 0.10),
+
+        /* subtle inner depth */
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.95);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   DARK TECH BACKGROUND LAYERS
+===================================================== */
+
+.ai-notification-area {
+    background-image:
+
+        /* top-right cyan technology glow */
+        radial-gradient(
+            circle at 88% 8%,
+            rgba(60, 210, 249, 0.20),
+            transparent 24%
+        ),
+
+        /* bottom-left blue growth glow */
+        radial-gradient(
+            circle at 5% 92%,
+            rgba(9, 80, 205, 0.16),
+            transparent 28%
+        ),
+
+        /* dark navy depth behind content */
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(226, 241, 255, 0.86)
+        );
+}
+
+
+/* =====================================================
+   TECH GRID INSIDE PANEL
+===================================================== */
+
+.ai-notification-area::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border-radius: inherit;
+
+    background:
+
+        /* diagonal tech lines */
+        repeating-linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 42px,
+            rgba(9, 80, 205, 0.025) 43px,
+            transparent 44px
+        ),
+
+        /* fine horizontal grid */
+        linear-gradient(
+            rgba(9, 80, 205, 0.025) 1px,
+            transparent 1px
+        ),
+
+        /* fine vertical grid */
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.92),
+            rgba(226, 241, 255, 0.12) 50%,
+            transparent 75%
+        );
+
+    background-size:
+        auto,
+        42px 42px,
+        42px 42px,
+        auto;
+}
+
+
+/* =====================================================
+   BLUE / CYAN TECH TOP LINE
+===================================================== */
+
+.ai-notification-area::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #041a3f 0%,
+            #082a66 20%,
+            #0950CD 55%,
+            #3CD2F9 100%
         );
 
     border-radius:
-        28px;
+        28px 28px 0 0;
 
-    background:
-        rgba(
-            5,
-            7,
-            11,
-            0.72
-        );
+    pointer-events: none;
 
     box-shadow:
-        0 30px 100px
-        rgba(
-            0,
-            0,
-            0,
-            0.35
-        );
+        0 0 18px
+        rgba(60, 210, 249, 0.35);
+}
 
-    overflow:
-        hidden;
+
+/* =====================================================
+   EXTRA DARK DEPTH UNDER PANEL
+===================================================== */
+
+.ai-notification-area {
+    isolation: isolate;
+}
+
+
+/*
+   This creates a strong dark architectural
+   shadow directly beneath the panel.
+*/
+
+.ai-notification-area > * {
+    position: relative;
+
+    z-index: 3;
 }
 
 
@@ -373,37 +555,32 @@
 ===================================================== */
 
 .ai-notification-glow {
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        300px;
+    width: 340px;
 
-    height:
-        300px;
+    height: 340px;
 
-    top:
-        -120px;
+    top: -140px;
 
-    right:
-        -100px;
+    right: -110px;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
-        rgba(
-            60,
-            210,
-            249,
-            0.12
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.30),
+            rgba(9, 80, 205, 0.12) 42%,
+            rgba(8, 42, 102, 0.04) 58%,
+            transparent 72%
         );
 
-    filter:
-        blur(70px);
+    filter: blur(45px);
 
-    pointer-events:
-        none;
+    pointer-events: none;
+
+    z-index: 1;
 }
 
 
@@ -412,40 +589,25 @@
 ===================================================== */
 
 .ai-notification-header {
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        5;
+    z-index: 10;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        9px;
+    gap: 9px;
 
-    margin:
-        0 8px 16px;
+    margin: 0 8px 16px;
 
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.5
-        );
+    color: var(--ai-dark);
 
-    font-size:
-        10px;
+    font-size: 10px;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    letter-spacing:
-        0.18em;
+    letter-spacing: 0.18em;
 }
 
 
@@ -454,26 +616,24 @@
 ===================================================== */
 
 .ai-status-indicator {
-    width:
-        7px;
+    width: 7px;
 
-    height:
-        7px;
+    height: 7px;
 
-    border-radius:
-        50%;
+    flex-shrink: 0;
+
+    border-radius: 50%;
 
     background:
-        #3CD2F9;
+        linear-gradient(
+            135deg,
+            #0950CD,
+            #3CD2F9
+        );
 
     box-shadow:
         0 0 12px
-        rgba(
-            60,
-            210,
-            249,
-            0.8
-        );
+        rgba(60, 210, 249, 0.75);
 
     animation:
         aiPulse 1.8s
@@ -486,20 +646,35 @@
 
     0%,
     100% {
-        opacity:
-            0.45;
+        opacity: 0.45;
 
-        transform:
-            scale(0.85);
+        transform: scale(0.85);
     }
 
     50% {
-        opacity:
-            1;
+        opacity: 1;
 
-        transform:
-            scale(1.15);
+        transform: scale(1.15);
     }
+}
+
+
+/* =====================================================
+   SCROLLABLE NOTIFICATION VIEWER
+===================================================== */
+
+.ai-notification-list-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    height: 470px;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    z-index: 5;
 }
 
 
@@ -508,17 +683,82 @@
 ===================================================== */
 
 .ai-notification-list {
-    position:
-        relative;
+    position: relative;
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        470px;
+    height: 100%;
 
-    overflow:
-        hidden;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 4px 8px 35px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(9, 80, 205, 0.40)
+        transparent;
+}
+
+
+/* =====================================================
+   WEBKIT SCROLLBAR
+===================================================== */
+
+.ai-notification-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+
+.ai-notification-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.ai-notification-list::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #041a3f,
+            #0950CD,
+            #3CD2F9
+        );
+}
+
+
+.ai-notification-list::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            to bottom,
+            #3CD2F9,
+            #0950CD,
+            #041a3f
+        );
+}
+
+
+/* =====================================================
+   FEED ITEM
+===================================================== */
+
+.ai-notification-feed-item {
+    position: relative;
+
+    width: 100%;
+
+    flex-shrink: 0;
 }
 
 
@@ -527,144 +767,245 @@
 ===================================================== */
 
 .ai-notification {
-    position:
-        relative;
+    position: relative;
 
-    width:
-        calc(
-            100% - 10px
-        );
+    width: 100%;
 
-    margin:
-        5px auto;
+    margin: 0;
 
-    padding:
-        14px;
+    padding: 18px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        flex-start;
+    align-items: flex-start;
 
-    gap:
-        13px;
+    gap: 14px;
 
     border:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.08
-        );
+        rgba(9, 80, 205, 0.13);
 
-    border-radius:
-        16px;
+    border-radius: 16px;
 
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.035
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.99),
+            rgba(226, 241, 255, 0.72)
         );
 
     box-shadow:
-        0 10px 30px
-        rgba(
-            0,
-            0,
-            0,
-            0.18
-        );
 
-    backdrop-filter:
-        blur(8px);
+        /* dark depth */
+        0 15px 35px
+        rgba(4, 26, 63, 0.12),
 
-    -webkit-backdrop-filter:
-        blur(8px);
+        /* blue depth */
+        0 7px 20px
+        rgba(9, 80, 205, 0.07);
 
     transition:
         transform 0.25s ease,
-        border-color 0.25s ease;
-}
-
-
-.ai-notification:hover {
-    transform:
-        scale(1.02);
-
-    border-color:
-        rgba(
-            60,
-            210,
-            249,
-            0.3
-        );
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
 
 
 /* =====================================================
-   NOTIFICATION ICON
+   NOTIFICATION CARD TOP ACCENT
 ===================================================== */
 
-.ai-notification-icon {
-    position:
-        relative;
+.ai-notification::before {
+    content: "";
 
-    width:
-        42px;
+    position: absolute;
 
-    height:
-        42px;
+    left: 0;
 
-    min-width:
-        42px;
+    top: 14px;
 
-    display:
-        flex;
+    bottom: 14px;
 
-    align-items:
-        center;
-
-    justify-content:
-        center;
+    width: 3px;
 
     border-radius:
-        13px;
+        0 4px 4px 0;
 
     background:
-        color-mix(
-            in srgb,
-            var(--notification-color) 15%,
-            transparent
+        linear-gradient(
+            to bottom,
+            var(--notification-color),
+            #3CD2F9
         );
 
-    border:
-        1px solid
+    opacity: 0.95;
+
+    box-shadow:
+        0 0 12px
         color-mix(
             in srgb,
             var(--notification-color) 30%,
             transparent
         );
-
-    box-shadow:
-        0 0 20px
-        color-mix(
-            in srgb,
-            var(--notification-color) 12%,
-            transparent
-        );
 }
 
 
-.ai-notification-icon span {
-    font-size:
-        18px;
+/* =====================================================
+   NOTIFICATION HOVER
+===================================================== */
 
-    line-height:
-        1;
+.ai-notification:hover {
+    transform: translateX(-4px);
+
+    border-color:
+        rgba(9, 80, 205, 0.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #eaf5ff
+        );
+
+    box-shadow:
+
+        0 24px 48px
+        rgba(4, 26, 63, 0.17),
+
+        0 12px 28px
+        rgba(9, 80, 205, 0.12),
+
+        0 0 28px
+        rgba(60, 210, 249, 0.14);
+}
+
+
+/* =====================================================
+   DARK CHECK / NUMBER BOX
+===================================================== */
+
+.ai-notification-number {
+    width: 42px;
+
+    min-width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(60, 210, 249, 0.35);
+
+    border-radius: 12px;
+
+    /*
+       FULL DARK TECH BOX
+    */
+
+    background:
+        linear-gradient(
+            145deg,
+            #041a3f 0%,
+            #082a66 48%,
+            #0950CD 100%
+        );
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    /*
+       Dark depth + cyan glow
+    */
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.14),
+
+        inset 0 -5px 12px
+        rgba(0, 0, 0, 0.25),
+
+        0 8px 20px
+        rgba(4, 26, 63, 0.28),
+
+        0 0 18px
+        rgba(60, 210, 249, 0.12);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CHECK BOX TECH SHINE
+===================================================== */
+
+.ai-notification-number::before {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+
+    height: 80px;
+
+    top: -45px;
+
+    right: -45px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.45),
+            transparent 68%
+        );
+
+    filter: blur(4px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CHECK BOX HOVER
+===================================================== */
+
+.ai-notification:hover .ai-notification-number {
+    background:
+        linear-gradient(
+            145deg,
+            #082a66 0%,
+            #0950CD 55%,
+            #3CD2F9 100%
+        );
+
+    border-color:
+        rgba(60, 210, 249, 0.65);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.20),
+
+        0 10px 25px
+        rgba(4, 26, 63, 0.35),
+
+        0 0 25px
+        rgba(60, 210, 249, 0.25);
 }
 
 
@@ -673,11 +1014,9 @@
 ===================================================== */
 
 .ai-notification-content {
-    min-width:
-        0;
+    min-width: 0;
 
-    flex:
-        1;
+    flex: 1;
 }
 
 
@@ -686,17 +1025,13 @@
 ===================================================== */
 
 .ai-notification-top {
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
-    gap:
-        10px;
+    gap: 12px;
 }
 
 
@@ -705,20 +1040,15 @@
 ===================================================== */
 
 .ai-notification-top h4 {
-    margin:
-        0;
+    margin: 0;
 
-    font-size:
-        14px;
+    font-size: 15px;
 
-    line-height:
-        1.3;
+    line-height: 1.35;
 
-    font-weight:
-        600;
+    font-weight: 600;
 
-    color:
-        #ffffff;
+    color: var(--ai-dark);
 }
 
 
@@ -727,48 +1057,30 @@
 ===================================================== */
 
 .ai-notification-status {
-    flex-shrink:
-        0;
+    flex-shrink: 0;
 
-    padding:
-        4px 8px;
+    padding: 5px 9px;
 
     border:
         1px solid
-        rgba(
-            60,
-            210,
-            249,
-            0.18
-        );
+        rgba(9, 80, 205, 0.18);
 
-    border-radius:
-        999px;
+    border-radius: 999px;
 
     background:
-        rgba(
-            60,
-            210,
-            249,
-            0.06
+        linear-gradient(
+            90deg,
+            rgba(226, 241, 255, 0.90),
+            rgba(60, 210, 249, 0.12)
         );
 
-    color:
-        rgba(
-            60,
-            210,
-            249,
-            0.85
-        );
+    color: var(--ai-blue);
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    font-weight:
-        600;
+    font-weight: 600;
 
-    white-space:
-        nowrap;
+    white-space: nowrap;
 }
 
 
@@ -777,21 +1089,70 @@
 ===================================================== */
 
 .ai-notification-content p {
-    margin:
-        6px 0 0;
+    margin: 8px 0 0;
 
-    font-size:
-        11px;
+    font-size: 12px;
 
-    line-height:
-        1.55;
+    line-height: 1.6;
 
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.48
+    color: var(--ai-muted);
+}
+
+
+/* =====================================================
+   OPTIONAL NOTIFICATION ICON
+===================================================== */
+
+.ai-notification-icon {
+    position: relative;
+
+    width: 42px;
+
+    height: 42px;
+
+    min-width: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #041a3f,
+            #082a66,
+            #0950CD
+        );
+
+    border:
+        1px solid
+        rgba(60, 210, 249, 0.32);
+
+    box-shadow:
+
+        0 8px 22px
+        rgba(4, 26, 63, 0.25),
+
+        0 0 18px
+        rgba(60, 210, 249, 0.10);
+
+    color: #ffffff;
+}
+
+
+.ai-notification-icon span {
+    font-size: 18px;
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(60, 210, 249, 0.55)
         );
 }
 
@@ -803,23 +1164,20 @@
 @media (max-width: 1050px) {
 
     .ai-integration-development {
-        flex-direction:
-            column;
+        flex-direction: column;
 
-        align-items:
-            flex-start;
+        align-items: flex-start;
 
-        padding:
-            100px 6%;
+        padding: 100px 6%;
+
+        gap: 60px;
     }
 
 
     .ai-integration-content {
-        width:
-            100%;
+        width: 100%;
 
-        max-width:
-            760px;
+        max-width: 760px;
     }
 
 
@@ -830,8 +1188,7 @@
                 560px
             );
 
-        align-self:
-            center;
+        align-self: center;
     }
 
 }
@@ -844,11 +1201,9 @@
 @media (max-width: 600px) {
 
     .ai-integration-development {
-        padding:
-            85px 20px 70px;
+        padding: 85px 20px 70px;
 
-        gap:
-            50px;
+        gap: 50px;
     }
 
 
@@ -863,179 +1218,618 @@
 
 
     .ai-integration-content p {
-        font-size:
-            15px;
+        font-size: 15px;
 
-        line-height:
-            1.7;
+        line-height: 1.7;
     }
 
 
     .ai-notification-area {
-        width:
-            100%;
+        width: 100%;
 
-        height:
-            500px;
+        height: 500px;
 
-        padding:
-            18px;
+        padding: 18px;
 
-        border-radius:
-            22px;
+        border-radius: 22px;
+
+        box-shadow:
+
+            0 38px 75px
+            rgba(4, 26, 63, 0.30),
+
+            0 22px 45px
+            rgba(8, 42, 102, 0.20),
+
+            0 12px 30px
+            rgba(9, 80, 205, 0.12),
+
+            0 0 35px
+            rgba(60, 210, 249, 0.07);
+    }
+
+
+    .ai-notification-list-wrapper {
+        height: 410px;
     }
 
 
     .ai-notification-list {
-        height:
-            410px;
+        width: 100%;
+
+        padding: 4px 5px 30px;
+
+        gap: 10px;
     }
 
 
     .ai-notification {
-        padding:
-            12px;
+        padding: 14px;
 
-        gap:
-            10px;
+        gap: 10px;
     }
 
 
-    .ai-notification-icon {
-        width:
-            38px;
+    .ai-notification-number {
+        width: 38px;
 
-        height:
-            38px;
+        min-width: 38px;
 
-        min-width:
-            38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        font-size: 10px;
+
+        box-shadow:
+
+            inset 0 1px 0
+            rgba(255, 255, 255, 0.14),
+
+            0 7px 18px
+            rgba(4, 26, 63, 0.30),
+
+            0 0 16px
+            rgba(60, 210, 249, 0.10);
     }
 
 
     .ai-notification-top {
-        align-items:
-            flex-start;
+        align-items: flex-start;
 
-        flex-direction:
-            column;
+        flex-direction: column;
 
-        gap:
-            5px;
+        gap: 6px;
+    }
+
+
+    .ai-notification-top h4 {
+        font-size: 14px;
     }
 
 
     .ai-notification-status {
-        font-size:
-            8px;
+        font-size: 8px;
+
+        padding: 4px 7px;
+    }
+
+
+    .ai-notification-content p {
+        font-size: 11px;
+
+        line-height: 1.55;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .ai-notification-area {
+        height: 480px;
+
+        padding: 16px;
+
+        box-shadow:
+
+            0 34px 65px
+            rgba(4, 26, 63, 0.28),
+
+            0 18px 38px
+            rgba(8, 42, 102, 0.18),
+
+            0 10px 25px
+            rgba(9, 80, 205, 0.10),
+
+            0 0 30px
+            rgba(60, 210, 249, 0.06);
+    }
+
+
+    .ai-notification-list-wrapper {
+        height: 390px;
+    }
+
+
+    .ai-notification-list {
+        width: 100%;
+
+        gap: 9px;
+    }
+
+
+    .ai-notification {
+        padding: 12px;
+    }
+
+
+    .ai-notification-number {
+        width: 34px;
+
+        min-width: 34px;
+
+        height: 34px;
+
+        border-radius: 9px;
     }
 
 }
 /* =====================================================
-   NOTIFICATION LIST WRAPPER
+   LEFT CONTENT — FUTURISTIC TECH BACKGROUND
 ===================================================== */
 
-.ai-notification-list-wrapper {
+.ai-integration-content {
     position: relative;
-
-    width: 100%;
-    height: 470px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
+    isolation: isolate;
 }
 
 
 /* =====================================================
-   NOTIFICATION CONTROLS
+   LARGE TECH GLOW BEHIND TEXT
 ===================================================== */
 
-.ai-notification-controls {
+.ai-integration-content::before {
+    content: "";
+
     position: absolute;
 
-    right: -4px;
+    width: 620px;
+    height: 620px;
+
+    left: -220px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    z-index: 20;
+    border-radius: 50%;
 
-    display: flex;
-    flex-direction: column;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(60, 210, 249, 0.20) 0%,
+            rgba(9, 80, 205, 0.13) 28%,
+            rgba(9, 80, 205, 0.06) 48%,
+            transparent 70%
+        );
 
-    gap: 8px;
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    z-index: -3;
 }
 
 
 /* =====================================================
-   ARROW BUTTON
+   TECH GRID BEHIND LEFT CONTENT
 ===================================================== */
 
-.ai-notification-arrow {
-    width: 34px;
-    height: 34px;
+.ai-integration-content::after {
+    content: "";
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
 
-    border: 1px solid rgba(60, 210, 249, 0.22);
+    width: 700px;
+    height: 620px;
 
-    border-radius: 9px;
+    left: -170px;
+    top: 50%;
 
-    background: rgba(60, 210, 249, 0.06);
+    transform: translateY(-50%);
 
-    color: #3CD2F9;
+    pointer-events: none;
 
-    font-size: 18px;
-    font-weight: 600;
+    z-index: -2;
 
-    cursor: pointer;
+    background-image:
 
-    backdrop-filter: blur(10px);
+        /* vertical grid */
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.08) 1px,
+            transparent 1px
+        ),
 
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        /* horizontal grid */
+        linear-gradient(
+            rgba(9, 80, 205, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            transparent 75%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            transparent 75%
+        );
+
+    opacity: 0.75;
 }
 
 
 /* =====================================================
-   HOVER
+   TECH ORBIT RINGS
 ===================================================== */
 
-.ai-notification-arrow:hover {
-    transform: scale(1.08);
+.ai-integration-content .ai-tech-orbit {
+    position: absolute;
 
-    background: rgba(60, 210, 249, 0.12);
+    width: 500px;
+    height: 500px;
 
-    border-color: rgba(60, 210, 249, 0.55);
+    left: -180px;
+    top: 50%;
+
+    transform: translateY(-50%)
+        rotate(-18deg);
+
+    border: 1px solid
+        rgba(9, 80, 205, 0.13);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* second orbit */
+
+.ai-integration-content .ai-tech-orbit::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 45px;
+
+    border: 1px solid
+        rgba(60, 210, 249, 0.16);
+
+    border-radius: 50%;
+
+    transform: rotate(35deg);
+}
+
+
+/* third orbit */
+
+.ai-integration-content .ai-tech-orbit::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 105px;
+
+    border: 1px dashed
+        rgba(9, 80, 205, 0.15);
+
+    border-radius: 50%;
+
+    transform: rotate(-25deg);
+}
+
+
+/* =====================================================
+   ORBIT GLOW NODE
+===================================================== */
+
+.ai-integration-content .ai-tech-orbit-node {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    top: 42px;
+    left: 50%;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0950CD,
+            #3CD2F9
+        );
 
     box-shadow:
-        0 0 20px
-        rgba(60, 210, 249, 0.15);
+        0 0 10px
+        rgba(60, 210, 249, 0.8),
+
+        0 0 25px
+        rgba(9, 80, 205, 0.45);
 }
 
 
 /* =====================================================
-   ACTIVE
+   CIRCUIT LINE EFFECT
 ===================================================== */
 
-.ai-notification-arrow:active {
-    transform: scale(0.94);
+.ai-integration-content .ai-circuit-lines {
+    position: absolute;
+
+    width: 520px;
+    height: 420px;
+
+    left: -100px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    opacity: 0.65;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            transparent 28%,
+            rgba(9, 80, 205, 0.10) 28.2%,
+            transparent 28.5%,
+            transparent 52%,
+            rgba(60, 210, 249, 0.12) 52.2%,
+            transparent 52.5%,
+            transparent 78%,
+            rgba(9, 80, 205, 0.08) 78.2%,
+            transparent 78.5%
+        );
+
+    mask-image:
+        linear-gradient(
+            to right,
+            black,
+            transparent 90%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            black,
+            transparent 90%
+        );
 }
 
 
 /* =====================================================
-   NOTIFICATION LIST ADJUSTMENT
+   CIRCUIT DOTS
 ===================================================== */
 
-.ai-notification-list-wrapper
-.ai-notification-list {
-    width: calc(100% - 45px);
+.ai-integration-content .ai-circuit-lines::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
     height: 100%;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(9, 80, 205, 0.35) 2px,
+            transparent 2.5px
+        );
+
+    background-size: 70px 70px;
+
+    opacity: 0.45;
+}
+
+
+/* =====================================================
+   ANIMATED TECH SCAN
+===================================================== */
+
+.ai-integration-content .ai-tech-scan {
+    position: absolute;
+
+    width: 420px;
+    height: 1px;
+
+    left: -100px;
+    top: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(60, 210, 249, 0.5),
+            transparent
+        );
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(60, 210, 249, 0.5)
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        aiTechScan 5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes aiTechScan {
+
+    0% {
+        transform: translateY(-180px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(180px);
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   CONTENT READABILITY LAYER
+===================================================== */
+
+.ai-integration-content > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   EXTRA GLOW AROUND HEADING
+===================================================== */
+
+.ai-integration-content h1 {
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .ai-integration-content::before {
+        width: 560px;
+        height: 560px;
+
+        left: -180px;
+    }
+
+    .ai-integration-content::after {
+        width: 620px;
+        height: 560px;
+
+        left: -140px;
+    }
+
+    .ai-integration-content .ai-tech-orbit {
+        width: 450px;
+        height: 450px;
+
+        left: -150px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE — KEEP IT SUBTLE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .ai-integration-content::before {
+        width: 420px;
+        height: 420px;
+
+        left: -180px;
+
+        opacity: 0.65;
+    }
+
+    .ai-integration-content::after {
+        width: 480px;
+        height: 430px;
+
+        left: -150px;
+
+        background-size: 35px 35px;
+
+        opacity: 0.45;
+    }
+
+    .ai-integration-content .ai-tech-orbit {
+        width: 360px;
+        height: 360px;
+
+        left: -150px;
+
+        opacity: 0.55;
+    }
+
+    .ai-integration-content .ai-circuit-lines {
+        width: 380px;
+        height: 350px;
+
+        left: -100px;
+
+        opacity: 0.35;
+    }
+
+    .ai-integration-content .ai-tech-scan {
+        width: 300px;
+
+        left: -80px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ai-integration-content .ai-tech-scan {
+        animation: none;
+    }
+
 }
