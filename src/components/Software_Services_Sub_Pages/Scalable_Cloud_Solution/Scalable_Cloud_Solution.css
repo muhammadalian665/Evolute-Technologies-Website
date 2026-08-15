@@ -1,71 +1,2536 @@
 /* =====================================================
-   DEDICATED DEVELOPMENT TEAMS - TEST CSS
+   SCALABLE CLOUD SOLUTIONS
+   EVOLUTE TECHNOLOGIES
+   COMPLETE RESPONSIVE DESIGN SYSTEM
 ===================================================== */
 
-.dedicated-development-teams-page {
+.scalable-cloud-solution {
+    --cloud-dark: #082a66;
+    --cloud-deep: #041a3f;
+    --cloud-blue: #0950cd;
+    --cloud-cyan: #3cd2f9;
+
+    --cloud-light-blue: #e2f1ff;
+    --cloud-soft-blue: #eef7ff;
+
+    --cloud-text: #14213d;
+    --cloud-muted: #667085;
+
+    --cloud-white: #ffffff;
+    --cloud-border: #e5edf7;
+
+    position: relative;
     width: 100%;
     min-height: 100vh;
 
+    overflow: hidden;
+
+    background: #ffffff;
+    color: var(--cloud-text);
+
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+.scalable-cloud-solution *,
+.scalable-cloud-solution *::before,
+.scalable-cloud-solution *::after {
+    box-sizing: border-box;
+}
+
+.scalable-cloud-solution button,
+.scalable-cloud-solution input,
+.scalable-cloud-solution textarea,
+.scalable-cloud-solution select {
+    font-family: inherit;
+}
+
+.scalable-cloud-solution button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.scalable-cloud-solution button:focus-visible {
+    outline: 3px solid rgba(60, 210, 249, 0.35);
+    outline-offset: 4px;
+}
+
+.scalable-cloud-solution img,
+.scalable-cloud-solution svg {
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.cloud-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 720px;
+
+    padding: 110px 7% 100px;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
-    padding: 100px 6%;
+    gap: 60px;
+
+    overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 15% 20%,
-            rgba(60, 210, 249, 0.18),
-            transparent 30%
+            circle at 82% 35%,
+            rgba(60, 210, 249, 0.13),
+            transparent 25%
         ),
         radial-gradient(
-            circle at 85% 80%,
-            rgba(9, 80, 205, 0.18),
+            circle at 12% 70%,
+            rgba(9, 80, 205, 0.07),
             transparent 30%
         ),
-        #050b18;
-
-    color: #ffffff;
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fbfdff 100%
+        );
 }
 
-.dedicated-development-teams-container {
-    width: 100%;
+
+/* =====================================================
+   HERO GRID
+===================================================== */
+
+.cloud-hero-grid {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.55;
+
+    background-image:
+        linear-gradient(
+            rgba(9, 80, 205, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            90deg,
+            black 0%,
+            transparent 85%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            90deg,
+            black 0%,
+            transparent 85%
+        );
+}
+
+
+/* =====================================================
+   HERO GLOWS
+===================================================== */
+
+.cloud-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(5px);
+
+    z-index: 0;
+}
+
+.cloud-glow-one {
+    width: 420px;
+    height: 420px;
+
+    top: 40px;
+    right: -130px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.16),
+            rgba(60, 210, 249, 0.02) 60%,
+            transparent 72%
+        );
+}
+
+.cloud-glow-two {
+    width: 300px;
+    height: 300px;
+
+    bottom: -120px;
+    left: -90px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(9, 80, 205, 0.10),
+            transparent 70%
+        );
+}
+
+
+/* =====================================================
+   FLOATING DOTS
+===================================================== */
+
+.cloud-floating-dot {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--cloud-cyan);
+
+    box-shadow:
+        0 0 0 5px rgba(60, 210, 249, 0.08),
+        0 0 18px rgba(60, 210, 249, 0.45);
+
+    z-index: 1;
+}
+
+.dot-one {
+    top: 22%;
+    left: 7%;
+}
+
+.dot-two {
+    right: 8%;
+    bottom: 20%;
+
+    background: var(--cloud-blue);
+
+    box-shadow:
+        0 0 0 5px rgba(9, 80, 205, 0.08),
+        0 0 18px rgba(9, 80, 205, 0.30);
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.cloud-hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(600px, 100%);
+}
+
+.cloud-hero-content > * {
+    position: relative;
+}
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.cloud-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    color: var(--cloud-blue);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.eyebrow-dot {
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 7px;
+
+    border-radius: 50%;
+
+    background: var(--cloud-cyan);
+
+    box-shadow:
+        0 0 0 5px rgba(60, 210, 249, 0.10),
+        0 0 14px rgba(60, 210, 249, 0.40);
+}
+
+.eyebrow-line {
+    width: 42px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cloud-blue),
+            transparent
+        );
+}
+
+
+/* =====================================================
+   HERO HEADING
+===================================================== */
+
+.cloud-hero h1 {
+    margin: 0;
+
+    max-width: 680px;
+
+    color: var(--cloud-deep);
+
+    font-size: clamp(48px, 5.2vw, 76px);
+
+    line-height: 1.04;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+}
+
+.cloud-hero h1 span {
+    position: relative;
+
+    display: block;
+
+    color: var(--cloud-blue);
+}
+
+.cloud-hero h1 span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 2px;
+    bottom: -10px;
+
+    width: 110px;
+    height: 4px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cloud-cyan),
+            transparent
+        );
+
+    opacity: 0.75;
+}
+
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.cloud-hero-description {
+    max-width: 570px;
+
+    margin: 30px 0 0;
+
+    color: var(--cloud-muted);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   HERO ACTIONS
+===================================================== */
+
+.cloud-hero-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 34px;
+}
+
+.cloud-primary-btn,
+.cloud-secondary-btn {
+    min-height: 52px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.cloud-primary-btn {
+    border: 1px solid var(--cloud-blue);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cloud-dark),
+            var(--cloud-blue)
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 25px rgba(9, 80, 205, 0.20);
+}
+
+.cloud-primary-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 35px rgba(9, 80, 205, 0.28);
+}
+
+.cloud-primary-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.cloud-primary-btn:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.cloud-secondary-btn {
+    border: 1px solid var(--cloud-border);
+
+    background: #ffffff;
+
+    color: var(--cloud-dark);
+
+    box-shadow:
+        0 5px 18px rgba(8, 42, 102, 0.06);
+}
+
+.cloud-secondary-btn:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(9, 80, 205, 0.25);
+
+    color: var(--cloud-blue);
+
+    box-shadow:
+        0 12px 25px rgba(9, 80, 205, 0.10);
+}
+
+
+/* =====================================================
+   TRUST ROW
+===================================================== */
+
+.cloud-trust-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.cloud-trust-row div {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #5d6b82;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.cloud-trust-row svg {
+    flex-shrink: 0;
+
+    color: var(--cloud-blue);
+
+    stroke-width: 2.4;
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.cloud-hero-visual {
+    position: relative;
+
+    flex: 0 0 510px;
+
+    width: 510px;
+    height: 510px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.cloud-orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border: 1px solid rgba(9, 80, 205, 0.12);
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 430px;
+    height: 430px;
+
+    border-top-color: rgba(60, 210, 249, 0.65);
+}
+
+.orbit-two {
+    width: 335px;
+    height: 335px;
+
+    border-right-color: rgba(9, 80, 205, 0.55);
+}
+
+.orbit-three {
+    width: 250px;
+    height: 250px;
+
+    border-bottom-color: rgba(60, 210, 249, 0.55);
+}
+
+
+/* =====================================================
+   ORBIT NODES
+===================================================== */
+
+.orbit-one::before,
+.orbit-two::before,
+.orbit-three::before {
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--cloud-cyan);
+
+    box-shadow:
+        0 0 14px rgba(60, 210, 249, 0.75);
+}
+
+.orbit-one::before {
+    top: 18px;
+    left: 20%;
+}
+
+.orbit-two::before {
+    right: 20px;
+    top: 28%;
+
+    background: var(--cloud-blue);
+
+    box-shadow:
+        0 0 14px rgba(9, 80, 205, 0.55);
+}
+
+.orbit-three::before {
+    bottom: 14px;
+    left: 35%;
+}
+
+
+/* =====================================================
+   CLOUD CORE
+===================================================== */
+
+.cloud-core {
+    position: relative;
+
+    width: 210px;
+    height: 210px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(9, 80, 205, 0.16);
+
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            #ffffff 0%,
+            #f3f9ff 48%,
+            #e2f1ff 100%
+        );
+
+    box-shadow:
+        0 25px 70px rgba(9, 80, 205, 0.14),
+        inset 0 0 30px rgba(255, 255, 255, 0.9);
+
+    z-index: 5;
+}
+
+.cloud-core::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border-radius: 50%;
+
+    border: 1px dashed rgba(9, 80, 205, 0.13);
+
+    animation: cloudCoreSpin 18s linear infinite;
+}
+
+@keyframes cloudCoreSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cloud-core-glow {
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(60, 210, 249, 0.16);
+
+    filter: blur(22px);
+
+    pointer-events: none;
+}
+
+.cloud-core svg {
+    position: relative;
+
+    color: var(--cloud-blue);
+
+    margin-bottom: 8px;
+
+    z-index: 2;
+}
+
+.cloud-core span {
+    position: relative;
+
+    color: var(--cloud-muted);
+
+    font-size: 13px;
+
+    z-index: 2;
+}
+
+.cloud-core strong {
+    position: relative;
+
+    margin-top: 3px;
+
+    color: var(--cloud-deep);
+
+    font-size: 17px;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   FLOATING CARDS
+===================================================== */
+
+.cloud-floating-card {
+    position: absolute;
+
+    min-width: 150px;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    border: 1px solid rgba(9, 80, 205, 0.10);
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 15px 35px rgba(8, 42, 102, 0.10);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    z-index: 8;
+}
+
+.floating-card-icon {
+    width: 36px;
+    height: 36px;
+
+    flex: 0 0 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: var(--cloud-soft-blue);
+
+    color: var(--cloud-blue);
+}
+
+.cloud-floating-card small {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #8a96a8;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.cloud-floating-card strong {
+    display: block;
+
+    color: var(--cloud-dark);
+
+    font-size: 13px;
+
+    font-weight: 750;
+}
+
+.card-security {
+    top: 58px;
+    left: -8px;
+}
+
+.card-performance {
+    right: -10px;
+    top: 155px;
+}
+
+.card-scaling {
+    left: 12px;
+    bottom: 65px;
+}
+
+
+/* =====================================================
+   CLOUD NODES
+===================================================== */
+
+.cloud-node {
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(9, 80, 205, 0.15);
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: var(--cloud-blue);
+
+    box-shadow:
+        0 10px 25px rgba(9, 80, 205, 0.10);
+
+    z-index: 7;
+
+    animation:
+        nodeFloat 4s ease-in-out infinite;
+}
+
+@keyframes nodeFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.node-one {
+    top: 95px;
+    right: 72px;
+
+    animation-delay: 0.2s;
+}
+
+.node-two {
+    right: 35px;
+    bottom: 95px;
+
+    animation-delay: 0.8s;
+}
+
+.node-three {
+    bottom: 45px;
+    left: 125px;
+
+    animation-delay: 1.2s;
+}
+
+
+/* =====================================================
+   STATS SECTION
+===================================================== */
+
+.cloud-stats-section {
+    position: relative;
+
+    padding: 0 7%;
+
+    background: #ffffff;
+
+    z-index: 5;
+}
+
+.cloud-stats {
+    position: relative;
+
     max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--cloud-border);
+    border-bottom: 1px solid var(--cloud-border);
+}
+
+.cloud-stat {
+    position: relative;
+
+    min-height: 125px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.cloud-stat:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 25%;
+
+    width: 1px;
+    height: 50%;
+
+    background: var(--cloud-border);
+}
+
+.cloud-stat strong {
+    color: var(--cloud-blue);
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.cloud-stat span {
+    margin-top: 5px;
+
+    color: var(--cloud-muted);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.cloud-section-heading {
+    max-width: 600px;
+}
+
+.cloud-section-heading.centered {
+    max-width: 700px;
+
+    margin: 0 auto;
 
     text-align: center;
 }
 
-.dedicated-development-teams-container h1 {
-    margin-bottom: 20px;
+.section-label {
+    display: inline-flex;
 
-    font-size: 52px;
-    font-weight: 700;
+    align-items: center;
 
-    color: #ffffff;
+    margin-bottom: 17px;
+
+    color: var(--cloud-blue);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
-.dedicated-development-teams-container p {
-    max-width: 700px;
+.section-label::before {
+    content: "";
 
-    margin: 0 auto 30px;
+    width: 22px;
+    height: 2px;
 
-    font-size: 18px;
-    line-height: 1.7;
+    margin-right: 9px;
 
-    color: #b8c4d9;
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cloud-cyan),
+            var(--cloud-blue)
+        );
 }
 
-.dedicated-development-teams-test {
-    display: inline-block;
+.cloud-section-heading h2,
+.advantages-content h2 {
+    margin: 0;
 
-    padding: 14px 28px;
+    color: var(--cloud-deep);
 
-    border-radius: 8px;
+    font-size: clamp(34px, 4vw, 52px);
 
-    background: #0950cd;
+    line-height: 1.12;
 
-    color: #ffffff;
+    letter-spacing: -1.8px;
+}
+
+.cloud-section-heading h2 span,
+.advantages-content h2 span {
+    color: var(--cloud-blue);
+}
+
+.cloud-section-heading p {
+    margin: 18px auto 0;
+
+    color: var(--cloud-muted);
 
     font-size: 16px;
-    font-weight: 600;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.cloud-services {
+    position: relative;
+
+    padding: 120px 7%;
+
+    background: #ffffff;
+}
+
+.cloud-services-grid {
+    max-width: 1200px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   SERVICE CARD
+===================================================== */
+
+.cloud-service-card {
+    position: relative;
+
+    min-height: 290px;
+
+    padding: 26px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border: 1px solid var(--cloud-border);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fbfdff
+        );
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(8, 42, 102, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cloud-service-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cloud-blue),
+            var(--cloud-cyan)
+        );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.35s ease;
+}
+
+.cloud-service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(9, 80, 205, 0.20);
+
+    box-shadow:
+        0 20px 45px rgba(9, 80, 205, 0.10);
+}
+
+.cloud-service-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* =====================================================
+   SERVICE TOP
+===================================================== */
+
+.service-card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.service-card-top span {
+    color: #a4afbf;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.service-card-top svg {
+    color: #a7b4c6;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.cloud-service-card:hover .service-card-top svg {
+    color: var(--cloud-blue);
+
+    transform: translate(3px, -3px);
+}
+
+
+/* =====================================================
+   SERVICE ICON
+===================================================== */
+
+.service-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(9, 80, 205, 0.10);
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef7ff,
+            #e2f1ff
+        );
+
+    color: var(--cloud-blue);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cloud-service-card:hover .service-icon {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--cloud-blue),
+            #1264e8
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 22px rgba(9, 80, 205, 0.20);
+}
+
+
+/* =====================================================
+   SERVICE CONTENT
+===================================================== */
+
+.cloud-service-card h3 {
+    margin: 0 0 10px;
+
+    color: var(--cloud-deep);
+
+    font-size: 19px;
+
+    line-height: 1.3;
+
+    font-weight: 750;
+}
+
+.cloud-service-card p {
+    margin: 0;
+
+    color: var(--cloud-muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.service-card-line {
+    width: 42px;
+    height: 2px;
+
+    margin-top: auto;
+    padding-top: 18px;
+
+    border-bottom: 2px solid rgba(60, 210, 249, 0.65);
+}
+
+
+/* =====================================================
+   WHY EVOLUTE / ADVANTAGES
+===================================================== */
+
+.cloud-advantages {
+    position: relative;
+
+    padding: 115px 7%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbff 0%,
+            #eef7ff 100%
+        );
+
+    overflow: hidden;
+}
+
+.advantages-background-shape {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.12),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+.advantages-layout {
+    position: relative;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    align-items: center;
+
+    gap: 75px;
+
+    z-index: 2;
+}
+
+.advantages-content {
+    max-width: 470px;
+}
+
+.advantages-content h2 {
+    font-size: clamp(34px, 3.8vw, 50px);
+}
+
+.advantages-content > p {
+    margin: 22px 0 0;
+
+    color: var(--cloud-muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   ADVANTAGE HIGHLIGHT
+===================================================== */
+
+.advantages-highlight {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 30px;
+
+    padding: 16px 18px;
+
+    border: 1px solid rgba(9, 80, 205, 0.10);
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 10px 25px rgba(8, 42, 102, 0.05);
+}
+
+.highlight-icon {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cloud-blue),
+            var(--cloud-cyan)
+        );
+
+    color: #ffffff;
+}
+
+.advantages-highlight strong {
+    display: block;
+
+    color: var(--cloud-deep);
+
+    font-size: 14px;
+}
+
+.advantages-highlight span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--cloud-muted);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   CAPABILITIES GRID
+===================================================== */
+
+.capabilities-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.capability-item {
+    min-height: 145px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    border: 1px solid rgba(9, 80, 205, 0.09);
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.80);
+
+    box-shadow:
+        0 8px 22px rgba(8, 42, 102, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.capability-item:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(9, 80, 205, 0.20);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 15px 30px rgba(9, 80, 205, 0.08);
+}
+
+.capability-icon {
+    width: 43px;
+    height: 43px;
+
+    flex: 0 0 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #eaf4ff;
+
+    color: var(--cloud-blue);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.capability-item:hover .capability-icon {
+    transform: scale(1.05);
+
+    background: var(--cloud-blue);
+
+    color: #ffffff;
+}
+
+.capability-item h3 {
+    margin: 2px 0 7px;
+
+    color: var(--cloud-deep);
+
+    font-size: 15px;
+
+    font-weight: 750;
+}
+
+.capability-item p {
+    margin: 0;
+
+    color: var(--cloud-muted);
+
+    font-size: 12.5px;
+
+    line-height: 1.65;
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.cloud-process {
+    position: relative;
+
+    padding: 120px 7%;
+
+    background: #ffffff;
+}
+
+.cloud-process-wrapper {
+    position: relative;
+
+    max-width: 1050px;
+
+    margin: 65px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   PROCESS LINE
+===================================================== */
+
+.process-progress-line {
+    position: absolute;
+
+    left: 11%;
+    right: 11%;
+
+    top: 31px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.12),
+            rgba(60, 210, 249, 0.65),
+            rgba(9, 80, 205, 0.12)
+        );
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   PROCESS STEP
+===================================================== */
+
+.cloud-process-step {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.process-number {
+    position: relative;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(9, 80, 205, 0.18);
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: var(--cloud-blue);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 22px rgba(9, 80, 205, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cloud-process-step:hover .process-number {
+    transform: scale(1.06);
+
+    border-color: var(--cloud-blue);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cloud-dark),
+            var(--cloud-blue)
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 12px 28px rgba(9, 80, 205, 0.20);
+}
+
+.process-content {
+    padding-top: 22px;
+
+    max-width: 210px;
+}
+
+.process-content h3 {
+    margin: 0;
+
+    color: var(--cloud-deep);
+
+    font-size: 18px;
+
+    font-weight: 750;
+}
+
+.process-content p {
+    margin: 10px 0 0;
+
+    color: var(--cloud-muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cloud-cta {
+    position: relative;
+
+    min-height: 450px;
+
+    padding: 90px 7%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #041a3f 0%,
+            #082a66 50%,
+            #0950cd 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   CTA GRID
+===================================================== */
+
+.cta-grid-pattern {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.12;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.35) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.35) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 78%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 78%
+        );
+}
+
+
+/* =====================================================
+   CTA GLOW
+===================================================== */
+
+.cta-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.25),
+            transparent 68%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+.cta-glow::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: -500px;
+    top: 300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.12),
+            transparent 70%
+        );
+}
+
+
+/* =====================================================
+   CTA CONTENT
+===================================================== */
+
+.cloud-cta-content {
+    position: relative;
+
+    max-width: 760px;
+
+    text-align: center;
+
+    z-index: 3;
+}
+
+.cta-icon {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    color: var(--cloud-cyan);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.cta-label {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--cloud-cyan);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.cloud-cta h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(36px, 5vw, 58px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+.cloud-cta h2 span {
+    display: block;
+
+    color: var(--cloud-cyan);
+}
+
+.cloud-cta p {
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   CTA BUTTON
+===================================================== */
+
+.cta-button {
+    margin-top: 30px;
+
+    min-height: 54px;
+
+    padding: 0 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: var(--cloud-blue);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+
+    background: #f4fbff;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.22);
+}
+
+.cta-button svg {
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .cloud-hero {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        gap: 30px;
+    }
+
+    .cloud-hero-content {
+        width: min(540px, 100%);
+    }
+
+    .cloud-hero-visual {
+        flex: 0 0 430px;
+
+        width: 430px;
+        height: 430px;
+    }
+
+    .orbit-one {
+        width: 360px;
+        height: 360px;
+    }
+
+    .orbit-two {
+        width: 285px;
+        height: 285px;
+    }
+
+    .orbit-three {
+        width: 215px;
+        height: 215px;
+    }
+
+    .cloud-core {
+        width: 180px;
+        height: 180px;
+    }
+
+    .card-security {
+        left: -5px;
+    }
+
+    .card-performance {
+        right: -5px;
+    }
+
+    .cloud-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantages-layout {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .advantages-content {
+        max-width: 650px;
+    }
+}
+
+
+/* =====================================================
+   TABLET / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cloud-hero {
+        min-height: auto;
+
+        padding-top: 90px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .cloud-hero-content {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .cloud-hero h1 {
+        font-size: clamp(44px, 8vw, 65px);
+    }
+
+    .cloud-hero-description {
+        max-width: 650px;
+    }
+
+    .cloud-trust-row {
+        justify-content: center;
+    }
+
+    .cloud-hero-visual {
+        margin-top: 20px;
+    }
+
+    .cloud-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cloud-stat:nth-child(2)::after {
+        display: none;
+    }
+
+    .cloud-stat:nth-child(1),
+    .cloud-stat:nth-child(2) {
+        border-bottom: 1px solid var(--cloud-border);
+    }
+
+    .cloud-process-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+
+        row-gap: 45px;
+    }
+
+    .process-progress-line {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .cloud-hero {
+        padding: 75px 20px 65px;
+
+        gap: 20px;
+    }
+
+    .cloud-eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.4px;
+    }
+
+    .eyebrow-line {
+        width: 25px;
+    }
+
+    .cloud-hero h1 {
+        font-size: clamp(39px, 12vw, 55px);
+
+        letter-spacing: -2px;
+    }
+
+    .cloud-hero h1 span::after {
+        display: none;
+    }
+
+    .cloud-hero-description {
+        margin-top: 23px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .cloud-hero-actions {
+        width: 100%;
+
+        flex-direction: column;
+
+        margin-top: 28px;
+    }
+
+    .cloud-primary-btn,
+    .cloud-secondary-btn {
+        width: 100%;
+    }
+
+    .cloud-trust-row {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        margin-top: 25px;
+    }
+
+    .cloud-hero-visual {
+        flex: none;
+
+        width: 330px;
+        height: 330px;
+
+        max-width: 100%;
+
+        margin-top: 10px;
+    }
+
+    .orbit-one {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orbit-two {
+        width: 235px;
+        height: 235px;
+    }
+
+    .orbit-three {
+        width: 175px;
+        height: 175px;
+    }
+
+    .cloud-core {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cloud-core svg {
+        width: 55px;
+        height: 55px;
+    }
+
+    .cloud-core span {
+        font-size: 11px;
+    }
+
+    .cloud-core strong {
+        font-size: 14px;
+    }
+
+    .cloud-floating-card {
+        min-width: 125px;
+
+        padding: 9px 10px;
+
+        gap: 8px;
+    }
+
+    .floating-card-icon {
+        width: 30px;
+        height: 30px;
+
+        flex-basis: 30px;
+    }
+
+    .cloud-floating-card small {
+        font-size: 8px;
+    }
+
+    .cloud-floating-card strong {
+        font-size: 11px;
+    }
+
+    .card-security {
+        top: 25px;
+        left: -8px;
+    }
+
+    .card-performance {
+        top: 105px;
+        right: -12px;
+    }
+
+    .card-scaling {
+        bottom: 25px;
+        left: 0;
+    }
+
+    .cloud-node {
+        width: 34px;
+        height: 34px;
+    }
+
+    .cloud-node svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .node-one {
+        top: 65px;
+        right: 42px;
+    }
+
+    .node-two {
+        right: 15px;
+        bottom: 55px;
+    }
+
+    .node-three {
+        bottom: 25px;
+        left: 70px;
+    }
+
+
+    /* =================================================
+       STATS
+    ================================================= */
+
+    .cloud-stats-section {
+        padding: 0 20px;
+    }
+
+    .cloud-stat {
+        min-height: 105px;
+
+        padding: 15px 8px;
+    }
+
+    .cloud-stat strong {
+        font-size: 23px;
+    }
+
+    .cloud-stat span {
+        font-size: 10px;
+    }
+
+
+    /* =================================================
+       SECTIONS
+    ================================================= */
+
+    .cloud-services,
+    .cloud-advantages,
+    .cloud-process {
+        padding: 80px 20px;
+    }
+
+    .cloud-section-heading h2,
+    .advantages-content h2 {
+        font-size: 35px;
+
+        letter-spacing: -1.3px;
+    }
+
+    .cloud-section-heading p {
+        font-size: 14px;
+    }
+
+
+    /* =================================================
+       SERVICES
+    ================================================= */
+
+    .cloud-services-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 40px;
+
+        gap: 16px;
+    }
+
+    .cloud-service-card {
+        min-height: 270px;
+
+        padding: 23px;
+    }
+
+
+    /* =================================================
+       ADVANTAGES
+    ================================================= */
+
+    .advantages-layout {
+        gap: 35px;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .capability-item {
+        min-height: auto;
+
+        padding: 18px;
+    }
+
+
+    /* =================================================
+       PROCESS
+    ================================================= */
+
+    .cloud-process-wrapper {
+        grid-template-columns: 1fr;
+
+        margin-top: 45px;
+
+        gap: 35px;
+    }
+
+    .cloud-process-step {
+        align-items: flex-start;
+
+        text-align: left;
+
+        flex-direction: row;
+
+        gap: 18px;
+    }
+
+    .process-number {
+        width: 54px;
+        height: 54px;
+
+        flex: 0 0 54px;
+    }
+
+    .process-content {
+        padding-top: 4px;
+
+        max-width: none;
+    }
+
+
+    /* =================================================
+       CTA
+    ================================================= */
+
+    .cloud-cta {
+        min-height: 470px;
+
+        padding: 75px 20px;
+    }
+
+    .cloud-cta h2 {
+        font-size: 39px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .cloud-cta p {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 390px) {
+
+    .cloud-hero {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .cloud-hero-visual {
+        width: 290px;
+        height: 290px;
+    }
+
+    .orbit-one {
+        width: 270px;
+        height: 270px;
+    }
+
+    .orbit-two {
+        width: 215px;
+        height: 215px;
+    }
+
+    .orbit-three {
+        width: 160px;
+        height: 160px;
+    }
+
+    .cloud-core {
+        width: 135px;
+        height: 135px;
+    }
+
+    .cloud-floating-card {
+        transform: scale(0.88);
+    }
+
+    .card-security {
+        left: -22px;
+    }
+
+    .card-performance {
+        right: -22px;
+    }
+
+    .cloud-section-heading h2,
+    .advantages-content h2 {
+        font-size: 31px;
+    }
+
+    .cloud-cta h2 {
+        font-size: 34px;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL DEVICES
+===================================================== */
+
+@media (max-width: 340px) {
+
+    .cloud-hero-visual {
+        width: 270px;
+        height: 270px;
+    }
+
+    .orbit-one {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orbit-two {
+        width: 200px;
+        height: 200px;
+    }
+
+    .orbit-three {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cloud-core {
+        width: 125px;
+        height: 125px;
+    }
+
+    .cloud-floating-card {
+        min-width: 112px;
+
+        transform: scale(0.80);
+    }
+
+    .card-security {
+        left: -30px;
+    }
+
+    .card-performance {
+        right: -30px;
+    }
+
+    .cloud-hero h1 {
+        font-size: 36px;
+    }
+
+    .cloud-cta h2 {
+        font-size: 31px;
+    }
+}
+
+
+/* =====================================================
+   HOVER CAPABILITY
+   Disable excessive hover movement on touch devices
+===================================================== */
+
+@media (hover: none) {
+
+    .cloud-service-card:hover {
+        transform: none;
+    }
+
+    .capability-item:hover {
+        transform: none;
+    }
+
+    .process-number:hover {
+        transform: none;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .scalable-cloud-solution *,
+    .scalable-cloud-solution *::before,
+    .scalable-cloud-solution *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
 }
