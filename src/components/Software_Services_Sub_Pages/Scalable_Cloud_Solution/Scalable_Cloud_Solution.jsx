@@ -213,6 +213,24 @@ const staggerContainer = {
 const Scalable_Cloud_Solution = () => {
     const navigate = useNavigate();
 
+    /*
+     * ===================================================
+     * CONTACT PAGE NAVIGATION
+     * ===================================================
+     *
+     * App.jsx mein Contact Us ka route:
+     *
+     * /contact-us
+     *
+     * Isliye Cloud page ke tamam CTA buttons
+     * isi route par navigate karenge.
+     */
+
+    const goToContact = () => {
+        navigate("/contact-us");
+    };
+
+
     return (
         <main className="scalable-cloud-solution">
 
@@ -354,10 +372,15 @@ const Scalable_Cloud_Solution = () => {
                         }}
                     >
 
+                        {/* =================================================
+                            BUILD YOUR CLOUD
+                            CONNECTED TO CONTACT US
+                        ================================================= */}
+
                         <motion.button
                             type="button"
                             className="cloud-primary-btn"
-                            onClick={() => navigate("/contact")}
+                            onClick={goToContact}
                             whileHover={{
                                 y: -3,
                                 scale: 1.02,
@@ -374,10 +397,15 @@ const Scalable_Cloud_Solution = () => {
                         </motion.button>
 
 
+                        {/* =================================================
+                            EXPLORE SERVICES
+                            CONNECTED TO SOFTWARE SERVICES
+                        ================================================= */}
+
                         <motion.button
                             type="button"
                             className="cloud-secondary-btn"
-                            onClick={() => navigate("/services")}
+                            onClick={() => navigate("/software-services")}
                             whileHover={{
                                 y: -3,
                             }}
@@ -862,6 +890,7 @@ const Scalable_Cloud_Solution = () => {
 
                         <h2>
                             Cloud infrastructure
+
                             <span>
                                 built around your business.
                             </span>
@@ -993,10 +1022,13 @@ const Scalable_Cloud_Solution = () => {
                     </span>
 
                     <h2>
+
                         From infrastructure
+
                         <span>
                             to impact.
                         </span>
+
                     </h2>
 
                     <p>
@@ -1120,10 +1152,13 @@ const Scalable_Cloud_Solution = () => {
 
 
                     <h2>
+
                         Let's build your
+
                         <span>
                             cloud advantage.
                         </span>
+
                     </h2>
 
 
@@ -1135,10 +1170,15 @@ const Scalable_Cloud_Solution = () => {
                     </p>
 
 
+                    {/* =================================================
+                        FINAL CTA
+                        CONNECTED TO CONTACT US
+                    ================================================= */}
+
                     <motion.button
                         type="button"
                         className="cta-button"
-                        onClick={() => navigate("/contact")}
+                        onClick={goToContact}
                         whileHover={{
                             y: -3,
                             scale: 1.02,
