@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import "./Got_A_Project.css";
 
 function GotAProject() {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate("/contact-us");
+  };
+
   return (
     <section className="got-a-project">
       <div className="got-a-project-container">
@@ -16,10 +23,14 @@ function GotAProject() {
 
           {/* RIGHT */}
           <div className="got-a-project-action">
-            <a href="/contact" className="got-a-project-button">
+            <button
+              type="button"
+              className="got-a-project-button"
+              onClick={handleContactClick}
+            >
               Contact Us
               <span>→</span>
-            </a>
+            </button>
           </div>
 
         </div>

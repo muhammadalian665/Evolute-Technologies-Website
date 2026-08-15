@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Customized_Solutions.css";
 
 function CustomizedSolutions() {
@@ -5,10 +6,16 @@ function CustomizedSolutions() {
     <section className="customized-solutions">
       <div className="customized-solutions-container">
 
-        {/* LEFT COLUMN - TICKER */}
+        {/* =====================================================
+            LEFT COLUMN - TICKER
+        ===================================================== */}
+
         <div className="customized-solutions-ticker-wrapper">
+
           <div className="customized-solutions-ticker">
+
             <div className="customized-solutions-ticker-track">
+
               <span>
                 Find A Perfect Fit With Our Customized Solutions Today!
               </span>
@@ -16,19 +23,35 @@ function CustomizedSolutions() {
               <span>
                 Find A Perfect Fit With Our Customized Solutions Today!
               </span>
+
             </div>
+
           </div>
+
         </div>
 
-        {/* RIGHT COLUMN - BUTTON */}
+
+        {/* =====================================================
+            RIGHT COLUMN - CTA
+        ===================================================== */}
+
         <div className="customized-solutions-button-column">
-          <a
-            href="/contact"
+
+          <Link
+            to="/contact-us"
             className="customized-solutions-button"
           >
-            <span>Discover Your Advantage</span>
-            <span className="customized-solutions-arrow">→</span>
-          </a>
+
+            <span>
+              Discover Your Advantage
+            </span>
+
+            <span className="customized-solutions-arrow">
+              →
+            </span>
+
+          </Link>
+
         </div>
 
       </div>
