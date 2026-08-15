@@ -31,7 +31,7 @@ import {
     ChevronRight,
     Sparkles,
     MonitorSmartphone,
-    
+
     Boxes,
     Headphones,
 } from "lucide-react";
