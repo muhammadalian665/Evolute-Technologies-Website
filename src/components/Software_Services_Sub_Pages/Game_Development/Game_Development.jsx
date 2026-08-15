@@ -30,7 +30,6 @@ import {
     Database,
     ChevronRight,
     CircleCheck,
-    Play,
     Joystick,
     Trophy,
     Crosshair,
@@ -39,6 +38,17 @@ import {
 
 import "./Game_Development.css";
 
+/* =====================================================
+   GAME DEVELOPMENT PAGE IMAGES
+===================================================== */
+import G1 from "../../../assets/Game_Development_Page images/G1.png";
+import G2 from "../../../assets/Game_Development_Page images/G2.png";
+import G3 from "../../../assets/Game_Development_Page images/G3.png";
+import G4 from "../../../assets/Game_Development_Page images/G4.png";
+import G5 from "../../../assets/Game_Development_Page images/G5.png";
+import G6 from "../../../assets/Game_Development_Page images/G6.png";
+import G7 from "../../../assets/Game_Development_Page images/G7.png";
+import G8 from "../../../assets/Game_Development_Page images/G8.png";
 /* =====================================================
    ANIMATION VARIANTS
 ===================================================== */
@@ -400,7 +410,7 @@ const faqs = [
 ];
 
 /* =====================================================
-   HERO GAME DASHBOARD
+   HERO GAME IMAGE VISUAL
 ===================================================== */
 
 function GameDevelopmentDashboard() {
@@ -461,10 +471,61 @@ function GameDevelopmentDashboard() {
                 }}
             />
 
-            {/* Main game interface */}
+            {/* =================================================
+               HERO IMAGE BACKGROUND LAYERS
+            ================================================= */}
+
+            <motion.img
+                src={G6}
+                alt=""
+                className="gd-hero-image gd-hero-image-six"
+                animate={{
+                    y: [0, -10, 0],
+                    rotate: [-2, 0, -2],
+                }}
+                transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            />
+
+            <motion.img
+                src={G7}
+                alt=""
+                className="gd-hero-image gd-hero-image-seven"
+                animate={{
+                    y: [0, 12, 0],
+                    rotate: [2, 0, 2],
+                }}
+                transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            />
+
+            <motion.img
+                src={G8}
+                alt=""
+                className="gd-hero-image gd-hero-image-eight"
+                animate={{
+                    scale: [1, 1.04, 1],
+                    opacity: [0.55, 0.75, 0.55],
+                }}
+                transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            />
+
+            {/* =================================================
+               MAIN GAME IMAGE
+            ================================================= */}
 
             <motion.div
-                className="gd-game-dashboard"
+                className="gd-main-image-wrapper"
                 animate={{
                     y: [0, -9, 0],
                 }}
@@ -474,171 +535,34 @@ function GameDevelopmentDashboard() {
                     ease: "easeInOut",
                 }}
             >
-                {/* Dashboard Header */}
+                <img
+                    src={G1}
+                    alt="Game Development"
+                    className="gd-main-image"
+                />
 
-                <div className="gd-dashboard-header">
-                    <div className="gd-dashboard-brand">
-                        <div className="gd-dashboard-icon">
-                            <Gamepad2 size={20} />
-                        </div>
+                <div className="gd-main-image-overlay" />
 
-                        <div>
-                            <strong>GAME SYSTEM</strong>
-                            <span>Development Console</span>
-                        </div>
-                    </div>
-
-                    <div className="gd-live-status">
-                        <span />
-                        LIVE BUILD
-                    </div>
+                <div className="gd-image-badge gd-image-badge-top">
+                    <Gamepad2 size={15} />
+                    GAME DEVELOPMENT
                 </div>
 
-                {/* Game Screen */}
-
-                <div className="gd-game-screen">
-                    <div className="gd-screen-grid" />
-                    <div className="gd-screen-scanline" />
-
-                    <motion.div
-                        className="gd-crosshair"
-                        animate={{
-                            rotate: 360,
-                        }}
-                        transition={{
-                            duration: 8,
-                            repeat: Infinity,
-                            ease: "linear",
-                        }}
-                    >
-                        <Crosshair size={54} />
-                    </motion.div>
-
-                    <div className="gd-screen-title">
-                        <span>PROJECT</span>
-                        <strong>NEXUS</strong>
-                    </div>
-
-                    <div className="gd-screen-bottom">
-                        <span>BUILD 0.9.8</span>
-                        <span>PLAYABLE</span>
-                    </div>
-                </div>
-
-                {/* Metrics */}
-
-                <div className="gd-dashboard-metrics">
-                    <div className="gd-metric">
-                        <div className="gd-metric-icon">
-                            <Gauge size={15} />
-                        </div>
-
-                        <div>
-                            <span>Performance</span>
-                            <strong>96%</strong>
-                        </div>
-                    </div>
-
-                    <div className="gd-metric">
-                        <div className="gd-metric-icon">
-                            <Zap size={15} />
-                        </div>
-
-                        <div>
-                            <span>Response</span>
-                            <strong>Fast</strong>
-                        </div>
-                    </div>
-
-                    <div className="gd-metric">
-                        <div className="gd-metric-icon">
-                            <ShieldCheck size={15} />
-                        </div>
-
-                        <div>
-                            <span>Stability</span>
-                            <strong>99%</strong>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Development Progress */}
-
-                <div className="gd-progress-section">
-                    <div className="gd-progress-heading">
-                        <span>DEVELOPMENT PROGRESS</span>
-                        <strong>78%</strong>
-                    </div>
-
-                    <div className="gd-progress-bar">
-                        <motion.span
-                            initial={{
-                                width: 0,
-                            }}
-                            animate={{
-                                width: "78%",
-                            }}
-                            transition={{
-                                duration: 1.6,
-                                delay: 0.7,
-                                ease,
-                            }}
-                        />
-                    </div>
-
-                    <div className="gd-progress-items">
-                        <span>
-                            <CheckCircle2 size={12} />
-                            Gameplay
-                        </span>
-
-                        <span>
-                            <CheckCircle2 size={12} />
-                            Systems
-                        </span>
-
-                        <span>
-                            <CheckCircle2 size={12} />
-                            UI
-                        </span>
-
-                        <span className="gd-progress-active">
-                            <Play size={11} />
-                            Testing
-                        </span>
-                    </div>
+                <div className="gd-image-badge gd-image-badge-bottom">
+                    <span />
+                    LIVE BUILD
                 </div>
             </motion.div>
 
-            {/* Floating Feature Card */}
+            {/* =================================================
+               FLOATING GAME IMAGES
+            ================================================= */}
 
             <motion.div
-                className="gd-floating-card gd-floating-feature"
+                className="gd-floating-image gd-floating-image-two"
                 animate={{
-                    y: [0, -9, 0],
-                }}
-                transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            >
-                <div className="gd-floating-icon">
-                    <Joystick size={17} />
-                </div>
-
-                <div>
-                    <strong>Gameplay Ready</strong>
-                    <span>Core systems active</span>
-                </div>
-            </motion.div>
-
-            {/* Floating Performance Card */}
-
-            <motion.div
-                className="gd-floating-card gd-floating-performance"
-                animate={{
-                    y: [0, 7, 0],
+                    y: [0, -10, 0],
+                    rotate: [-3, -1, -3],
                 }}
                 transition={{
                     duration: 4.5,
@@ -646,11 +570,86 @@ function GameDevelopmentDashboard() {
                     ease: "easeInOut",
                 }}
             >
-                <Gauge size={15} />
+                <img
+                    src={G2}
+                    alt="Game development visual"
+                />
+            </motion.div>
+
+            <motion.div
+                className="gd-floating-image gd-floating-image-three"
+                animate={{
+                    y: [0, 9, 0],
+                    rotate: [3, 1, 3],
+                }}
+                transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            >
+                <img
+                    src={G3}
+                    alt="Game development visual"
+                />
+            </motion.div>
+
+            <motion.div
+                className="gd-floating-image gd-floating-image-four"
+                animate={{
+                    y: [0, -7, 0],
+                    rotate: [2, 0, 2],
+                }}
+                transition={{
+                    duration: 5.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            >
+                <img
+                    src={G4}
+                    alt="Game development visual"
+                />
+            </motion.div>
+
+            <motion.div
+                className="gd-floating-image gd-floating-image-five"
+                animate={{
+                    y: [0, 8, 0],
+                    rotate: [-2, 0, -2],
+                }}
+                transition={{
+                    duration: 4.8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            >
+                <img
+                    src={G5}
+                    alt="Game development visual"
+                />
+            </motion.div>
+
+            {/* =================================================
+               HERO TECH LABEL
+            ================================================= */}
+
+            <motion.div
+                className="gd-hero-tech-label"
+                animate={{
+                    y: [0, -5, 0],
+                }}
+                transition={{
+                    duration: 3.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            >
+                <Gauge size={14} />
 
                 <div>
                     <strong>96 FPS</strong>
-                    <span>Optimized</span>
+                    <span>Optimized Experience</span>
                 </div>
             </motion.div>
         </motion.div>
@@ -663,12 +662,6 @@ function GameDevelopmentDashboard() {
 
 export default function Game_Development() {
     const navigate = useNavigate();
-
-    /* =================================================
-       CONTACT US NAVIGATION
-       
-       ALL CTA BUTTONS USE THIS FUNCTION
-    ================================================= */
 
     const goToContact = () => {
         navigate("/contact-us");
@@ -687,8 +680,6 @@ export default function Game_Development() {
                 <div className="gd-hero-glow gd-glow-one" />
                 <div className="gd-hero-glow gd-glow-two" />
                 <div className="gd-hero-glow gd-glow-three" />
-
-                {/* Floating Particles */}
 
                 <motion.span
                     className="gd-particle gd-particle-one"
@@ -716,14 +707,13 @@ export default function Game_Development() {
 
                 <div className="gd-hero-content">
 
-                    {/* Hero Copy */}
-
                     <motion.div
                         className="gd-hero-copy"
                         variants={fadeLeft}
                         initial="hidden"
                         animate="visible"
                     >
+
                         <motion.div
                             className="gd-eyebrow"
                             initial={{
@@ -753,8 +743,6 @@ export default function Game_Development() {
                             designed around gameplay, technology, creativity,
                             and the players who matter.
                         </p>
-
-                        {/* HERO CTA BUTTONS */}
 
                         <div className="gd-hero-actions">
 
@@ -790,6 +778,7 @@ export default function Game_Development() {
                         </div>
 
                         <div className="gd-hero-trust">
+
                             <div className="gd-trust-item">
                                 <CheckCircle2 size={15} />
                                 2D & 3D Experiences
@@ -804,10 +793,10 @@ export default function Game_Development() {
                                 <Globe2 size={15} />
                                 Multi-Platform
                             </div>
-                        </div>
-                    </motion.div>
 
-                    {/* Hero Visual */}
+                        </div>
+
+                    </motion.div>
 
                     <GameDevelopmentDashboard />
 
@@ -964,6 +953,7 @@ export default function Game_Development() {
                                     }}
                                 >
                                     <div className="gd-service-card-top">
+
                                         <div className="gd-service-icon">
                                             <Icon size={21} />
                                         </div>
@@ -971,6 +961,7 @@ export default function Game_Development() {
                                         <span className="gd-service-number">
                                             {service.number}
                                         </span>
+
                                     </div>
 
                                     <h3>{service.title}</h3>
@@ -1015,6 +1006,7 @@ export default function Game_Development() {
                         }}
                         variants={fadeLeft}
                     >
+
                         <span className="gd-section-label">
                             <Cpu size={14} />
                             GAME ENGINEERING
@@ -1033,8 +1025,6 @@ export default function Game_Development() {
                             systems, backend services, reliability, interfaces,
                             and the technical foundation behind the game.
                         </p>
-
-                        {/* CONTACT CTA */}
 
                         <motion.button
                             className="gd-text-btn"
@@ -1106,6 +1096,7 @@ export default function Game_Development() {
                         }}
                         variants={fadeUp}
                     >
+
                         <span className="gd-section-label">
                             <Gamepad2 size={14} />
                             WHAT WE BUILD
@@ -1121,6 +1112,7 @@ export default function Game_Development() {
                             ambitious interactive product, we build around
                             the experience you want players to have.
                         </p>
+
                     </motion.div>
 
                     <motion.div
@@ -1133,6 +1125,7 @@ export default function Game_Development() {
                             amount: 0.15,
                         }}
                     >
+
                         {gameTypes.map((type, index) => {
                             const Icon = type.icon;
 
@@ -1145,6 +1138,7 @@ export default function Game_Development() {
                                         y: -7,
                                     }}
                                 >
+
                                     <div className="gd-game-type-number">
                                         {String(index + 1).padStart(2, "0")}
                                     </div>
@@ -1161,9 +1155,11 @@ export default function Game_Development() {
                                         className="gd-game-type-arrow"
                                         size={19}
                                     />
+
                                 </motion.article>
                             );
                         })}
+
                     </motion.div>
 
                 </div>
@@ -1186,6 +1182,7 @@ export default function Game_Development() {
                         }}
                         variants={fadeLeft}
                     >
+
                         <span className="gd-section-label">
                             <Layers3 size={14} />
                             GAME CAPABILITIES
@@ -1203,6 +1200,7 @@ export default function Game_Development() {
                         </p>
 
                         <div className="gd-capability-note">
+
                             <div className="gd-capability-note-icon">
                                 <ShieldCheck size={18} />
                             </div>
@@ -1218,7 +1216,9 @@ export default function Game_Development() {
                                     performance, and business requirements.
                                 </span>
                             </div>
+
                         </div>
+
                     </motion.div>
 
                     <motion.div
@@ -1231,6 +1231,7 @@ export default function Game_Development() {
                             amount: 0.15,
                         }}
                     >
+
                         {capabilities.map((item) => {
                             const Icon = item.icon;
 
@@ -1249,6 +1250,7 @@ export default function Game_Development() {
                                 </motion.div>
                             );
                         })}
+
                     </motion.div>
 
                 </div>
@@ -1271,6 +1273,7 @@ export default function Game_Development() {
                         }}
                         variants={fadeUp}
                     >
+
                         <span className="gd-section-label">
                             <Workflow size={14} />
                             OUR GAME DEVELOPMENT PROCESS
@@ -1286,6 +1289,7 @@ export default function Game_Development() {
                             validate ideas early, build intelligently, and
                             continuously improve the player experience.
                         </p>
+
                     </motion.div>
 
                     <div className="gd-process-line" />
@@ -1300,6 +1304,7 @@ export default function Game_Development() {
                             amount: 0.1,
                         }}
                     >
+
                         {processSteps.map((step) => {
                             const Icon = step.icon;
 
@@ -1309,6 +1314,7 @@ export default function Game_Development() {
                                     key={step.number}
                                     variants={fadeUp}
                                 >
+
                                     <span className="gd-process-number">
                                         {step.number}
                                     </span>
@@ -1326,9 +1332,11 @@ export default function Game_Development() {
                                     <h3>{step.title}</h3>
 
                                     <p>{step.description}</p>
+
                                 </motion.div>
                             );
                         })}
+
                     </motion.div>
 
                 </div>
@@ -1339,6 +1347,7 @@ export default function Game_Development() {
             ================================================= */}
 
             <section className="gd-technology">
+
                 <div className="gd-tech-glow" />
 
                 <div className="gd-container gd-tech-box">
@@ -1353,6 +1362,7 @@ export default function Game_Development() {
                         }}
                         variants={fadeLeft}
                     >
+
                         <span className="gd-section-label">
                             <Cpu size={14} />
                             TECHNOLOGY APPROACH
@@ -1374,6 +1384,7 @@ export default function Game_Development() {
                         </p>
 
                         <div className="gd-tech-highlight">
+
                             <div className="gd-tech-highlight-icon">
                                 <Target size={19} />
                             </div>
@@ -1390,7 +1401,9 @@ export default function Game_Development() {
                                     project actually needs.
                                 </span>
                             </div>
+
                         </div>
+
                     </motion.div>
 
                     <motion.div
@@ -1411,6 +1424,7 @@ export default function Game_Development() {
                             once: true,
                         }}
                     >
+
                         <div className="gd-tech-console">
 
                             <div className="gd-console-top">
@@ -1422,6 +1436,7 @@ export default function Game_Development() {
                             </div>
 
                             <div className="gd-console-lines">
+
                                 <div>
                                     <span>GAMEPLAY</span>
                                     <strong>READY</strong>
@@ -1451,9 +1466,11 @@ export default function Game_Development() {
                                     <span>SECURITY</span>
                                     <strong>ACTIVE</strong>
                                 </div>
+
                             </div>
 
                         </div>
+
                     </motion.div>
 
                 </div>
@@ -1476,6 +1493,7 @@ export default function Game_Development() {
                         }}
                         variants={fadeUp}
                     >
+
                         <span className="gd-section-label">
                             <CircleCheck size={14} />
                             COMMON QUESTIONS
@@ -1490,6 +1508,7 @@ export default function Game_Development() {
                             A few answers to common questions about our game
                             development services.
                         </p>
+
                     </motion.div>
 
                     <motion.div
@@ -1502,6 +1521,7 @@ export default function Game_Development() {
                             amount: 0.12,
                         }}
                     >
+
                         {faqs.map((faq) => (
                             <motion.div
                                 className="gd-faq-item"
@@ -1511,6 +1531,7 @@ export default function Game_Development() {
                                     x: 4,
                                 }}
                             >
+
                                 <span className="gd-faq-number">
                                     {faq.number}
                                 </span>
@@ -1524,8 +1545,10 @@ export default function Game_Development() {
                                     className="gd-faq-arrow"
                                     size={18}
                                 />
+
                             </motion.div>
                         ))}
+
                     </motion.div>
 
                 </div>
@@ -1550,6 +1573,7 @@ export default function Game_Development() {
                     }}
                     variants={fadeUp}
                 >
+
                     <motion.div
                         className="gd-cta-icon"
                         animate={{
@@ -1580,8 +1604,6 @@ export default function Game_Development() {
                         turn the idea into a real gaming experience.
                     </p>
 
-                    {/* FINAL CONTACT CTA */}
-
                     <motion.button
                         className="gd-cta-button"
                         onClick={goToContact}
@@ -1604,6 +1626,7 @@ export default function Game_Development() {
                     </div>
 
                 </motion.div>
+
             </section>
 
         </main>

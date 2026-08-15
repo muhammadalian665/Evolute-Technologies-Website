@@ -402,18 +402,25 @@
 
 
 /* =====================================================
-   HERO GAME VISUAL
+   HERO IMAGE VISUAL
 ===================================================== */
 
 .gd-hero-visual {
     position: relative;
 
-    min-height: 530px;
+    min-height: 560px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    isolation: isolate;
 }
+
+
+/* =====================================================
+   DECORATIVE ORBITS
+===================================================== */
 
 .gd-orbit {
     position: absolute;
@@ -423,6 +430,8 @@
     border-radius: 50%;
 
     pointer-events: none;
+
+    z-index: 0;
 }
 
 .gd-orbit::before {
@@ -475,448 +484,329 @@
 }
 
 
-.gd-game-dashboard {
+/* =====================================================
+   BACKGROUND IMAGES
+===================================================== */
+
+.gd-hero-image {
+    position: absolute;
+
+    object-fit: cover;
+
+    pointer-events: none;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(60, 210, 249, 0.12);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(9, 80, 205, 0.12);
+
+    opacity: 0.38;
+
+    filter: saturate(0.85) brightness(0.65);
+
+    z-index: 1;
+}
+
+.gd-hero-image-six {
+    width: 190px;
+    height: 125px;
+
+    left: 2%;
+    top: 6%;
+
+    transform: rotate(-10deg);
+}
+
+.gd-hero-image-seven {
+    width: 180px;
+    height: 120px;
+
+    right: 0;
+    top: 10%;
+
+    transform: rotate(9deg);
+}
+
+.gd-hero-image-eight {
+    width: 260px;
+    height: 160px;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    opacity: 0.22;
+
+    filter: saturate(0.7) brightness(0.55);
+}
+
+
+/* =====================================================
+   MAIN HERO IMAGE
+===================================================== */
+
+.gd-main-image-wrapper {
     position: relative;
-    z-index: 4;
 
-    width: min(530px, 90%);
+    width: min(530px, 82%);
 
-    padding: 17px;
+    z-index: 5;
+
+    overflow: hidden;
 
     border-radius: 22px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(12, 31, 65, 0.96),
-            rgba(4, 14, 31, 0.98)
-        );
+    border: 1px solid rgba(60, 210, 249, 0.28);
 
-    border: 1px solid rgba(60, 210, 249, 0.24);
+    background: #061126;
 
     box-shadow:
-        0 35px 80px rgba(0, 0, 0, 0.5),
-        0 0 60px rgba(9, 80, 205, 0.18),
-        inset 0 1px rgba(255, 255, 255, 0.07);
+        0 35px 90px rgba(0, 0, 0, 0.55),
+        0 0 65px rgba(9, 80, 205, 0.2),
+        0 0 25px rgba(60, 210, 249, 0.08),
+        inset 0 1px rgba(255, 255, 255, 0.12);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(15px);
 }
 
-.gd-dashboard-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 3px 4px 15px;
-}
-
-.gd-dashboard-brand {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-}
-
-.gd-dashboard-icon {
-    width: 39px;
-    height: 39px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 11px;
-
-    color: var(--gd-cyan);
-
-    background: rgba(60, 210, 249, 0.08);
-    border: 1px solid rgba(60, 210, 249, 0.2);
-
-    box-shadow: 0 0 20px rgba(60, 210, 249, 0.08);
-}
-
-.gd-dashboard-brand strong,
-.gd-dashboard-brand span {
+.gd-main-image {
     display: block;
+
+    width: 100%;
+    height: 390px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
 }
 
-.gd-dashboard-brand strong {
-    color: white;
+.gd-main-image-wrapper:hover .gd-main-image {
+    transform: scale(1.035);
 
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    filter: saturate(1.08) brightness(1.05);
 }
 
-.gd-dashboard-brand span {
-    margin-top: 4px;
+.gd-main-image-overlay {
+    position: absolute;
 
-    color: #6f86aa;
+    inset: 0;
 
-    font-size: 9px;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 8, 21, 0.08) 0%,
+            transparent 35%,
+            rgba(2, 8, 21, 0.58) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.08),
+            transparent 50%,
+            rgba(60, 210, 249, 0.08)
+        );
 }
 
-.gd-live-status {
+
+/* =====================================================
+   IMAGE BADGES
+===================================================== */
+
+.gd-image-badge {
+    position: absolute;
+
+    z-index: 3;
+
     display: flex;
     align-items: center;
     gap: 7px;
 
-    color: #71f0b3;
+    padding: 9px 12px;
+
+    border-radius: 9px;
+
+    background: rgba(3, 12, 28, 0.82);
+
+    border: 1px solid rgba(60, 210, 249, 0.22);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(12px);
+
+    color: #dff7ff;
 
     font-size: 8px;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.11em;
 }
 
-.gd-live-status span {
+.gd-image-badge svg {
+    color: var(--gd-cyan);
+}
+
+.gd-image-badge-top {
+    top: 16px;
+    left: 16px;
+}
+
+.gd-image-badge-bottom {
+    right: 16px;
+    bottom: 16px;
+
+    color: #72f0b2;
+}
+
+.gd-image-badge-bottom span {
     width: 6px;
     height: 6px;
 
     border-radius: 50%;
 
-    background: #71f0b3;
+    background: #72f0b2;
 
-    box-shadow: 0 0 10px #71f0b3;
+    box-shadow: 0 0 10px #72f0b2;
+
+    animation: gdImageLive 2s infinite;
+}
+
+@keyframes gdImageLive {
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
 }
 
 
-/* Game screen */
+/* =====================================================
+   FLOATING IMAGES
+===================================================== */
 
-.gd-game-screen {
-    position: relative;
+.gd-floating-image {
+    position: absolute;
 
-    height: 230px;
+    z-index: 8;
 
     overflow: hidden;
+
+    width: 135px;
+    height: 92px;
+
+    padding: 4px;
 
     border-radius: 14px;
 
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(9, 80, 205, 0.2),
-            transparent 45%
-        ),
-        linear-gradient(
-            135deg,
-            #030a19,
-            #071c3b
-        );
+    background: rgba(4, 14, 31, 0.9);
 
-    border: 1px solid rgba(60, 210, 249, 0.15);
-}
-
-.gd-screen-grid {
-    position: absolute;
-    inset: 0;
-
-    opacity: 0.28;
-
-    background-image:
-        linear-gradient(
-            rgba(60, 210, 249, 0.12) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(60, 210, 249, 0.12) 1px,
-            transparent 1px
-        );
-
-    background-size: 35px 35px;
-
-    transform: perspective(400px) rotateX(55deg) scale(1.4);
-    transform-origin: center bottom;
-}
-
-.gd-screen-scanline {
-    position: absolute;
-    left: 0;
-    right: 0;
-
-    height: 1px;
-
-    background: rgba(60, 210, 249, 0.45);
-
-    box-shadow: 0 0 12px rgba(60, 210, 249, 0.6);
-
-    animation: gdScan 4s linear infinite;
-}
-
-@keyframes gdScan {
-    from {
-        top: -2px;
-    }
-
-    to {
-        top: 100%;
-    }
-}
-
-.gd-crosshair {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    color: rgba(60, 210, 249, 0.6);
-}
-
-.gd-screen-title {
-    position: absolute;
-
-    left: 24px;
-    top: 24px;
-}
-
-.gd-screen-title span,
-.gd-screen-title strong {
-    display: block;
-}
-
-.gd-screen-title span {
-    color: #6f91bd;
-
-    font-size: 8px;
-    letter-spacing: 0.2em;
-}
-
-.gd-screen-title strong {
-    margin-top: 5px;
-
-    color: white;
-
-    font-size: 26px;
-    letter-spacing: 0.08em;
-}
-
-.gd-screen-bottom {
-    position: absolute;
-
-    left: 22px;
-    right: 22px;
-    bottom: 18px;
-
-    display: flex;
-    justify-content: space-between;
-
-    color: #6e8bb3;
-
-    font-size: 8px;
-    letter-spacing: 0.12em;
-}
-
-.gd-screen-bottom span:last-child {
-    color: #6fe9ac;
-}
-
-
-/* Metrics */
-
-.gd-dashboard-metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 9px;
-
-    margin-top: 11px;
-}
-
-.gd-metric {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 11px;
-
-    border-radius: 10px;
-
-    background: rgba(255, 255, 255, 0.025);
-
-    border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.gd-metric-icon {
-    width: 28px;
-    height: 28px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 8px;
-
-    color: var(--gd-cyan);
-
-    background: rgba(60, 210, 249, 0.08);
-}
-
-.gd-metric span,
-.gd-metric strong {
-    display: block;
-}
-
-.gd-metric span {
-    color: #667c9f;
-
-    font-size: 7px;
-}
-
-.gd-metric strong {
-    margin-top: 3px;
-
-    color: #e9f4ff;
-
-    font-size: 11px;
-}
-
-
-/* Progress */
-
-.gd-progress-section {
-    margin-top: 13px;
-
-    padding: 13px;
-
-    border-radius: 11px;
-
-    background: rgba(0, 0, 0, 0.14);
-}
-
-.gd-progress-heading {
-    display: flex;
-    justify-content: space-between;
-
-    color: #728aaf;
-
-    font-size: 8px;
-    letter-spacing: 0.1em;
-}
-
-.gd-progress-heading strong {
-    color: var(--gd-cyan);
-}
-
-.gd-progress-bar {
-    height: 4px;
-
-    margin-top: 9px;
-
-    overflow: hidden;
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.06);
-}
-
-.gd-progress-bar span {
-    display: block;
-
-    height: 100%;
-
-    border-radius: inherit;
-
-    background: linear-gradient(
-        90deg,
-        var(--gd-blue),
-        var(--gd-cyan)
-    );
-
-    box-shadow: 0 0 12px rgba(60, 210, 249, 0.5);
-}
-
-.gd-progress-items {
-    display: flex;
-    justify-content: space-between;
-
-    margin-top: 10px;
-
-    color: #687fa2;
-
-    font-size: 7px;
-}
-
-.gd-progress-items span {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.gd-progress-items svg {
-    color: #54dca0;
-}
-
-.gd-progress-items .gd-progress-active {
-    color: var(--gd-cyan);
-}
-
-
-/* Floating cards */
-
-.gd-floating-card {
-    position: absolute;
-    z-index: 8;
-
-    display: flex;
-    align-items: center;
-    gap: 9px;
-
-    padding: 12px 14px;
-
-    border-radius: 12px;
-
-    background: rgba(5, 17, 38, 0.9);
-
-    border: 1px solid rgba(60, 210, 249, 0.2);
+    border: 1px solid rgba(60, 210, 249, 0.25);
 
     box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.3),
-        0 0 25px rgba(9, 80, 205, 0.1);
+        0 20px 45px rgba(0, 0, 0, 0.42),
+        0 0 30px rgba(9, 80, 205, 0.15);
 
     backdrop-filter: blur(14px);
 }
 
-.gd-floating-feature {
-    left: -20px;
-    top: 90px;
+.gd-floating-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 10px;
 }
 
-.gd-floating-performance {
-    right: -20px;
-    bottom: 90px;
+.gd-floating-image-two {
+    left: -7px;
+    top: 75px;
 }
 
-.gd-floating-icon {
-    width: 31px;
-    height: 31px;
+.gd-floating-image-three {
+    right: -8px;
+    top: 55px;
+}
 
-    display: grid;
-    place-items: center;
+.gd-floating-image-four {
+    left: 8px;
+    bottom: 65px;
+}
 
-    border-radius: 9px;
+.gd-floating-image-five {
+    right: 8px;
+    bottom: 48px;
+}
 
+
+/* =====================================================
+   HERO TECH LABEL
+===================================================== */
+
+.gd-hero-tech-label {
+    position: absolute;
+
+    right: -2px;
+    bottom: 145px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 13px;
+
+    border-radius: 11px;
+
+    background: rgba(4, 14, 31, 0.92);
+
+    border: 1px solid rgba(60, 210, 249, 0.22);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(9, 80, 205, 0.12);
+
+    backdrop-filter: blur(14px);
+}
+
+.gd-hero-tech-label > svg {
     color: var(--gd-cyan);
-
-    background: rgba(60, 210, 249, 0.08);
 }
 
-.gd-floating-card strong,
-.gd-floating-card span {
+.gd-hero-tech-label strong,
+.gd-hero-tech-label span {
     display: block;
 }
 
-.gd-floating-card strong {
-    color: #f0f7ff;
+.gd-hero-tech-label strong {
+    color: #eef8ff;
+
     font-size: 9px;
 }
 
-.gd-floating-card span {
+.gd-hero-tech-label span {
     margin-top: 3px;
 
     color: #7289ad;
 
-    font-size: 8px;
-}
-
-.gd-floating-performance > svg {
-    color: var(--gd-cyan);
+    font-size: 7px;
 }
 
 
@@ -1482,6 +1372,7 @@
 
 .gd-capability-pill svg {
     flex: 0 0 auto;
+
     color: var(--gd-cyan);
 }
 
@@ -2053,7 +1944,7 @@
     }
 
     .gd-hero-visual {
-        min-height: 500px;
+        min-height: 530px;
     }
 
     .gd-services-grid {
@@ -2143,16 +2034,15 @@
     }
 
     .gd-hero-visual {
-        min-height: 420px;
+        min-height: 440px;
     }
 
-    .gd-game-dashboard {
-        width: 100%;
-        padding: 11px;
+    .gd-main-image-wrapper {
+        width: 88%;
     }
 
-    .gd-game-screen {
-        height: 185px;
+    .gd-main-image {
+        height: 300px;
     }
 
     .gd-orbit-one {
@@ -2170,38 +2060,65 @@
         height: 190px;
     }
 
-    .gd-floating-feature {
-        left: -7px;
-        top: 55px;
+    .gd-floating-image {
+        width: 105px;
+        height: 72px;
+
+        padding: 3px;
+
+        border-radius: 11px;
     }
 
-    .gd-floating-performance {
-        right: -7px;
+    .gd-floating-image-two {
+        left: -4px;
+        top: 58px;
+    }
+
+    .gd-floating-image-three {
+        right: -4px;
+        top: 48px;
+    }
+
+    .gd-floating-image-four {
+        left: 0;
         bottom: 55px;
     }
 
-    .gd-floating-card {
-        padding: 9px 10px;
+    .gd-floating-image-five {
+        right: 0;
+        bottom: 42px;
     }
 
-    .gd-dashboard-metrics {
-        gap: 5px;
+    .gd-hero-image-six {
+        width: 130px;
+        height: 88px;
+
+        left: -10px;
+        top: 5%;
     }
 
-    .gd-metric {
-        padding: 8px 6px;
+    .gd-hero-image-seven {
+        width: 125px;
+        height: 84px;
+
+        right: -8px;
+        top: 7%;
     }
 
-    .gd-metric-icon {
-        display: none;
+    .gd-hero-image-eight {
+        width: 190px;
+        height: 120px;
     }
 
-    .gd-metric span {
-        font-size: 6px;
+    .gd-hero-tech-label {
+        right: 2px;
+        bottom: 105px;
     }
 
-    .gd-metric strong {
-        font-size: 9px;
+    .gd-image-badge {
+        padding: 7px 9px;
+
+        font-size: 7px;
     }
 
     .gd-intro,
@@ -2302,16 +2219,44 @@
         border-left: 1px solid #e8edf5;
     }
 
-    .gd-game-screen {
-        height: 165px;
+    .gd-main-image {
+        height: 260px;
     }
 
-    .gd-floating-feature {
-        left: -12px;
+    .gd-floating-image {
+        width: 90px;
+        height: 62px;
     }
 
-    .gd-floating-performance {
-        right: -12px;
+    .gd-floating-image-two {
+        left: -8px;
+    }
+
+    .gd-floating-image-three {
+        right: -8px;
+    }
+
+    .gd-floating-image-four {
+        left: -5px;
+    }
+
+    .gd-floating-image-five {
+        right: -5px;
+    }
+
+    .gd-hero-tech-label {
+        right: -5px;
+        bottom: 85px;
+    }
+
+    .gd-hero-image-six,
+    .gd-hero-image-seven {
+        display: none;
+    }
+
+    .gd-hero-image-eight {
+        width: 160px;
+        height: 100px;
     }
 
     .gd-progress-items {
