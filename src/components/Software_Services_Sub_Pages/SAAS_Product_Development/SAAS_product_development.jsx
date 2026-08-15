@@ -1,13 +1,193 @@
 import { useNavigate } from "react-router-dom";
-
-import CardSwap, {
-    Card,
-} from "./CardSwap";
+import { motion } from "framer-motion";
 
 import "./SAAS_product_development.css";
 
 
+/* =====================================================
+   SAAS PRODUCT DEVELOPMENT SERVICES
+===================================================== */
+
+const notifications = [
+    {
+        number: "01",
+        name: "SaaS Product Development",
+        description:
+            "Build scalable SaaS products from concept to launch with modern architecture and reliable technology.",
+        status: "Product Ready",
+        color: "#3CD2F9",
+    },
+
+    {
+        number: "02",
+        name: "MVP Development",
+        description:
+            "Validate your SaaS idea quickly with a focused MVP designed to reach the market faster.",
+        status: "MVP Ready",
+        color: "#3CD2F9",
+    },
+
+    {
+        number: "03",
+        name: "SaaS Architecture",
+        description:
+            "Design secure and scalable SaaS architectures built to support growing users, features, and data.",
+        status: "Architecture Ready",
+        color: "#60A5FA",
+    },
+
+    {
+        number: "04",
+        name: "Multi-Tenant SaaS",
+        description:
+            "Develop efficient multi-tenant platforms that securely serve multiple customers from a single system.",
+        status: "Multi-Tenant Active",
+        color: "#3CD2F9",
+    },
+
+    {
+        number: "05",
+        name: "SaaS UI & UX",
+        description:
+            "Create intuitive and conversion-focused interfaces that make complex SaaS products simple to use.",
+        status: "Experience Optimized",
+        color: "#818CF8",
+    },
+
+    {
+        number: "06",
+        name: "Subscription & Billing",
+        description:
+            "Implement flexible subscription plans, recurring payments, billing workflows, and customer management.",
+        status: "Billing Integrated",
+        color: "#3CD2F9",
+    },
+
+    {
+        number: "07",
+        name: "API & Third-Party Integration",
+        description:
+            "Connect your SaaS platform with APIs, payment gateways, CRMs, analytics tools, and external services.",
+        status: "Integration Connected",
+        color: "#22D3EE",
+    },
+
+    {
+        number: "08",
+        name: "Cloud & Infrastructure",
+        description:
+            "Deploy reliable cloud infrastructure designed for performance, availability, security, and scalability.",
+        status: "Cloud Optimized",
+        color: "#38BDF8",
+    },
+
+    {
+        number: "09",
+        name: "SaaS Security",
+        description:
+            "Protect your platform and customer data with secure authentication, authorization, encryption, and monitoring.",
+        status: "Security Active",
+        color: "#67E8F9",
+    },
+
+    {
+        number: "10",
+        name: "SaaS Migration & Modernization",
+        description:
+            "Transform legacy applications into modern SaaS platforms with scalable architecture and improved performance.",
+        status: "Modernization Ready",
+        color: "#3CD2F9",
+    },
+
+    {
+        number: "11",
+        name: "Performance Optimization",
+        description:
+            "Improve application speed, reliability, database performance, and overall SaaS user experience.",
+        status: "Performance Optimized",
+        color: "#34D399",
+    },
+
+    {
+        number: "12",
+        name: "Continuous SaaS Growth",
+        description:
+            "Continuously enhance your SaaS product with new features, improvements, monitoring, and technical support.",
+        status: "Growth Active",
+        color: "#60A5FA",
+    },
+];
+
+
+/* =====================================================
+   NOTIFICATION CARD
+===================================================== */
+
+const Notification = ({
+    number,
+    name,
+    description,
+    color,
+    status,
+}) => {
+
+    return (
+
+        <div
+            className="saas-notification"
+            style={{
+                "--notification-color": color,
+            }}
+        >
+
+            {/* =================================================
+               NOTIFICATION NUMBER
+            ================================================= */}
+
+            <div className="saas-notification-number">
+                {number}
+            </div>
+
+
+            {/* =================================================
+               CONTENT
+            ================================================= */}
+
+            <div className="saas-notification-content">
+
+                <div className="saas-notification-top">
+
+                    <h4>
+                        {name}
+                    </h4>
+
+                    <span className="saas-notification-status">
+                        {status}
+                    </span>
+
+                </div>
+
+
+                <p>
+                    {description}
+                </p>
+
+            </div>
+
+        </div>
+    );
+};
+
+
+/* =====================================================
+   SAAS PRODUCT DEVELOPMENT
+===================================================== */
+
 function SAAS_product_development() {
+
+    /* =================================================
+       NAVIGATION
+    ================================================= */
 
     const navigate = useNavigate();
 
@@ -21,449 +201,155 @@ function SAAS_product_development() {
                HERO CONTENT
             ================================================= */}
 
-            <div className="saas-product-development-content">
+            <div className="saas-product-content">
+
+                {/* =================================================
+                   FUTURISTIC DECORATIVE ELEMENTS
+                ================================================= */}
+
+                <div className="saas-tech-orbit">
+                    <div className="saas-tech-orbit-node" />
+                </div>
+
+                <div className="saas-circuit-lines" />
+
+                <div className="saas-tech-scan" />
 
 
-                <span className="saas-product-development-eyebrow">
-
+                <span className="saas-product-eyebrow">
                     SAAS PRODUCT DEVELOPMENT
-
                 </span>
 
 
                 <h1>
-
-                    Build Scalable SaaS
-
-                    Products That Grow
-
-                    With Your Business
-
+                    Build a SaaS Product
+                    <br />
+                    That Scales With Your Business.
                 </h1>
 
 
                 <p>
-
-                    We design and develop powerful,
-
-                    scalable SaaS products that turn
-
-                    complex ideas into reliable,
-
-                    high-performing digital platforms.
-
+                    We design and develop scalable SaaS products
+                    that turn your ideas into powerful digital
+                    platforms. From MVP development and cloud
+                    architecture to subscriptions, integrations,
+                    security, and continuous optimization, we
+                    build SaaS solutions designed for long-term
+                    growth.
                 </p>
 
 
-                <div className="saas-product-development-buttons">
+                {/* =================================================
+                   CTA
+                ================================================= */}
 
-
-                    {/* =================================================
-                       START YOUR PROJECT
-                       → CONTACT US
-                    ================================================= */}
+                <div className="saas-product-buttons">
 
                     <button
                         type="button"
+                        className="saas-primary-button"
                         onClick={() =>
                             navigate("/contact-us")
                         }
                     >
-
-                        Start Your Project
-
+                        Lets Talk
                     </button>
-
-
-                    {/* =================================================
-                       EXPLORE OUR SERVICES
-                       → SOFTWARE SERVICES
-                    ================================================= */}
-
-                    <button
-                        type="button"
-                        className="secondary-button"
-                        onClick={() =>
-                            navigate("/software-services")
-                        }
-                    >
-
-                        Explore Our Services
-
-                    </button>
-
 
                 </div>
-
 
             </div>
 
 
             {/* =================================================
-               CARD SWAP
+               SAAS SERVICES AREA
             ================================================= */}
 
-            <div className="saas-product-development-cards">
+            <div className="saas-notification-area">
 
 
-                <CardSwap
+                {/* =================================================
+                   DECORATIVE GLOW
+                ================================================= */}
 
-                    width={500}
+                <div className="saas-notification-glow" />
 
-                    height={400}
 
-                    cardDistance={70}
+                {/* =================================================
+                   SERVICES HEADER
+                ================================================= */}
 
-                    verticalDistance={70}
+                <div className="saas-notification-header">
 
-                    skewAmount={6}
+                    <div className="saas-status-indicator" />
 
-                    easing="elastic"
+                    <span>
+                        SAAS CAPABILITIES
+                    </span>
 
-                >
+                </div>
 
 
-                    {/* =================================================
-                       CARD 01
-                    ================================================= */}
+                {/* =================================================
+                   SCROLLABLE NOTIFICATION VIEWER
+                ================================================= */}
 
-                    <Card>
+                <div className="saas-notification-list-wrapper">
 
-                        <div className="saas-card-content">
+                    <div className="saas-notification-list">
 
-                            <span>
-                                01
-                            </span>
+                        {notifications.map(
+                            (
+                                notification,
+                                index
+                            ) => (
 
-                            <h3>
-                                Cloud-Native Architecture
-                            </h3>
+                                <motion.div
+                                    key={
+                                        notification.number
+                                    }
 
-                            <p>
-                                Build SaaS products on modern cloud
-                                infrastructure for flexibility,
-                                reliability, and seamless access
-                                from anywhere.
-                            </p>
+                                    className="saas-notification-feed-item"
 
-                        </div>
+                                    initial={{
+                                        opacity: 0,
+                                        y: 20,
+                                    }}
 
-                    </Card>
+                                    animate={{
+                                        opacity: 1,
+                                        y: 0,
+                                    }}
 
+                                    transition={{
+                                        duration: 0.4,
+                                        delay:
+                                            index *
+                                            0.04,
+                                        ease: [
+                                            0.22,
+                                            1,
+                                            0.36,
+                                            1,
+                                        ],
+                                    }}
+                                >
 
-                    {/* =================================================
-                       CARD 02
-                    ================================================= */}
+                                    <Notification
+                                        {...notification}
+                                    />
 
-                    <Card>
+                                </motion.div>
 
-                        <div className="saas-card-content">
+                            )
+                        )}
 
-                            <span>
-                                02
-                            </span>
+                    </div>
 
-                            <h3>
-                                Multi-Tenant Systems
-                            </h3>
-
-                            <p>
-                                Serve multiple customers through a
-                                secure architecture while keeping
-                                every organization's data isolated
-                                and protected.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 03
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                03
-                            </span>
-
-                            <h3>
-                                Subscription & Billing
-                            </h3>
-
-                            <p>
-                                Implement flexible pricing plans,
-                                recurring subscriptions, trials,
-                                upgrades, cancellations, and
-                                automated billing workflows.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 04
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                04
-                            </span>
-
-                            <h3>
-                                Scalable Infrastructure
-                            </h3>
-
-                            <p>
-                                Engineer systems that scale smoothly
-                                as users, transactions, and workloads
-                                grow without compromising performance.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 05
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                05
-                            </span>
-
-                            <h3>
-                                User & Role Management
-                            </h3>
-
-                            <p>
-                                Create powerful authentication,
-                                permissions, teams, roles, and
-                                access-control systems tailored
-                                to your business.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 06
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                06
-                            </span>
-
-                            <h3>
-                                Secure Data Management
-                            </h3>
-
-                            <p>
-                                Protect sensitive customer data with
-                                encryption, secure APIs, backups,
-                                access controls, and industry-standard
-                                security practices.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 07
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                07
-                            </span>
-
-                            <h3>
-                                API-First Development
-                            </h3>
-
-                            <p>
-                                Build robust APIs that allow your SaaS
-                                platform to connect seamlessly with
-                                third-party tools, applications,
-                                and services.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 08
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                08
-                            </span>
-
-                            <h3>
-                                Real-Time Analytics
-                            </h3>
-
-                            <p>
-                                Turn product and customer activity
-                                into actionable insights through
-                                dashboards, reports, metrics,
-                                and real-time data.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 09
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                09
-                            </span>
-
-                            <h3>
-                                Third-Party Integrations
-                            </h3>
-
-                            <p>
-                                Connect your SaaS product with CRMs,
-                                payment platforms, communication tools,
-                                productivity apps, and other business
-                                systems.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 10
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                10
-                            </span>
-
-                            <h3>
-                                Automated Workflows
-                            </h3>
-
-                            <p>
-                                Reduce manual work with intelligent
-                                workflows, triggers, notifications,
-                                scheduled tasks, and process automation.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 11
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                11
-                            </span>
-
-                            <h3>
-                                Continuous Updates
-                            </h3>
-
-                            <p>
-                                Deliver new features, improvements,
-                                bug fixes, and security updates without
-                                requiring customers to install new
-                                versions.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                    {/* =================================================
-                       CARD 12
-                    ================================================= */}
-
-                    <Card>
-
-                        <div className="saas-card-content">
-
-                            <span>
-                                12
-                            </span>
-
-                            <h3>
-                                High Availability
-                            </h3>
-
-                            <p>
-                                Design reliable SaaS platforms with
-                                monitoring, backups, redundancy, and
-                                recovery strategies to minimize downtime.
-                            </p>
-
-                        </div>
-
-                    </Card>
-
-
-                </CardSwap>
-
+                </div>
 
             </div>
 
-
         </section>
-
     );
 }
 

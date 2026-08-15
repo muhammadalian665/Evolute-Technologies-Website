@@ -1,49 +1,239 @@
 /* =====================================================
    SAAS PRODUCT DEVELOPMENT
+   NAVBAR COLOR SYSTEM
 ===================================================== */
 
 .saas-product-development {
+    --saas-dark: #082a66;
+    --saas-deep: #041a3f;
+    --saas-blue: #0950CD;
+    --saas-cyan: #3CD2F9;
+    --saas-light-blue: #e2f1ff;
+    --saas-soft-blue: #eef6ff;
+    --saas-text: #172033;
+    --saas-muted: #667085;
+    --saas-white: #ffffff;
+
     position: relative;
 
     width: 100%;
     min-height: 100vh;
 
+    padding: 120px 7% 100px;
+
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    padding: 120px 7%;
+    gap: 70px;
 
     overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 80% 40%,
-            rgba(60, 210, 249, 0.14),
+            circle at 10% 30%,
+            rgba(60, 210, 249, 0.16),
             transparent 30%
         ),
+
         radial-gradient(
-            circle at 15% 80%,
-            rgba(9, 80, 205, 0.14),
+            circle at 90% 55%,
+            rgba(9, 80, 205, 0.12),
             transparent 32%
         ),
-        #05070b;
 
-    color: #ffffff;
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f4f9ff 42%,
+            #eaf5ff 70%,
+            #f8fbff 100%
+        );
+
+    color: var(--saas-text);
 }
 
 
 /* =====================================================
-   CONTENT
+   BACKGROUND GRID
 ===================================================== */
 
-.saas-product-development-content {
+.saas-product-development::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(9, 80, 205, 0.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+}
+
+
+/* =====================================================
+   BACKGROUND COLOR GLOW
+===================================================== */
+
+.saas-product-development::after {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -240px;
+    bottom: -260px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.16),
+            rgba(9, 80, 205, 0.06) 45%,
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.saas-product-content {
     position: relative;
 
     z-index: 5;
 
-    width: 50%;
+    width: 48%;
 
-    max-width: 700px;
+    max-width: 680px;
+
+    isolation: isolate;
+}
+
+
+/* =====================================================
+   LARGE TECH GLOW BEHIND TEXT
+===================================================== */
+
+.saas-product-content::before {
+    content: "";
+
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    left: -220px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(60, 210, 249, 0.20) 0%,
+            rgba(9, 80, 205, 0.13) 28%,
+            rgba(9, 80, 205, 0.06) 48%,
+            transparent 70%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    z-index: -3;
+}
+
+
+/* =====================================================
+   TECH GRID BEHIND LEFT CONTENT
+===================================================== */
+
+.saas-product-content::after {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 620px;
+
+    left: -170px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.08) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            rgba(9, 80, 205, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            transparent 75%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            transparent 75%
+        );
+
+    opacity: 0.75;
 }
 
 
@@ -51,50 +241,108 @@
    EYEBROW
 ===================================================== */
 
-.saas-product-development-eyebrow {
-    display: inline-block;
+.saas-product-eyebrow {
+    display: inline-flex;
 
-    margin-bottom: 22px;
+    align-items: center;
 
-    font-family:
-        "Figtree",
-        sans-serif;
+    margin-bottom: 24px;
 
-    font-size: 14px;
+    padding: 8px 14px;
+
+    border:
+        1px solid
+        rgba(9, 80, 205, 0.22);
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(226, 241, 255, 0.85),
+            rgba(60, 210, 249, 0.10)
+        );
+
+    color: var(--saas-dark);
+
+    font-size: 12px;
 
     font-weight: 700;
 
-    letter-spacing: 2.5px;
+    letter-spacing: 0.16em;
 
-    color: #3cd2f9;
+    box-shadow:
+        0 8px 25px
+        rgba(9, 80, 205, 0.08);
+
+    backdrop-filter: blur(8px);
 }
 
 
 /* =====================================================
-   HEADING
+   MAIN HEADING
 ===================================================== */
 
-.saas-product-development-content h1 {
+.saas-product-content h1 {
+    position: relative;
+
+    z-index: 2;
+
     margin: 0;
 
-    max-width: 680px;
-
-    font-family:
-        "Figtree",
-        sans-serif;
+    max-width: 700px;
 
     font-size:
         clamp(
             48px,
             5vw,
-            78px
+            76px
         );
 
-    line-height: 1.02;
+    line-height: 1.04;
 
-    font-weight: 800;
+    font-weight: 700;
 
-    letter-spacing: -2px;
+    letter-spacing: -0.045em;
+
+    color: var(--saas-dark);
+
+    text-shadow:
+        0 1px 0
+        rgba(255, 255, 255, 0.8);
+}
+
+
+/* =====================================================
+   GRADIENT TEXT
+===================================================== */
+
+.saas-product-content h1 span {
+    background:
+        linear-gradient(
+            135deg,
+            #082a66 0%,
+            #0950CD 48%,
+            #3CD2F9 100%
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =====================================================
+   HEADING SELECTION
+===================================================== */
+
+.saas-product-content h1::selection {
+    background:
+        rgba(60, 210, 249, 0.25);
+
+    color: var(--saas-dark);
 }
 
 
@@ -102,40 +350,37 @@
    DESCRIPTION
 ===================================================== */
 
-.saas-product-development-content p {
-    max-width: 600px;
+.saas-product-content p {
+    position: relative;
 
-    margin:
-        28px 0 35px;
+    z-index: 2;
 
-    font-family:
-        "Figtree",
-        sans-serif;
+    max-width: 610px;
 
-    font-size: 18px;
+    margin: 28px 0 0;
 
-    line-height: 1.7;
+    font-size: 17px;
 
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.68
-        );
+    line-height: 1.75;
+
+    color: var(--saas-muted);
 }
 
 
 /* =====================================================
-   BUTTONS
+   CTA AREA
 ===================================================== */
 
-.saas-product-development-buttons {
+.saas-product-buttons {
+    position: relative;
+
+    z-index: 2;
+
     display: flex;
 
     align-items: center;
 
-    gap: 16px;
+    margin-top: 36px;
 }
 
 
@@ -143,243 +388,1028 @@
    PRIMARY BUTTON
 ===================================================== */
 
-.saas-product-development-buttons button {
-    padding:
-        15px 28px;
+.saas-primary-button {
+    position: relative;
 
-    border: none;
+    padding: 15px 28px;
+
+    border:
+        1px solid
+        rgba(8, 42, 102, 0.35);
 
     border-radius: 8px;
 
     background:
         linear-gradient(
             135deg,
-            #0950cd,
-            #3cd2f9
+            #082a66 0%,
+            #0950CD 58%,
+            #3CD2F9 100%
         );
 
     color: #ffffff;
-
-    font-family:
-        "Figtree",
-        sans-serif;
 
     font-size: 15px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     cursor: pointer;
 
+    box-shadow:
+        0 10px 30px
+        rgba(9, 80, 205, 0.20);
+
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
 
 
-.saas-product-development-buttons button:hover {
-    transform:
-        translateY(-3px);
+.saas-primary-button:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(9, 80, 205, 0.65);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0950CD,
+            #0a4db8,
+            #3CD2F9
+        );
 
     box-shadow:
-        0 12px 35px
-        rgba(
-            60,
-            210,
-            249,
-            0.25
-        );
+        0 15px 40px
+        rgba(9, 80, 205, 0.30);
 }
 
 
 /* =====================================================
-   SECONDARY BUTTON
+   TECH ORBIT RINGS
 ===================================================== */
 
-.saas-product-development-buttons
-.secondary-button {
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.04
-        );
+.saas-product-content .saas-tech-orbit {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -180px;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(-18deg);
 
     border:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.16
-        );
+        rgba(9, 80, 205, 0.13);
 
-    color: #ffffff;
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* SECOND ORBIT */
+
+.saas-product-content .saas-tech-orbit::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 45px;
+
+    border:
+        1px solid
+        rgba(60, 210, 249, 0.16);
+
+    border-radius: 50%;
+
+    transform: rotate(35deg);
+}
+
+
+/* THIRD ORBIT */
+
+.saas-product-content .saas-tech-orbit::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 105px;
+
+    border:
+        1px dashed
+        rgba(9, 80, 205, 0.15);
+
+    border-radius: 50%;
+
+    transform: rotate(-25deg);
 }
 
 
 /* =====================================================
-   CARD AREA
+   ORBIT NODE
 ===================================================== */
 
-.saas-product-development-cards {
+.saas-product-content .saas-tech-orbit-node {
     position: absolute;
 
+    width: 9px;
+    height: 9px;
+
+    top: 42px;
+    left: 50%;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0950CD,
+            #3CD2F9
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(60, 210, 249, 0.8),
+
+        0 0 25px
+        rgba(9, 80, 205, 0.45);
+}
+
+
+/* =====================================================
+   CIRCUIT LINE EFFECT
+===================================================== */
+
+.saas-product-content .saas-circuit-lines {
+    position: absolute;
+
+    width: 520px;
+    height: 420px;
+
+    left: -100px;
     top: 50%;
 
-    right: 5%;
+    transform: translateY(-50%);
 
-    width: 550px;
+    pointer-events: none;
 
-    height: 500px;
+    z-index: -1;
 
-    transform:
-        translateY(-50%);
+    opacity: 0.65;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            transparent 28%,
+            rgba(9, 80, 205, 0.10) 28.2%,
+            transparent 28.5%,
+            transparent 52%,
+            rgba(60, 210, 249, 0.12) 52.2%,
+            transparent 52.5%,
+            transparent 78%,
+            rgba(9, 80, 205, 0.08) 78.2%,
+            transparent 78.5%
+        );
+
+    mask-image:
+        linear-gradient(
+            to right,
+            black,
+            transparent 90%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            black,
+            transparent 90%
+        );
+}
+
+
+/* =====================================================
+   CIRCUIT DOTS
+===================================================== */
+
+.saas-product-content .saas-circuit-lines::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(9, 80, 205, 0.35) 2px,
+            transparent 2.5px
+        );
+
+    background-size: 70px 70px;
+
+    opacity: 0.45;
+}
+
+
+/* =====================================================
+   ANIMATED TECH SCAN
+===================================================== */
+
+.saas-product-content .saas-tech-scan {
+    position: absolute;
+
+    width: 420px;
+    height: 1px;
+
+    left: -100px;
+    top: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(60, 210, 249, 0.5),
+            transparent
+        );
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(60, 210, 249, 0.5)
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        saasTechScan 5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes saasTechScan {
+
+    0% {
+        transform: translateY(-180px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(180px);
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   NOTIFICATION AREA
+===================================================== */
+
+.saas-notification-area {
+    position: relative;
+
+    z-index: 5;
+
+    width: 520px;
+
+    height: 570px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 25px;
+
+    border:
+        1px solid
+        rgba(9, 80, 205, 0.18);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(226, 241, 255, 0.84)
+        );
+
+    box-shadow:
+
+        0 55px 100px
+        rgba(4, 26, 63, 0.32),
+
+        0 32px 70px
+        rgba(8, 42, 102, 0.25),
+
+        0 18px 50px
+        rgba(9, 80, 205, 0.14),
+
+        0 0 55px
+        rgba(60, 210, 249, 0.10),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.95);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =====================================================
+   DARK TECH BACKGROUND LAYERS
+===================================================== */
+
+.saas-notification-area {
+    background-image:
+
+        radial-gradient(
+            circle at 88% 8%,
+            rgba(60, 210, 249, 0.20),
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 5% 92%,
+            rgba(9, 80, 205, 0.16),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(226, 241, 255, 0.86)
+        );
+}
+
+
+/* =====================================================
+   TECH GRID INSIDE PANEL
+===================================================== */
+
+.saas-notification-area::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border-radius: inherit;
+
+    background:
+
+        repeating-linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 42px,
+            rgba(9, 80, 205, 0.025) 43px,
+            transparent 44px
+        ),
+
+        linear-gradient(
+            rgba(9, 80, 205, 0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.92),
+            rgba(226, 241, 255, 0.12) 50%,
+            transparent 75%
+        );
+
+    background-size:
+        auto,
+        42px 42px,
+        42px 42px,
+        auto;
+}
+
+
+/* =====================================================
+   BLUE / CYAN TECH TOP LINE
+===================================================== */
+
+.saas-notification-area::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #041a3f 0%,
+            #082a66 20%,
+            #0950CD 55%,
+            #3CD2F9 100%
+        );
+
+    border-radius:
+        28px 28px 0 0;
+
+    pointer-events: none;
+
+    box-shadow:
+        0 0 18px
+        rgba(60, 210, 249, 0.35);
+}
+
+
+/* =====================================================
+   CHILDREN DEPTH
+===================================================== */
+
+.saas-notification-area > * {
+    position: relative;
 
     z-index: 3;
 }
 
 
 /* =====================================================
-   SAAS CARD
+   NOTIFICATION GLOW
 ===================================================== */
 
-.saas-product-development-cards
-.card {
+.saas-notification-glow {
+    position: absolute;
+
+    width: 340px;
+
+    height: 340px;
+
+    top: -140px;
+
+    right: -110px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.30),
+            rgba(9, 80, 205, 0.12) 42%,
+            rgba(8, 42, 102, 0.04) 58%,
+            transparent 72%
+        );
+
+    filter: blur(45px);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   NOTIFICATION HEADER
+===================================================== */
+
+.saas-notification-header {
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 0 8px 16px;
+
+    color: var(--saas-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =====================================================
+   STATUS INDICATOR
+===================================================== */
+
+.saas-status-indicator {
+    width: 7px;
+
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0950CD,
+            #3CD2F9
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(60, 210, 249, 0.75);
+
+    animation:
+        saasPulse 1.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes saasPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform: scale(1.15);
+    }
+}
+
+
+/* =====================================================
+   SCROLLABLE VIEWER
+===================================================== */
+
+.saas-notification-list-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    height: 470px;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   NOTIFICATION LIST
+===================================================== */
+
+.saas-notification-list {
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 4px 8px 35px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(9, 80, 205, 0.40)
+        transparent;
+}
+
+
+/* =====================================================
+   WEBKIT SCROLLBAR
+===================================================== */
+
+.saas-notification-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+
+.saas-notification-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.saas-notification-list::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #041a3f,
+            #0950CD,
+            #3CD2F9
+        );
+}
+
+
+.saas-notification-list::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            to bottom,
+            #3CD2F9,
+            #0950CD,
+            #041a3f
+        );
+}
+
+
+/* =====================================================
+   FEED ITEM
+===================================================== */
+
+.saas-notification-feed-item {
+    position: relative;
+
+    width: 100%;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   NOTIFICATION CARD
+===================================================== */
+
+.saas-notification {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    border:
+        1px solid
+        rgba(9, 80, 205, 0.13);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.99),
+            rgba(226, 241, 255, 0.72)
+        );
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(4, 26, 63, 0.12),
+
+        0 7px 20px
+        rgba(9, 80, 205, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* =====================================================
+   CARD TOP ACCENT
+===================================================== */
+
+.saas-notification::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 14px;
+
+    bottom: 14px;
+
+    width: 3px;
+
+    border-radius:
+        0 4px 4px 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--notification-color),
+            #3CD2F9
+        );
+
+    opacity: 0.95;
+
+    box-shadow:
+        0 0 12px
+        color-mix(
+            in srgb,
+            var(--notification-color) 30%,
+            transparent
+        );
+}
+
+
+/* =====================================================
+   NOTIFICATION HOVER
+===================================================== */
+
+.saas-notification:hover {
+    transform: translateX(-4px);
+
+    border-color:
+        rgba(9, 80, 205, 0.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #eaf5ff
+        );
+
+    box-shadow:
+
+        0 24px 48px
+        rgba(4, 26, 63, 0.17),
+
+        0 12px 28px
+        rgba(9, 80, 205, 0.12),
+
+        0 0 28px
+        rgba(60, 210, 249, 0.14);
+}
+
+
+/* =====================================================
+   NUMBER BOX
+===================================================== */
+
+.saas-notification-number {
+    width: 42px;
+
+    min-width: 42px;
+
+    height: 42px;
+
     display: flex;
 
     align-items: center;
 
     justify-content: center;
 
-    padding: 45px;
-
     border:
         1px solid
-        rgba(
-            60,
-            210,
-            249,
-            0.28
-        );
+        rgba(60, 210, 249, 0.35);
 
-    border-radius: 24px;
+    border-radius: 12px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(
-                255,
-                255,
-                255,
-                0.10
-            ),
-            rgba(
-                255,
-                255,
-                255,
-                0.025
-            )
+            #041a3f 0%,
+            #082a66 48%,
+            #0950CD 100%
         );
 
-    box-shadow:
-        0 30px 80px
-        rgba(
-            0,
-            0,
-            0,
-            0.45
-        ),
+    color: #ffffff;
 
-        inset 0 1px 0
-        rgba(
-            255,
-            255,
-            255,
-            0.12
-        );
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-}
-
-
-/* =====================================================
-   CARD CONTENT
-===================================================== */
-
-.saas-card-content {
-    width: 100%;
-}
-
-
-/* =====================================================
-   CARD NUMBER
-===================================================== */
-
-.saas-card-content span {
-    display: block;
-
-    margin-bottom: 35px;
-
-    font-family:
-        "Figtree",
-        sans-serif;
-
-    font-size: 14px;
+    font-size: 11px;
 
     font-weight: 700;
 
-    letter-spacing: 2px;
+    letter-spacing: 0.04em;
 
-    color: #3cd2f9;
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.14),
+
+        inset 0 -5px 12px
+        rgba(0, 0, 0, 0.25),
+
+        0 8px 20px
+        rgba(4, 26, 63, 0.28),
+
+        0 0 18px
+        rgba(60, 210, 249, 0.12);
+
+    position: relative;
+
+    overflow: hidden;
 }
 
 
 /* =====================================================
-   CARD TITLE
+   NUMBER BOX SHINE
 ===================================================== */
 
-.saas-card-content h3 {
-    margin: 0 0 18px;
+.saas-notification-number::before {
+    content: "";
 
-    font-family:
-        "Figtree",
-        sans-serif;
+    position: absolute;
 
-    font-size: 34px;
+    width: 80px;
 
-    line-height: 1.1;
+    height: 80px;
 
-    font-weight: 800;
+    top: -45px;
+
+    right: -45px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 210, 249, 0.45),
+            transparent 68%
+        );
+
+    filter: blur(4px);
+
+    pointer-events: none;
 }
 
 
 /* =====================================================
-   CARD DESCRIPTION
+   NUMBER BOX HOVER
 ===================================================== */
 
-.saas-card-content p {
+.saas-notification:hover .saas-notification-number {
+    background:
+        linear-gradient(
+            145deg,
+            #082a66 0%,
+            #0950CD 55%,
+            #3CD2F9 100%
+        );
+
+    border-color:
+        rgba(60, 210, 249, 0.65);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.20),
+
+        0 10px 25px
+        rgba(4, 26, 63, 0.35),
+
+        0 0 25px
+        rgba(60, 210, 249, 0.25);
+}
+
+
+/* =====================================================
+   NOTIFICATION CONTENT
+===================================================== */
+
+.saas-notification-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+/* =====================================================
+   NOTIFICATION TOP
+===================================================== */
+
+.saas-notification-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.saas-notification-top h4 {
     margin: 0;
 
-    font-family:
-        "Figtree",
-        sans-serif;
+    font-size: 15px;
 
-    font-size: 16px;
+    line-height: 1.35;
 
-    line-height: 1.7;
+    font-weight: 600;
 
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.65
+    color: var(--saas-dark);
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.saas-notification-status {
+    flex-shrink: 0;
+
+    padding: 5px 9px;
+
+    border:
+        1px solid
+        rgba(9, 80, 205, 0.18);
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(226, 241, 255, 0.90),
+            rgba(60, 210, 249, 0.12)
         );
+
+    color: var(--saas-blue);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.saas-notification-content p {
+    margin: 8px 0 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: var(--saas-muted);
 }
 
 
@@ -387,28 +1417,60 @@
    TABLET
 ===================================================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 1050px) {
 
     .saas-product-development {
-        padding:
-            100px 6%;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 100px 6%;
+
+        gap: 60px;
     }
 
-    .saas-product-development-content {
-        width: 55%;
+
+    .saas-product-content {
+        width: 100%;
+
+        max-width: 760px;
     }
 
-    .saas-product-development-cards {
-        right: -100px;
 
-        transform:
-            translateY(-50%)
-            scale(0.8);
+    .saas-notification-area {
+        width:
+            min(
+                100%,
+                560px
+            );
+
+        align-self: center;
     }
 
-    .saas-product-development-content h1 {
-        font-size: 58px;
+
+    .saas-product-content::before {
+        width: 560px;
+        height: 560px;
+
+        left: -180px;
     }
+
+
+    .saas-product-content::after {
+        width: 620px;
+        height: 560px;
+
+        left: -140px;
+    }
+
+
+    .saas-product-content .saas-tech-orbit {
+        width: 450px;
+        height: 450px;
+
+        left: -150px;
+    }
+
 }
 
 
@@ -416,52 +1478,178 @@
    MOBILE
 ===================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     .saas-product-development {
-        min-height: auto;
+        padding: 85px 20px 70px;
+
+        gap: 50px;
+    }
+
+
+    .saas-product-content h1 {
+        font-size:
+            clamp(
+                40px,
+                12vw,
+                58px
+            );
+    }
+
+
+    .saas-product-content p {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .saas-notification-area {
+        width: 100%;
+
+        height: 500px;
+
+        padding: 18px;
+
+        border-radius: 22px;
+
+        box-shadow:
+
+            0 38px 75px
+            rgba(4, 26, 63, 0.30),
+
+            0 22px 45px
+            rgba(8, 42, 102, 0.20),
+
+            0 12px 30px
+            rgba(9, 80, 205, 0.12),
+
+            0 0 35px
+            rgba(60, 210, 249, 0.07);
+    }
+
+
+    .saas-notification-list-wrapper {
+        height: 410px;
+    }
+
+
+    .saas-notification-list {
+        width: 100%;
+
+        padding: 4px 5px 30px;
+
+        gap: 10px;
+    }
+
+
+    .saas-notification {
+        padding: 14px;
+
+        gap: 10px;
+    }
+
+
+    .saas-notification-number {
+        width: 38px;
+
+        min-width: 38px;
+
+        height: 38px;
+
+        border-radius: 10px;
+
+        font-size: 10px;
+
+        box-shadow:
+
+            inset 0 1px 0
+            rgba(255, 255, 255, 0.14),
+
+            0 7px 18px
+            rgba(4, 26, 63, 0.30),
+
+            0 0 16px
+            rgba(60, 210, 249, 0.10);
+    }
+
+
+    .saas-notification-top {
+        align-items: flex-start;
 
         flex-direction: column;
 
-        align-items: flex-start;
-
-        padding:
-            90px 6% 120px;
+        gap: 6px;
     }
 
-    .saas-product-development-content {
-        width: 100%;
+
+    .saas-notification-top h4 {
+        font-size: 14px;
     }
 
-    .saas-product-development-content h1 {
-        font-size: 46px;
 
-        letter-spacing:
-            -1.5px;
+    .saas-notification-status {
+        font-size: 8px;
+
+        padding: 4px 7px;
     }
 
-    .saas-product-development-content p {
-        font-size: 16px;
+
+    .saas-notification-content p {
+        font-size: 11px;
+
+        line-height: 1.55;
     }
 
-    .saas-product-development-buttons {
-        flex-wrap: wrap;
+
+    .saas-product-content::before {
+        width: 420px;
+        height: 420px;
+
+        left: -180px;
+
+        opacity: 0.65;
     }
 
-    .saas-product-development-cards {
-        position: relative;
 
-        top: auto;
-        right: auto;
+    .saas-product-content::after {
+        width: 480px;
+        height: 430px;
 
-        width: 100%;
+        left: -150px;
 
-        height: 480px;
+        background-size: 35px 35px;
 
-        margin-top: 70px;
-
-        transform: none;
+        opacity: 0.45;
     }
+
+
+    .saas-product-content .saas-tech-orbit {
+        width: 360px;
+        height: 360px;
+
+        left: -150px;
+
+        opacity: 0.55;
+    }
+
+
+    .saas-product-content .saas-circuit-lines {
+        width: 380px;
+        height: 350px;
+
+        left: -100px;
+
+        opacity: 0.35;
+    }
+
+
+    .saas-product-content .saas-tech-scan {
+        width: 300px;
+
+        left: -80px;
+    }
+
 }
 
 
@@ -469,37 +1657,67 @@
    SMALL MOBILE
 ===================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
 
-    .saas-product-development {
-        padding:
-            75px 5% 100px;
+    .saas-notification-area {
+        height: 480px;
+
+        padding: 16px;
+
+        box-shadow:
+
+            0 34px 65px
+            rgba(4, 26, 63, 0.28),
+
+            0 18px 38px
+            rgba(8, 42, 102, 0.18),
+
+            0 10px 25px
+            rgba(9, 80, 205, 0.10),
+
+            0 0 30px
+            rgba(60, 210, 249, 0.06);
     }
 
-    .saas-product-development-content h1 {
-        font-size: 38px;
+
+    .saas-notification-list-wrapper {
+        height: 390px;
     }
 
-    .saas-product-development-buttons {
-        flex-direction: column;
 
-        align-items: stretch;
-    }
-
-    .saas-product-development-buttons button {
+    .saas-notification-list {
         width: 100%;
+
+        gap: 9px;
     }
 
-    .saas-product-development-cards {
-        height: 430px;
+
+    .saas-notification {
+        padding: 12px;
     }
 
-    .saas-product-development-cards
-    .card {
-        padding: 30px;
+
+    .saas-notification-number {
+        width: 34px;
+
+        min-width: 34px;
+
+        height: 34px;
+
+        border-radius: 9px;
     }
 
-    .saas-card-content h3 {
-        font-size: 28px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .saas-product-content .saas-tech-scan {
+        animation: none;
     }
+
 }
