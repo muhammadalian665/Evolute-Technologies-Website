@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
 .about-hero-image {
   position: absolute;
   inset: 0;
@@ -12,6 +16,10 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* =====================================================
+   BLACK HERO OVERLAY
+===================================================== */
 
 .about-hero-overlay {
   position: absolute;
@@ -22,67 +30,143 @@
 
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.72) 0%,
-    rgba(255, 255, 255, 0.68) 18%,
-    rgba(255, 255, 255, 0.58) 32%,
-    rgba(255, 255, 255, 0.45) 46%,
-    rgba(255, 255, 255, 0.28) 60%,
-    rgba(255, 255, 255, 0.12) 76%,
-    rgba(255, 255, 255, 0) 94%
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.76) 18%,
+    rgba(0, 0, 0, 0.65) 35%,
+    rgba(0, 0, 0, 0.50) 52%,
+    rgba(0, 0, 0, 0.34) 68%,
+    rgba(0, 0, 0, 0.16) 84%,
+    rgba(0, 0, 0, 0.05) 100%
   );
 }
 
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
 .about-hero-content {
   max-width: 650px;
-  color: #111111;
+  color: #ffffff;
 }
+
+/* =====================================================
+   HERO HEADING
+===================================================== */
 
 .about-hero-content h1 {
   margin: 0 0 24px;
+
   font-size: 58px;
   line-height: 1.1;
   font-weight: 700;
 
+  color: #ffffff;
+
   text-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.35),
-    0 4px 12px rgba(0, 0, 0, 0.2);
+    0 2px 5px rgba(0, 0, 0, 0.75),
+    0 4px 14px rgba(0, 0, 0, 0.5);
 }
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
 
 .about-hero-content p {
   margin: 0 0 32px;
   max-width: 580px;
+
   font-size: 18px;
   line-height: 1.7;
-  color: #333333;
+
+  color: rgba(255, 255, 255, 0.92);
 
   text-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.3),
-    0 2px 6px rgba(0, 0, 0, 0.18);
+    0 1px 4px rgba(0, 0, 0, 0.75),
+    0 3px 8px rgba(0, 0, 0, 0.45);
 }
+
+/* =====================================================
+   HERO BUTTON
+===================================================== */
 
 .about-hero-button {
   padding: 14px 30px;
+
   border: none;
   border-radius: 6px;
+
   background: #0950cd;
   color: #ffffff;
+
   font-size: 16px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.45);
 }
 
 .about-hero-button:hover {
   background: #063fa3;
+
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(9, 80, 205, 0.35);
+
+  box-shadow:
+    0 6px 18px rgba(9, 80, 205, 0.45);
 }
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+  .about-hero {
+    min-height: 600px;
+  }
+
+  .about-hero-overlay {
+    padding: 0 7%;
+
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.72) 30%,
+      rgba(0, 0, 0, 0.55) 55%,
+      rgba(0, 0, 0, 0.30) 80%,
+      rgba(0, 0, 0, 0.10) 100%
+    );
+  }
+
+  .about-hero-content {
+    max-width: 600px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 50px;
+  }
+
+  .about-hero-content p {
+    font-size: 17px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 768px) {
   .about-hero {
     min-height: 550px;
+  }
+
+  .about-hero-image {
+    object-position: center;
   }
 
   .about-hero-overlay {
@@ -90,18 +174,69 @@
 
     background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.72) 0%,
-      rgba(255, 255, 255, 0.58) 35%,
-      rgba(255, 255, 255, 0.3) 65%,
-      rgba(255, 255, 255, 0) 100%
+      rgba(0, 0, 0, 0.84) 0%,
+      rgba(0, 0, 0, 0.76) 35%,
+      rgba(0, 0, 0, 0.58) 65%,
+      rgba(0, 0, 0, 0.35) 100%
     );
   }
 
+  .about-hero-content {
+    max-width: 100%;
+  }
+
   .about-hero-content h1 {
+    margin-bottom: 20px;
+
     font-size: 40px;
+    line-height: 1.12;
+
+    color: #ffffff;
   }
 
   .about-hero-content p {
+    margin-bottom: 28px;
+
     font-size: 16px;
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .about-hero-button {
+    padding: 13px 26px;
+    font-size: 15px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .about-hero {
+    min-height: 520px;
+  }
+
+  .about-hero-overlay {
+    padding: 0 5%;
+
+    background: rgba(0, 0, 0, 0.68);
+  }
+
+  .about-hero-content h1 {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .about-hero-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .about-hero-button {
+    width: 100%;
+    max-width: 220px;
+    padding: 13px 22px;
   }
 }

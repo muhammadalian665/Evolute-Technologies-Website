@@ -76,7 +76,7 @@ Let's build something meaningful, scalable, and impactful together.`;
 
             <h3>Muhammad Umar</h3>
 
-            <p>Founder &amp; CEO</p>
+            <p>Founder</p>
 
             <span>Evolute Technologies</span>
 
