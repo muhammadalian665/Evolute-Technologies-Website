@@ -31,7 +31,6 @@ import {
     ChevronRight,
     Sparkles,
     MonitorSmartphone,
-
     Boxes,
     Headphones,
 } from "lucide-react";
@@ -311,7 +310,6 @@ const processSteps = [
 
 /* =====================================================
    TECHNOLOGY LANDSCAPE
-   Technology-Agnostic
 ===================================================== */
 
 const technologies = [
@@ -922,15 +920,13 @@ export default function Technology_Consultation() {
 
     /* =================================================
        NAVIGATION
+       
+       ALL CTA BUTTONS GO TO CONTACT US
+       App.jsx route: /contact-us
     ================================================= */
 
     const goToContact = () => {
-        navigate("/contact");
-    };
-
-
-    const goToQuote = () => {
-        navigate("/get-a-quote");
+        navigate("/contact-us");
     };
 
 
@@ -1012,6 +1008,8 @@ export default function Technology_Consultation() {
 
                         <div className="tc-hero-actions">
 
+                            {/* CTA 01 */}
+
                             <motion.button
                                 className="tc-primary-btn"
 
@@ -1033,10 +1031,12 @@ export default function Technology_Consultation() {
                             </motion.button>
 
 
+                            {/* CTA 02 */}
+
                             <motion.button
                                 className="tc-secondary-btn"
 
-                                onClick={goToQuote}
+                                onClick={goToContact}
 
                                 whileHover={{
                                     y: -3,
@@ -1505,6 +1505,8 @@ export default function Technology_Consultation() {
                             and ongoing optimization.
                         </p>
 
+
+                        {/* CTA 03 */}
 
                         <motion.button
                             className="tc-text-btn"
@@ -1975,6 +1977,8 @@ export default function Technology_Consultation() {
                                     </div>
 
 
+                                    {/* CTA 04 — All cards go to Contact */}
+
                                     <motion.button
                                         className={`tc-model-button ${
                                             model.featured
@@ -2188,6 +2192,8 @@ export default function Technology_Consultation() {
                         technical challenges, or next big idea.
                     </p>
 
+
+                    {/* CTA 05 */}
 
                     <motion.button
                         className="tc-cta-button"
