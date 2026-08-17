@@ -1,130 +1,224 @@
 import "./Services.css";
 
-import { Code2, Target } from "lucide-react";
+import {
+    ArrowUpRight,
+    Code2,
+    Target,
+    Sparkles,
+} from "lucide-react";
+
 import { Link } from "react-router-dom";
 
-import SoftwareServices from "../../../assets/Service_&_Growth_Card_images/Software_Services.png";
-import GrowthServices from "../../../assets/Service_&_Growth_Card_images/Growth_Services.png";
-
-import Software2 from "../../../assets/Service_&_Growth_Card_images/Software2.png";
-import Growth2 from "../../../assets/Service_&_Growth_Card_images/Growth2.png";
 
 function Services() {
+
     const services = [
         {
+            number: "01",
+            label: "TECHNOLOGY & PRODUCT",
             title: "Software Services",
 
             description:
-                "Build scalable software solutions, applications, SaaS products, AI solutions, and cloud systems designed to support your business.",
+                "Build scalable digital products, intelligent applications, SaaS platforms, and cloud systems engineered around your business goals.",
 
             icon: Code2,
 
-            // Standby image
-            image: Software2,
-
-            // Hover image
-            hoverImage: SoftwareServices,
-
-            // Page route
             route: "/software-services",
         },
 
         {
+            number: "02",
+            label: "REVENUE & GROWTH",
             title: "Growth Services",
 
             description:
-                "Generate qualified opportunities and build predictable growth through targeted outreach, automation, and sales systems.",
+                "Create predictable revenue through targeted outreach, intelligent automation, lead generation, and scalable sales systems.",
 
             icon: Target,
 
-            // Standby image
-            image: Growth2,
-
-            // Hover image
-            hoverImage: GrowthServices,
-
-            // Page route
             route: "/growth-services",
         },
     ];
+
 
     return (
         <section className="services-section">
 
             <div className="services-container">
 
-                {/* Header */}
+                {/* =====================================================
+                    SECTION HEADER
+                ===================================================== */}
+
                 <div className="services-header">
 
-                    <h2>
-                        Our Services
-                    </h2>
+                    <div className="services-header-content">
+
+                        <div className="services-eyebrow">
+                            <Sparkles size={15} />
+                            <span>WHAT WE DO</span>
+                        </div>
+
+                        <h2>
+                            Solutions built for
+                            <span> ambitious businesses.</span>
+                        </h2>
+
+                        <p>
+                            From building powerful digital products to creating
+                            predictable growth systems, we help businesses
+                            move from ideas to measurable outcomes.
+                        </p>
+
+                    </div>
 
                 </div>
 
 
-                {/* Services Grid */}
+                {/* =====================================================
+                    SERVICES GRID
+                ===================================================== */}
+
                 <div className="services-grid">
 
-                    {services.map((service, index) => {
+                    {services.map((service) => {
 
                         const ServiceIcon = service.icon;
 
                         return (
-                            <Link
-                                to={service.route}
-                                className="service-card"
-                                key={index}
+                            <div
+                                className="service-column"
+                                key={service.number}
                             >
 
-                                {/* Standby Image */}
-                                <div
-                                    className="card-image card-image-default"
-                                    style={{
-                                        backgroundImage: `url(${service.image})`,
-                                    }}
-                                ></div>
+                                <Link
+                                    to={service.route}
+                                    className="service-card"
+                                >
+
+                                    {/* =================================================
+                                        FLOATING PARTICLES
+                                    ================================================= */}
+
+                                    <div
+                                        className="service-particles"
+                                        aria-hidden="true"
+                                    >
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                        <span />
+                                    </div>
 
 
-                                {/* Hover Image */}
-                                <div
-                                    className="card-image card-image-hover"
-                                    style={{
-                                        backgroundImage: `url(${service.hoverImage})`,
-                                    }}
-                                ></div>
+                                    {/* =================================================
+                                        CARD DECORATIVE GLOW
+                                    ================================================= */}
+
+                                    <div className="service-card-glow" />
 
 
-                                {/* Overlay */}
-                                <div className="card-overlay"></div>
+                                    {/* =================================================
+                                        CARD TOP
+                                    ================================================= */}
+
+                                    <div className="service-card-top">
+
+                                        <span className="service-number">
+                                            {service.number}
+                                        </span>
+
+                                        <span className="service-label">
+                                            {service.label}
+                                        </span>
+
+                                    </div>
 
 
-                                {/* Icon */}
-                                <div className="service-icon">
+                                    {/* =================================================
+                                        CARD CONTENT
+                                    ================================================= */}
 
-                                    <ServiceIcon size={24} />
+                                    <div className="service-card-content">
 
-                                </div>
+                                        {/* ICON */}
+
+                                        <div className="service-icon">
+
+                                            <ServiceIcon
+                                                size={23}
+                                                strokeWidth={1.8}
+                                            />
+
+                                        </div>
 
 
-                                {/* Content */}
-                                <h3>
-                                    {service.title}
-                                </h3>
+                                        {/* TITLE */}
 
-                                <p>
-                                    {service.description}
-                                </p>
+                                        <h3>
+                                            {service.title}
+                                        </h3>
 
 
-                                {/* Arrow */}
-                                <span className="service-arrow">
-                                    →
-                                </span>
+                                        {/* DESCRIPTION */}
 
-                            </Link>
+                                        <p>
+                                            {service.description}
+                                        </p>
+
+
+                                        {/* CTA */}
+
+                                        <div className="service-card-cta">
+
+                                            <span>
+                                                Explore Service
+                                            </span>
+
+                                            <span className="service-arrow">
+                                                <ArrowUpRight size={19} />
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </Link>
+
+                            </div>
                         );
                     })}
+
+                </div>
+
+
+                {/* =====================================================
+                    BOTTOM STATEMENT
+                ===================================================== */}
+
+                <div className="services-bottom">
+
+                    <span className="services-bottom-line" />
+
+                    <p>
+                        Technology + Growth
+                        <strong> built around your goals.</strong>
+                    </p>
+
+                    <span className="services-bottom-line" />
 
                 </div>
 
@@ -133,5 +227,6 @@ function Services() {
         </section>
     );
 }
+
 
 export default Services;
