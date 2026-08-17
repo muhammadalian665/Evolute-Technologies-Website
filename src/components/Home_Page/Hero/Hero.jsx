@@ -44,14 +44,11 @@ function Hero() {
             <div className="hero-content">
 
                 <h1>
-                    Empowering Businesses Through AI,
-                    Software & Digital Innovation
+                    We Build Technology. We Drive Growth.
                 </h1>
 
                 <p>
-                    We design scalable software solutions and
-                    growth systems that help companies innovate,
-                    automate, and scale globally.
+                    From intelligent software and AI solutions to lead generation and outbound growth systems, we help ambitious businesses build, connect, and scale.
                 </p>
 
 

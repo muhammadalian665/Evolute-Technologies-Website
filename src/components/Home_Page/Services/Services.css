@@ -1842,3 +1842,132 @@ body {
         grid-template-columns: 1fr !important;
     }
 }
+/* =========================================================
+   SERVICE HEADLINES — BLUE
+========================================================= */
+
+.services-section .service-card h3 {
+    color: var(--evo-blue) !important;
+}
+
+/* Keep headline white on card hover */
+.services-section .service-card:hover h3 {
+    color: #ffffff !important;
+}
+/* =========================================================
+   PREMIUM STANDBY CARD — WHITE / COOL GLASS
+   Paste at the VERY END of Services.css
+========================================================= */
+
+.services-section .service-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8fbff 45%,
+            #eef5fc 100%
+        ) !important;
+
+    border-color: rgba(9, 80, 205, 0.20) !important;
+
+    box-shadow:
+        0 22px 55px rgba(7, 19, 38, 0.10),
+        0 6px 18px rgba(9, 80, 205, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+
+/* =========================================================
+   SUBTLE GLASS LIGHTING
+========================================================= */
+
+.services-section .service-card::before {
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(60, 210, 249, 0.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(9, 80, 205, 0.07),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255, 255, 255, 0.90),
+            transparent 58%
+        ) !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   SOFTER PARTICLES
+========================================================= */
+
+.services-section .service-particles span {
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.services-section .service-number {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #edf7ff
+        ) !important;
+
+    border-color: rgba(9, 80, 205, 0.18) !important;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.services-section .service-label {
+    background: rgba(255, 255, 255, 0.78) !important;
+
+    border-color: rgba(9, 80, 205, 0.16) !important;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.services-section .service-icon {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(9, 80, 205, 0.08),
+            rgba(60, 210, 249, 0.15)
+        ) !important;
+
+    border-color: rgba(9, 80, 205, 0.16) !important;
+}
+
+
+/* =========================================================
+   HOVER — EXISTING BLUE GRADIENT
+========================================================= */
+
+.services-section .service-card:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #0950cd 0%,
+            #0b66d8 35%,
+            #117ee8 68%,
+            #3cd2f9 100%
+        ) !important;
+
+    border-color: rgba(60, 210, 249, 0.95) !important;
+}
