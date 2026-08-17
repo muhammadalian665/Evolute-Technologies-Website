@@ -11,7 +11,6 @@ import {
     Crosshair,
     Database,
     Filter,
-    Mail,
     MessageSquare,
     Network,
     Radar,
@@ -412,8 +411,13 @@ function Linkedin_Outreach() {
                             className="linkedin-hero-actions"
                             variants={fadeUp}
                         >
+
+                            {/* =================================================
+                                CTA 1 → CONTACT US
+                            ================================================= */}
+
                             <a
-                                href="/contact"
+                                href="/contact-us"
                                 className="linkedin-primary-btn"
                             >
                                 Start a Conversation
@@ -427,6 +431,7 @@ function Linkedin_Outreach() {
                                 Explore the Process
                                 <ArrowRight size={17} />
                             </a>
+
                         </motion.div>
 
                         <motion.div
@@ -563,8 +568,6 @@ function Linkedin_Outreach() {
 
                             <div className="linkedin-dashboard-main">
 
-                                {/* PROFILE */}
-
                                 <div className="linkedin-profile-card">
 
                                     <div className="linkedin-profile-avatar">
@@ -586,8 +589,6 @@ function Linkedin_Outreach() {
                                     </div>
 
                                 </div>
-
-                                {/* MESSAGE */}
 
                                 <div className="linkedin-message-preview">
 
@@ -616,8 +617,6 @@ function Linkedin_Outreach() {
                                     </div>
 
                                 </div>
-
-                                {/* STATS */}
 
                                 <div className="linkedin-dashboard-stats">
 
@@ -667,8 +666,6 @@ function Linkedin_Outreach() {
                                     </div>
 
                                 </div>
-
-                                {/* CHART */}
 
                                 <div className="linkedin-chart">
 
@@ -868,8 +865,6 @@ function Linkedin_Outreach() {
                         variants={staggerContainer}
                     >
 
-                        {/* RADAR */}
-
                         <motion.div
                             className="linkedin-why-visual"
                             variants={fadeLeft}
@@ -939,8 +934,6 @@ function Linkedin_Outreach() {
                             </div>
 
                         </motion.div>
-
-                        {/* CONTENT */}
 
                         <motion.div
                             className="linkedin-why-content"
@@ -1361,8 +1354,12 @@ function Linkedin_Outreach() {
                                 outreach campaign.
                             </p>
 
+                            {/* =================================================
+                                CTA 2 → CONTACT US
+                            ================================================= */}
+
                             <a
-                                href="/contact"
+                                href="/contact-us"
                                 className="linkedin-faq-contact"
                             >
                                 Talk to our team
@@ -1504,22 +1501,19 @@ function Linkedin_Outreach() {
 
                         <div className="linkedin-cta-actions">
 
+                            {/* =================================================
+                                CTA 3 → CONTACT US
+                            ================================================= */}
+
                             <a
-                                href="/contact"
+                                href="/contact-us"
                                 className="linkedin-primary-btn linkedin-cta-btn"
                             >
                                 Let's Talk
                                 <ArrowUpRight size={18} />
                             </a>
 
-                            <a
-                                href="mailto:hello@evolutetechnologies.com"
-                                className="linkedin-cta-email"
-                            >
-                                <Mail size={17} />
-                                hello@evolutetechnologies.com
-                            </a>
-
+                            
                         </div>
 
                     </motion.div>
