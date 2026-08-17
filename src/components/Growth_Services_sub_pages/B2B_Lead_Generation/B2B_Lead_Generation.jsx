@@ -411,8 +411,14 @@ function B2B_Lead_Generation() {
 
     const [openFaq, setOpenFaq] = React.useState(0);
 
+
+    /* =====================================================
+       GLOBAL CONTACT CTA HANDLER
+       All CTA buttons use this function.
+    ===================================================== */
+
     const goToContact = () => {
-        navigate("/contact");
+        navigate("/contact-us");
 
         window.scrollTo({
             top: 0,
@@ -473,12 +479,17 @@ function B2B_Lead_Generation() {
                         </motion.p>
 
 
+                        {/* ===============================
+                            CTA #1
+                        =============================== */}
+
                         <motion.div
                             className="b2b-hero-actions"
                             variants={fadeUp}
                         >
 
                             <motion.button
+                                type="button"
                                 className="b2b-btn b2b-btn-primary"
                                 onClick={goToContact}
                                 whileHover={{
@@ -1325,6 +1336,7 @@ function B2B_Lead_Generation() {
                                         <span>
                                             {item}
                                         </span>
+
                                     </motion.div>
 
                                 ))}
@@ -1543,7 +1555,12 @@ function B2B_Lead_Generation() {
                             </p>
 
 
+                            {/* ===============================
+                                CTA #2
+                            =============================== */}
+
                             <motion.button
+                                type="button"
                                 className="b2b-text-link"
                                 onClick={goToContact}
                                 whileHover={{
@@ -1889,7 +1906,13 @@ function B2B_Lead_Generation() {
                                 </div>
 
 
+                                {/* ===============================
+                                    CTA #3
+                                =============================== */}
+
                                 <motion.button
+                                    type="button"
+                                    aria-label="Contact Evolute Technologies"
                                     onClick={goToContact}
                                     whileHover={{
                                         scale: 1.1,
@@ -1935,6 +1958,7 @@ function B2B_Lead_Generation() {
                                     >
 
                                         <button
+                                            type="button"
                                             className="b2b-faq-question"
                                             onClick={() =>
                                                 setOpenFaq(
@@ -2063,7 +2087,12 @@ function B2B_Lead_Generation() {
                         </p>
 
 
+                        {/* ===============================
+                            CTA #4
+                        =============================== */}
+
                         <motion.button
+                            type="button"
                             className="b2b-btn b2b-btn-white"
                             onClick={goToContact}
                             whileHover={{
