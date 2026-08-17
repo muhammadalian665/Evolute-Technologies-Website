@@ -1,247 +1,314 @@
-/* Software Hiring Section */
+/* =========================================================
+   SOFTWARE HIRING SECTION
+========================================================= */
 
 .software-hiring-section {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: #ffffff;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
 }
 
-/* Full Width Two-Column Layout */
+
+/* =========================================================
+   FULL WIDTH TWO-COLUMN LAYOUT
+========================================================= */
 
 .software-hiring-grid {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
-  gap: 0;
+    gap: 0;
 }
 
-/* Image Columns */
+
+/* =========================================================
+   IMAGE COLUMNS
+========================================================= */
 
 .software-hiring-column {
-  position: relative;
+    position: relative;
 
-  width: 100%;
-  min-height: 500px;
+    width: 100%;
+    min-height: 500px;
 
-  padding: 70px 65px;
+    padding: 70px 65px;
 
-  display: flex;
-  align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 
-  background-size: cover;
-  background-position: center;
+    background-size: cover;
+    background-position: center;
 
-  overflow: hidden;
+    overflow: hidden;
 }
 
-/* =========================================
-   LEFT - CHARCOAL OVERLAY
-   ========================================= */
+
+/* =========================================================
+   LEFT — CHARCOAL OVERLAY
+========================================================= */
 
 .software-hiring-left {
-  position: relative;
+    position: relative;
 }
 
 .software-hiring-left::before {
-  content: "";
+    content: "";
 
-  position: absolute;
-  inset: 0;
+    position: absolute;
+    inset: 0;
 
-  background: rgba(25, 25, 25, 0.72);
+    background: rgba(25, 25, 25, 0.72);
 
-  z-index: 1;
+    z-index: 1;
 
-  transition: background 0.4s ease;
+    transition: background 0.4s ease;
 }
+
 
 /* LEFT HOVER */
 
 .software-hiring-left:hover::before {
-  background: rgba(15, 15, 15, 0.82);
+    background: rgba(15, 15, 15, 0.82);
 }
 
-/* =========================================
-   RIGHT - SAME CHARCOAL OVERLAY
-   ========================================= */
+
+/* =========================================================
+   RIGHT — CHARCOAL OVERLAY
+========================================================= */
 
 .software-hiring-right {
-  position: relative;
+    position: relative;
 }
 
 .software-hiring-right::before {
-  content: "";
+    content: "";
 
-  position: absolute;
-  inset: 0;
+    position: absolute;
+    inset: 0;
 
-  background: rgba(25, 25, 25, 0.72);
+    background: rgba(25, 25, 25, 0.72);
 
-  z-index: 1;
+    z-index: 1;
 
-  transition: background 0.4s ease;
+    transition: background 0.4s ease;
 }
+
 
 /* RIGHT HOVER */
 
 .software-hiring-right:hover::before {
-  background: rgba(15, 15, 15, 0.82);
+    background: rgba(15, 15, 15, 0.82);
 }
 
-/* =========================================
+
+/* =========================================================
    CONTENT
-   ========================================= */
+========================================================= */
 
 .software-hiring-content {
-  position: relative;
+    position: relative;
 
-  z-index: 2;
+    z-index: 2;
 
-  width: 100%;
-  max-width: 560px;
+    width: 100%;
+    max-width: 560px;
 
-  color: white;
+    color: #ffffff;
 }
 
-/* =========================================
-   HEADING - SAME HEIGHT
-   ========================================= */
+
+/* =========================================================
+   HEADING
+========================================================= */
 
 .software-hiring-content h2 {
-  margin: 0 0 18px;
+    margin: 0 0 18px;
 
-  font-size: 34px;
-  line-height: 1.25;
-  font-weight: 700;
+    font-size: 34px;
+    line-height: 1.25;
+    font-weight: 700;
 
-  color: white;
+    color: #ffffff;
 
-  min-height: 85px;
+    min-height: 85px;
 
-  display: flex;
-  align-items: flex-start;
+    display: flex;
+    align-items: flex-start;
 
-  text-shadow:
-    0 2px 4px rgba(0, 0, 0, 1),
-    0 5px 12px rgba(0, 0, 0, 0.95),
-    0 8px 20px rgba(0, 0, 0, 0.8);
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 1),
+        0 5px 12px rgba(0, 0, 0, 0.95),
+        0 8px 20px rgba(0, 0, 0, 0.8);
 }
 
-/* =========================================
-   PARAGRAPH - SAME HEIGHT
-   ========================================= */
+
+/* =========================================================
+   PARAGRAPH
+========================================================= */
 
 .software-hiring-content p {
-  margin: 0;
+    margin: 0;
 
-  max-width: 520px;
+    max-width: 520px;
 
-  font-size: 17px;
-  line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.65;
 
-  color: white;
+    color: #ffffff;
 
-  min-height: 84px;
+    min-height: 84px;
 
-  display: flex;
-  align-items: flex-start;
+    display: flex;
+    align-items: flex-start;
 
-  text-shadow:
-    0 2px 4px rgba(0, 0, 0, 1),
-    0 4px 10px rgba(0, 0, 0, 0.95),
-    0 7px 16px rgba(0, 0, 0, 0.8);
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 1),
+        0 4px 10px rgba(0, 0, 0, 0.95),
+        0 7px 16px rgba(0, 0, 0, 0.8);
 }
 
-/* =========================================
-   BUTTONS
-   ========================================= */
+
+/* =========================================================
+   BUTTON — BLUE STANDBY
+========================================================= */
 
 .software-hiring-button {
-  display: inline-block;
+    display: inline-block;
 
-  margin-top: 30px;
+    margin-top: 30px;
 
-  padding: 14px 26px;
+    padding: 14px 26px;
 
-  background: #ffffff;
-  color: #000000;
+    background: #0950cd !important;
+    color: #ffffff !important;
 
-  font-size: 15px;
-  font-weight: 600;
+    font-size: 15px;
+    font-weight: 600;
 
-  text-decoration: none;
+    text-decoration: none;
 
-  border-radius: 7px;
+    border: 1px solid #0950cd;
+    border-radius: 7px;
 
-  box-shadow:
-    0 5px 15px rgba(0, 0, 0, 0.35);
+    box-shadow:
+        0 5px 15px rgba(9, 80, 205, 0.35);
 
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-/* Button Hover */
+
+/* =========================================================
+   BUTTON — WHITE ON HOVER
+========================================================= */
 
 .software-hiring-button:hover {
-  background: rgb(9, 80, 205);
-  color: #ffffff;
+    background: #ffffff !important;
+    color: #0950cd !important;
 
-  transform: translateY(-3px);
+    border-color: #ffffff;
 
-  box-shadow:
-    0 8px 22px rgba(9, 80, 205, 0.55);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(255, 255, 255, 0.35);
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+.software-hiring-button:focus,
+.software-hiring-button:focus-visible {
+    outline: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
-  .software-hiring-grid {
-    grid-template-columns: 1fr;
-  }
+    .software-hiring-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .software-hiring-column {
-    min-height: 450px;
-    padding: 60px 45px;
-  }
+    .software-hiring-column {
+        min-height: 450px;
+        padding: 60px 45px;
+    }
 
-  .software-hiring-content h2 {
-    min-height: auto;
-  }
+    .software-hiring-content h2 {
+        min-height: auto;
+    }
 
-  .software-hiring-content p {
-    min-height: auto;
-  }
+    .software-hiring-content p {
+        min-height: auto;
+    }
 }
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
-  .software-hiring-column {
-    min-height: 420px;
-    padding: 45px 25px;
-  }
+    .software-hiring-column {
+        min-height: 420px;
+        padding: 45px 25px;
+    }
 
-  .software-hiring-content h2 {
-    font-size: 27px;
-    min-height: auto;
-  }
+    .software-hiring-content h2 {
+        font-size: 27px;
+        min-height: auto;
+    }
 
-  .software-hiring-content p {
-    font-size: 15px;
-    min-height: auto;
-  }
+    .software-hiring-content p {
+        font-size: 15px;
+        min-height: auto;
+    }
 
-  .software-hiring-button {
-    padding: 12px 20px;
-  }
+    .software-hiring-button {
+        padding: 12px 20px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .software-hiring-column {
+        min-height: 400px;
+        padding: 40px 20px;
+    }
+
+    .software-hiring-content h2 {
+        font-size: 25px;
+    }
+
+    .software-hiring-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .software-hiring-button {
+        margin-top: 25px;
+        padding: 11px 18px;
+        font-size: 14px;
+    }
 }

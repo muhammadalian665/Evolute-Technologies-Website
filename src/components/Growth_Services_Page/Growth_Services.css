@@ -1,1305 +1,1325 @@
-/* =====================================================
-   GROWTH SERVICES SECTION
-===================================================== */
-
-.growth-services-section {
-    width: 100%;
-    min-height: 100vh;
-
-    padding: 110px 6% 100px;
-
-    background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(60, 210, 249, 0.12),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(9, 80, 205, 0.14),
-            transparent 30%
-        ),
-        #f7faff;
-
-    overflow: hidden;
-}
-
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
-.growth-services-container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.growth-services-header {
-    text-align: center;
-    max-width: 850px;
-    margin: 0 auto 65px;
-}
-
-
-/* =====================================================
-   HEADER TITLE
-===================================================== */
-
-.growth-services-header h1 {
-    margin: 0 0 18px;
-
-    color: #071d49;
-
-    font-size: clamp(34px, 4vw, 52px);
-
-    line-height: 1.15;
-
-    font-weight: 800;
-
-    letter-spacing: -1.5px;
-}
-
-
-/* =====================================================
-   HEADER DESCRIPTION
-===================================================== */
-
-.growth-services-header p {
-    margin: 0 auto;
-
-    max-width: 720px;
-
-    color: #607089;
-
-    font-size: 17px;
-
-    line-height: 1.7;
-}
-
-
-/* =====================================================
-   SERVICES GRID
-===================================================== */
-
-.growth-services-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 20px;
-
-    min-height: 390px;
-
-    perspective: 1200px;
-}
-
-
-/* =====================================================
-   FUTURISTIC SERVICE CARD
-===================================================== */
-
-.growth-service-card {
-    position: relative;
-
-    min-height: 500px;
-
-    padding: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-start;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.92),
-            rgba(242, 248, 255, 0.82)
-        );
-
-    border:
-        2px solid rgba(9, 80, 205, 0.32);
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 15px 45px rgba(7, 50, 110, 0.08),
-        0 0 0 1px rgba(60, 210, 249, 0.04);
-
-    overflow: hidden;
-
-    transform:
-        translateY(0)
-        scale(1);
-
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.45s ease,
-        border-color 0.45s ease,
-        filter 0.45s ease,
-        opacity 0.45s ease;
-
-    isolation: isolate;
-}
-
-
-/* =====================================================
-   FUTURISTIC GRID PATTERN
-===================================================== */
-
-.growth-service-card::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(9, 80, 205, 0.045) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(9, 80, 205, 0.045) 1px,
-            transparent 1px
-        );
-
-    background-size: 28px 28px;
-
-    mask-image:
-        linear-gradient(
-            to bottom right,
-            black,
-            transparent 75%
-        );
-
-    pointer-events: none;
-
-    z-index: 3;
-}
-
-
-/* =====================================================
-   NEON GLOW
-===================================================== */
-
-.growth-service-card::after {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    top: -80px;
-    right: -70px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(60, 210, 249, 0.28),
-            rgba(60, 210, 249, 0.08) 45%,
-            transparent 72%
-        );
-
-    filter: blur(5px);
-
-    opacity: 0.8;
-
-    transition:
-        transform 0.5s ease,
-        opacity 0.5s ease;
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-
-/* =====================================================
-   SERVICE IMAGE AREA
-===================================================== */
-
-.growth-service-card-image {
-    position: relative;
-
-    width: 100%;
-    height: 190px;
-
-    flex-shrink: 0;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #edf6ff,
-            #f7fbff
-        );
-
-    z-index: 2;
-}
-
-
-/* =====================================================
-   SERVICE IMAGE
-===================================================== */
-
-.growth-service-card-image img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
-}
-
-
-/* =====================================================
-   IMAGE OVERLAY
-===================================================== */
-
-.growth-service-card-image::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(7, 29, 73, 0.02),
-            rgba(7, 29, 73, 0.12)
-        );
-
-    pointer-events: none;
-
-    z-index: 2;
-}
-
-
-/* =====================================================
-   IMAGE HOVER
-===================================================== */
-
-.growth-service-card:hover
-.growth-service-card-image img {
-    transform:
-        scale(1.06);
-
-    filter:
-        brightness(1.04);
-}
-
-
-/* =====================================================
-   CARD HOVER SYSTEM
-   OTHER CARDS MOVE BACK
-===================================================== */
-
-.growth-services-grid:hover
-.growth-service-card {
-    transform:
-        translateY(8px)
-        scale(0.96);
-
-    opacity: 0.72;
-
-    filter:
-        brightness(0.92);
-
-    border-color:
-        rgba(9, 80, 205, 0.24);
-
-    box-shadow:
-        0 10px 25px rgba(7, 50, 110, 0.06);
-}
-
-
-/* =====================================================
-   ACTIVE / HOVERED CARD
-   POP OUT
-===================================================== */
-
-.growth-services-grid
-.growth-service-card:hover {
-    z-index: 50;
-
-    transform:
-        translateY(-14px)
-        scale(1.04);
-
-    opacity: 1;
-
-    filter:
-        brightness(1);
-
-    border-color:
-        rgba(60, 210, 249, 0.9);
-
-    box-shadow:
-        0 30px 65px rgba(7, 50, 110, 0.18),
-        0 0 30px rgba(60, 210, 249, 0.16),
-        0 0 60px rgba(9, 80, 205, 0.08);
-}
-
-
-/* =====================================================
-   HOVERED CARD GLOW
-===================================================== */
-
-.growth-services-grid
-.growth-service-card:hover::after {
-    transform:
-        scale(1.5)
-        translate(-15px, 15px);
-
-    opacity: 1;
-}
-
-
-/* =====================================================
-   WHITE CARD CONTENT
-===================================================== */
-
-.growth-service-card-content {
-    position: relative;
-
-    z-index: 4;
-
-    flex: 1;
-
-    padding:
-        22px 28px 28px;
-
-    background:
-        #ffffff;
-}
-
-
-/* =====================================================
-   TOP TECH LINE
-===================================================== */
-
-.growth-service-card-content::before {
-    content: "";
-
-    position: absolute;
-
-    top: -2px;
-    left: 0;
-
-    width: 48px;
-    height: 3px;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #0950cd,
-            #3cd2f9
-        );
-
-    box-shadow:
-        0 0 12px rgba(60, 210, 249, 0.7);
-
-    transition:
-        width 0.4s ease;
-}
-
-
-/* =====================================================
-   TOP LINE ON HOVER
-===================================================== */
-
-.growth-service-card:hover
-.growth-service-card-content::before {
-    width: 100px;
-}
-
-
-/* =====================================================
-   CARD NUMBER
-===================================================== */
-
-.growth-service-card-number {
-    position: relative;
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 18px;
-
-    border:
-        2px solid rgba(8, 42, 102, 0.42);
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #071d49,
-            #082a66,
-            #0950cd
-        );
-
-    color:
-        #ffffff;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    box-shadow:
-        0 6px 18px rgba(8, 42, 102, 0.18),
-        inset 0 0 15px rgba(60, 210, 249, 0.12);
-
-    transition:
-        transform 0.4s ease,
-        background 0.4s ease,
-        color 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
-}
-
-
-/* =====================================================
-   NUMBER OUTER GLOW
-===================================================== */
-
-.growth-service-card-number::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -4px;
-
-    border:
-        1px solid rgba(60, 210, 249, 0.25);
-
-    border-radius: 15px;
-
-    opacity: 0;
-
-    transition:
-        opacity 0.4s ease,
-        border-color 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-
-/* =====================================================
-   NUMBER HOVER
-===================================================== */
-
-.growth-service-card:hover
-.growth-service-card-number {
-    transform:
-        rotate(8deg)
-        scale(1.12);
-
-    background:
-        linear-gradient(
-            135deg,
-            #3cd2f9,
-            #17aee4,
-            #0950cd
-        );
-
-    color:
-        #ffffff;
-
-    border-color:
-        #3cd2f9;
-
-    box-shadow:
-        0 0 25px rgba(60, 210, 249, 0.55),
-        0 0 45px rgba(9, 80, 205, 0.25);
-}
-
-
-/* =====================================================
-   NUMBER GLOW ON HOVER
-===================================================== */
-
-.growth-service-card:hover
-.growth-service-card-number::before {
-    opacity: 1;
-
-    border-color:
-        rgba(60, 210, 249, 0.75);
-
-    box-shadow:
-        0 0 15px rgba(60, 210, 249, 0.35);
-}
-
-
-/* =====================================================
-   CARD TITLE
-===================================================== */
-
-.growth-service-card h2 {
-    margin: 0 0 15px;
-
-    color:
-        #071d49;
-
-    font-size: 22px;
-
-    line-height: 1.25;
-
-    font-weight: 750;
-
-    letter-spacing: -0.3px;
-
-    transition:
-        color 0.3s ease;
-}
-
-
-/* =====================================================
-   CARD TITLE HOVER
-===================================================== */
-
-.growth-service-card:hover h2 {
-    color:
-        #0950cd;
-}
-
-
-/* =====================================================
-   CARD DESCRIPTION
-===================================================== */
-
-.growth-service-card p {
-    margin: 0 0 25px;
-
-    color:
-        #637083;
-
-    font-size: 15px;
-
-    line-height: 1.65;
-}
-
-
-/* =====================================================
-   CARD BUTTON
-===================================================== */
-
-.growth-service-card-button {
-    position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding:
-        11px 16px;
-
-    border:
-        2px solid rgba(8, 42, 102, 0.42);
-
-    border-radius: 9px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #071d49,
-            #082a66,
-            #0950cd
-        );
-
-    color:
-        #ffffff;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 7px 18px rgba(8, 42, 102, 0.16);
-
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* =====================================================
-   BUTTON BACKGROUND ANIMATION
-===================================================== */
-
-.growth-service-card-button::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            #3cd2f9,
-            #0950cd,
-            #071d49
-        );
-
-    transform:
-        translateX(-101%);
-
-    transition:
-        transform 0.35s ease;
-
-    z-index: -1;
-}
-
-
-/* =====================================================
-   BUTTON COLOR ON CARD HOVER
-===================================================== */
-
-.growth-service-card:hover
-.growth-service-card-button {
-    background:
-        linear-gradient(
-            135deg,
-            #3cd2f9,
-            #17aee4,
-            #0950cd
-        );
-
-    color:
-        #ffffff;
-
-    border-color:
-        #3cd2f9;
-
-    box-shadow:
-        0 10px 28px rgba(9, 80, 205, 0.32),
-        0 0 22px rgba(60, 210, 249, 0.22);
-}
-
-
-/* =====================================================
-   BUTTON ANIMATION ON CARD HOVER
-===================================================== */
-
-.growth-service-card:hover
-.growth-service-card-button::before {
-    transform:
-        translateX(0);
-}
-
-
-/* =====================================================
-   DIRECT BUTTON HOVER
-===================================================== */
-
-.growth-service-card-button:hover {
-    transform:
-        translateY(-3px);
-
-    background:
-        linear-gradient(
-            135deg,
-            #071d49,
-            #082a66,
-            #0950cd
-        );
-
-    color:
-        #ffffff;
-
-    border-color:
-        #3cd2f9;
-
-    box-shadow:
-        0 10px 28px rgba(9, 80, 205, 0.38),
-        0 0 25px rgba(60, 210, 249, 0.25);
-}
-
-
-/* =====================================================
-   BUTTON ARROW
-===================================================== */
-
-.growth-service-button-arrow {
-    font-size: 18px;
-
-    color:
-        #ffffff;
-
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease;
-}
-
-
-/* =====================================================
-   BUTTON ARROW HOVER
-===================================================== */
-
-.growth-service-card-button:hover
-.growth-service-button-arrow {
-    color:
-        #ffffff;
-
-    transform:
-        translateX(5px);
-}
-
-
-/* =====================================================
-   NAVIGATION CONTROLS
-===================================================== */
-
-.growth-services-controls {
-    margin-top: 45px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 25px;
-}
-
-
-/* =====================================================
-   NAVIGATION ARROWS
-===================================================== */
-
-.growth-services-arrow {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border:
-        2px solid rgba(9, 80, 205, 0.28);
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 255, 255, 0.85);
-
-    color:
-        #082a66;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 22px rgba(9, 80, 205, 0.08);
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* =====================================================
-   NAVIGATION ARROW HOVER
-===================================================== */
-
-.growth-services-arrow:hover:not(:disabled) {
-    transform:
-        translateY(-3px);
-
-    background:
-        linear-gradient(
-            135deg,
-            #082a66,
-            #0950cd
-        );
-
-    color:
-        #ffffff;
-
-    border-color:
-        #0950cd;
-
-    box-shadow:
-        0 12px 28px rgba(9, 80, 205, 0.25);
-}
-
-
-/* =====================================================
-   DISABLED ARROW
-===================================================== */
-
-.growth-services-arrow:disabled {
-    opacity:
-        0.35;
-
-    cursor:
-        not-allowed;
-
-    box-shadow:
-        none;
-}
-
-
-/* =====================================================
-   PAGE INDICATORS
-===================================================== */
-
-.growth-services-pages {
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-}
-
-
-/* =====================================================
-   PAGE DOT
-===================================================== */
-
-.growth-services-pages span {
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background:
-        #cbd8e8;
-
-    transition:
-        width 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* =====================================================
-   ACTIVE PAGE
-===================================================== */
-
-.growth-services-pages span.active {
-    width: 26px;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #082a66,
-            #0950cd,
-            #3cd2f9
-        );
-
-    box-shadow:
-        0 0 10px rgba(60, 210, 249, 0.35);
-}
-
-
-/* =====================================================
-   PAGE SLIDE ANIMATION - NEXT
-===================================================== */
-
-.slide-next
-.growth-service-card {
-    animation:
-        slideNext
-        0.55s
-        ease-in-out
-        forwards;
-}
-
-
-/* =====================================================
-   NEXT SWIPE
-===================================================== */
-
-@keyframes slideNext {
-
-    0% {
-        opacity: 1;
-
-        transform:
-            translateX(0);
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translateX(-45px);
-    }
-}
-
-
-/* =====================================================
-   PAGE SLIDE ANIMATION - PREVIOUS
-===================================================== */
-
-.slide-previous
-.growth-service-card {
-    animation:
-        slidePrevious
-        0.55s
-        ease-in-out
-        forwards;
-}
-
-
-/* =====================================================
-   PREVIOUS SWIPE
-===================================================== */
-
-@keyframes slidePrevious {
-
-    0% {
-        opacity: 1;
-
-        transform:
-            translateX(0);
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translateX(45px);
-    }
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1100px) {
-
-    .growth-services-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 650px) {
-
-    .growth-services-section {
-        padding:
-            80px 20px;
-    }
-
-
-    .growth-services-header {
-        margin-bottom:
-            45px;
-    }
-
-
-    .growth-services-header h1 {
-        font-size:
-            34px;
-    }
-
-
-    .growth-services-header p {
-        font-size:
-            15px;
-    }
-
-
-    .growth-services-grid {
-        grid-template-columns:
-            1fr;
-
-        min-height:
-            auto;
-
-        perspective:
-            none;
-    }
-
-
-    .growth-service-card {
-        min-height:
-            480px;
-
-        padding:
-            0;
-
-        border:
-            2px solid rgba(9, 80, 205, 0.32);
-    }
-
-
-    /* =================================================
-       MOBILE IMAGE
-    ================================================= */
-
-    .growth-service-card-image {
-        height:
-            175px;
-    }
-
-
-    /* =================================================
-       MOBILE CONTENT
-    ================================================= */
-
-    .growth-service-card-content {
-        padding:
-            20px 25px 25px;
-    }
-
-
-    .growth-service-card h2 {
-        font-size:
-            21px;
-    }
-
-
-    .growth-service-card p {
-        font-size:
-            14px;
-    }
-
-
-    /* =================================================
-       MOBILE NUMBER STANDBY
-    ================================================= */
-
-    .growth-service-card-number {
-        margin-bottom:
-            18px;
-
-        border:
-            2px solid rgba(8, 42, 102, 0.42);
-
-        background:
-            linear-gradient(
-                135deg,
-                #071d49,
-                #082a66,
-                #0950cd
-            );
-
-        color:
-            #ffffff;
-    }
-
-
-    /* =================================================
-       MOBILE BUTTON STANDBY
-    ================================================= */
-
-    .growth-service-card-button {
-        border:
-            2px solid rgba(8, 42, 102, 0.42);
-
-        background:
-            linear-gradient(
-                135deg,
-                #071d49,
-                #082a66,
-                #0950cd
-            );
-
-        color:
-            #ffffff;
-    }
-
-
-    /* =================================================
-       DISABLE DESKTOP HOVER DEPTH
-    ================================================= */
-
-    .growth-services-grid:hover
-    .growth-service-card {
-        transform:
-            translateY(0)
-            scale(1);
-
-        opacity:
-            1;
-
-        filter:
-            none;
-
-        border-color:
-            rgba(9, 80, 205, 0.32);
-    }
-
-
-    /* =================================================
-       MOBILE CARD HOVER
-    ================================================= */
-
-    .growth-services-grid
-    .growth-service-card:hover {
-        transform:
-            translateY(-8px)
-            scale(1.02);
-
-        opacity:
-            1;
-
-        border-color:
-            rgba(60, 210, 249, 0.9);
-    }
-
-
-    /* =================================================
-       MOBILE NUMBER HOVER
-    ================================================= */
-
-    .growth-service-card:hover
-    .growth-service-card-number {
-        background:
-            linear-gradient(
-                135deg,
-                #3cd2f9,
-                #17aee4,
-                #0950cd
-            );
-
-        color:
-            #ffffff;
-
-        border-color:
-            #3cd2f9;
-
-        box-shadow:
-            0 0 22px rgba(60, 210, 249, 0.45);
-    }
-
-
-    /* =================================================
-       MOBILE BUTTON HOVER
-    ================================================= */
-
-    .growth-service-card:hover
-    .growth-service-card-button {
-        background:
-            linear-gradient(
-                135deg,
-                #3cd2f9,
-                #17aee4,
-                #0950cd
-            );
-
-        color:
-            #ffffff;
-
-        border-color:
-            #3cd2f9;
-
-        box-shadow:
-            0 10px 25px rgba(9, 80, 205, 0.28),
-            0 0 20px rgba(60, 210, 249, 0.18);
-    }
-
-
-    /* =================================================
-       MOBILE DIRECT BUTTON HOVER
-    ================================================= */
-
-    .growth-service-card-button:hover {
-        background:
-            linear-gradient(
-                135deg,
-                #071d49,
-                #082a66,
-                #0950cd
-            );
-
-        color:
-            #ffffff;
-
-        border-color:
-            #3cd2f9;
-    }
-
-
-    /* =================================================
-       MOBILE ARROW
-    ================================================= */
-
-    .growth-service-card-button:hover
-    .growth-service-button-arrow {
-        color:
-            #ffffff;
-    }
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .growth-service-card,
-    .growth-service-card-image img,
-    .growth-service-card-number,
-    .growth-service-card-button,
-    .growth-service-card-content::before,
-    .growth-service-card::after {
-        transition:
-            none;
-    }
-
-
-    .slide-next
-    .growth-service-card,
-    .slide-previous
-    .growth-service-card {
-        animation:
-            none;
-    }
+/* ===================================================== 
+   GROWTH SERVICES SECTION 
+===================================================== */ 
+ 
+.growth-services-section { 
+    width: 100%; 
+    min-height: 100vh; 
+ 
+    padding: 110px 6% 100px; 
+ 
+    background: 
+        radial-gradient( 
+            circle at 15% 15%, 
+            rgba(60, 210, 249, 0.12), 
+            transparent 28% 
+        ), 
+        radial-gradient( 
+            circle at 85% 75%, 
+            rgba(9, 80, 205, 0.14), 
+            transparent 30% 
+        ), 
+        #f7faff; 
+ 
+    overflow: hidden; 
+} 
+ 
+ 
+/* ===================================================== 
+   CONTAINER 
+===================================================== */ 
+ 
+.growth-services-container { 
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+} 
+ 
+ 
+/* ===================================================== 
+   HEADER 
+===================================================== */ 
+ 
+.growth-services-header { 
+    text-align: center; 
+    max-width: 850px; 
+    margin: 0 auto 65px; 
+} 
+ 
+ 
+/* ===================================================== 
+   HEADER TITLE 
+===================================================== */ 
+ 
+.growth-services-header h1 { 
+    margin: 0 0 18px; 
+ 
+    color: #071d49; 
+ 
+    font-size: clamp(34px, 4vw, 52px); 
+ 
+    line-height: 1.15; 
+ 
+    font-weight: 800; 
+ 
+    letter-spacing: -1.5px; 
+} 
+ 
+ 
+/* ===================================================== 
+   HEADER DESCRIPTION 
+===================================================== */ 
+ 
+.growth-services-header p { 
+    margin: 0 auto; 
+ 
+    max-width: 720px; 
+ 
+    color: #607089; 
+ 
+    font-size: 17px; 
+ 
+    line-height: 1.7; 
+} 
+ 
+ 
+/* ===================================================== 
+   SERVICES GRID 
+===================================================== */ 
+ 
+.growth-services-grid { 
+    display: grid; 
+ 
+    grid-template-columns: 
+        repeat(4, 1fr); 
+ 
+    gap: 20px; 
+ 
+    min-height: 390px; 
+ 
+    perspective: 1200px; 
+} 
+ 
+ 
+/* ===================================================== 
+   FUTURISTIC SERVICE CARD 
+===================================================== */ 
+ 
+.growth-service-card { 
+    position: relative; 
+ 
+    min-height: 500px; 
+ 
+    padding: 0; 
+ 
+    display: flex; 
+ 
+    flex-direction: column; 
+ 
+    justify-content: flex-start; 
+ 
+    background: 
+        linear-gradient( 
+            145deg, 
+            rgba(255, 255, 255, 0.92), 
+            rgba(242, 248, 255, 0.82) 
+        ); 
+ 
+    border: 
+        2px solid rgba(9, 80, 205, 0.32); 
+ 
+    border-radius: 22px; 
+ 
+    box-shadow: 
+        0 15px 45px rgba(7, 50, 110, 0.08), 
+        0 0 0 1px rgba(60, 210, 249, 0.04); 
+ 
+    overflow: hidden; 
+ 
+    transform: 
+        translateY(0) 
+        scale(1); 
+ 
+    transition: 
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), 
+        box-shadow 0.45s ease, 
+        border-color 0.45s ease, 
+        filter 0.45s ease, 
+        opacity 0.45s ease; 
+ 
+    isolation: isolate; 
+} 
+ 
+ 
+/* ===================================================== 
+   FUTURISTIC GRID PATTERN 
+===================================================== */ 
+ 
+.growth-service-card::before { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    inset: 0; 
+ 
+    background-image: 
+        linear-gradient( 
+            rgba(9, 80, 205, 0.045) 1px, 
+            transparent 1px 
+        ), 
+        linear-gradient( 
+            90deg, 
+            rgba(9, 80, 205, 0.045) 1px, 
+            transparent 1px 
+        ); 
+ 
+    background-size: 28px 28px; 
+ 
+    mask-image: 
+        linear-gradient( 
+            to bottom right, 
+            black, 
+            transparent 75% 
+        ); 
+ 
+    pointer-events: none; 
+ 
+    z-index: 3; 
+} 
+ 
+ 
+/* ===================================================== 
+   NEON GLOW 
+===================================================== */ 
+ 
+.growth-service-card::after { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    width: 180px; 
+    height: 180px; 
+ 
+    top: -80px; 
+    right: -70px; 
+ 
+    border-radius: 50%; 
+ 
+    background: 
+        radial-gradient( 
+            circle, 
+            rgba(60, 210, 249, 0.28), 
+            rgba(60, 210, 249, 0.08) 45%, 
+            transparent 72% 
+        ); 
+ 
+    filter: blur(5px); 
+ 
+    opacity: 0.8; 
+ 
+    transition: 
+        transform 0.5s ease, 
+        opacity 0.5s ease; 
+ 
+    z-index: 1; 
+ 
+    pointer-events: none; 
+} 
+ 
+ 
+/* ===================================================== 
+   SERVICE IMAGE AREA 
+===================================================== */ 
+ 
+.growth-service-card-image { 
+    position: relative; 
+ 
+    width: 100%; 
+    height: 190px; 
+ 
+    flex-shrink: 0; 
+ 
+    overflow: hidden; 
+ 
+    background: 
+        linear-gradient( 
+            135deg, 
+            #edf6ff, 
+            #f7fbff 
+        ); 
+ 
+    z-index: 2; 
+} 
+ 
+ 
+/* ===================================================== 
+   SERVICE IMAGE 
+===================================================== */ 
+ 
+.growth-service-card-image img { 
+    width: 100%; 
+    height: 100%; 
+ 
+    display: block; 
+ 
+    object-fit: cover; 
+ 
+    object-position: center; 
+ 
+    transition: 
+        transform 0.5s ease, 
+        filter 0.5s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   IMAGE OVERLAY 
+===================================================== */ 
+ 
+.growth-service-card-image::after { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    inset: 0; 
+ 
+    background: 
+        linear-gradient( 
+            to bottom, 
+            rgba(7, 29, 73, 0.02), 
+            rgba(7, 29, 73, 0.12) 
+        ); 
+ 
+    pointer-events: none; 
+ 
+    z-index: 2; 
+} 
+ 
+ 
+/* ===================================================== 
+   IMAGE HOVER 
+===================================================== */ 
+ 
+.growth-service-card:hover 
+.growth-service-card-image img { 
+    transform: 
+        scale(1.06); 
+ 
+    filter: 
+        brightness(1.04); 
+} 
+ 
+ 
+/* ===================================================== 
+   CARD HOVER SYSTEM 
+   OTHER CARDS MOVE BACK 
+===================================================== */ 
+ 
+.growth-services-grid:hover 
+.growth-service-card { 
+    transform: 
+        translateY(8px) 
+        scale(0.96); 
+ 
+    opacity: 0.72; 
+ 
+    filter: 
+        brightness(0.92); 
+ 
+    border-color: 
+        rgba(9, 80, 205, 0.24); 
+ 
+    box-shadow: 
+        0 10px 25px rgba(7, 50, 110, 0.06); 
+} 
+ 
+ 
+/* ===================================================== 
+   ACTIVE / HOVERED CARD 
+   POP OUT 
+===================================================== */ 
+ 
+.growth-services-grid 
+.growth-service-card:hover { 
+    z-index: 50; 
+ 
+    transform: 
+        translateY(-14px) 
+        scale(1.04); 
+ 
+    opacity: 1; 
+ 
+    filter: 
+        brightness(1); 
+ 
+    border-color: 
+        rgba(60, 210, 249, 0.9); 
+ 
+    box-shadow: 
+        0 30px 65px rgba(7, 50, 110, 0.18), 
+        0 0 30px rgba(60, 210, 249, 0.16), 
+        0 0 60px rgba(9, 80, 205, 0.08); 
+} 
+ 
+ 
+/* ===================================================== 
+   HOVERED CARD GLOW 
+===================================================== */ 
+ 
+.growth-services-grid 
+.growth-service-card:hover::after { 
+    transform: 
+        scale(1.5) 
+        translate(-15px, 15px); 
+ 
+    opacity: 1; 
+} 
+ 
+ 
+/* ===================================================== 
+   WHITE CARD CONTENT 
+===================================================== */ 
+ 
+.growth-service-card-content { 
+    position: relative; 
+ 
+    z-index: 4; 
+ 
+    flex: 1; 
+ 
+    padding: 
+        22px 28px 28px; 
+ 
+    background: 
+        #ffffff; 
+} 
+ 
+ 
+/* ===================================================== 
+   TOP TECH LINE 
+===================================================== */ 
+ 
+.growth-service-card-content::before { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    top: -2px; 
+    left: 0; 
+ 
+    width: 48px; 
+    height: 3px; 
+ 
+    border-radius: 10px; 
+ 
+    background: 
+        linear-gradient( 
+            90deg, 
+            #0950cd, 
+            #3cd2f9 
+        ); 
+ 
+    box-shadow: 
+        0 0 12px rgba(60, 210, 249, 0.7); 
+ 
+    transition: 
+        width 0.4s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   TOP LINE ON HOVER 
+===================================================== */ 
+ 
+.growth-service-card:hover 
+.growth-service-card-content::before { 
+    width: 100px; 
+} 
+ 
+ 
+/* ===================================================== 
+   CARD NUMBER 
+===================================================== */ 
+ 
+.growth-service-card-number { 
+    position: relative; 
+ 
+    width: 48px; 
+    height: 48px; 
+ 
+    display: flex; 
+ 
+    align-items: center; 
+    justify-content: center; 
+ 
+    margin-bottom: 18px; 
+ 
+    border: 
+        2px solid rgba(8, 42, 102, 0.42); 
+ 
+    border-radius: 12px; 
+ 
+    background: 
+        linear-gradient( 
+            135deg, 
+            #071d49, 
+            #082a66, 
+            #0950cd 
+        ); 
+ 
+    color: 
+        #ffffff; 
+ 
+    font-size: 13px; 
+ 
+    font-weight: 800; 
+ 
+    letter-spacing: 1px; 
+ 
+    box-shadow: 
+        0 6px 18px rgba(8, 42, 102, 0.18), 
+        inset 0 0 15px rgba(60, 210, 249, 0.12); 
+ 
+    transition: 
+        transform 0.4s ease, 
+        background 0.4s ease, 
+        color 0.4s ease, 
+        box-shadow 0.4s ease, 
+        border-color 0.4s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   NUMBER OUTER GLOW 
+===================================================== */ 
+ 
+.growth-service-card-number::before { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    inset: -4px; 
+ 
+    border: 
+        1px solid rgba(60, 210, 249, 0.25); 
+ 
+    border-radius: 15px; 
+ 
+    opacity: 0; 
+ 
+    transition: 
+        opacity 0.4s ease, 
+        border-color 0.4s ease, 
+        box-shadow 0.4s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   NUMBER HOVER 
+===================================================== */ 
+ 
+.growth-service-card:hover 
+.growth-service-card-number { 
+    transform: 
+        rotate(8deg) 
+        scale(1.12); 
+ 
+    background: 
+        linear-gradient( 
+            135deg, 
+            #3cd2f9, 
+            #17aee4, 
+            #0950cd 
+        ); 
+ 
+    color: 
+        #ffffff; 
+ 
+    border-color: 
+        #3cd2f9; 
+ 
+    box-shadow: 
+        0 0 25px rgba(60, 210, 249, 0.55), 
+        0 0 45px rgba(9, 80, 205, 0.25); 
+} 
+ 
+ 
+/* ===================================================== 
+   NUMBER GLOW ON HOVER 
+===================================================== */ 
+ 
+.growth-service-card:hover 
+.growth-service-card-number::before { 
+    opacity: 1; 
+ 
+    border-color: 
+        rgba(60, 210, 249, 0.75); 
+ 
+    box-shadow: 
+        0 0 15px rgba(60, 210, 249, 0.35); 
+} 
+ 
+ 
+/* ===================================================== 
+   CARD TITLE 
+===================================================== */ 
+ 
+.growth-service-card h2 { 
+    margin: 0 0 15px; 
+ 
+    color: 
+        #071d49; 
+ 
+    font-size: 22px; 
+ 
+    line-height: 1.25; 
+ 
+    font-weight: 750; 
+ 
+    letter-spacing: -0.3px; 
+ 
+    transition: 
+        color 0.3s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   CARD TITLE HOVER 
+===================================================== */ 
+ 
+.growth-service-card:hover h2 { 
+    color: 
+        #0950cd; 
+} 
+ 
+ 
+/* ===================================================== 
+   CARD DESCRIPTION 
+===================================================== */ 
+ 
+.growth-service-card p { 
+    margin: 0 0 25px; 
+ 
+    color: 
+        #637083; 
+ 
+    font-size: 15px; 
+ 
+    line-height: 1.65; 
+} 
+ 
+ 
+/* ===================================================== 
+   CARD BUTTON 
+===================================================== */ 
+ 
+.growth-service-card-button { 
+    position: relative; 
+ 
+    display: inline-flex; 
+ 
+    align-items: center; 
+ 
+    gap: 12px; 
+ 
+    padding: 
+        11px 16px; 
+ 
+    border: 
+        2px solid rgba(8, 42, 102, 0.42); 
+ 
+    border-radius: 9px; 
+ 
+    background: 
+        linear-gradient( 
+            135deg, 
+            #071d49, 
+            #082a66, 
+            #0950cd 
+        ); 
+ 
+    color: 
+        #ffffff; 
+ 
+    /* REMOVE UNDERLINE */ 
+    text-decoration: none; 
+    -webkit-text-decoration: none; 
+ 
+    font-size: 14px; 
+ 
+    font-weight: 700; 
+ 
+    cursor: pointer; 
+ 
+    overflow: hidden; 
+ 
+    box-shadow: 
+        0 7px 18px rgba(8, 42, 102, 0.16); 
+ 
+    transition: 
+        transform 0.3s ease, 
+        color 0.3s ease, 
+        background 0.3s ease, 
+        border-color 0.3s ease, 
+        box-shadow 0.3s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   REMOVE LINK UNDERLINE IN ALL STATES 
+===================================================== */ 
+ 
+.growth-service-card-button:link, 
+.growth-service-card-button:visited, 
+.growth-service-card-button:hover, 
+.growth-service-card-button:active, 
+.growth-service-card-button:focus { 
+    text-decoration: none; 
+    -webkit-text-decoration: none; 
+} 
+ 
+ 
+/* ===================================================== 
+   BUTTON BACKGROUND ANIMATION 
+===================================================== */ 
+ 
+.growth-service-card-button::before { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    inset: 0; 
+ 
+    background: 
+        linear-gradient( 
+            90deg, 
+            #3cd2f9, 
+            #0950cd, 
+            #071d49 
+        ); 
+ 
+    transform: 
+        translateX(-101%); 
+ 
+    transition: 
+        transform 0.35s ease; 
+ 
+    z-index: -1; 
+} 
+ 
+ 
+/* ===================================================== 
+   BUTTON COLOR ON CARD HOVER 
+===================================================== */ 
+ 
+.growth-service-card:hover 
+.growth-service-card-button { 
+    background: 
+        linear-gradient( 
+            135deg, 
+            #3cd2f9, 
+            #17aee4, 
+            #0950cd 
+        ); 
+ 
+    color: 
+        #ffffff; 
+ 
+    border-color: 
+        #3cd2f9; 
+ 
+    box-shadow: 
+        0 10px 28px rgba(9, 80, 205, 0.32), 
+        0 0 22px rgba(60, 210, 249, 0.22); 
+} 
+ 
+ 
+/* ===================================================== 
+   BUTTON ANIMATION ON CARD HOVER 
+===================================================== */ 
+ 
+.growth-service-card:hover 
+.growth-service-card-button::before { 
+    transform: 
+        translateX(0); 
+} 
+ 
+ 
+/* ===================================================== 
+   DIRECT BUTTON HOVER 
+===================================================== */ 
+ 
+.growth-service-card-button:hover { 
+    transform: 
+        translateY(-3px); 
+ 
+    background: 
+        linear-gradient( 
+            135deg, 
+            #071d49, 
+            #082a66, 
+            #0950cd 
+        ); 
+ 
+    color: 
+        #ffffff; 
+ 
+    border-color: 
+        #3cd2f9; 
+ 
+    box-shadow: 
+        0 10px 28px rgba(9, 80, 205, 0.38), 
+        0 0 25px rgba(60, 210, 249, 0.25); 
+ 
+    text-decoration: none; 
+} 
+ 
+ 
+/* ===================================================== 
+   BUTTON ARROW 
+===================================================== */ 
+ 
+.growth-service-button-arrow { 
+    font-size: 18px; 
+ 
+    color: 
+        #ffffff; 
+ 
+    text-decoration: none; 
+ 
+    transition: 
+        transform 0.3s ease, 
+        color 0.3s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   BUTTON ARROW HOVER 
+===================================================== */ 
+ 
+.growth-service-card-button:hover 
+.growth-service-button-arrow { 
+    color: 
+        #ffffff; 
+ 
+    transform: 
+        translateX(5px); 
+ 
+    text-decoration: none; 
+} 
+ 
+ 
+/* ===================================================== 
+   NAVIGATION CONTROLS 
+===================================================== */ 
+ 
+.growth-services-controls { 
+    margin-top: 45px; 
+ 
+    display: flex; 
+ 
+    justify-content: center; 
+ 
+    align-items: center; 
+ 
+    gap: 25px; 
+} 
+ 
+ 
+/* ===================================================== 
+   NAVIGATION ARROWS 
+===================================================== */ 
+ 
+.growth-services-arrow { 
+    width: 48px; 
+    height: 48px; 
+ 
+    display: flex; 
+ 
+    align-items: center; 
+    justify-content: center; 
+ 
+    border: 
+        2px solid rgba(9, 80, 205, 0.28); 
+ 
+    border-radius: 50%; 
+ 
+    background: 
+        rgba(255, 255, 255, 0.85); 
+ 
+    color: 
+        #082a66; 
+ 
+    font-size: 22px; 
+ 
+    cursor: pointer; 
+ 
+    box-shadow: 
+        0 8px 22px rgba(9, 80, 205, 0.08); 
+ 
+    transition: 
+        transform 0.3s ease, 
+        background 0.3s ease, 
+        color 0.3s ease, 
+        border-color 0.3s ease, 
+        box-shadow 0.3s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   NAVIGATION ARROW HOVER 
+===================================================== */ 
+ 
+.growth-services-arrow:hover:not(:disabled) { 
+    transform: 
+        translateY(-3px); 
+ 
+    background: 
+        linear-gradient( 
+            135deg, 
+            #082a66, 
+            #0950cd 
+        ); 
+ 
+    color: 
+        #ffffff; 
+ 
+    border-color: 
+        #0950cd; 
+ 
+    box-shadow: 
+        0 12px 28px rgba(9, 80, 205, 0.25); 
+} 
+ 
+ 
+/* ===================================================== 
+   DISABLED ARROW 
+===================================================== */ 
+ 
+.growth-services-arrow:disabled { 
+    opacity: 
+        0.35; 
+ 
+    cursor: 
+        not-allowed; 
+ 
+    box-shadow: 
+        none; 
+} 
+ 
+ 
+/* ===================================================== 
+   PAGE INDICATORS 
+===================================================== */ 
+ 
+.growth-services-pages { 
+    display: flex; 
+ 
+    align-items: center; 
+ 
+    gap: 7px; 
+} 
+ 
+ 
+/* ===================================================== 
+   PAGE DOT 
+===================================================== */ 
+ 
+.growth-services-pages span { 
+    width: 7px; 
+    height: 7px; 
+ 
+    border-radius: 50%; 
+ 
+    background: 
+        #cbd8e8; 
+ 
+    transition: 
+        width 0.3s ease, 
+        background 0.3s ease, 
+        box-shadow 0.3s ease; 
+} 
+ 
+ 
+/* ===================================================== 
+   ACTIVE PAGE 
+===================================================== */ 
+ 
+.growth-services-pages span.active { 
+    width: 26px; 
+ 
+    border-radius: 10px; 
+ 
+    background: 
+        linear-gradient( 
+            90deg, 
+            #082a66, 
+            #0950cd, 
+            #3cd2f9 
+        ); 
+ 
+    box-shadow: 
+        0 0 10px rgba(60, 210, 249, 0.35); 
+} 
+ 
+ 
+/* ===================================================== 
+   PAGE SLIDE ANIMATION - NEXT 
+===================================================== */ 
+ 
+.slide-next 
+.growth-service-card { 
+    animation: 
+        slideNext 
+        0.55s 
+        ease-in-out 
+        forwards; 
+} 
+ 
+ 
+/* ===================================================== 
+   NEXT SWIPE 
+===================================================== */ 
+ 
+@keyframes slideNext { 
+ 
+    0% { 
+        opacity: 1; 
+ 
+        transform: 
+            translateX(0); 
+    } 
+ 
+    100% { 
+        opacity: 0; 
+ 
+        transform: 
+            translateX(-45px); 
+    } 
+} 
+ 
+ 
+/* ===================================================== 
+   PAGE SLIDE ANIMATION - PREVIOUS 
+===================================================== */ 
+ 
+.slide-previous 
+.growth-service-card { 
+    animation: 
+        slidePrevious 
+        0.55s 
+        ease-in-out 
+        forwards; 
+} 
+ 
+ 
+/* ===================================================== 
+   PREVIOUS SWIPE 
+===================================================== */ 
+ 
+@keyframes slidePrevious { 
+ 
+    0% { 
+        opacity: 1; 
+ 
+        transform: 
+            translateX(0); 
+    } 
+ 
+    100% { 
+        opacity: 0; 
+ 
+        transform: 
+            translateX(45px); 
+    } 
+} 
+ 
+ 
+/* ===================================================== 
+   TABLET 
+===================================================== */ 
+ 
+@media (max-width: 1100px) { 
+ 
+    .growth-services-grid { 
+        grid-template-columns: 
+            repeat(2, 1fr); 
+    } 
+} 
+ 
+ 
+/* ===================================================== 
+   MOBILE 
+===================================================== */ 
+ 
+@media (max-width: 650px) { 
+ 
+    .growth-services-section { 
+        padding: 
+            80px 20px; 
+    } 
+ 
+ 
+    .growth-services-header { 
+        margin-bottom: 
+            45px; 
+    } 
+ 
+ 
+    .growth-services-header h1 { 
+        font-size: 
+            34px; 
+    } 
+ 
+ 
+    .growth-services-header p { 
+        font-size: 
+            15px; 
+    } 
+ 
+ 
+    .growth-services-grid { 
+        grid-template-columns: 
+            1fr; 
+ 
+        min-height: 
+            auto; 
+ 
+        perspective: 
+            none; 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE IMAGE 
+    ================================================= */ 
+ 
+    .growth-service-card-image { 
+        height: 
+            175px; 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE CONTENT 
+    ================================================= */ 
+ 
+    .growth-service-card-content { 
+        padding: 
+            20px 25px 25px; 
+    } 
+ 
+ 
+    .growth-service-card h2 { 
+        font-size: 
+            21px; 
+    } 
+ 
+ 
+    .growth-service-card p { 
+        font-size: 
+            14px; 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE NUMBER STANDBY 
+    ================================================= */ 
+ 
+    .growth-service-card-number { 
+        margin-bottom: 
+            18px; 
+ 
+        border: 
+            2px solid rgba(8, 42, 102, 0.42); 
+ 
+        background: 
+            linear-gradient( 
+                135deg, 
+                #071d49, 
+                #082a66, 
+                #0950cd 
+            ); 
+ 
+        color: 
+            #ffffff; 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE BUTTON STANDBY 
+    ================================================= */ 
+ 
+    .growth-service-card-button { 
+        border: 
+            2px solid rgba(8, 42, 102, 0.42); 
+ 
+        background: 
+            linear-gradient( 
+                135deg, 
+                #071d49, 
+                #082a66, 
+                #0950cd 
+            ); 
+ 
+        color: 
+            #ffffff; 
+ 
+        text-decoration: none; 
+    } 
+ 
+ 
+    /* ================================================= 
+       DISABLE DESKTOP HOVER DEPTH 
+    ================================================= */ 
+ 
+    .growth-services-grid:hover 
+    .growth-service-card { 
+        transform: 
+            translateY(0) 
+            scale(1); 
+ 
+        opacity: 
+            1; 
+ 
+        filter: 
+            none; 
+ 
+        border-color: 
+            rgba(9, 80, 205, 0.32); 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE CARD HOVER 
+    ================================================= */ 
+ 
+    .growth-services-grid 
+    .growth-service-card:hover { 
+        transform: 
+            translateY(-8px) 
+            scale(1.02); 
+ 
+        opacity: 
+            1; 
+ 
+        border-color: 
+            rgba(60, 210, 249, 0.9); 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE NUMBER HOVER 
+    ================================================= */ 
+ 
+    .growth-service-card:hover 
+    .growth-service-card-number { 
+        background: 
+            linear-gradient( 
+                135deg, 
+                #3cd2f9, 
+                #17aee4, 
+                #0950cd 
+            ); 
+ 
+        color: 
+            #ffffff; 
+ 
+        border-color: 
+            #3cd2f9; 
+ 
+        box-shadow: 
+            0 0 22px rgba(60, 210, 249, 0.45); 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE BUTTON HOVER 
+    ================================================= */ 
+ 
+    .growth-service-card:hover 
+    .growth-service-card-button { 
+        background: 
+            linear-gradient( 
+                135deg, 
+                #3cd2f9, 
+                #17aee4, 
+                #0950cd 
+            ); 
+ 
+        color: 
+            #ffffff; 
+ 
+        border-color: 
+            #3cd2f9; 
+ 
+        box-shadow: 
+            0 10px 25px rgba(9, 80, 205, 0.28), 
+            0 0 20px rgba(60, 210, 249, 0.18); 
+ 
+        text-decoration: none; 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE DIRECT BUTTON HOVER 
+    ================================================= */ 
+ 
+    .growth-service-card-button:hover { 
+        background: 
+            linear-gradient( 
+                135deg, 
+                #071d49, 
+                #082a66, 
+                #0950cd 
+            ); 
+ 
+        color: 
+            #ffffff; 
+ 
+        border-color: 
+            #3cd2f9; 
+ 
+        text-decoration: none; 
+    } 
+ 
+ 
+    /* ================================================= 
+       MOBILE ARROW 
+    ================================================= */ 
+ 
+    .growth-service-card-button:hover 
+    .growth-service-button-arrow { 
+        color: 
+            #ffffff; 
+ 
+        text-decoration: none; 
+    } 
+} 
+ 
+ 
+/* ===================================================== 
+   REDUCED MOTION 
+===================================================== */ 
+ 
+@media (prefers-reduced-motion: reduce) { 
+ 
+    .growth-service-card, 
+    .growth-service-card-image img, 
+    .growth-service-card-number, 
+    .growth-service-card-button, 
+    .growth-service-card-content::before, 
+    .growth-service-card::after { 
+        transition: 
+            none; 
+    } 
+ 
+ 
+    .slide-next 
+    .growth-service-card, 
+    .slide-previous 
+    .growth-service-card { 
+        animation: 
+            none; 
+    } 
 }
