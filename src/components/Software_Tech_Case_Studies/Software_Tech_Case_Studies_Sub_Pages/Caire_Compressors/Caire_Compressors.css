@@ -1,100 +1,311 @@
-﻿.case-study-test-page {
+﻿/* =========================================================
+   C-AIRE COMPRESSORS CASE STUDY
+   Evolute Technologies
+========================================================= */
+
+:root {
+    --caire-blue: #0950cd;
+    --caire-blue-dark: #063b9d;
+    --caire-cyan: #3cd2f9;
+
+    --caire-dark: #071326;
+    --caire-text: #5d6b7d;
+
+    --caire-border: #d8e1ef;
+    --caire-white: #ffffff;
+    --caire-light: #f7faff;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.caire-case-study {
     width: 100%;
-    min-height: 100vh;
-    padding: 140px 6% 100px;
+    overflow: hidden;
+
+    background: var(--caire-white);
+    color: var(--caire-dark);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.caire-container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.caire-hero {
+    position: relative;
+
+    padding: 120px 0 95px;
 
     background:
         radial-gradient(
-            circle at 15% 20%,
-            rgba(60, 210, 249, 0.14),
+            circle at 85% 15%,
+            rgba(60, 210, 249, 0.10),
             transparent 30%
         ),
         radial-gradient(
-            circle at 85% 80%,
-            rgba(9, 80, 205, 0.10),
-            transparent 32%
+            circle at 10% 80%,
+            rgba(9, 80, 205, 0.06),
+            transparent 30%
         ),
         #ffffff;
 }
 
-.case-study-test-container {
-    width: min(1200px, 100%);
-    margin: 0 auto;
 
-    padding: 80px 70px;
+/* =========================================================
+   SUBTLE GRID
+========================================================= */
 
-    border: 1px solid rgba(9, 80, 205, 0.12);
-    border-radius: 30px;
+.caire-hero::before {
+    content: "";
 
-    background: #ffffff;
+    position: absolute;
+    inset: 0;
 
-    box-shadow:
-        0 25px 70px rgba(7, 19, 38, 0.08);
+    background-image:
+        linear-gradient(
+            rgba(9, 80, 205, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.025) 1px,
+            transparent 1px
+        );
 
-    text-align: center;
+    background-size: 70px 70px;
+
+    pointer-events: none;
 }
 
-.case-study-test-label {
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.caire-content {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1000px;
+
+    margin: 0;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.caire-heading {
     display: inline-block;
 
-    margin-bottom: 22px;
-    padding: 8px 16px;
+    margin: 0 0 25px;
 
-    border-radius: 999px;
+    color: var(--caire-dark);
 
-    background: rgba(9, 80, 205, 0.08);
+    font-size: clamp(58px, 7vw, 88px);
 
-    color: #0950cd;
+    line-height: 1;
 
-    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: -0.055em;
+
+    cursor: default;
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   HEADING HOVER
+========================================================= */
+
+.caire-heading:hover {
+    color: var(--caire-blue);
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   HEADING SPAN
+========================================================= */
+
+.caire-heading span {
+    color: var(--caire-blue);
+
+    transition:
+        color 0.4s ease;
+}
+
+
+.caire-heading:hover span {
+    color: var(--caire-cyan);
+}
+
+
+/* =========================================================
+   HEADING LINE
+========================================================= */
+
+.caire-heading-line {
+    width: 100px;
+
+    height: 4px;
+
+    margin-bottom: 42px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--caire-blue),
+            var(--caire-cyan)
+        );
+
+    transform-origin: left;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.caire-description {
+    margin: 0 0 28px;
+
+    color: var(--caire-text);
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    text-align: left;
+}
+
+
+.caire-description strong {
+    color: var(--caire-dark);
+
     font-weight: 700;
-
-    letter-spacing: 1.5px;
 }
 
-.case-study-test-container h1 {
-    margin: 0 0 22px;
 
-    color: #071326;
+/* =========================================================
+   SUMMARY
+========================================================= */
 
-    font-size: clamp(42px, 6vw, 76px);
+.caire-summary {
+    max-width: 900px;
 
-    line-height: 1.05;
+    margin: 40px 0 0;
+
+    padding-top: 32px;
+
+    border-top: 1px solid var(--caire-border);
+
+    color: var(--caire-dark);
+
+    font-size: 22px;
+
+    line-height: 1.9;
+
+    font-weight: 650;
+
+    text-align: left;
 }
 
-.case-study-test-container p {
-    max-width: 700px;
-    margin: 0 auto 35px;
 
-    color: #5d6b7d;
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-    font-size: 18px;
-    line-height: 1.8;
+@media (max-width: 900px) {
+
+    .caire-container {
+        width: 90%;
+    }
+
+
+    .caire-heading {
+        font-size: clamp(52px, 8vw, 70px);
+    }
+
+
+    .caire-description {
+        font-size: 19px;
+
+        line-height: 1.9;
+    }
+
+
+    .caire-summary {
+        font-size: 21px;
+
+        line-height: 1.85;
+    }
 }
 
-.case-study-test-status {
-    display: inline-flex;
 
-    align-items: center;
-    gap: 10px;
+/* =========================================================
+   MOBILE
+========================================================= */
 
-    padding: 12px 20px;
+@media (max-width: 500px) {
 
-    border-radius: 999px;
+    .caire-container {
+        width: 90%;
+    }
 
-    background: rgba(60, 210, 249, 0.10);
 
-    color: #0950cd;
+    .caire-hero {
+        padding: 75px 0 60px;
+    }
 
-    font-size: 14px;
-    font-weight: 700;
-}
 
-.status-dot {
-    width: 9px;
-    height: 9px;
+    .caire-heading {
+        font-size: 44px;
 
-    border-radius: 50%;
+        letter-spacing: -0.04em;
+    }
 
-    background: #3cd2f9;
+
+    .caire-heading-line {
+        width: 75px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .caire-description {
+        font-size: 17px;
+
+        line-height: 1.85;
+    }
+
+
+    .caire-summary {
+        font-size: 18px;
+
+        line-height: 1.8;
+    }
 }
