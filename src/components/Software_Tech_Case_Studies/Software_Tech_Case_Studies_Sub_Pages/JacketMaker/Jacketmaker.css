@@ -1,0 +1,311 @@
+﻿/* =========================================================
+   JACKETMAKER CASE STUDY
+   Evolute Technologies
+========================================================= */
+
+:root {
+    --jacket-blue: #0950cd;
+    --jacket-blue-dark: #063b9d;
+    --jacket-cyan: #3cd2f9;
+
+    --jacket-dark: #071326;
+    --jacket-text: #5d6b7d;
+
+    --jacket-border: #d8e1ef;
+    --jacket-white: #ffffff;
+    --jacket-light: #f7faff;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.jacketmaker-case-study {
+    width: 100%;
+    overflow: hidden;
+
+    background: var(--jacket-white);
+    color: var(--jacket-dark);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.jacketmaker-container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.jacketmaker-hero {
+    position: relative;
+
+    padding: 120px 0 95px;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(60, 210, 249, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(9, 80, 205, 0.06),
+            transparent 30%
+        ),
+        #ffffff;
+}
+
+
+/* =========================================================
+   SUBTLE GRID
+========================================================= */
+
+.jacketmaker-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(9, 80, 205, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(9, 80, 205, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.jacketmaker-content {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1000px;
+
+    margin: 0;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.jacketmaker-heading {
+    display: inline-block;
+
+    margin: 0 0 25px;
+
+    color: var(--jacket-dark);
+
+    font-size: clamp(58px, 7vw, 88px);
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -0.055em;
+
+    cursor: default;
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   HEADING HOVER
+========================================================= */
+
+.jacketmaker-heading:hover {
+    color: var(--jacket-blue);
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   HEADING SPAN
+========================================================= */
+
+.jacketmaker-heading span {
+    color: var(--jacket-blue);
+
+    transition:
+        color 0.4s ease;
+}
+
+
+.jacketmaker-heading:hover span {
+    color: var(--jacket-cyan);
+}
+
+
+/* =========================================================
+   HEADING LINE
+========================================================= */
+
+.jacketmaker-heading-line {
+    width: 100px;
+
+    height: 4px;
+
+    margin-bottom: 42px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--jacket-blue),
+            var(--jacket-cyan)
+        );
+
+    transform-origin: left;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.jacketmaker-description {
+    margin: 0 0 28px;
+
+    color: var(--jacket-text);
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    text-align: left;
+}
+
+
+.jacketmaker-description strong {
+    color: var(--jacket-dark);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.jacketmaker-summary {
+    max-width: 900px;
+
+    margin: 40px 0 0;
+
+    padding-top: 32px;
+
+    border-top: 1px solid var(--jacket-border);
+
+    color: var(--jacket-dark);
+
+    font-size: 22px;
+
+    line-height: 1.9;
+
+    font-weight: 650;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .jacketmaker-container {
+        width: 90%;
+    }
+
+
+    .jacketmaker-heading {
+        font-size: clamp(52px, 8vw, 70px);
+    }
+
+
+    .jacketmaker-description {
+        font-size: 19px;
+
+        line-height: 1.9;
+    }
+
+
+    .jacketmaker-summary {
+        font-size: 21px;
+
+        line-height: 1.85;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .jacketmaker-container {
+        width: 90%;
+    }
+
+
+    .jacketmaker-hero {
+        padding: 75px 0 60px;
+    }
+
+
+    .jacketmaker-heading {
+        font-size: 44px;
+
+        letter-spacing: -0.04em;
+    }
+
+
+    .jacketmaker-heading-line {
+        width: 75px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .jacketmaker-description {
+        font-size: 17px;
+
+        line-height: 1.85;
+    }
+
+
+    .jacketmaker-summary {
+        font-size: 18px;
+
+        line-height: 1.8;
+    }
+}
