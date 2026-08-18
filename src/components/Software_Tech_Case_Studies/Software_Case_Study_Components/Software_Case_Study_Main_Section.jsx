@@ -1,6 +1,8 @@
 import "./Software_Case_Study_Main_Section.css";
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 /* =========================================================
    SOFTWARE CASE STUDY IMAGES
@@ -63,7 +65,6 @@ import TipsyScoop
 
 /* =========================================================
    CASE STUDIES DATA
-   SHUFFLED ORDER
 ========================================================= */
 
 const caseStudies = [
@@ -75,6 +76,7 @@ const caseStudies = [
         title: "Fluvanna",
         description:
             "A scalable web-based experience designed to simplify digital interactions through intuitive design and modern application architecture.",
+        route: "/case-studies/software-tech/fluvanna",
     },
 
     {
@@ -84,6 +86,7 @@ const caseStudies = [
         title: "GTA Properties",
         description:
             "A modern property platform designed to simplify property discovery, management, and digital interaction for real estate businesses and their customers.",
+        route: "/case-studies/software-tech/gta-properties",
     },
 
     {
@@ -93,6 +96,9 @@ const caseStudies = [
         title: "Soap & Slave",
         description:
             "A distinctive digital commerce platform designed around a clean user experience, product presentation, and scalable online functionality.",
+
+        /* FIXED ROUTE */
+        route: "/case-studies/software-tech/soap-and-slave",
     },
 
     {
@@ -102,6 +108,7 @@ const caseStudies = [
         title: "Seeker Mobile App",
         description:
             "A user-focused mobile application developed with a clean experience, intuitive navigation, and scalable architecture for modern mobile users.",
+        route: "/case-studies/software-tech/seeker-mobile-app",
     },
 
     {
@@ -111,6 +118,11 @@ const caseStudies = [
         title: "Enterprise Digital Platform",
         description:
             "A custom digital solution engineered to deliver a seamless user experience, scalable infrastructure, and reliable business functionality.",
+
+        /* FIXED ROUTE
+           Enterprise Digital Platform = Caire Compressors
+        */
+        route: "/case-studies/software-tech/caire-compressors",
     },
 
     {
@@ -120,6 +132,7 @@ const caseStudies = [
         title: "EliteClass LMS",
         description:
             "A modern learning management system built to connect students, instructors, and educational content through an intuitive and scalable digital environment.",
+        route: "/case-studies/software-tech/elite-class-lms",
     },
 
     {
@@ -129,6 +142,7 @@ const caseStudies = [
         title: "Tipsy Scoop",
         description:
             "A modern digital experience designed to connect customers with products through engaging visuals, intuitive navigation, and a premium interface.",
+        route: "/case-studies/software-tech/tipsy-scoop",
     },
 
     {
@@ -138,6 +152,7 @@ const caseStudies = [
         title: "NetBeat Live & Proximous",
         description:
             "A scalable streaming technology solution engineered to support real-time digital experiences, reliable content delivery, and audience engagement.",
+        route: "/case-studies/software-tech/netbeat-live",
     },
 
     {
@@ -147,6 +162,7 @@ const caseStudies = [
         title: "Charlotte",
         description:
             "A polished digital solution designed to provide an intuitive experience while supporting modern business and technology requirements.",
+        route: "/case-studies/software-tech/charlotte",
     },
 
     {
@@ -156,6 +172,7 @@ const caseStudies = [
         title: "Election Campaign Management Platform",
         description:
             "A powerful digital platform designed to simplify election campaign management, streamline communication, and organize campaign operations through one centralized system.",
+        route: "/case-studies/software-tech/election-campaign-management",
     },
 
     {
@@ -165,6 +182,7 @@ const caseStudies = [
         title: "JacketMaker",
         description:
             "A modern digital commerce experience designed to simplify product discovery, customization, and online customer interaction.",
+        route: "/case-studies/software-tech/jacketmaker",
     },
 
     {
@@ -174,6 +192,7 @@ const caseStudies = [
         title: "TapVax",
         description:
             "A healthcare-focused digital solution designed to make vaccination-related processes more accessible, organized, and convenient through technology.",
+        route: "/case-studies/software-tech/tapvax",
     },
 
     {
@@ -183,6 +202,7 @@ const caseStudies = [
         title: "LiveStream Trivia App",
         description:
             "An interactive live-streaming experience combining real-time engagement, trivia, and digital entertainment into one connected platform.",
+        route: "/case-studies/software-tech/livestream-trivia-app",
     },
 
     {
@@ -192,6 +212,7 @@ const caseStudies = [
         title: "HealthMed",
         description:
             "A healthcare-focused digital platform designed to improve accessibility, organization, and digital interaction through modern technology.",
+        route: "/case-studies/software-tech/healthmed",
     },
 
     {
@@ -201,6 +222,7 @@ const caseStudies = [
         title: "Scalable OTT Platform",
         description:
             "A scalable over-the-top streaming platform designed to support high-quality content delivery, flexible infrastructure, and growing digital audiences.",
+        route: "/case-studies/software-tech/scalable-ott-platform",
     },
 
     {
@@ -210,6 +232,7 @@ const caseStudies = [
         title: "Checkmate",
         description:
             "A modern technology solution focused on delivering an efficient digital experience with scalable functionality and a clean interface.",
+        route: "/case-studies/software-tech/checkmate",
     },
 
     {
@@ -219,6 +242,7 @@ const caseStudies = [
         title: "FitnessWay Q8",
         description:
             "A digital fitness solution designed to deliver a seamless user experience while helping users manage their fitness journey through a modern technology platform.",
+        route: "/case-studies/software-tech/fitnessway-q8",
     },
 
     {
@@ -228,6 +252,7 @@ const caseStudies = [
         title: "Bavari",
         description:
             "A modern digital platform developed with a premium user experience, scalable architecture, and technology-focused solutions.",
+        route: "/case-studies/software-tech/bavari",
     },
 
 ];
@@ -250,10 +275,6 @@ function Software_Case_Study_Main_Section() {
                     <motion.article
                         className="software-case-study-row"
                         key={study.id}
-
-                        /* =====================================
-                           SCROLL REVEAL
-                        ===================================== */
 
                         initial={{
                             opacity: 0,
@@ -301,7 +322,15 @@ function Software_Case_Study_Main_Section() {
                                 {study.description}
                             </p>
 
-                            <button className="software-case-study-button">
+
+                            {/* =====================================
+                               VIEW CASE STUDY BUTTON
+                            ===================================== */}
+
+                            <Link
+                                to={study.route}
+                                className="software-case-study-button"
+                            >
 
                                 View Case Study
 
@@ -309,7 +338,7 @@ function Software_Case_Study_Main_Section() {
                                     ↗
                                 </span>
 
-                            </button>
+                            </Link>
 
                         </div>
 
@@ -318,14 +347,17 @@ function Software_Case_Study_Main_Section() {
                            RIGHT — IMAGE
                         ===================================== */}
 
-                        <div className="software-case-study-image">
+                        <Link
+                            to={study.route}
+                            className="software-case-study-image"
+                        >
 
                             <img
                                 src={study.image}
                                 alt={study.title}
                             />
 
-                        </div>
+                        </Link>
 
                     </motion.article>
 
@@ -336,6 +368,7 @@ function Software_Case_Study_Main_Section() {
         </section>
 
     );
+
 }
 
 
