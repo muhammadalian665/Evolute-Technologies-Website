@@ -20,6 +20,14 @@ import Growth_Services
 
 
 /* =====================================================
+   SOFTWARE & TECH CASE STUDIES
+===================================================== */
+
+import Software_Case_Studies
+    from "./components/Software_Tech_Case_Studies/Software_Case_Studies";
+
+
+/* =====================================================
    SOFTWARE SERVICES SUB PAGES
 ===================================================== */
 
@@ -149,6 +157,16 @@ function App() {
 
 
                 {/* =================================================
+                    SOFTWARE & TECH CASE STUDIES
+                ================================================= */}
+
+                <Route
+                    path="/case-studies/software-tech"
+                    element={<Software_Case_Studies />}
+                />
+
+
+                {/* =================================================
                     SOFTWARE SERVICE SUB PAGES
                 ================================================= */}
 
@@ -232,6 +250,7 @@ function App() {
                     element={<Sales_automation_Systems />}
                 />
 
+
             </Routes>
 
 
@@ -241,9 +260,11 @@ function App() {
 
             <Footer />
 
+
         </BrowserRouter>
 
     );
+
 }
 
 
