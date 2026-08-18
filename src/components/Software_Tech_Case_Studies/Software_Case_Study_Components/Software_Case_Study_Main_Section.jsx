@@ -2,6 +2,19 @@ import "./Software_Case_Study_Main_Section.css";
 
 import { motion } from "framer-motion";
 
+/* =========================================================
+   SOFTWARE CASE STUDY IMAGES
+========================================================= */
+
+import Bavari
+    from "../../../assets/Software_Case_Study_Images/Bavari.jpg";
+
+import Charlotte
+    from "../../../assets/Software_Case_Study_Images/Charlotte.jpg";
+
+import Checkmate
+    from "../../../assets/Software_Case_Study_Images/Checkmate.jpg";
+
 import ElectionCampaign
     from "../../../assets/Software_Case_Study_Images/ElectionCampaign.png";
 
@@ -11,8 +24,20 @@ import EliteClassLMS
 import FitnessWayQ8
     from "../../../assets/Software_Case_Study_Images/FitnessWayQ8.png";
 
+import Fluvanna
+    from "../../../assets/Software_Case_Study_Images/Fluvanna.jpg";
+
 import GTAProperties
     from "../../../assets/Software_Case_Study_Images/GTAProperties.png";
+
+import HealthMed
+    from "../../../assets/Software_Case_Study_Images/HealthMed.png";
+
+import image
+    from "../../../assets/Software_Case_Study_Images/image.jpg";
+
+import JacketMaker
+    from "../../../assets/Software_Case_Study_Images/JacketMaker.png";
 
 import LiveStreamTriviaApp
     from "../../../assets/Software_Case_Study_Images/LiveStreamTriviaApp.png";
@@ -26,40 +51,34 @@ import ScalableOTT
 import SeekerMobileApp
     from "../../../assets/Software_Case_Study_Images/SeekerMobileApp.png";
 
+import SoapSlave
+    from "../../../assets/Software_Case_Study_Images/Soap&Slave.png";
+
 import TapVax
     from "../../../assets/Software_Case_Study_Images/TapVax.png";
 
+import TipsyScoop
+    from "../../../assets/Software_Case_Study_Images/TipsyScoop.png";
+
+
+/* =========================================================
+   CASE STUDIES DATA
+   SHUFFLED ORDER
+========================================================= */
 
 const caseStudies = [
+
     {
         id: "01",
-        image: ElectionCampaign,
-        category: "Custom Software Development",
-        title: "Election Campaign Management Platform",
+        image: Fluvanna,
+        category: "Web Application",
+        title: "Fluvanna",
         description:
-            "A powerful digital platform designed to simplify election campaign management, streamline communication, and organize campaign operations through one centralized system.",
+            "A scalable web-based experience designed to simplify digital interactions through intuitive design and modern application architecture.",
     },
 
     {
         id: "02",
-        image: EliteClassLMS,
-        category: "Education Technology",
-        title: "EliteClass LMS",
-        description:
-            "A modern learning management system built to connect students, instructors, and educational content through an intuitive and scalable digital environment.",
-    },
-
-    {
-        id: "03",
-        image: FitnessWayQ8,
-        category: "Health & Fitness",
-        title: "FitnessWay Q8",
-        description:
-            "A digital fitness solution designed to deliver a seamless user experience while helping users manage their fitness journey through a modern technology platform.",
-    },
-
-    {
-        id: "04",
         image: GTAProperties,
         category: "Real Estate Technology",
         title: "GTA Properties",
@@ -68,34 +87,16 @@ const caseStudies = [
     },
 
     {
-        id: "05",
-        image: LiveStreamTriviaApp,
-        category: "Live Streaming",
-        title: "LiveStream Trivia App",
+        id: "03",
+        image: SoapSlave,
+        category: "E-Commerce Platform",
+        title: "Soap & Slave",
         description:
-            "An interactive live-streaming experience combining real-time engagement, trivia, and digital entertainment into one connected platform.",
+            "A distinctive digital commerce platform designed around a clean user experience, product presentation, and scalable online functionality.",
     },
 
     {
-        id: "06",
-        image: NetBeatLiveProximous,
-        category: "Streaming Technology",
-        title: "NetBeat Live & Proximous",
-        description:
-            "A scalable streaming technology solution engineered to support real-time digital experiences, reliable content delivery, and audience engagement.",
-    },
-
-    {
-        id: "07",
-        image: ScalableOTT,
-        category: "OTT Solutions",
-        title: "Scalable OTT Platform",
-        description:
-            "A scalable over-the-top streaming platform designed to support high-quality content delivery, flexible infrastructure, and growing digital audiences.",
-    },
-
-    {
-        id: "08",
+        id: "04",
         image: SeekerMobileApp,
         category: "Mobile Application",
         title: "Seeker Mobile App",
@@ -104,19 +105,142 @@ const caseStudies = [
     },
 
     {
+        id: "05",
+        image: image,
+        category: "Digital Solution",
+        title: "Enterprise Digital Platform",
+        description:
+            "A custom digital solution engineered to deliver a seamless user experience, scalable infrastructure, and reliable business functionality.",
+    },
+
+    {
+        id: "06",
+        image: EliteClassLMS,
+        category: "Education Technology",
+        title: "EliteClass LMS",
+        description:
+            "A modern learning management system built to connect students, instructors, and educational content through an intuitive and scalable digital environment.",
+    },
+
+    {
+        id: "07",
+        image: TipsyScoop,
+        category: "Food & Beverage Technology",
+        title: "Tipsy Scoop",
+        description:
+            "A modern digital experience designed to connect customers with products through engaging visuals, intuitive navigation, and a premium interface.",
+    },
+
+    {
+        id: "08",
+        image: NetBeatLiveProximous,
+        category: "Streaming Technology",
+        title: "NetBeat Live & Proximous",
+        description:
+            "A scalable streaming technology solution engineered to support real-time digital experiences, reliable content delivery, and audience engagement.",
+    },
+
+    {
         id: "09",
+        image: Charlotte,
+        category: "Digital Platform",
+        title: "Charlotte",
+        description:
+            "A polished digital solution designed to provide an intuitive experience while supporting modern business and technology requirements.",
+    },
+
+    {
+        id: "10",
+        image: ElectionCampaign,
+        category: "Custom Software Development",
+        title: "Election Campaign Management Platform",
+        description:
+            "A powerful digital platform designed to simplify election campaign management, streamline communication, and organize campaign operations through one centralized system.",
+    },
+
+    {
+        id: "11",
+        image: JacketMaker,
+        category: "E-Commerce Technology",
+        title: "JacketMaker",
+        description:
+            "A modern digital commerce experience designed to simplify product discovery, customization, and online customer interaction.",
+    },
+
+    {
+        id: "12",
         image: TapVax,
         category: "Healthcare Technology",
         title: "TapVax",
         description:
             "A healthcare-focused digital solution designed to make vaccination-related processes more accessible, organized, and convenient through technology.",
     },
+
+    {
+        id: "13",
+        image: LiveStreamTriviaApp,
+        category: "Live Streaming",
+        title: "LiveStream Trivia App",
+        description:
+            "An interactive live-streaming experience combining real-time engagement, trivia, and digital entertainment into one connected platform.",
+    },
+
+    {
+        id: "14",
+        image: HealthMed,
+        category: "Healthcare Technology",
+        title: "HealthMed",
+        description:
+            "A healthcare-focused digital platform designed to improve accessibility, organization, and digital interaction through modern technology.",
+    },
+
+    {
+        id: "15",
+        image: ScalableOTT,
+        category: "OTT Solutions",
+        title: "Scalable OTT Platform",
+        description:
+            "A scalable over-the-top streaming platform designed to support high-quality content delivery, flexible infrastructure, and growing digital audiences.",
+    },
+
+    {
+        id: "16",
+        image: Checkmate,
+        category: "Technology Platform",
+        title: "Checkmate",
+        description:
+            "A modern technology solution focused on delivering an efficient digital experience with scalable functionality and a clean interface.",
+    },
+
+    {
+        id: "17",
+        image: FitnessWayQ8,
+        category: "Health & Fitness",
+        title: "FitnessWay Q8",
+        description:
+            "A digital fitness solution designed to deliver a seamless user experience while helping users manage their fitness journey through a modern technology platform.",
+    },
+
+    {
+        id: "18",
+        image: Bavari,
+        category: "Digital Experience",
+        title: "Bavari",
+        description:
+            "A modern digital platform developed with a premium user experience, scalable architecture, and technology-focused solutions.",
+    },
+
 ];
 
+
+/* =========================================================
+   COMPONENT
+========================================================= */
 
 function Software_Case_Study_Main_Section() {
 
     return (
+
         <section className="software-case-study-main-section">
 
             <div className="software-case-study-container">
@@ -127,9 +251,9 @@ function Software_Case_Study_Main_Section() {
                         className="software-case-study-row"
                         key={study.id}
 
-                        /* =========================================
+                        /* =====================================
                            SCROLL REVEAL
-                        ========================================= */
+                        ===================================== */
 
                         initial={{
                             opacity: 0,
@@ -210,6 +334,7 @@ function Software_Case_Study_Main_Section() {
             </div>
 
         </section>
+
     );
 }
 
