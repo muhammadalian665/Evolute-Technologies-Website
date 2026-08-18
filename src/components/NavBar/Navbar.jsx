@@ -10,6 +10,9 @@ function Navbar() {
     const [servicesOpen, setServicesOpen] =
         useState(false);
 
+    const [caseStudiesOpen, setCaseStudiesOpen] =
+        useState(false);
+
 
     return (
 
@@ -39,7 +42,9 @@ function Navbar() {
             <ul className="nav-links">
 
 
-                {/* HOME */}
+                {/* =================================================
+                    HOME
+                ================================================= */}
 
                 <li>
                     <Link to="/">
@@ -48,7 +53,9 @@ function Navbar() {
                 </li>
 
 
-                {/* ABOUT */}
+                {/* =================================================
+                    ABOUT
+                ================================================= */}
 
                 <li>
                     <Link to="/about">
@@ -143,16 +150,95 @@ function Navbar() {
                 </li>
 
 
-                {/* CASE STUDIES */}
+                {/* =================================================
+                    CASE STUDIES DROPDOWN
+                ================================================= */}
 
-                <li>
-                    <Link to="/case-studies">
+                <li
+                    className="case-studies-dropdown"
+
+                    onClick={() =>
+                        setCaseStudiesOpen(!caseStudiesOpen)
+                    }
+                >
+
+                    <Link
+                        to="/case-studies"
+
+                        onClick={(e) =>
+                            e.preventDefault()
+                        }
+                    >
                         Case Studies
                     </Link>
+
+
+                    {/* =================================================
+                        CASE STUDIES MENU
+                    ================================================= */}
+
+                    <div
+                        className={`case-studies-menu ${
+                            caseStudiesOpen
+                                ? "case-studies-menu-open"
+                                : ""
+                        }`}
+                    >
+
+
+                        {/* =============================================
+                            SOFTWARE & TECH CASE STUDIES
+                        ============================================= */}
+
+                        <div
+                            className="case-studies-menu-item"
+
+                            onClick={(e) => {
+
+                                e.stopPropagation();
+
+                                navigate(
+                                    "/case-studies/software-tech"
+                                );
+
+                                setCaseStudiesOpen(false);
+
+                            }}
+                        >
+                            Software & Tech Case Studies
+                        </div>
+
+
+                        {/* =============================================
+                            GROWTH CASE STUDIES
+                        ============================================= */}
+
+                        <div
+                            className="case-studies-menu-item"
+
+                            onClick={(e) => {
+
+                                e.stopPropagation();
+
+                                navigate(
+                                    "/case-studies/growth"
+                                );
+
+                                setCaseStudiesOpen(false);
+
+                            }}
+                        >
+                            Growth Case Studies
+                        </div>
+
+                    </div>
+
                 </li>
 
 
-                {/* CONTACT */}
+                {/* =================================================
+                    CONTACT
+                ================================================= */}
 
                 <li>
                     <Link to="/contact-us">
@@ -177,9 +263,11 @@ function Navbar() {
                 Hire Us
             </button>
 
+
         </header>
 
     );
+
 }
 
 
