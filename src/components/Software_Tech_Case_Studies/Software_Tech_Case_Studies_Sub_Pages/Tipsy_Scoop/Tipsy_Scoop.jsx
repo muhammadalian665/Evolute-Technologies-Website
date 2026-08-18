@@ -1,38 +1,112 @@
 ﻿import "./Tipsy_Scoop.css";
+import { motion } from "framer-motion";
 
-function Tipsy_Scoop() {
-
+function TipsyScoop() {
     return (
-        <main className="case-study-test-page">
+        <main className="tipsy-case-study">
 
-            <section className="case-study-test-hero">
+            {/* =========================================
+                CASE STUDY INTRO
+            ========================================= */}
 
-                <div className="case-study-test-container">
+            <section className="tipsy-hero">
+                <div className="tipsy-container">
 
-                    <span className="case-study-test-label">
-                        SOFTWARE & TECH CASE STUDY
-                    </span>
+                    <motion.div
+                        className="tipsy-content"
+                        initial={{ opacity: 0, y: 35 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 0.8,
+                            ease: "easeOut"
+                        }}
+                    >
 
-                    <h1>
-                        Tipsy Scoop
-                    </h1>
+                        {/* HEADING */}
 
-                    <p>
-                        This is a temporary test page for the Tipsy Scoop case study.
-                        The route and component are working correctly.
-                    </p>
+                        <motion.h1
+                            className="tipsy-heading"
+                            initial={{ opacity: 0, y: 25 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.8,
+                                delay: 0.1
+                            }}
+                        >
+                            Tipsy Scoop Liquor Infused Ice Cream
+                        </motion.h1>
 
-                    <div className="case-study-test-status">
-                        <span className="status-dot"></span>
-                        Page Loaded Successfully
-                    </div>
+
+                        <motion.div
+                            className="tipsy-heading-line"
+                            initial={{ opacity: 0, scaleX: 0 }}
+                            animate={{ opacity: 1, scaleX: 1 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: 0.3
+                            }}
+                        />
+
+
+                        <motion.p
+                            className="tipsy-description"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.7,
+                                delay: 0.35
+                            }}
+                        >
+                            Tipsy Scoop is a distinctive dessert brand known
+                            for combining premium ice cream with sophisticated
+                            cocktail-inspired flavors. The digital experience
+                            was designed to bring the brand's playful identity
+                            to life while making it easier for customers to
+                            discover unique flavors, explore products, and
+                            engage with the Tipsy Scoop experience.
+                        </motion.p>
+
+
+                        <motion.p
+                            className="tipsy-description"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.7,
+                                delay: 0.45
+                            }}
+                        >
+                            The platform creates an engaging journey around
+                            the brand's liquor-infused ice cream collection,
+                            combining compelling product presentation with
+                            intuitive navigation and a visually rich
+                            experience. From discovering signature flavors to
+                            learning more about the brand, every interaction
+                            was structured to capture the fun, premium, and
+                            unconventional character of Tipsy Scoop.
+                        </motion.p>
+
+
+                        <motion.p
+                            className="tipsy-summary"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.7,
+                                delay: 0.55
+                            }}
+                        >
+                            A bold digital experience bringing Tipsy Scoop's
+                            playful cocktail-inspired ice cream brand to life.
+                        </motion.p>
+
+                    </motion.div>
 
                 </div>
-
             </section>
 
         </main>
     );
 }
 
-export default Tipsy_Scoop;
+export default TipsyScoop;
