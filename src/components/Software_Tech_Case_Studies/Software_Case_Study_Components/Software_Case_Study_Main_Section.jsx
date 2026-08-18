@@ -1,5 +1,7 @@
 import "./Software_Case_Study_Main_Section.css";
 
+import { motion } from "framer-motion";
+
 import ElectionCampaign
     from "../../../assets/Software_Case_Study_Images/ElectionCampaign.png";
 
@@ -113,19 +115,49 @@ const caseStudies = [
 
 
 function Software_Case_Study_Main_Section() {
+
     return (
         <section className="software-case-study-main-section">
 
             <div className="software-case-study-container">
 
-                {caseStudies.map((study) => (
+                {caseStudies.map((study, index) => (
 
-                    <article
+                    <motion.article
                         className="software-case-study-row"
                         key={study.id}
+
+                        /* =========================================
+                           SCROLL REVEAL
+                        ========================================= */
+
+                        initial={{
+                            opacity: 0,
+                            y: 90,
+                            scale: 0.97,
+                        }}
+
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                        }}
+
+                        viewport={{
+                            once: true,
+                            amount: 0.18,
+                        }}
+
+                        transition={{
+                            duration: 0.75,
+                            delay: index * 0.05,
+                            ease: [0.22, 1, 0.36, 1],
+                        }}
                     >
 
-                        {/* LEFT — TEXT */}
+                        {/* =====================================
+                           LEFT — TEXT
+                        ===================================== */}
 
                         <div className="software-case-study-content">
 
@@ -146,17 +178,21 @@ function Software_Case_Study_Main_Section() {
                             </p>
 
                             <button className="software-case-study-button">
+
                                 View Case Study
 
                                 <span>
                                     ↗
                                 </span>
+
                             </button>
 
                         </div>
 
 
-                        {/* RIGHT — IMAGE */}
+                        {/* =====================================
+                           RIGHT — IMAGE
+                        ===================================== */}
 
                         <div className="software-case-study-image">
 
@@ -167,7 +203,7 @@ function Software_Case_Study_Main_Section() {
 
                         </div>
 
-                    </article>
+                    </motion.article>
 
                 ))}
 
@@ -176,5 +212,6 @@ function Software_Case_Study_Main_Section() {
         </section>
     );
 }
+
 
 export default Software_Case_Study_Main_Section;
