@@ -1,0 +1,969 @@
+/* ========================================================= 
+   SOFTWARE CASE STUDY MAIN SECTION 
+   Evolute Technologies 
+   Premium B2B Case Studies 
+========================================================= */ 
+ 
+:root { 
+    --case-blue: #0950cd; 
+    --case-blue-dark: #063b9d; 
+    --case-cyan: #3cd2f9; 
+ 
+    --case-dark: #071326; 
+    --case-text: #5d6b7d; 
+ 
+    --case-border: rgba(7, 19, 38, 0.12); 
+ 
+    /* ========================= 
+       CARD COLORS 
+    ========================= */ 
+ 
+    --case-card-bg: #071326; 
+    --case-card-hover: #0950cd; 
+ 
+    --case-image-bg: #eaf0f7; 
+} 
+ 
+ 
+/* ========================================================= 
+   MAIN SECTION 
+   FULL WIDTH 
+   NO LEFT / RIGHT / BOTTOM WHITE SPACE 
+========================================================= */ 
+ 
+.software-case-study-main-section { 
+    width: 100%; 
+ 
+    padding: 30px 0 0; 
+ 
+    margin: 0; 
+ 
+    background: #ffffff; 
+ 
+    box-sizing: border-box; 
+} 
+ 
+ 
+/* ========================================================= 
+   CONTAINER 
+   FULL WIDTH 
+========================================================= */ 
+ 
+.software-case-study-container { 
+    width: 100%; 
+ 
+    max-width: none; 
+ 
+    margin: 0; 
+ 
+    padding: 0; 
+ 
+    box-sizing: border-box; 
+} 
+ 
+ 
+/* ========================================================= 
+   CASE STUDY CARD 
+ 
+   LEFT  → TEXT 
+   RIGHT → IMAGE 
+ 
+   NO GAP 
+   NO OUTER SPACE 
+========================================================= */ 
+ 
+.software-case-study-row { 
+    width: 100%; 
+ 
+    display: grid; 
+ 
+    grid-template-columns: 1fr 1fr; 
+ 
+    min-height: 500px; 
+ 
+    margin: 0; 
+ 
+    padding: 0; 
+ 
+    gap: 0; 
+ 
+    border: 0; 
+ 
+    overflow: hidden; 
+ 
+    background: #ffffff; 
+ 
+    box-shadow: none; 
+ 
+    box-sizing: border-box; 
+ 
+    transition: 
+        box-shadow 0.45s ease, 
+        transform 0.45s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   CARD HOVER 
+========================================================= */ 
+ 
+.software-case-study-row:hover { 
+    position: relative; 
+ 
+    z-index: 2; 
+ 
+    box-shadow: 
+        0 22px 55px rgba(9, 80, 205, 0.18); 
+ 
+    transform: translateY(-2px); 
+} 
+ 
+ 
+/* ========================================================= 
+   LEFT SIDE — TEXT CARD 
+========================================================= */ 
+ 
+.software-case-study-content { 
+    position: relative; 
+ 
+    order: 1; 
+ 
+    display: flex; 
+ 
+    flex-direction: column; 
+ 
+    justify-content: center; 
+ 
+    width: 100%; 
+ 
+    min-width: 0; 
+ 
+    padding: 70px 9%; 
+ 
+    margin: 0; 
+ 
+    background: var(--case-card-bg); 
+ 
+    overflow: hidden; 
+ 
+    box-sizing: border-box; 
+ 
+    transition: 
+        background 0.45s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   CARD DECORATIVE GLOW 
+========================================================= */ 
+ 
+.software-case-study-content::before { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    top: -150px; 
+    left: -150px; 
+ 
+    width: 330px; 
+    height: 330px; 
+ 
+    background: 
+        radial-gradient( 
+            circle, 
+            rgba(60, 210, 249, 0.14), 
+            transparent 68% 
+        ); 
+ 
+    pointer-events: none; 
+ 
+    opacity: 0.8; 
+ 
+    transition: 
+        transform 0.7s ease, 
+        opacity 0.5s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   SECOND SUBTLE GLOW 
+========================================================= */ 
+ 
+.software-case-study-content::after { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    right: -180px; 
+    bottom: -180px; 
+ 
+    width: 360px; 
+    height: 360px; 
+ 
+    background: 
+        radial-gradient( 
+            circle, 
+            rgba(9, 80, 205, 0.22), 
+            transparent 68% 
+        ); 
+ 
+    pointer-events: none; 
+ 
+    opacity: 0.35; 
+ 
+    transition: 
+        transform 0.7s ease, 
+        opacity 0.5s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   TEXT CARD HOVER COLOR 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-content { 
+    background: var(--case-card-hover); 
+} 
+ 
+ 
+/* ========================================================= 
+   GLOW HOVER 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-content::before { 
+    transform: scale(1.45); 
+ 
+    opacity: 1; 
+} 
+ 
+ 
+.software-case-study-row:hover 
+.software-case-study-content::after { 
+    transform: scale(1.3); 
+ 
+    opacity: 0.6; 
+} 
+ 
+ 
+/* ========================================================= 
+   CASE STUDY NUMBER 
+========================================================= */ 
+ 
+.software-case-study-number { 
+    position: absolute; 
+ 
+    top: 38px; 
+    right: 45px; 
+ 
+    z-index: 3; 
+ 
+    color: rgba(255, 255, 255, 0.22); 
+ 
+    font-size: 64px; 
+ 
+    line-height: 1; 
+ 
+    font-weight: 700; 
+ 
+    letter-spacing: -0.06em; 
+ 
+    transition: 
+        color 0.35s ease, 
+        transform 0.35s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   NUMBER HOVER 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-number { 
+    color: rgba(255, 255, 255, 0.42); 
+ 
+    transform: translateY(-2px); 
+} 
+ 
+ 
+/* ========================================================= 
+   CATEGORY 
+========================================================= */ 
+ 
+.software-case-study-category { 
+    position: relative; 
+ 
+    z-index: 3; 
+ 
+    display: block; 
+ 
+    margin: 0 0 17px; 
+ 
+    color: var(--case-cyan); 
+ 
+    font-size: 11px; 
+ 
+    font-weight: 700; 
+ 
+    letter-spacing: 0.15em; 
+ 
+    text-transform: uppercase; 
+ 
+    transition: 
+        color 0.3s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   CATEGORY HOVER 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-category { 
+    color: #ffffff; 
+} 
+ 
+ 
+/* ========================================================= 
+   TITLE 
+========================================================= */ 
+ 
+.software-case-study-content h2 { 
+    position: relative; 
+ 
+    z-index: 3; 
+ 
+    max-width: 540px; 
+ 
+    margin: 0 0 20px; 
+ 
+    color: #ffffff; 
+ 
+    font-size: clamp(30px, 3vw, 44px); 
+ 
+    line-height: 1.12; 
+ 
+    font-weight: 600; 
+ 
+    letter-spacing: -0.045em; 
+ 
+    transition: 
+        color 0.3s ease, 
+        transform 0.3s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   TITLE HOVER 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-content h2 { 
+    color: #ffffff; 
+ 
+    transform: translateX(5px); 
+} 
+ 
+ 
+/* ========================================================= 
+   DESCRIPTION 
+========================================================= */ 
+ 
+.software-case-study-content p { 
+    position: relative; 
+ 
+    z-index: 3; 
+ 
+    max-width: 510px; 
+ 
+    margin: 0 0 30px; 
+ 
+    color: rgba(255, 255, 255, 0.68); 
+ 
+    font-size: 15px; 
+ 
+    line-height: 1.8; 
+ 
+    font-weight: 400; 
+ 
+    transition: 
+        color 0.3s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   DESCRIPTION HOVER 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-content p { 
+    color: rgba(255, 255, 255, 0.88); 
+} 
+ 
+ 
+/* ========================================================= 
+   BUTTON 
+========================================================= */ 
+ 
+.software-case-study-button { 
+    position: relative; 
+ 
+    z-index: 3; 
+ 
+    width: fit-content; 
+ 
+    display: inline-flex; 
+ 
+    align-items: center; 
+ 
+    justify-content: center; 
+ 
+    gap: 12px; 
+ 
+    padding: 12px 19px; 
+ 
+    border: 1px solid rgba(255, 255, 255, 0.55); 
+ 
+    border-radius: 4px; 
+ 
+    background: transparent; 
+ 
+    color: #ffffff; 
+ 
+    font-family: "Inter", sans-serif; 
+ 
+    font-size: 12px; 
+ 
+    font-weight: 600; 
+ 
+    letter-spacing: 0.01em; 
+ 
+    cursor: pointer; 
+ 
+    transition: 
+        background 0.3s ease, 
+        border-color 0.3s ease, 
+        color 0.3s ease, 
+        transform 0.3s ease, 
+        box-shadow 0.3s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   BUTTON ARROW 
+========================================================= */ 
+ 
+.software-case-study-button span { 
+    display: inline-flex; 
+ 
+    font-size: 17px; 
+ 
+    line-height: 1; 
+ 
+    transition: 
+        transform 0.3s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   BUTTON HOVER 
+========================================================= */ 
+ 
+.software-case-study-button:hover { 
+    background: #ffffff; 
+ 
+    border-color: #ffffff; 
+ 
+    color: var(--case-blue); 
+ 
+    transform: translateY(-2px); 
+ 
+    box-shadow: 
+        0 8px 22px rgba(0, 0, 0, 0.16); 
+} 
+ 
+ 
+/* ========================================================= 
+   BUTTON ARROW HOVER 
+========================================================= */ 
+ 
+.software-case-study-button:hover span { 
+    transform: translate(3px, -3px); 
+} 
+ 
+ 
+/* ========================================================= 
+   RIGHT SIDE — IMAGE 
+========================================================= */ 
+ 
+.software-case-study-image { 
+    position: relative; 
+ 
+    width: 100%; 
+ 
+    height: 100%; 
+ 
+    min-height: 500px; 
+ 
+    order: 2; 
+ 
+    margin: 0; 
+ 
+    padding: 0; 
+ 
+    overflow: hidden; 
+ 
+    background: var(--case-image-bg); 
+ 
+    box-sizing: border-box; 
+} 
+ 
+ 
+/* ========================================================= 
+   PREMIUM IMAGE SHINE 
+========================================================= */ 
+ 
+.software-case-study-image::before { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    inset: 0; 
+ 
+    z-index: 3; 
+ 
+    background: 
+        linear-gradient( 
+            115deg, 
+            transparent 0%, 
+            transparent 35%, 
+            rgba(255, 255, 255, 0.12) 48%, 
+            transparent 61%, 
+            transparent 100% 
+        ); 
+ 
+    transform: translateX(-100%); 
+ 
+    pointer-events: none; 
+ 
+    transition: 
+        transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); 
+} 
+ 
+ 
+/* ========================================================= 
+   PREMIUM IMAGE OVERLAY 
+========================================================= */ 
+ 
+.software-case-study-image::after { 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    inset: 0; 
+ 
+    z-index: 2; 
+ 
+    background: 
+        radial-gradient( 
+            circle at 85% 10%, 
+            rgba(60, 210, 249, 0.20), 
+            transparent 32% 
+        ), 
+ 
+        radial-gradient( 
+            circle at 15% 90%, 
+            rgba(9, 80, 205, 0.18), 
+            transparent 38% 
+        ), 
+ 
+        linear-gradient( 
+            135deg, 
+            rgba(7, 19, 38, 0.18), 
+            transparent 42%, 
+            rgba(7, 19, 38, 0.22) 
+        ), 
+ 
+        linear-gradient( 
+            135deg, 
+            rgba(9, 80, 205, 0.06), 
+            rgba(60, 210, 249, 0.02) 
+        ); 
+ 
+    pointer-events: none; 
+ 
+    opacity: 0.9; 
+ 
+    transition: 
+        opacity 0.6s ease, 
+        background 0.6s ease; 
+} 
+ 
+ 
+/* ========================================================= 
+   PREMIUM IMAGE HOVER OVERLAY 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-image::after { 
+    opacity: 1; 
+ 
+    background: 
+        radial-gradient( 
+            circle at 85% 10%, 
+            rgba(60, 210, 249, 0.28), 
+            transparent 35% 
+        ), 
+ 
+        radial-gradient( 
+            circle at 15% 90%, 
+            rgba(9, 80, 205, 0.24), 
+            transparent 40% 
+        ), 
+ 
+        linear-gradient( 
+            135deg, 
+            rgba(7, 19, 38, 0.12), 
+            transparent 45%, 
+            rgba(7, 19, 38, 0.18) 
+        ), 
+ 
+        linear-gradient( 
+            135deg, 
+            rgba(9, 80, 205, 0.10), 
+            rgba(60, 210, 249, 0.04) 
+        ); 
+} 
+ 
+ 
+/* ========================================================= 
+   PREMIUM SHINE HOVER 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-image::before { 
+    transform: translateX(100%); 
+} 
+ 
+ 
+/* ========================================================= 
+   IMAGE 
+========================================================= */ 
+ 
+.software-case-study-image img { 
+    width: 100%; 
+ 
+    height: 100%; 
+ 
+    display: block; 
+ 
+    margin: 0; 
+    padding: 0; 
+ 
+    object-fit: cover; 
+ 
+    transition: 
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); 
+} 
+ 
+ 
+/* ========================================================= 
+   IMAGE HOVER 
+========================================================= */ 
+ 
+.software-case-study-row:hover 
+.software-case-study-image img { 
+    transform: scale(1.045); 
+} 
+ 
+ 
+/* ========================================================= 
+   TABLET 
+========================================================= */ 
+ 
+@media (max-width: 1000px) { 
+ 
+    .software-case-study-main-section { 
+        padding: 20px 0 0; 
+    } 
+ 
+ 
+    .software-case-study-row { 
+        min-height: 440px; 
+ 
+        margin: 0; 
+ 
+        gap: 0; 
+    } 
+ 
+ 
+    .software-case-study-content { 
+        padding: 55px 7%; 
+    } 
+ 
+ 
+    .software-case-study-image { 
+        min-height: 440px; 
+    } 
+ 
+ 
+    .software-case-study-number { 
+        top: 30px; 
+ 
+        right: 30px; 
+ 
+        font-size: 50px; 
+    } 
+ 
+ 
+    .software-case-study-content h2 { 
+        font-size: 32px; 
+    } 
+ 
+ 
+    .software-case-study-content p { 
+        font-size: 14px; 
+ 
+        line-height: 1.75; 
+    } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   MOBILE 
+========================================================= */ 
+ 
+@media (max-width: 700px) { 
+ 
+    .software-case-study-main-section { 
+        padding: 10px 0 0; 
+    } 
+ 
+ 
+    .software-case-study-row { 
+        display: flex; 
+ 
+        flex-direction: column; 
+ 
+        width: 100%; 
+ 
+        min-height: auto; 
+ 
+        margin: 0; 
+ 
+        padding: 0; 
+ 
+        gap: 0; 
+    } 
+ 
+ 
+    /* ========================= 
+       IMAGE 
+    ========================= */ 
+ 
+    .software-case-study-image { 
+        width: 100%; 
+ 
+        min-height: 300px; 
+ 
+        order: 1; 
+ 
+        margin: 0; 
+ 
+        padding: 0; 
+    } 
+ 
+ 
+    /* ========================= 
+       CONTENT 
+    ========================= */ 
+ 
+    .software-case-study-content { 
+        width: 100%; 
+ 
+        min-height: 350px; 
+ 
+        padding: 55px 30px; 
+ 
+        order: 2; 
+ 
+        margin: 0; 
+    } 
+ 
+ 
+    /* ========================= 
+       NUMBER 
+    ========================= */ 
+ 
+    .software-case-study-number { 
+        top: 25px; 
+ 
+        right: 25px; 
+ 
+        font-size: 44px; 
+    } 
+ 
+ 
+    /* ========================= 
+       CATEGORY 
+    ========================= */ 
+ 
+    .software-case-study-category { 
+        font-size: 10px; 
+ 
+        letter-spacing: 0.13em; 
+ 
+        margin-bottom: 14px; 
+    } 
+ 
+ 
+    /* ========================= 
+       TITLE 
+    ========================= */ 
+ 
+    .software-case-study-content h2 { 
+        font-size: 29px; 
+ 
+        line-height: 1.15; 
+    } 
+ 
+ 
+    /* ========================= 
+       DESCRIPTION 
+    ========================= */ 
+ 
+    .software-case-study-content p { 
+        font-size: 14px; 
+ 
+        line-height: 1.75; 
+ 
+        margin-bottom: 25px; 
+    } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   SMALL MOBILE 
+========================================================= */ 
+ 
+@media (max-width: 480px) { 
+ 
+    .software-case-study-main-section { 
+        padding: 5px 0 0; 
+    } 
+ 
+ 
+    .software-case-study-row { 
+        width: 100%; 
+ 
+        margin: 0; 
+ 
+        gap: 0; 
+    } 
+ 
+ 
+    /* ========================= 
+       IMAGE 
+    ========================= */ 
+ 
+    .software-case-study-image { 
+        width: 100%; 
+ 
+        min-height: 240px; 
+ 
+        margin: 0; 
+ 
+        padding: 0; 
+    } 
+ 
+ 
+    /* ========================= 
+       CONTENT 
+    ========================= */ 
+ 
+    .software-case-study-content { 
+        width: 100%; 
+ 
+        min-height: 330px; 
+ 
+        padding: 50px 24px; 
+ 
+        margin: 0; 
+    } 
+ 
+ 
+    /* ========================= 
+       NUMBER 
+    ========================= */ 
+ 
+    .software-case-study-number { 
+        top: 22px; 
+ 
+        right: 22px; 
+ 
+        font-size: 40px; 
+    } 
+ 
+ 
+    /* ========================= 
+       CATEGORY 
+    ========================= */ 
+ 
+    .software-case-study-category { 
+        font-size: 10px; 
+ 
+        letter-spacing: 0.12em; 
+ 
+        margin-bottom: 13px; 
+    } 
+ 
+ 
+    /* ========================= 
+       TITLE 
+    ========================= */ 
+ 
+    .software-case-study-content h2 { 
+        font-size: 26px; 
+ 
+        line-height: 1.15; 
+ 
+        letter-spacing: -0.04em; 
+ 
+        margin-bottom: 17px; 
+    } 
+ 
+ 
+    /* ========================= 
+       DESCRIPTION 
+    ========================= */ 
+ 
+    .software-case-study-content p { 
+        font-size: 14px; 
+ 
+        line-height: 1.7; 
+ 
+        margin-bottom: 24px; 
+    } 
+ 
+ 
+    /* ========================= 
+       BUTTON 
+    ========================= */ 
+ 
+    .software-case-study-button { 
+        padding: 11px 16px; 
+ 
+        font-size: 11px; 
+ 
+        gap: 10px; 
+    } 
+ 
+ 
+    .software-case-study-button span { 
+        font-size: 15px; 
+    } 
+ 
+}
