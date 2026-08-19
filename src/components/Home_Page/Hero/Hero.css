@@ -1078,3 +1078,39 @@ video {
     max-width: 100%;
     box-sizing: border-box;
 }
+/* =====================================================
+   HERO CONTENT - VERTICAL CENTER
+===================================================== */
+
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 60px;
+    margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero-content {
+        padding: 0 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .hero-content {
+        padding: 0 20px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+    .hero-content {
+        padding: 0 15px;
+    }
+}
