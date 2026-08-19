@@ -103,7 +103,7 @@ function Footer() {
             <h4>General Questions</h4>
 
             <a href="mailto:hello@evolutetechnologies.com">
-              hello@evolutetechnologies.com
+              info@evolutetechnologies.com
             </a>
 
           </div>
