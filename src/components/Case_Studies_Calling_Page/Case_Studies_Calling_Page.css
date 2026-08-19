@@ -1,0 +1,379 @@
+/* =========================================================
+   CASE STUDIES CALLING PAGE
+   Evolute Technologies
+========================================================= */
+
+:root {
+    --calling-blue: #0950CD;
+    --calling-cyan: #3CD2F9;
+    --calling-dark: #071326;
+    --calling-text: #526174;
+    --calling-border: rgba(7, 19, 38, 0.12);
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.case-studies-calling-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.case-studies-calling-hero {
+    position: relative;
+    padding: 150px 40px 80px;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(60, 210, 249, 0.12),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #f8fbff 0%,
+            #ffffff 100%
+        );
+}
+
+
+.case-studies-calling-container {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+
+/* Eyebrow */
+
+.case-studies-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: var(--calling-blue);
+}
+
+
+/* Heading */
+
+.case-studies-calling-hero h1 {
+    margin: 0;
+
+    font-size: 68px;
+    line-height: 1.05;
+    font-weight: 800;
+
+    color: var(--calling-dark);
+
+    letter-spacing: -2px;
+}
+
+
+.case-studies-calling-hero p {
+    max-width: 700px;
+    margin: 25px auto 0;
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    color: var(--calling-text);
+}
+
+
+/* =========================================================
+   OPTIONS SECTION
+========================================================= */
+
+.case-studies-options {
+    padding: 30px 40px 120px;
+}
+
+
+.case-studies-options-container {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.case-study-option {
+    position: relative;
+
+    min-height: 430px;
+
+    padding: 50px;
+
+    display: flex;
+    align-items: flex-end;
+
+    border: 1px solid var(--calling-border);
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.case-study-option:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(60, 210, 249, 0.6);
+
+    box-shadow:
+        0 25px 60px rgba(7, 19, 38, 0.12);
+}
+
+
+/* =========================================================
+   CARD BACKGROUND
+========================================================= */
+
+.software-option {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(9, 80, 205, 0.14),
+            transparent 40%
+        ),
+        #ffffff;
+}
+
+
+.growth-option {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(60, 210, 249, 0.18),
+            transparent 40%
+        ),
+        #ffffff;
+}
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.case-study-option-glow {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -100px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: var(--calling-cyan);
+
+    filter: blur(90px);
+
+    opacity: 0.15;
+
+    transition: 0.5s ease;
+}
+
+
+.case-study-option:hover .case-study-option-glow {
+    opacity: 0.3;
+    transform: scale(1.3);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.case-study-option-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Number */
+
+.case-study-number {
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--calling-blue);
+}
+
+
+/* Heading */
+
+.case-study-option h2 {
+    margin: 0;
+
+    max-width: 450px;
+
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 750;
+
+    color: var(--calling-dark);
+
+    letter-spacing: -1px;
+}
+
+
+/* Description */
+
+.case-study-option p {
+    max-width: 500px;
+
+    margin: 20px 0 30px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: var(--calling-text);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.case-study-option-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 20px;
+
+    border: 1px solid rgba(9, 80, 205, 0.2);
+    border-radius: 8px;
+
+    background: rgba(9, 80, 205, 0.06);
+
+    color: var(--calling-blue);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.case-study-option-btn span {
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.case-study-option:hover .case-study-option-btn {
+    background: var(--calling-blue);
+    color: #ffffff;
+    border-color: var(--calling-blue);
+}
+
+
+.case-study-option:hover
+.case-study-option-btn span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .case-studies-calling-hero {
+        padding: 120px 25px 60px;
+    }
+
+    .case-studies-calling-hero h1 {
+        font-size: 52px;
+    }
+
+    .case-studies-options {
+        padding: 20px 25px 80px;
+    }
+
+    .case-studies-options-container {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-option {
+        min-height: 380px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .case-studies-calling-hero {
+        padding: 100px 20px 50px;
+    }
+
+    .case-studies-calling-hero h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .case-studies-calling-hero p {
+        font-size: 16px;
+    }
+
+    .case-studies-options {
+        padding: 10px 20px 60px;
+    }
+
+    .case-study-option {
+        min-height: 360px;
+        padding: 35px 28px;
+        border-radius: 20px;
+    }
+
+    .case-study-option h2 {
+        font-size: 30px;
+    }
+
+    .case-study-option p {
+        font-size: 15px;
+    }
+
+}

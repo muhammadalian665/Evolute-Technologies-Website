@@ -9,13 +9,16 @@ function Hero() {
         navigate("/contact-us");
     };
 
+    const handleViewWorkClick = () => {
+        navigate("/case-studies");
+    };
+
     return (
         <section className="hero">
 
             {/* ================================
                 HERO VIDEO
             ================================= */}
-
             <video
                 className="hero-video"
                 autoPlay
@@ -33,18 +36,17 @@ function Hero() {
             {/* ================================
                 HERO OVERLAY
             ================================= */}
-
             <div className="hero-overlay"></div>
 
 
             {/* ================================
                 HERO CONTENT
             ================================= */}
-
             <div className="hero-content">
 
                 <h1>
-                    We Build Technology. We Drive Growth.
+                    We Build Technology <br />
+                    We Drive Growth.
                 </h1>
 
                 <p>
@@ -55,7 +57,6 @@ function Hero() {
                 {/* ================================
                     HERO BUTTONS
                 ================================= */}
-
                 <div className="hero-buttons">
 
                     <button
@@ -68,6 +69,7 @@ function Hero() {
 
                     <button
                         className="secondary-btn"
+                        onClick={handleViewWorkClick}
                     >
                         View Our Work
                     </button>

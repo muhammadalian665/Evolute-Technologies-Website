@@ -20,6 +20,14 @@ import Growth_Services
 
 
 /* =====================================================
+   CASE STUDIES CALLING PAGE
+===================================================== */
+
+import Case_Studies_Calling_Page
+    from "./components/Case_Studies_Calling_Page/Case_Studies_Calling_Page";
+
+
+/* =====================================================
    SOFTWARE & TECH CASE STUDIES
 ===================================================== */
 
@@ -259,6 +267,16 @@ function App() {
                 <Route
                     path="/growth-services"
                     element={<Growth_Services />}
+                />
+
+
+                {/* =================================================
+                    CASE STUDIES CALLING PAGE
+                ================================================= */}
+
+                <Route
+                    path="/case-studies"
+                    element={<Case_Studies_Calling_Page />}
                 />
 
 
@@ -515,7 +533,6 @@ function App() {
                     path="/sales-automation-systems"
                     element={<Sales_automation_Systems />}
                 />
-
 
             </Routes>
 
