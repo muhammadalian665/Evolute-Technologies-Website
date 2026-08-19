@@ -17,7 +17,7 @@ function HaveAQuery() {
             Contacts
           </span>
 
-          <h2>Have a query</h2>
+          <h2>Have a query?</h2>
 
           <button
             className="have-a-query-button"
