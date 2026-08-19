@@ -29,8 +29,8 @@ function ContactUs() {
 
         try {
             const response = await emailjs.send(
-                "service_bklsxzd",
-                "template_1tmv7wr",
+                "service_3hb6cxo",
+                "template_40248mb",
                 {
                     full_name: formData.fullName,
                     contact_number: formData.contactNumber,
@@ -38,7 +38,7 @@ function ContactUs() {
                     tech_stack: formData.techStack,
                     project_details: formData.projectDetails,
                 },
-                "bXZsPy3QmAoIHSUHO"
+                "HHRtlnRN3izeMhl2Y"
             );
 
             console.log("EmailJS Success:", response);
@@ -58,8 +58,11 @@ function ContactUs() {
             console.error("Error Text:", error?.text);
 
             alert(
-                `EmailJS Error\n\nStatus: ${error?.status || "Unknown"
-                }\nMessage: ${error?.text || "Unknown error"}`
+                `EmailJS Error\n\nStatus: ${
+                    error?.status || "Unknown"
+                }\nMessage: ${
+                    error?.text || "Unknown error"
+                }`
             );
 
             setStatus(
@@ -70,16 +73,20 @@ function ContactUs() {
 
     return (
         <section className="contact-us">
+
             {/* ================================
-          CONTACT HERO
-      ================================= */}
+                CONTACT HERO
+            ================================= */}
 
             <div className="contact-us-hero">
+
                 <span className="contact-us-label">
                     Contact Us
                 </span>
 
-                <h1>Let’s build something together.</h1>
+                <h1>
+                    Let’s build something together.
+                </h1>
 
                 <p>
                     Have an idea, project, or business challenge?
@@ -95,30 +102,42 @@ function ContactUs() {
                     Schedule a Call
                     <span>→</span>
                 </a>
+
             </div>
 
+
             {/* ================================
-          CONTACT FORM
-      ================================= */}
+                CONTACT FORM
+            ================================= */}
 
             <div className="contact-form-wrapper">
-                <div className="contact-form-header">
-                    <span>Start a conversation</span>
 
-                    <h2>Let’s Discuss Your Needs</h2>
+                <div className="contact-form-header">
+
+                    <span>
+                        Start a conversation
+                    </span>
+
+                    <h2>
+                        Let’s Discuss Your Needs
+                    </h2>
 
                     <p>
                         Tell us about your project. We'll take it from there.
                     </p>
+
                 </div>
+
 
                 <form
                     className="contact-form"
                     onSubmit={handleSubmit}
                 >
+
                     {/* FULL NAME */}
 
                     <div className="form-group">
+
                         <label htmlFor="fullName">
                             Full name
                         </label>
@@ -132,11 +151,14 @@ function ContactUs() {
                             onChange={handleChange}
                             required
                         />
+
                     </div>
+
 
                     {/* CONTACT NUMBER */}
 
                     <div className="form-group">
+
                         <label htmlFor="contactNumber">
                             Contact number
                         </label>
@@ -150,11 +172,14 @@ function ContactUs() {
                             onChange={handleChange}
                             required
                         />
+
                     </div>
+
 
                     {/* EMAIL */}
 
                     <div className="form-group">
+
                         <label htmlFor="email">
                             Email address
                         </label>
@@ -168,11 +193,14 @@ function ContactUs() {
                             onChange={handleChange}
                             required
                         />
+
                     </div>
+
 
                     {/* SERVICE */}
 
                     <div className="form-group">
+
                         <label htmlFor="techStack">
                             Choose your service
                         </label>
@@ -184,6 +212,7 @@ function ContactUs() {
                             onChange={handleChange}
                             required
                         >
+
                             <option value="">
                                 Choose Your Service
                             </option>
@@ -222,6 +251,7 @@ function ContactUs() {
                                 Maintenance
                             </option>
 
+
                             {/* GROWTH & SALES ENABLEMENT */}
 
                             <option value="B2B Lead Generation">
@@ -252,17 +282,22 @@ function ContactUs() {
                                 Consultation
                             </option>
 
+
                             {/* OTHER */}
 
                             <option value="Other">
                                 Other
                             </option>
+
                         </select>
+
                     </div>
+
 
                     {/* PROJECT DETAILS */}
 
                     <div className="form-group full-width">
+
                         <label htmlFor="projectDetails">
                             Project details
                         </label>
@@ -276,11 +311,14 @@ function ContactUs() {
                             onChange={handleChange}
                             required
                         />
+
                     </div>
+
 
                     {/* TERMS */}
 
                     <div className="terms-checkbox">
+
                         <input
                             type="checkbox"
                             id="terms"
@@ -288,6 +326,7 @@ function ContactUs() {
                         />
 
                         <label htmlFor="terms">
+
                             I understand and agree to{" "}
 
                             <a
@@ -297,9 +336,13 @@ function ContactUs() {
                             >
                                 terms & conditions
                             </a>
+
                             .
+
                         </label>
+
                     </div>
+
 
                     {/* SUBMIT */}
 
@@ -308,12 +351,15 @@ function ContactUs() {
                         className="submit-button"
                         disabled={status === "Sending..."}
                     >
+
                         {status === "Sending..."
                             ? "Sending..."
                             : "Submit Now"}
 
                         <span>→</span>
+
                     </button>
+
 
                     {/* STATUS */}
 
@@ -328,8 +374,11 @@ function ContactUs() {
                             {status}
                         </p>
                     )}
+
                 </form>
+
             </div>
+
         </section>
     );
 }
