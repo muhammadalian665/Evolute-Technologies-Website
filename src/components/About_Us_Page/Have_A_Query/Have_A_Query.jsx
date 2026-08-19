@@ -1,33 +1,32 @@
 import "./Have_A_Query.css";
-import QueryImage from "../../../assets/About_Us_Images/Have_a_query.png";
+import { useNavigate } from "react-router-dom";
 
 function HaveAQuery() {
-  return (
-    <section
-      className="have-a-query"
-      style={{ backgroundImage: `url(${QueryImage})` }}
-    >
-      <div className="have-a-query-container">
+  const navigate = useNavigate();
 
+  const handleContactClick = () => {
+    navigate("/contact-us");
+  };
+
+  return (
+    <section className="have-a-query">
+      <div className="have-a-query-container">
         {/* CONTENT */}
         <div className="have-a-query-content">
           <span className="have-a-query-label">
             Contacts
           </span>
 
-          <h2>
-            Have a query
-          </h2>
+          <h2>Have a query</h2>
 
-          <a
-            href="mailto:info@evolutetechnologies.com"
+          <button
             className="have-a-query-button"
+            onClick={handleContactClick}
           >
-            Send an Email
+            Contact Us
             <span>→</span>
-          </a>
+          </button>
         </div>
-
       </div>
     </section>
   );

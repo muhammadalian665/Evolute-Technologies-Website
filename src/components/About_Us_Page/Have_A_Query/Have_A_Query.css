@@ -1,5 +1,5 @@
-/* =====================================================
-   HAVE A QUERY
+/* ===================================================== 
+   HAVE A QUERY 
 ===================================================== */
 
 .have-a-query {
@@ -11,11 +11,72 @@
   position: relative;
   overflow: hidden;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* DARK CHARCOAL BACKGROUND */
+  background: #202225;
 
   color: #ffffff;
+}
+
+
+/* =====================================================
+   WHITE TEXTURE / GRID DESIGN
+===================================================== */
+
+.have-a-query::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  opacity: 0.7;
+
+  z-index: 0;
+}
+
+
+/* =====================================================
+   SUBTLE WHITE TEXTURE GLOW
+===================================================== */
+
+.have-a-query::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  top: -280px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.09) 0%,
+      rgba(255, 255, 255, 0.035) 35%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
 }
 
 
@@ -201,8 +262,6 @@
     min-height: 460px;
 
     padding: 80px 6%;
-
-    background-position: center;
   }
 
   .have-a-query-content h2 {
@@ -220,8 +279,6 @@
     min-height: 420px;
 
     padding: 65px 6%;
-
-    background-position: center;
   }
 
   .have-a-query-overlay {
@@ -244,6 +301,8 @@
     font-size: 14px;
   }
 }
+
+
 /* =====================================================
    DARK TEXT OVERRIDE
 ===================================================== */
@@ -258,9 +317,12 @@
 
 .have-a-query-content h2 {
   color: #ffffff;
-}/* =========================================================
+}
+
+
+/* =========================================================
    UNIVERSAL RESPONSIVE SYSTEM
-   Evolute Technologies
+   Evolute Technologies 
    Paste at the END of CSS files
 ========================================================= */
 
