@@ -244,3 +244,18 @@
     font-size: 14px;
   }
 }
+/* =====================================================
+   DARK TEXT OVERRIDE
+===================================================== */
+
+.have-a-query {
+  color: #ffffff;
+}
+
+.have-a-query-label {
+  color: #ffffff;
+}
+
+.have-a-query-content h2 {
+  color: #ffffff;
+}
