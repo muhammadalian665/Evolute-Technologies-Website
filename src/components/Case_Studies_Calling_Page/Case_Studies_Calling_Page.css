@@ -19,7 +19,9 @@
 .case-studies-calling-page {
     width: 100%;
     min-height: 100vh;
+
     background: #ffffff;
+
     overflow: hidden;
 }
 
@@ -30,8 +32,11 @@
 
 .case-studies-calling-hero {
     position: relative;
+
     padding: 150px 40px 80px;
+
     text-align: center;
+
     background:
         radial-gradient(
             circle at 50% 0%,
@@ -48,33 +53,45 @@
 
 .case-studies-calling-container {
     position: relative;
+
     max-width: 850px;
+
     margin: 0 auto;
+
     z-index: 2;
 }
 
 
-/* Eyebrow */
+/* =========================================================
+   EYEBROW
+========================================================= */
 
 .case-studies-eyebrow {
     display: inline-block;
+
     margin-bottom: 18px;
 
     font-size: 14px;
+
     font-weight: 700;
+
     letter-spacing: 3px;
 
     color: var(--calling-blue);
 }
 
 
-/* Heading */
+/* =========================================================
+   HERO HEADING
+========================================================= */
 
 .case-studies-calling-hero h1 {
     margin: 0;
 
     font-size: 68px;
+
     line-height: 1.05;
+
     font-weight: 800;
 
     color: var(--calling-dark);
@@ -85,9 +102,11 @@
 
 .case-studies-calling-hero p {
     max-width: 700px;
+
     margin: 25px auto 0;
 
     font-size: 19px;
+
     line-height: 1.7;
 
     color: var(--calling-text);
@@ -105,9 +124,11 @@
 
 .case-studies-options-container {
     max-width: 1250px;
+
     margin: 0 auto;
 
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
 
     gap: 30px;
@@ -121,21 +142,25 @@
 .case-study-option {
     position: relative;
 
-    min-height: 430px;
+    min-height: 500px;
 
     padding: 50px;
 
     display: flex;
+
     align-items: flex-end;
 
-    border: 1px solid var(--calling-border);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
     border-radius: 24px;
 
     overflow: hidden;
 
     cursor: pointer;
 
-    background: #ffffff;
+    background: var(--calling-dark);
+
+    isolation: isolate;
 
     transition:
         transform 0.4s ease,
@@ -144,70 +169,108 @@
 }
 
 
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.case-study-option-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: -3;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.case-study-option-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 19, 38, 0.08) 0%,
+            rgba(7, 19, 38, 0.20) 22%,
+            rgba(7, 19, 38, 0.55) 48%,
+            rgba(7, 19, 38, 0.88) 72%,
+            rgba(7, 19, 38, 0.98) 100%
+        );
+
+    transition:
+        background 0.5s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
 .case-study-option:hover {
     transform: translateY(-10px);
 
-    border-color: rgba(60, 210, 249, 0.6);
+    border-color: rgba(60, 210, 249, 0.75);
 
     box-shadow:
-        0 25px 60px rgba(7, 19, 38, 0.12);
+        0 30px 70px rgba(7, 19, 38, 0.25);
+}
+
+
+.case-study-option:hover
+.case-study-option-image {
+    transform: scale(1.07);
+
+    filter: brightness(1.08);
+}
+
+
+.case-study-option:hover
+.case-study-option-overlay {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 19, 38, 0.05) 0%,
+            rgba(7, 19, 38, 0.18) 22%,
+            rgba(7, 19, 38, 0.50) 48%,
+            rgba(7, 19, 38, 0.88) 72%,
+            rgba(7, 19, 38, 0.98) 100%
+        );
 }
 
 
 /* =========================================================
-   CARD BACKGROUND
+   SOFTWARE CARD
 ========================================================= */
 
 .software-option {
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(9, 80, 205, 0.14),
-            transparent 40%
-        ),
-        #ffffff;
-}
-
-
-.growth-option {
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(60, 210, 249, 0.18),
-            transparent 40%
-        ),
-        #ffffff;
+    background-color: #071326;
 }
 
 
 /* =========================================================
-   CARD GLOW
+   GROWTH CARD
 ========================================================= */
 
-.case-study-option-glow {
-    position: absolute;
-
-    width: 220px;
-    height: 220px;
-
-    top: -100px;
-    right: -100px;
-
-    border-radius: 50%;
-
-    background: var(--calling-cyan);
-
-    filter: blur(90px);
-
-    opacity: 0.15;
-
-    transition: 0.5s ease;
-}
-
-
-.case-study-option:hover .case-study-option-glow {
-    opacity: 0.3;
-    transform: scale(1.3);
+.growth-option {
+    background-color: #071326;
 }
 
 
@@ -217,53 +280,72 @@
 
 .case-study-option-content {
     position: relative;
-    z-index: 2;
+
+    z-index: 3;
+
+    max-width: 560px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.65);
 }
 
 
-/* Number */
+/* =========================================================
+   NUMBER
+========================================================= */
 
 .case-study-number {
     display: block;
 
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 
     font-size: 15px;
+
     font-weight: 700;
+
     letter-spacing: 2px;
 
-    color: var(--calling-blue);
+    color: var(--calling-cyan);
 }
 
 
-/* Heading */
+/* =========================================================
+   CARD HEADING
+========================================================= */
 
 .case-study-option h2 {
     margin: 0;
 
-    max-width: 450px;
+    max-width: 500px;
 
-    font-size: 38px;
+    font-size: 40px;
+
     line-height: 1.15;
+
     font-weight: 750;
 
-    color: var(--calling-dark);
+    color: #ffffff;
 
     letter-spacing: -1px;
 }
 
 
-/* Description */
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
 
 .case-study-option p {
     max-width: 500px;
 
-    margin: 20px 0 30px;
+    margin: 18px 0 28px;
 
     font-size: 17px;
-    line-height: 1.7;
 
-    color: var(--calling-text);
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.88);
 }
 
 
@@ -273,38 +355,70 @@
 
 .case-study-option-btn {
     display: inline-flex;
+
     align-items: center;
+
+    justify-content: center;
+
     gap: 12px;
 
-    padding: 13px 20px;
+    padding: 13px 21px;
 
-    border: 1px solid rgba(9, 80, 205, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
     border-radius: 8px;
 
-    background: rgba(9, 80, 205, 0.06);
+    background: rgba(255, 255, 255, 0.12);
 
-    color: var(--calling-blue);
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #ffffff;
 
     font-size: 15px;
+
     font-weight: 700;
 
     cursor: pointer;
 
-    transition: 0.3s ease;
+    text-shadow: none;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
 }
 
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
 
 .case-study-option-btn span {
     font-size: 20px;
 
-    transition: transform 0.3s ease;
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease;
 }
 
 
-.case-study-option:hover .case-study-option-btn {
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.case-study-option:hover
+.case-study-option-btn {
     background: var(--calling-blue);
+
+    border-color: var(--calling-cyan);
+
     color: #ffffff;
-    border-color: var(--calling-blue);
+
+    box-shadow:
+        0 8px 25px rgba(9, 80, 205, 0.35);
 }
 
 
@@ -315,7 +429,41 @@
 
 
 /* =========================================================
-   RESPONSIVE
+   SUBTLE CARD LIGHT
+========================================================= */
+
+.case-study-option::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(60, 210, 249, 0.8),
+            transparent
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.case-study-option:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -324,24 +472,46 @@
         padding: 120px 25px 60px;
     }
 
+
     .case-studies-calling-hero h1 {
         font-size: 52px;
     }
+
+
+    .case-studies-calling-hero p {
+        font-size: 18px;
+    }
+
 
     .case-studies-options {
         padding: 20px 25px 80px;
     }
 
+
     .case-studies-options-container {
         grid-template-columns: 1fr;
+
+        gap: 25px;
     }
 
+
     .case-study-option {
-        min-height: 380px;
+        min-height: 430px;
+
+        padding: 40px;
+    }
+
+
+    .case-study-option h2 {
+        font-size: 36px;
     }
 
 }
 
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -349,31 +519,718 @@
         padding: 100px 20px 50px;
     }
 
+
+    .case-studies-eyebrow {
+        font-size: 12px;
+
+        letter-spacing: 2.5px;
+    }
+
+
     .case-studies-calling-hero h1 {
         font-size: 42px;
+
         letter-spacing: -1px;
     }
 
+
     .case-studies-calling-hero p {
+        margin-top: 20px;
+
         font-size: 16px;
+
+        line-height: 1.6;
     }
+
 
     .case-studies-options {
         padding: 10px 20px 60px;
     }
 
+
+    .case-studies-options-container {
+        gap: 20px;
+    }
+
+
     .case-study-option {
-        min-height: 360px;
-        padding: 35px 28px;
+        min-height: 420px;
+
+        padding: 32px 28px;
+
         border-radius: 20px;
     }
 
+
     .case-study-option h2 {
         font-size: 30px;
+
+        letter-spacing: -0.5px;
     }
+
 
     .case-study-option p {
         font-size: 15px;
+
+        line-height: 1.6;
+
+        margin: 15px 0 24px;
+    }
+
+
+    .case-study-number {
+        margin-bottom: 20px;
+
+        font-size: 13px;
+    }
+
+
+    .case-study-option-btn {
+        padding: 12px 17px;
+
+        font-size: 14px;
+    }
+
+
+    .case-study-option-image {
+        object-position: center;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .case-studies-calling-hero h1 {
+        font-size: 36px;
+    }
+
+
+    .case-study-option {
+        min-height: 400px;
+
+        padding: 28px 22px;
+    }
+
+
+    .case-study-option h2 {
+        font-size: 27px;
+    }
+
+
+    .case-study-option p {
+        font-size: 14px;
+    }
+
+}
+/* =========================================================
+   CASE STUDY CARD LAYOUT FIX
+   Fixes:
+   - Image overflow
+   - Incorrect image sizing
+   - Content disappearing
+   - Card height
+   - Footer/content clipping
+   - Responsive card structure
+========================================================= */
+
+
+/* =========================================================
+   PAGE OVERFLOW FIX
+========================================================= */
+
+.case-studies-calling-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #ffffff;
+
+    /*
+     * Do not clip vertically overflowing content.
+     * This prevents lower card content/footer from being
+     * visually cut off.
+     */
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+
+/* =========================================================
+   OPTIONS SECTION
+========================================================= */
+
+.case-studies-options {
+    width: 100%;
+
+    padding: 30px 40px 120px;
+
+    /*
+     * Make sure the section can contain the complete cards.
+     */
+    overflow: visible;
+}
+
+
+.case-studies-options-container {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   CARD — CORRECT VERTICAL STRUCTURE
+========================================================= */
+
+.case-study-option {
+    position: relative;
+
+    /*
+     * Remove the old restrictive card behavior.
+     */
+    min-height: 0;
+    height: 100%;
+
+    /*
+     * Image + content should stack vertically.
+     */
+    display: flex;
+    flex-direction: column;
+
+    /*
+     * Remove the old 50px all-around padding.
+     * The image should touch the card edges while
+     * the content gets its own padding.
+     */
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 24px;
+
+    /*
+     * Keep the card itself clipped for rounded corners,
+     * but NOT the content area independently.
+     */
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: var(--calling-dark);
+
+    isolation: isolate;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+   IMPORTANT:
+   JSX ACTUALLY USES THIS CLASS
+========================================================= */
+
+.case-study-image-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    /*
+     * Controlled image area.
+     * Prevents source image dimensions from determining
+     * the card height.
+     */
+    aspect-ratio: 16 / 9;
+
+    min-height: 0;
+
+    flex: 0 0 auto;
+
+    overflow: hidden;
+
+    background: var(--calling-dark);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   ACTUAL IMAGE
+   IMPORTANT:
+   JSX USES .case-study-image
+========================================================= */
+
+.case-study-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    /*
+     * Keeps every source image consistent.
+     */
+    object-fit: cover;
+
+    object-position: center;
+
+    /*
+     * Prevents inline-image sizing issues.
+     */
+    max-width: none;
+    max-height: none;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+   IMPORTANT:
+   JSX USES .case-study-image-overlay
+========================================================= */
+
+.case-study-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 19, 38, 0.02) 0%,
+            rgba(7, 19, 38, 0.08) 35%,
+            rgba(7, 19, 38, 0.30) 100%
+        );
+
+    transition:
+        background 0.5s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.case-study-option:hover .case-study-image {
+    transform: scale(1.04);
+
+    filter: brightness(1.08);
+}
+
+
+.case-study-option:hover .case-study-image-overlay {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 19, 38, 0.02) 0%,
+            rgba(7, 19, 38, 0.06) 35%,
+            rgba(7, 19, 38, 0.22) 100%
+        );
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.case-study-option-content {
+    position: relative;
+
+    z-index: 3;
+
+    /*
+     * Content must have its own space below the image.
+     */
+    flex: 1 1 auto;
+
+    width: 100%;
+
+    max-width: none;
+
+    /*
+     * Proper content spacing.
+     */
+    padding: 32px 40px 38px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.35);
+
+    /*
+     * Never clip text.
+     */
+    overflow: visible;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 19, 38, 0.98) 0%,
+            rgba(7, 19, 38, 1) 100%
+        );
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.case-study-number {
+    display: block;
+
+    margin-bottom: 16px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--calling-cyan);
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.case-study-option h2 {
+    margin: 0;
+
+    max-width: 500px;
+
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    font-weight: 750;
+
+    color: #ffffff;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.case-study-option p {
+    max-width: 500px;
+
+    margin: 16px 0 24px;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    /*
+     * Explicitly prevent text clipping.
+     */
+    overflow: visible;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.case-study-option-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 13px 21px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    text-shadow: none;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.case-study-option-btn span {
+    font-size: 20px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.case-study-option:hover .case-study-option-btn {
+    background: var(--calling-blue);
+
+    border-color: var(--calling-cyan);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(9, 80, 205, 0.35);
+}
+
+
+.case-study-option:hover .case-study-option-btn span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   CARD TOP LIGHT
+========================================================= */
+
+.case-study-option::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    z-index: 5;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(60, 210, 249, 0.8),
+            transparent
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.case-study-option:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .case-studies-options {
+        padding: 20px 25px 90px;
+    }
+
+
+    .case-studies-options-container {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .case-study-option {
+        height: auto;
+
+        min-height: 0;
+    }
+
+
+    .case-study-image-wrapper {
+        aspect-ratio: 16 / 9;
+    }
+
+
+    .case-study-option-content {
+        padding: 32px 35px 36px;
+    }
+
+
+    .case-study-option h2 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .case-studies-options {
+        padding: 10px 20px 70px;
+    }
+
+
+    .case-studies-options-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .case-study-option {
+        width: 100%;
+
+        min-height: 0;
+
+        height: auto;
+
+        border-radius: 20px;
+    }
+
+
+    .case-study-image-wrapper {
+        width: 100%;
+
+        /*
+         * Slightly taller mobile ratio for better
+         * visual presence without making the image huge.
+         */
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .case-study-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+    }
+
+
+    .case-study-option-content {
+        width: 100%;
+
+        padding: 28px 28px 32px;
+    }
+
+
+    .case-study-number {
+        margin-bottom: 16px;
+
+        font-size: 13px;
+    }
+
+
+    .case-study-option h2 {
+        font-size: 30px;
+
+        line-height: 1.18;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .case-study-option p {
+        margin: 15px 0 24px;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+
+    .case-study-option-btn {
+        padding: 12px 17px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .case-study-image-wrapper {
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .case-study-option-content {
+        padding: 25px 22px 28px;
+    }
+
+
+    .case-study-option h2 {
+        font-size: 27px;
+    }
+
+
+    .case-study-option p {
+        font-size: 14px;
+
+        line-height: 1.6;
     }
 
 }

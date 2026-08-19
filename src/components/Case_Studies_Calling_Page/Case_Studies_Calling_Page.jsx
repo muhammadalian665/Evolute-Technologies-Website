@@ -1,6 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import "./Case_Studies_Calling_Page.css";
 
+import SoftwareImage
+    from "../../assets/CaseStudiesCallingPageImages/Software.png";
+
+import GrowthImage
+    from "../../assets/CaseStudiesCallingPageImages/Growth.png";
+
+
 function Case_Studies_Calling_Page() {
 
     const navigate = useNavigate();
@@ -51,12 +58,32 @@ function Case_Studies_Calling_Page() {
 
                 <div className="case-studies-options-container">
 
-                    {/* SOFTWARE CARD */}
+
+                    {/* =========================================
+                        SOFTWARE CARD
+                    ========================================= */}
 
                     <div
                         className="case-study-option software-option"
                         onClick={handleSoftwareCaseStudies}
                     >
+
+                        {/* IMAGE */}
+
+                        <div className="case-study-image-wrapper">
+
+                            <img
+                                src={SoftwareImage}
+                                alt="Software Case Studies"
+                                className="case-study-image"
+                            />
+
+                            <div className="case-study-image-overlay"></div>
+
+                        </div>
+
+
+                        {/* CONTENT */}
 
                         <div className="case-study-option-content">
 
@@ -74,7 +101,13 @@ function Case_Studies_Calling_Page() {
                                 solutions we've built for businesses.
                             </p>
 
-                            <button className="case-study-option-btn">
+                            <button
+                                className="case-study-option-btn"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleSoftwareCaseStudies();
+                                }}
+                            >
                                 Explore Software Work
                                 <span>→</span>
                             </button>
@@ -86,12 +119,31 @@ function Case_Studies_Calling_Page() {
                     </div>
 
 
-                    {/* GROWTH CARD */}
+                    {/* =========================================
+                        GROWTH CARD
+                    ========================================= */}
 
                     <div
                         className="case-study-option growth-option"
                         onClick={handleGrowthCaseStudies}
                     >
+
+                        {/* IMAGE */}
+
+                        <div className="case-study-image-wrapper">
+
+                            <img
+                                src={GrowthImage}
+                                alt="Growth Case Studies"
+                                className="case-study-image"
+                            />
+
+                            <div className="case-study-image-overlay"></div>
+
+                        </div>
+
+
+                        {/* CONTENT */}
 
                         <div className="case-study-option-content">
 
@@ -109,7 +161,13 @@ function Case_Studies_Calling_Page() {
                                 designed to help businesses scale.
                             </p>
 
-                            <button className="case-study-option-btn">
+                            <button
+                                className="case-study-option-btn"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleGrowthCaseStudies();
+                                }}
+                            >
                                 Explore Growth Work
                                 <span>→</span>
                             </button>
