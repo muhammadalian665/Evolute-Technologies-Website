@@ -1,38 +1,39 @@
 ﻿/* =========================================================
-   CODERGIZE
+   HIGH-TICKET B2B SERVICES
    Evolute Technologies
 ========================================================= */
 
 :root {
-    --codergize-blue: #0950cd;
-    --codergize-cyan: #3cd2f9;
-    --codergize-dark: #071326;
-    --codergize-text: #5d6b7d;
-    --codergize-border: #d8e1ef;
+    --high-ticket-blue: #0950cd;
+    --high-ticket-dark: #071326;
+    --high-ticket-text: #5d6b7d;
+    --high-ticket-cyan: #3cd2f9;
+    --high-ticket-border: #d8e1ef;
+    --high-ticket-white: #ffffff;
 }
 
-.codergize-case-study {
+.high-ticket-b2b-services {
     width: 100%;
     overflow: hidden;
     background: #fff;
-    color: var(--codergize-dark);
+    color: var(--high-ticket-dark);
 }
 
-.codergize-container {
+.high-ticket-b2b-container {
     width: min(1200px, 92%);
     margin: auto;
 }
 
-.codergize-hero {
+.high-ticket-b2b-hero {
     position: relative;
     padding: 120px 0 100px;
     background:
-        radial-gradient(circle at 85% 15%, rgba(60,210,249,.11), transparent 30%),
-        radial-gradient(circle at 10% 80%, rgba(9,80,205,.07), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(60,210,249,.1), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(9,80,205,.06), transparent 30%),
         #fff;
 }
 
-.codergize-hero::before {
+.high-ticket-b2b-hero::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -42,60 +43,66 @@
     background-size: 70px 70px;
 }
 
-.codergize-content {
+.high-ticket-b2b-content {
     position: relative;
     z-index: 1;
     max-width: 1050px;
 }
 
-.codergize-heading {
+.high-ticket-b2b-heading {
     margin: 0 0 25px;
     font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.05;
     font-weight: 800;
     letter-spacing: -.055em;
     transition: .4s ease;
 }
 
-.codergize-heading:hover {
-    color: var(--codergize-blue);
+.high-ticket-b2b-heading:hover {
+    color: var(--high-ticket-blue);
     transform: translateX(5px);
 }
 
-.codergize-heading-line {
+.high-ticket-b2b-heading-line {
     width: 105px;
     height: 4px;
     margin-bottom: 42px;
     border-radius: 20px;
-    background: linear-gradient(90deg, var(--codergize-blue), var(--codergize-cyan));
+    background: linear-gradient(90deg, var(--high-ticket-blue), var(--high-ticket-cyan));
+    transform-origin: left;
 }
 
-.codergize-description {
+.high-ticket-b2b-description {
     margin-bottom: 28px;
-    color: var(--codergize-text);
+    color: var(--high-ticket-text);
     font-size: 20px;
     line-height: 2;
 }
 
-.codergize-summary {
+.high-ticket-b2b-summary {
     margin-top: 42px;
     padding-top: 32px;
-    border-top: 1px solid var(--codergize-border);
+    border-top: 1px solid var(--high-ticket-border);
     font-size: 22px;
     line-height: 1.9;
     font-weight: 650;
 }
 
 @media (max-width: 700px) {
-    .codergize-hero {
+    .high-ticket-b2b-hero {
         padding: 75px 0 60px;
     }
 
-    .codergize-heading {
-        font-size: 42px;
+    .high-ticket-b2b-heading {
+        font-size: 43px;
     }
 
-    .codergize-description {
+    .high-ticket-b2b-description {
         font-size: 17px;
         line-height: 1.85;
+    }
+
+    .high-ticket-b2b-summary {
+        font-size: 18px;
     }
 }

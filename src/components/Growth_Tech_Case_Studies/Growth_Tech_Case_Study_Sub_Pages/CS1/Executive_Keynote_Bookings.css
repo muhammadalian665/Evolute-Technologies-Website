@@ -1,0 +1,128 @@
+﻿/* =========================================================
+   EXECUTIVE KEYNOTE BOOKINGS
+   Evolute Technologies
+========================================================= */
+
+:root {
+    --exec-blue: #0950cd;
+    --exec-blue-dark: #063b9d;
+    --exec-cyan: #3cd2f9;
+    --exec-dark: #071326;
+    --exec-text: #5d6b7d;
+    --exec-border: #d8e1ef;
+    --exec-white: #ffffff;
+}
+
+.executive-keynote-bookings {
+    width: 100%;
+    overflow: hidden;
+    background: var(--exec-white);
+    color: var(--exec-dark);
+}
+
+.executive-keynote-container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+.executive-keynote-hero {
+    position: relative;
+    padding: 120px 0 100px;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(60,210,249,.11), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(9,80,205,.07), transparent 30%),
+        #fff;
+}
+
+.executive-keynote-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(9,80,205,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(9,80,205,.025) 1px, transparent 1px);
+    background-size: 70px 70px;
+    pointer-events: none;
+}
+
+.executive-keynote-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1050px;
+}
+
+.executive-keynote-heading {
+    display: inline-block;
+    margin: 0 0 25px;
+    color: var(--exec-dark);
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -.055em;
+    transition: .4s ease;
+}
+
+.executive-keynote-heading:hover {
+    color: var(--exec-blue);
+    transform: translateX(5px);
+}
+
+.executive-keynote-heading-line {
+    width: 105px;
+    height: 4px;
+    margin-bottom: 42px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--exec-blue), var(--exec-cyan));
+    transform-origin: left;
+}
+
+.executive-keynote-description {
+    margin: 0 0 28px;
+    color: var(--exec-text);
+    font-size: 20px;
+    line-height: 2;
+}
+
+.executive-keynote-summary {
+    margin-top: 42px;
+    padding-top: 32px;
+    border-top: 1px solid var(--exec-border);
+    color: var(--exec-dark);
+    font-size: 22px;
+    line-height: 1.9;
+    font-weight: 650;
+}
+
+@media (max-width: 900px) {
+    .executive-keynote-container {
+        width: 90%;
+    }
+
+    .executive-keynote-heading {
+        font-size: clamp(45px, 8vw, 68px);
+    }
+
+    .executive-keynote-description {
+        font-size: 19px;
+        line-height: 1.9;
+    }
+}
+
+@media (max-width: 500px) {
+    .executive-keynote-hero {
+        padding: 75px 0 60px;
+    }
+
+    .executive-keynote-heading {
+        font-size: 42px;
+    }
+
+    .executive-keynote-description {
+        font-size: 17px;
+        line-height: 1.85;
+    }
+
+    .executive-keynote-summary {
+        font-size: 18px;
+    }
+}

@@ -1,29 +1,29 @@
 ﻿/* =========================================================
-   CODERGIZE
+   SHOPIFY ECOMMERCE GROWTH
    Evolute Technologies
 ========================================================= */
 
 :root {
-    --codergize-blue: #0950cd;
-    --codergize-cyan: #3cd2f9;
-    --codergize-dark: #071326;
-    --codergize-text: #5d6b7d;
-    --codergize-border: #d8e1ef;
+    --shopify-blue: #0950cd;
+    --shopify-cyan: #3cd2f9;
+    --shopify-dark: #071326;
+    --shopify-text: #5d6b7d;
+    --shopify-border: #d8e1ef;
 }
 
-.codergize-case-study {
+.shopify-ecommerce-growth {
     width: 100%;
     overflow: hidden;
     background: #fff;
-    color: var(--codergize-dark);
+    color: var(--shopify-dark);
 }
 
-.codergize-container {
+.shopify-ecommerce-container {
     width: min(1200px, 92%);
     margin: auto;
 }
 
-.codergize-hero {
+.shopify-ecommerce-hero {
     position: relative;
     padding: 120px 0 100px;
     background:
@@ -32,7 +32,7 @@
         #fff;
 }
 
-.codergize-hero::before {
+.shopify-ecommerce-hero::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -42,59 +42,60 @@
     background-size: 70px 70px;
 }
 
-.codergize-content {
+.shopify-ecommerce-content {
     position: relative;
     z-index: 1;
     max-width: 1050px;
 }
 
-.codergize-heading {
+.shopify-ecommerce-heading {
     margin: 0 0 25px;
     font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.05;
     font-weight: 800;
     letter-spacing: -.055em;
     transition: .4s ease;
 }
 
-.codergize-heading:hover {
-    color: var(--codergize-blue);
+.shopify-ecommerce-heading:hover {
+    color: var(--shopify-blue);
     transform: translateX(5px);
 }
 
-.codergize-heading-line {
+.shopify-ecommerce-heading-line {
     width: 105px;
     height: 4px;
     margin-bottom: 42px;
     border-radius: 20px;
-    background: linear-gradient(90deg, var(--codergize-blue), var(--codergize-cyan));
+    background: linear-gradient(90deg, var(--shopify-blue), var(--shopify-cyan));
 }
 
-.codergize-description {
+.shopify-ecommerce-description {
     margin-bottom: 28px;
-    color: var(--codergize-text);
+    color: var(--shopify-text);
     font-size: 20px;
     line-height: 2;
 }
 
-.codergize-summary {
+.shopify-ecommerce-summary {
     margin-top: 42px;
     padding-top: 32px;
-    border-top: 1px solid var(--codergize-border);
+    border-top: 1px solid var(--shopify-border);
     font-size: 22px;
     line-height: 1.9;
     font-weight: 650;
 }
 
 @media (max-width: 700px) {
-    .codergize-hero {
+    .shopify-ecommerce-hero {
         padding: 75px 0 60px;
     }
 
-    .codergize-heading {
+    .shopify-ecommerce-heading {
         font-size: 42px;
     }
 
-    .codergize-description {
+    .shopify-ecommerce-description {
         font-size: 17px;
         line-height: 1.85;
     }

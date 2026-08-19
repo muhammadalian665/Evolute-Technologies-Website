@@ -1,29 +1,29 @@
 ﻿/* =========================================================
-   CODERGIZE
+   ALISA WATLINGTON
    Evolute Technologies
 ========================================================= */
 
 :root {
-    --codergize-blue: #0950cd;
-    --codergize-cyan: #3cd2f9;
-    --codergize-dark: #071326;
-    --codergize-text: #5d6b7d;
-    --codergize-border: #d8e1ef;
+    --alisa-blue: #0950cd;
+    --alisa-cyan: #3cd2f9;
+    --alisa-dark: #071326;
+    --alisa-text: #5d6b7d;
+    --alisa-border: #d8e1ef;
 }
 
-.codergize-case-study {
+.alisa-watlington {
     width: 100%;
     overflow: hidden;
     background: #fff;
-    color: var(--codergize-dark);
+    color: var(--alisa-dark);
 }
 
-.codergize-container {
+.alisa-watlington-container {
     width: min(1200px, 92%);
     margin: auto;
 }
 
-.codergize-hero {
+.alisa-watlington-hero {
     position: relative;
     padding: 120px 0 100px;
     background:
@@ -32,7 +32,7 @@
         #fff;
 }
 
-.codergize-hero::before {
+.alisa-watlington-hero::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -42,13 +42,13 @@
     background-size: 70px 70px;
 }
 
-.codergize-content {
+.alisa-watlington-content {
     position: relative;
     z-index: 1;
     max-width: 1050px;
 }
 
-.codergize-heading {
+.alisa-watlington-heading {
     margin: 0 0 25px;
     font-size: clamp(48px, 6vw, 82px);
     font-weight: 800;
@@ -56,46 +56,45 @@
     transition: .4s ease;
 }
 
-.codergize-heading:hover {
-    color: var(--codergize-blue);
+.alisa-watlington-heading:hover {
+    color: var(--alisa-blue);
     transform: translateX(5px);
 }
 
-.codergize-heading-line {
+.alisa-watlington-heading-line {
     width: 105px;
     height: 4px;
     margin-bottom: 42px;
     border-radius: 20px;
-    background: linear-gradient(90deg, var(--codergize-blue), var(--codergize-cyan));
+    background: linear-gradient(90deg, var(--alisa-blue), var(--alisa-cyan));
 }
 
-.codergize-description {
+.alisa-watlington-description {
     margin-bottom: 28px;
-    color: var(--codergize-text);
+    color: var(--alisa-text);
     font-size: 20px;
     line-height: 2;
 }
 
-.codergize-summary {
+.alisa-watlington-summary {
     margin-top: 42px;
     padding-top: 32px;
-    border-top: 1px solid var(--codergize-border);
+    border-top: 1px solid var(--alisa-border);
     font-size: 22px;
     line-height: 1.9;
     font-weight: 650;
 }
 
 @media (max-width: 700px) {
-    .codergize-hero {
+    .alisa-watlington-hero {
         padding: 75px 0 60px;
     }
 
-    .codergize-heading {
+    .alisa-watlington-heading {
         font-size: 42px;
     }
 
-    .codergize-description {
+    .alisa-watlington-description {
         font-size: 17px;
-        line-height: 1.85;
     }
 }

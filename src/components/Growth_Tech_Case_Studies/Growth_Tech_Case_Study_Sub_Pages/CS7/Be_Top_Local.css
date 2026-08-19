@@ -1,29 +1,29 @@
 ﻿/* =========================================================
-   CODERGIZE
+   BE TOP LOCAL
    Evolute Technologies
 ========================================================= */
 
 :root {
-    --codergize-blue: #0950cd;
-    --codergize-cyan: #3cd2f9;
-    --codergize-dark: #071326;
-    --codergize-text: #5d6b7d;
-    --codergize-border: #d8e1ef;
+    --be-top-blue: #0950cd;
+    --be-top-cyan: #3cd2f9;
+    --be-top-dark: #071326;
+    --be-top-text: #5d6b7d;
+    --be-top-border: #d8e1ef;
 }
 
-.codergize-case-study {
+.be-top-local {
     width: 100%;
     overflow: hidden;
     background: #fff;
-    color: var(--codergize-dark);
+    color: var(--be-top-dark);
 }
 
-.codergize-container {
+.be-top-local-container {
     width: min(1200px, 92%);
     margin: auto;
 }
 
-.codergize-hero {
+.be-top-local-hero {
     position: relative;
     padding: 120px 0 100px;
     background:
@@ -32,7 +32,7 @@
         #fff;
 }
 
-.codergize-hero::before {
+.be-top-local-hero::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -42,13 +42,13 @@
     background-size: 70px 70px;
 }
 
-.codergize-content {
+.be-top-local-content {
     position: relative;
     z-index: 1;
     max-width: 1050px;
 }
 
-.codergize-heading {
+.be-top-local-heading {
     margin: 0 0 25px;
     font-size: clamp(48px, 6vw, 82px);
     font-weight: 800;
@@ -56,46 +56,45 @@
     transition: .4s ease;
 }
 
-.codergize-heading:hover {
-    color: var(--codergize-blue);
+.be-top-local-heading:hover {
+    color: var(--be-top-blue);
     transform: translateX(5px);
 }
 
-.codergize-heading-line {
+.be-top-local-heading-line {
     width: 105px;
     height: 4px;
     margin-bottom: 42px;
     border-radius: 20px;
-    background: linear-gradient(90deg, var(--codergize-blue), var(--codergize-cyan));
+    background: linear-gradient(90deg, var(--be-top-blue), var(--be-top-cyan));
 }
 
-.codergize-description {
+.be-top-local-description {
     margin-bottom: 28px;
-    color: var(--codergize-text);
+    color: var(--be-top-text);
     font-size: 20px;
     line-height: 2;
 }
 
-.codergize-summary {
+.be-top-local-summary {
     margin-top: 42px;
     padding-top: 32px;
-    border-top: 1px solid var(--codergize-border);
+    border-top: 1px solid var(--be-top-border);
     font-size: 22px;
     line-height: 1.9;
     font-weight: 650;
 }
 
 @media (max-width: 700px) {
-    .codergize-hero {
+    .be-top-local-hero {
         padding: 75px 0 60px;
     }
 
-    .codergize-heading {
+    .be-top-local-heading {
         font-size: 42px;
     }
 
-    .codergize-description {
+    .be-top-local-description {
         font-size: 17px;
-        line-height: 1.85;
     }
 }

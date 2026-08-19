@@ -1,29 +1,29 @@
 ﻿/* =========================================================
-   CODERGIZE
+   NGL & LU
    Evolute Technologies
 ========================================================= */
 
 :root {
-    --codergize-blue: #0950cd;
-    --codergize-cyan: #3cd2f9;
-    --codergize-dark: #071326;
-    --codergize-text: #5d6b7d;
-    --codergize-border: #d8e1ef;
+    --ngl-blue: #0950cd;
+    --ngl-cyan: #3cd2f9;
+    --ngl-dark: #071326;
+    --ngl-text: #5d6b7d;
+    --ngl-border: #d8e1ef;
 }
 
-.codergize-case-study {
+.ngl-lu-case-study {
     width: 100%;
     overflow: hidden;
     background: #fff;
-    color: var(--codergize-dark);
+    color: var(--ngl-dark);
 }
 
-.codergize-container {
+.ngl-lu-container {
     width: min(1200px, 92%);
     margin: auto;
 }
 
-.codergize-hero {
+.ngl-lu-hero {
     position: relative;
     padding: 120px 0 100px;
     background:
@@ -32,7 +32,7 @@
         #fff;
 }
 
-.codergize-hero::before {
+.ngl-lu-hero::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -42,13 +42,13 @@
     background-size: 70px 70px;
 }
 
-.codergize-content {
+.ngl-lu-content {
     position: relative;
     z-index: 1;
     max-width: 1050px;
 }
 
-.codergize-heading {
+.ngl-lu-heading {
     margin: 0 0 25px;
     font-size: clamp(48px, 6vw, 82px);
     font-weight: 800;
@@ -56,46 +56,45 @@
     transition: .4s ease;
 }
 
-.codergize-heading:hover {
-    color: var(--codergize-blue);
+.ngl-lu-heading:hover {
+    color: var(--ngl-blue);
     transform: translateX(5px);
 }
 
-.codergize-heading-line {
+.ngl-lu-heading-line {
     width: 105px;
     height: 4px;
     margin-bottom: 42px;
     border-radius: 20px;
-    background: linear-gradient(90deg, var(--codergize-blue), var(--codergize-cyan));
+    background: linear-gradient(90deg, var(--ngl-blue), var(--ngl-cyan));
 }
 
-.codergize-description {
+.ngl-lu-description {
     margin-bottom: 28px;
-    color: var(--codergize-text);
+    color: var(--ngl-text);
     font-size: 20px;
     line-height: 2;
 }
 
-.codergize-summary {
+.ngl-lu-summary {
     margin-top: 42px;
     padding-top: 32px;
-    border-top: 1px solid var(--codergize-border);
+    border-top: 1px solid var(--ngl-border);
     font-size: 22px;
     line-height: 1.9;
     font-weight: 650;
 }
 
 @media (max-width: 700px) {
-    .codergize-hero {
+    .ngl-lu-hero {
         padding: 75px 0 60px;
     }
 
-    .codergize-heading {
+    .ngl-lu-heading {
         font-size: 42px;
     }
 
-    .codergize-description {
+    .ngl-lu-description {
         font-size: 17px;
-        line-height: 1.85;
     }
 }

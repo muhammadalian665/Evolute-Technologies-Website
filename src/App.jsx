@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar
     from "./components/NavBar/Navbar";
@@ -99,34 +99,34 @@ import Tipsy_Scoop
 ===================================================== */
 
 import Executive_Keynote_Bookings
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS1/Executive Keynote Bookings";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS1/Executive_Keynote_Bookings";
 
 import High_Ticket_B2B_Services
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS2/High-Ticket B2B Services";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS2/High_Ticket_B2B_Services";
 
 import Shopify_eCommerce_Growth
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS3/Shopify eCommerce Growth";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS3/Shopify_eCommerce_Growth";
 
 import Multi_Channel_Clinic_Outreach
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS4/Multi-Channel Clinic Outreach";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS4/Multi_Channel_Clinic_Outreach";
 
 import Codergize
     from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS5/Codergize";
 
 import NGL_LU
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS6/NGL & LU";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS6/NGL_LU";
 
 import Be_Top_Local
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS7/Be Top Local";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS7/Be_Top_Local";
 
 import AtoZ_Solutions
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS8/AtoZ Solutions";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS8/AtoZ_Solutions";
 
 import Alisa_Watlington
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS9/Alisa Watlington";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS9/Alisa_Watlington";
 
 import SMB_Cybersecurity_Initiative
-    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS10/SMB Cybersecurity Initiative";
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS10/SMB_Cybersecurity_Initiative";
 
 
 /* =====================================================
@@ -534,3 +534,5 @@ function App() {
 
 
 export default App;
+
+
