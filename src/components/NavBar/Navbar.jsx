@@ -205,7 +205,7 @@ function Navbar() {
  
                             }} 
                         > 
-                            Software & Tech Case Studies 
+                            Software Development 
                         </div> 
  
  
@@ -228,7 +228,7 @@ function Navbar() {
  
                             }} 
                         > 
-                            Growth Case Studies 
+                            Growth  
                         </div> 
  
                     </div> 
