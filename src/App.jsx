@@ -95,6 +95,41 @@ import Tipsy_Scoop
 
 
 /* =====================================================
+   GROWTH TECH CASE STUDY SUB PAGES
+===================================================== */
+
+import Executive_Keynote_Bookings
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS1/Executive Keynote Bookings";
+
+import High_Ticket_B2B_Services
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS2/High-Ticket B2B Services";
+
+import Shopify_eCommerce_Growth
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS3/Shopify eCommerce Growth";
+
+import Multi_Channel_Clinic_Outreach
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS4/Multi-Channel Clinic Outreach";
+
+import Codergize
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS5/Codergize";
+
+import NGL_LU
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS6/NGL & LU";
+
+import Be_Top_Local
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS7/Be Top Local";
+
+import AtoZ_Solutions
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS8/AtoZ Solutions";
+
+import Alisa_Watlington
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS9/Alisa Watlington";
+
+import SMB_Cybersecurity_Initiative
+    from "./components/Growth_Tech_Case_Studies/Growth_Tech_Case_Study_Sub_Pages/CS10/SMB Cybersecurity Initiative";
+
+
+/* =====================================================
    SOFTWARE SERVICES SUB PAGES
 ===================================================== */
 
@@ -339,6 +374,61 @@ function App() {
                 <Route
                     path="/case-studies/software-tech/tipsy-scoop"
                     element={<Tipsy_Scoop />}
+                />
+
+
+                {/* =================================================
+                    GROWTH TECH CASE STUDY SUB PAGES
+                ================================================= */}
+
+                <Route
+                    path="/case-studies/growth-tech/cs1"
+                    element={<Executive_Keynote_Bookings />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs2"
+                    element={<High_Ticket_B2B_Services />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs3"
+                    element={<Shopify_eCommerce_Growth />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs4"
+                    element={<Multi_Channel_Clinic_Outreach />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs5"
+                    element={<Codergize />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs6"
+                    element={<NGL_LU />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs7"
+                    element={<Be_Top_Local />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs8"
+                    element={<AtoZ_Solutions />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs9"
+                    element={<Alisa_Watlington />}
+                />
+
+                <Route
+                    path="/case-studies/growth-tech/cs10"
+                    element={<SMB_Cybersecurity_Initiative />}
                 />
 
 

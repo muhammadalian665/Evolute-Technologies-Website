@@ -15,13 +15,13 @@ const caseStudies = [
 
         category: "Appointment Setting",
 
-        title: "Appointment Setting",
+        title: "Executive Keynote Bookings",
 
         description:
-            "A structured outbound appointment-setting system designed to identify qualified prospects, initiate meaningful conversations, and generate consistent sales opportunities.",
+            "A structured outbound appointment-setting system designed to identify qualified corporate decision-makers, initiate meaningful conversations, and generate consistent speaking opportunities.",
 
         route:
-            "/case-studies/growth-tech/appointment-setting",
+            "/case-studies/growth-tech/cs1",
     },
 
 
@@ -30,13 +30,13 @@ const caseStudies = [
 
         category: "B2B Lead Generation",
 
-        title: "B2B Lead Generation",
+        title: "High-Ticket B2B Services",
 
         description:
-            "A scalable B2B lead generation system built to identify high-value prospects, enrich decision-maker data, and create a predictable pipeline of qualified opportunities.",
+            "A multi-channel LinkedIn and email outreach system built to connect high-ticket B2B services with relevant decision-makers through targeted prospecting and personalized engagement.",
 
         route:
-            "/case-studies/growth-tech/b2b-lead-generation",
+            "/case-studies/growth-tech/cs2",
     },
 
 
@@ -45,58 +45,118 @@ const caseStudies = [
 
         category: "Cold Email Campaign",
 
-        title: "Cold Email Campaign",
+        title: "Shopify eCommerce Growth",
 
         description:
-            "A data-driven cold email outreach system designed around targeted prospecting, personalized messaging, automated follow-ups, and measurable campaign performance.",
+            "A structured cold email growth system designed for Shopify and DTC brands, combining focused targeting, personalized messaging, strategic follow-ups, and campaign optimization.",
 
         route:
-            "/case-studies/growth-tech/cold-email-campaign",
+            "/case-studies/growth-tech/cs3",
     },
 
 
     {
         id: "04",
 
-        category: "LinkedIn Outreach",
+        category: "Appointment Generation",
 
-        title: "LinkedIn Outreach",
+        title: "Multi-Channel Clinic Outreach",
 
         description:
-            "A strategic LinkedIn outreach system designed to connect businesses with relevant decision-makers through personalized messaging and consistent relationship-building.",
+            "A multi-channel outreach campaign designed to connect healthcare clinics with relevant decision-makers through targeted prospect research, personalized messaging, and consistent follow-up.",
 
         route:
-            "/case-studies/growth-tech/linkedin-outreach",
+            "/case-studies/growth-tech/cs4",
     },
 
 
     {
         id: "05",
 
-        category: "Outbound Growth Strategy",
+        category: "B2B Lead Generation",
 
-        title: "Outbound Growth Strategy",
+        title: "Codergize",
 
         description:
-            "A complete outbound growth framework combining prospect research, multi-channel outreach, campaign intelligence, and sales development processes.",
+            "A targeted LinkedIn and email outreach system designed to help a technology services company reach founders, business owners, and senior decision-makers with relevant technology solutions.",
 
         route:
-            "/case-studies/growth-tech/outbound-growth-strategy",
+            "/case-studies/growth-tech/cs5",
     },
 
 
     {
         id: "06",
 
-        category: "Sales Automation",
+        category: "LinkedIn Outreach",
 
-        title: "Sales Automation Systems",
+        title: "NGL & LU",
 
         description:
-            "An automated sales infrastructure designed to streamline repetitive workflows, improve lead management, accelerate follow-ups, and support scalable business growth.",
+            "A trigger-based LinkedIn outreach campaign designed to connect leadership development services with HR decision-makers using company growth signals and personalized messaging.",
 
         route:
-            "/case-studies/growth-tech/sales-automation-systems",
+            "/case-studies/growth-tech/cs6",
+    },
+
+
+    {
+        id: "07",
+
+        category: "Cold Email Campaign",
+
+        title: "Be Top Local",
+
+        description:
+            "A targeted cold email campaign focused on helping functional and integrated medical clinics generate qualified patients, booked appointments, and measurable marketing outcomes.",
+
+        route:
+            "/case-studies/growth-tech/cs7",
+    },
+
+
+    {
+        id: "08",
+
+        category: "Multi-Channel Outreach",
+
+        title: "AtoZ Solutions",
+
+        description:
+            "A personalized LinkedIn and email outreach campaign designed to identify brands with strong college-student audiences and connect them with campus-based acquisition opportunities.",
+
+        route:
+            "/case-studies/growth-tech/cs8",
+    },
+
+
+    {
+        id: "09",
+
+        category: "Industrial Manufacturing",
+
+        title: "Alisa Watlington",
+
+        description:
+            "A targeted LinkedIn outreach campaign designed to connect industrial manufacturing businesses with qualified lead-generation and marketing opportunities.",
+
+        route:
+            "/case-studies/growth-tech/cs9",
+    },
+
+
+    {
+        id: "10",
+
+        category: "Cybersecurity Outreach",
+
+        title: "SMB Cybersecurity Initiative",
+
+        description:
+            "A structured LinkedIn and email outreach campaign designed to engage U.S. SMB decision-makers around practical cybersecurity, resilience, and recovery readiness.",
+
+        route:
+            "/case-studies/growth-tech/cs10",
     },
 
 ];
@@ -194,7 +254,7 @@ function Growth_Case_Study_Main_Sections() {
 
 
                         {/* =====================================
-                           RIGHT — IMAGE PLACEHOLDER
+                           RIGHT — PLACEHOLDER
                         ===================================== */}
 
                         <Link
