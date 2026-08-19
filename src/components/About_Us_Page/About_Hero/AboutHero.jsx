@@ -1,9 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import "./AboutHero.css";
 import heroImage from "../../../assets/About_Us_Images/Evolute Technologies.png";
 
 function AboutHero() {
+
+  const navigate = useNavigate();
+
+  const handleDiscoverMore = () => {
+    navigate("/case-studies");
+  };
+
   return (
     <section className="about-hero">
+
       <img
         src={heroImage}
         alt="Evolute Technologies"
@@ -11,18 +20,32 @@ function AboutHero() {
       />
 
       <div className="about-hero-overlay">
+
         <div className="about-hero-content">
-          <h1>We Accelerate Your Business With Technology & Growth</h1>
+
+          <h1>
+            We Accelerate Your Business With Technology & Growth
+          </h1>
 
           <p>
-            At Evolute Technologies, we combine technology and growth to help businesses build and scale. From custom software, SaaS, AI, web and mobile apps to B2B lead generation, sales automation, and outbound growth, we turn ideas into scalable solutions and measurable results.
+            At Evolute Technologies, we combine technology and growth to help
+            businesses build and scale. From custom software, SaaS, AI, web
+            and mobile apps to B2B lead generation, sales automation, and
+            outbound growth, we turn ideas into scalable solutions and
+            measurable results.
           </p>
 
-          <button className="about-hero-button">
+          <button
+            className="about-hero-button"
+            onClick={handleDiscoverMore}
+          >
             Discover More
           </button>
+
         </div>
+
       </div>
+
     </section>
   );
 }
