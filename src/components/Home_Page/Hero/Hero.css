@@ -194,4 +194,887 @@
 
   color: #3CD2F9;
 
+}/* =========================================================
+   UNIVERSAL RESPONSIVE SYSTEM
+   Evolute Technologies
+   Paste at the END of CSS files
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL BOX MODEL
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE WIDTH / OVERFLOW
+========================================================= */
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+img,
+video,
+iframe,
+svg,
+canvas {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+/* =========================================================
+   CONTAINERS
+========================================================= */
+
+.container,
+.section-container,
+.content-container,
+.hero-container,
+.main-container,
+.page-container {
+    width: min(100% - 40px, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   FLEX SAFETY
+========================================================= */
+
+.flex,
+.row {
+    min-width: 0;
+}
+
+.flex > *,
+.row > * {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   GRID SAFETY
+========================================================= */
+
+.grid {
+    width: 100%;
+    min-width: 0;
+}
+
+.grid > * {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   BUTTON SAFETY
+========================================================= */
+
+button {
+    max-width: 100%;
+    font-family: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   FORM SAFETY
+========================================================= */
+
+input,
+textarea,
+select {
+    max-width: 100%;
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   TABLE SAFETY
+========================================================= */
+
+table {
+    max-width: 100%;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1400px+
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .container,
+    .section-container,
+    .content-container,
+    .hero-container,
+    .main-container,
+    .page-container {
+        width: min(100% - 100px, 1280px);
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+   1200px - 1399px
+========================================================= */
+
+@media (max-width: 1399px) {
+
+    .container,
+    .section-container,
+    .content-container,
+    .hero-container,
+    .main-container,
+    .page-container {
+        width: min(100% - 70px, 1200px);
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   1024px - 1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .container,
+    .section-container,
+    .content-container,
+    .hero-container,
+    .main-container,
+    .page-container {
+        width: calc(100% - 60px);
+    }
+
+
+    /* Flexible grids */
+
+    .grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* Prevent oversized headings */
+
+    h1 {
+        font-size:
+            clamp(36px, 5vw, 64px);
+    }
+
+    h2 {
+        font-size:
+            clamp(30px, 4vw, 52px);
+    }
+
+    h3 {
+        font-size:
+            clamp(24px, 3vw, 38px);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 1023px
+========================================================= */
+
+@media (max-width: 1023px) {
+
+    .container,
+    .section-container,
+    .content-container,
+    .hero-container,
+    .main-container,
+    .page-container {
+        width: calc(100% - 50px);
+    }
+
+
+    /* Flex layouts */
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+
+    /* Common 3/4 column grids */
+
+    .grid-3,
+    .grid-4 {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* Common two-column sections */
+
+    .two-column,
+    .two-col,
+    .split-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Images */
+
+    img {
+        max-width: 100%;
+    }
+
+
+    /* Headings */
+
+    h1 {
+        font-size:
+            clamp(34px, 5.5vw, 56px);
+        line-height: 1.1;
+    }
+
+    h2 {
+        font-size:
+            clamp(28px, 4.5vw, 46px);
+        line-height: 1.15;
+    }
+
+    h3 {
+        font-size:
+            clamp(22px, 3.5vw, 34px);
+        line-height: 1.2;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   767px AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .container,
+    .section-container,
+    .content-container,
+    .hero-container,
+    .main-container,
+    .page-container {
+        width: calc(100% - 36px);
+    }
+
+
+    /* =====================================================
+       FLEX → COLUMN
+    ===================================================== */
+
+    .row,
+    .flex-column-mobile {
+        flex-direction: column;
+    }
+
+
+    /* =====================================================
+       GRIDS → SINGLE COLUMN
+    ===================================================== */
+
+    .grid,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .cards-grid,
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================================
+       TWO COLUMN
+    ===================================================== */
+
+    .two-column,
+    .two-col,
+    .split-layout,
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================================
+       CENTER CONTENT
+    ===================================================== */
+
+    .text-center-mobile {
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       HEADINGS
+    ===================================================== */
+
+    h1 {
+        font-size:
+            clamp(30px, 8vw, 48px);
+
+        line-height: 1.08;
+    }
+
+    h2 {
+        font-size:
+            clamp(26px, 7vw, 40px);
+
+        line-height: 1.12;
+    }
+
+    h3 {
+        font-size:
+            clamp(21px, 6vw, 32px);
+
+        line-height: 1.2;
+    }
+
+    h4 {
+        font-size:
+            clamp(18px, 5vw, 26px);
+    }
+
+
+    /* =====================================================
+       PARAGRAPHS
+    ===================================================== */
+
+    p {
+        font-size:
+            clamp(14px, 4vw, 17px);
+
+        line-height: 1.65;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .btn,
+    .button,
+    .primary-btn,
+    .secondary-btn {
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       SECTION SPACING
+    ===================================================== */
+
+    section {
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       HERO SAFETY
+    ===================================================== */
+
+    .hero,
+    .hero-section {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       ABSOLUTE CONTENT SAFETY
+    ===================================================== */
+
+    .hero-content,
+    .section-content {
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .card,
+    .service-card,
+    .case-card,
+    .project-card {
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       IMAGES INSIDE CARDS
+    ===================================================== */
+
+    .card img,
+    .service-card img,
+    .case-card img,
+    .project-card img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px AND BELOW
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .container,
+    .section-container,
+    .content-container,
+    .hero-container,
+    .main-container,
+    .page-container {
+        width: calc(100% - 28px);
+    }
+
+
+    /* =====================================================
+       TYPOGRAPHY
+    ===================================================== */
+
+    h1 {
+        font-size:
+            clamp(27px, 9vw, 40px);
+    }
+
+    h2 {
+        font-size:
+            clamp(24px, 8vw, 34px);
+    }
+
+    h3 {
+        font-size:
+            clamp(20px, 7vw, 28px);
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .btn,
+    .button,
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .card,
+    .service-card,
+    .case-card,
+    .project-card {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       FORM
+    ===================================================== */
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+   360px AND BELOW
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .container,
+    .section-container,
+    .content-container,
+    .hero-container,
+    .main-container,
+    .page-container {
+        width: calc(100% - 24px);
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW FROM LONG ELEMENTS
+========================================================= */
+
+pre,
+code {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+video {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE UTILITY
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP UTILITY
+========================================================= */
+
+@media (min-width: 768px) {
+
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE TOUCH
+========================================================= */
+
+@media (max-width: 767px) {
+
+    a,
+    button {
+        min-height: 40px;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   END UNIVERSAL RESPONSIVE SYSTEM
+========================================================= */
+/* =====================================================
+   AUTO RESPONSIVE HERO SECTION
+   Device-Based Responsive Fix
+===================================================== */
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+    .hero {
+        min-height: 90vh;
+        height: auto;
+    }
+
+    .hero-content {
+        max-width: 1200px;
+        padding: 100px 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 5vw, 78px);
+        line-height: 1.08;
+    }
+
+    .hero p {
+        font-size: 21px;
+        line-height: 1.6;
+    }
+}
+
+
+/* =====================================================
+   LAPTOP / DESKTOP
+===================================================== */
+
+@media (min-width: 1025px) and (max-width: 1399px) {
+
+    .hero {
+        min-height: 85vh;
+        height: auto;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 1100px;
+        padding: 90px 50px;
+        box-sizing: border-box;
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 5vw, 68px);
+        line-height: 1.1;
+    }
+
+    .hero p {
+        font-size: 19px;
+        line-height: 1.55;
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width: 651px) and (max-width: 1024px) {
+
+    .hero {
+        width: 100%;
+        min-height: 75vh;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 900px;
+        padding: 80px 40px;
+        box-sizing: border-box;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 6vw, 58px);
+        line-height: 1.12;
+    }
+
+    .hero p {
+        max-width: 700px;
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .hero img,
+    .hero-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .hero {
+        width: 100%;
+        min-height: 75vh;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 65px 20px;
+        box-sizing: border-box;
+    }
+
+    .hero h1 {
+        width: 100%;
+        font-size: clamp(32px, 9vw, 48px);
+        line-height: 1.12;
+        word-wrap: break-word;
+    }
+
+    .hero p {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .hero img,
+    .hero-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero-content {
+        padding: 50px 15px;
+    }
+
+    .hero h1 {
+        font-size: clamp(28px, 9vw, 40px);
+        line-height: 1.12;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL DEVICES
+===================================================== */
+
+@media (max-width: 350px) {
+
+    .hero-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+}
+
+
+/* =====================================================
+   PREVENT HORIZONTAL OVERFLOW
+===================================================== */
+
+.hero,
+.hero * {
+    max-width: 100%;
+    box-sizing: border-box;
 }
