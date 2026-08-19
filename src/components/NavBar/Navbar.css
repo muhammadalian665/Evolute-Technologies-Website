@@ -648,4 +648,38 @@
     color: #ffffff;
 
     transform: translateX(3px);
+}/* =====================================================
+   EXTRA LARGE NAVBAR TEXT
+===================================================== */
+
+/* Main Navigation */
+.nav-links a {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Hire Us Button */
+.hire-btn {
+    font-size: 22px;
+    padding: 15px 32px;
+}
+
+/* Services Dropdown */
+.services-menu-item {
+    font-size: 21px;
+}
+
+/* Services Arrow */
+.services-menu-item::after {
+    font-size: 22px;
+}
+
+/* Case Studies Dropdown */
+.case-studies-menu-item {
+    font-size: 21px;
+}
+
+/* Case Studies Arrow */
+.case-studies-menu-item::after {
+    font-size: 22px;
 }
