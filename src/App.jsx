@@ -208,6 +208,14 @@ import FloatingSocials
     from "./components/Floating_Socials/FloatingSocials";
 
 
+/* =====================================================
+   WELCOME POPUP
+===================================================== */
+
+import WelcomePopup
+    from "./components/Welcome_Popup/WelcomePopup";
+
+
 function App() {
 
     return (
@@ -219,6 +227,13 @@ function App() {
             ===================================================== */}
 
             <Navbar />
+
+
+            {/* =====================================================
+                WELCOME POPUP
+            ===================================================== */}
+
+            <WelcomePopup />
 
 
             {/* =====================================================
