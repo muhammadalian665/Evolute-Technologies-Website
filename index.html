@@ -2,12 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>evolute-technologies</title>
+
+    <title>Evolute Technologies</title>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Chatbase AI Agent -->
+    <script>
+      (function () {
+        if (
+          !window.chatbase ||
+          window.chatbase("getState") !== "initialized"
+        ) {
+          window.chatbase = function () {
+            window.chatbase.q = window.chatbase.q || [];
+            window.chatbase.q.push(arguments);
+          };
+
+          window.chatbase.q = [];
+
+          window.chatbase = new Proxy(window.chatbase, {
+            get: function (target, prop) {
+              if (prop === "q") {
+                return target.q;
+              }
+
+              return function () {
+                return target.apply(null, arguments);
+              };
+            },
+          });
+        }
+
+        var onLoad = function () {
+          var script = document.createElement("script");
+
+          script.src = "https://www.chatbase.co/embed.min.js";
+          script.id = "y3VpZj5-eQ0XEkKle6QC6";
+          script.domain = "www.chatbase.co";
+
+          document.body.appendChild(script);
+        };
+
+        if (document.readyState === "complete") {
+          onLoad();
+        } else {
+          window.addEventListener("load", onLoad);
+        }
+      })();
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
