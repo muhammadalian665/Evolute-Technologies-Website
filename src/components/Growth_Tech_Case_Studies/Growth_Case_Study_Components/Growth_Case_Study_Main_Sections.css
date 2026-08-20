@@ -1619,3 +1619,43 @@ video {
 /* =========================================================
    END UNIVERSAL RESPONSIVE SYSTEM
 ========================================================= */
+/* =========================================
+   CASE STUDY CARD IMAGES - FIXED SIZE
+========================================= */
+
+.growth-case-study-image {
+    overflow: hidden;
+}
+
+.growth-case-study-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.growth-case-study-card-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Prevent image from shrinking */
+.growth-case-study-placeholder img {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .growth-case-study-placeholder {
+        min-height: 260px;
+    }
+}

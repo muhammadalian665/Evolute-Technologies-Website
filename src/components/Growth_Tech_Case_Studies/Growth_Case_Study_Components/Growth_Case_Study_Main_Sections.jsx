@@ -3,6 +3,18 @@ import "./Growth_Case_Study_Main_Sections.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+// Growth Case Study Images
+import executiveKeynote from "../../../assets/Growth_Case_Study_Images/Executive_kEYNOTE_booking.png";
+import highTicketB2B from "../../../assets/Growth_Case_Study_Images/High_ticket_B2B_Service.png";
+import shopifyGrowth from "../../../assets/Growth_Case_Study_Images/Shopify_eCommerceGrowth.png";
+import multiChannelClinic from "../../../assets/Growth_Case_Study_Images/Multi_Chaneel_Clinic_Outreach.png";
+import codergize from "../../../assets/Growth_Case_Study_Images/Codergiz.png";
+import nglLu from "../../../assets/Growth_Case_Study_Images/NGL&LU.png";
+import beTopLocal from "../../../assets/Growth_Case_Study_Images/BeTopLocal.png";
+import atoZSolutions from "../../../assets/Growth_Case_Study_Images/AtoZSolutions.png";
+import alisaWatlington from "../../../assets/Growth_Case_Study_Images/Alisa_Wetlington.png";
+import smbCybersecurity from "../../../assets/Growth_Case_Study_Images/SMB_CyberSecurity.png";
+
 
 /* =========================================================
    GROWTH CASE STUDIES DATA
@@ -20,6 +32,8 @@ const caseStudies = [
         description:
             "A structured outbound appointment-setting system designed to identify qualified corporate decision-makers, initiate meaningful conversations, and generate consistent speaking opportunities.",
 
+        image: executiveKeynote,
+
         route:
             "/case-studies/growth-tech/cs1",
     },
@@ -34,6 +48,8 @@ const caseStudies = [
 
         description:
             "A multi-channel LinkedIn and email outreach system built to connect high-ticket B2B services with relevant decision-makers through targeted prospecting and personalized engagement.",
+
+        image: highTicketB2B,
 
         route:
             "/case-studies/growth-tech/cs2",
@@ -50,6 +66,8 @@ const caseStudies = [
         description:
             "A structured cold email growth system designed for Shopify and DTC brands, combining focused targeting, personalized messaging, strategic follow-ups, and campaign optimization.",
 
+        image: shopifyGrowth,
+
         route:
             "/case-studies/growth-tech/cs3",
     },
@@ -64,6 +82,8 @@ const caseStudies = [
 
         description:
             "A multi-channel outreach campaign designed to connect healthcare clinics with relevant decision-makers through targeted prospect research, personalized messaging, and consistent follow-up.",
+
+        image: multiChannelClinic,
 
         route:
             "/case-studies/growth-tech/cs4",
@@ -80,6 +100,8 @@ const caseStudies = [
         description:
             "A targeted LinkedIn and email outreach system designed to help a technology services company reach founders, business owners, and senior decision-makers with relevant technology solutions.",
 
+        image: codergize,
+
         route:
             "/case-studies/growth-tech/cs5",
     },
@@ -94,6 +116,8 @@ const caseStudies = [
 
         description:
             "A trigger-based LinkedIn outreach campaign designed to connect leadership development services with HR decision-makers using company growth signals and personalized messaging.",
+
+        image: nglLu,
 
         route:
             "/case-studies/growth-tech/cs6",
@@ -110,6 +134,8 @@ const caseStudies = [
         description:
             "A targeted cold email campaign focused on helping functional and integrated medical clinics generate qualified patients, booked appointments, and measurable marketing outcomes.",
 
+        image: beTopLocal,
+
         route:
             "/case-studies/growth-tech/cs7",
     },
@@ -124,6 +150,8 @@ const caseStudies = [
 
         description:
             "A personalized LinkedIn and email outreach campaign designed to identify brands with strong college-student audiences and connect them with campus-based acquisition opportunities.",
+
+        image: atoZSolutions,
 
         route:
             "/case-studies/growth-tech/cs8",
@@ -140,6 +168,8 @@ const caseStudies = [
         description:
             "A targeted LinkedIn outreach campaign designed to connect industrial manufacturing businesses with qualified lead-generation and marketing opportunities.",
 
+        image: alisaWatlington,
+
         route:
             "/case-studies/growth-tech/cs9",
     },
@@ -154,6 +184,8 @@ const caseStudies = [
 
         description:
             "A structured LinkedIn and email outreach campaign designed to engage U.S. SMB decision-makers around practical cybersecurity, resilience, and recovery readiness.",
+
+        image: smbCybersecurity,
 
         route:
             "/case-studies/growth-tech/cs10",
@@ -254,7 +286,7 @@ function Growth_Case_Study_Main_Sections() {
 
 
                         {/* =====================================
-                           RIGHT — PLACEHOLDER
+                           RIGHT — CASE STUDY IMAGE
                         ===================================== */}
 
                         <Link
@@ -264,9 +296,11 @@ function Growth_Case_Study_Main_Sections() {
 
                             <div className="growth-case-study-placeholder">
 
-                                <span>
-                                    {study.id}
-                                </span>
+                                <img
+                                    src={study.image}
+                                    alt={study.title}
+                                    className="growth-case-study-card-image"
+                                />
 
                             </div>
 
