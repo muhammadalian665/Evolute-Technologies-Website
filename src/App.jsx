@@ -200,6 +200,14 @@ import Footer
     from "./components/Footer/Footer";
 
 
+/* =====================================================
+   FLOATING SOCIALS
+===================================================== */
+
+import FloatingSocials
+    from "./components/Floating_Socials/FloatingSocials";
+
+
 function App() {
 
     return (
@@ -211,6 +219,13 @@ function App() {
             ===================================================== */}
 
             <Navbar />
+
+
+            {/* =====================================================
+                GLOBAL FLOATING SOCIALS
+            ===================================================== */}
+
+            <FloatingSocials />
 
 
             {/* =====================================================

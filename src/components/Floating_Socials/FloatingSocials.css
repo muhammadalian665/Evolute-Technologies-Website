@@ -1,0 +1,186 @@
+/* =========================================
+   FLOATING SOCIALS
+========================================= */
+
+.floating-socials {
+    position: fixed;
+
+    right: 22px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    z-index: 99999;
+}
+
+
+/* =========================================
+   SOCIAL BUTTON
+========================================= */
+
+.floating-social {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    /* Strong background for visibility */
+    background: #0950CD;
+
+    /* White icons */
+    color: #ffffff;
+
+    text-decoration: none;
+
+    /* Border makes buttons visible on white */
+    border: 2px solid rgba(255, 255, 255, 0.95);
+
+    /* Strong shadow + glow */
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.20),
+        0 0 0 3px rgba(9, 80, 205, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.floating-social svg {
+    width: 23px;
+    height: 23px;
+
+    stroke-width: 2.5;
+}
+
+
+/* =========================================
+   LINKEDIN
+========================================= */
+
+.floating-social.linkedin {
+    background: #0A66C2;
+    color: #ffffff;
+}
+
+.floating-social.linkedin:hover {
+    background: #004182;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   WHATSAPP
+========================================= */
+
+.floating-social.whatsapp {
+    background: #25D366;
+    color: #ffffff;
+}
+
+.floating-social.whatsapp:hover {
+    background: #128C7E;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   EMAIL
+========================================= */
+/* =========================================
+   EMAIL
+========================================= */
+
+.floating-social.email {
+    background: #ffffff;
+    color: #E53935;
+
+    border: 3px solid #0950CD;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18),
+        0 0 0 3px rgba(9, 80, 205, 0.12);
+}
+
+.floating-social.email:hover {
+    background: #ffffff;
+    color: #E53935;
+
+    border-color: #063D9E;
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.25),
+        0 0 22px rgba(9, 80, 205, 0.40);
+}
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.floating-social:hover {
+    transform: translateX(-7px) scale(1.1);
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.25),
+        0 0 22px rgba(9, 80, 205, 0.40);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .floating-socials {
+        right: 12px;
+        gap: 10px;
+    }
+
+    .floating-social {
+        width: 45px;
+        height: 45px;
+    }
+
+    .floating-social svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .floating-socials {
+        right: 9px;
+        gap: 8px;
+    }
+
+    .floating-social {
+        width: 42px;
+        height: 42px;
+    }
+
+    .floating-social svg {
+        width: 19px;
+        height: 19px;
+    }
+}
